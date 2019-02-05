@@ -1,8 +1,29 @@
+const pkg = require("./package.json");
+
 module.exports = {
   siteMetadata: {
-    title: "United Nations World Data Forum",
-    description:
-      "The 3rd UN World Data Forum will take place 18-21 October 2020 in Bern, Switzerland.",
-    url: "https://next.undataforum.org"
-  }
+    title: pkg.name,
+    description: pkg.description,
+    siteUrl: "https://theme.undataforum.org",
+    navLinks: [
+      {
+        href: "/blog",
+        text: "Blog"
+      },
+      {
+        href: "/committee",
+        text: "Committee"
+      }
+    ]
+  },
+  plugins: [
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: [".mdx", ".md"]
+      }
+    },
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-react-helmet"
+  ]
 };

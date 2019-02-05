@@ -1,9 +1,10 @@
 {
   "name": "@undataforum/gatsby-theme",
   "version": "0.0.0",
-  "description": "Gatbsy theme for @UNDataForum websites.",
+  "description": "Gatbsy theme for UN World Data Forum websites.",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "start": "gatsby develop",
     "build": "rm -rf ./public && gatsby build",
@@ -20,13 +21,25 @@
     }
   },
   "dependencies": {
+    "@mdotasia/eslint-config": "^0.6.0",
+    "@mdx-js/mdx": "^0.16.5",
+    "@mdx-js/tag": "^0.16.5",
+    "@undataforum/components": "file:.yalc/@undataforum/components",
+    "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.72",
+    "gatsby-image": "^2.0.25",
+    "gatsby-mdx": "^0.3.5",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-plugin-sharp": "^2.0.15",
+    "gatsby-plugin-styled-components": "^3.0.5",
+    "gatsby-transformer-sharp": "^2.1.9",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
-    "@mdotasia/eslint-config": "^0.5.0",
     "eslint": "^5.10.0",
     "husky": "^1.3.0",
     "lint-staged": "^8.1.0",

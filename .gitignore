@@ -1,3 +1,5 @@
 .cache/
+.yalc/
 node_modules/
 public/
+yalc.lock
