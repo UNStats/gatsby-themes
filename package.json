@@ -10,7 +10,8 @@
     "build": "rm -rf ./public && gatsby build",
     "format": "pretty-quick",
     "inspect": "node --inspect-brk node_modules/.bin/gatsby develop",
-    "lint": "eslint --ext .jsx,.js --ignore-path .gitignore ."
+    "lint": "eslint --ext .jsx,.js --ignore-path .gitignore .",
+    "upgrade-interactive": "npm-check --update"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint"
@@ -21,29 +22,37 @@
     }
   },
   "dependencies": {
-    "@mdotasia/eslint-config": "^0.6.0",
     "@mdx-js/mdx": "^0.16.5",
     "@mdx-js/tag": "^0.16.5",
-    "@undataforum/components": "file:.yalc/@undataforum/components",
+    "@undataforum/components": "^0.21.0",
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.0.72",
     "gatsby-image": "^2.0.25",
     "gatsby-mdx": "^0.3.5",
+    "gatsby-plugin-compile-es6-packages": "^1.0.6",
+    "gatsby-plugin-page-creator": "^2.0.6",
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-sharp": "^2.0.15",
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-transformer-sharp": "^2.1.9",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.3"
   },
   "devDependencies": {
+    "@mdotasia/eslint-config": "^0.6.0",
     "eslint": "^5.10.0",
+    "gatsby": "^2.0.117",
     "husky": "^1.3.0",
     "lint-staged": "^8.1.0",
+    "npm-check": "^5.9.0",
     "prettier": "^1.15.3",
-    "pretty-quick": "^1.8.0"
+    "pretty-quick": "^1.8.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.0.117",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   }
 }
