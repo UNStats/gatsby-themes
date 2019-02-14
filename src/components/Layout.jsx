@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import { Box, Head, Header, Provider } from "@undataforum/components";
 
 const Layout = ({ children }) => (
@@ -33,14 +33,8 @@ const Layout = ({ children }) => (
             url={siteUrl}
             noRobots
           />
-          <Header
-            link={({ children: linkChildren, href, className }) => (
-              <Link className={className} to={href}>
-                {linkChildren}
-              </Link>
-            )}
-            links={navLinks}
-          />
+
+          <Header links={navLinks} />
           <Box my={[3, 4]}>{children}</Box>
         </Fragment>
       </Provider>

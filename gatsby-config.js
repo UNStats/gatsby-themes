@@ -7,8 +7,8 @@ module.exports = {
     siteUrl: "https://theme.undataforum.org",
     navLinks: [
       {
-        href: "/blog",
-        text: "Blog"
+        href: "/about",
+        text: "About"
       },
       {
         href: "/committee",
@@ -17,10 +17,19 @@ module.exports = {
     ]
   },
   plugins: [
+    // Install "gatsby-plugin-page-creator" if the theme should be able to generate pages.
+    // {
+    //   resolve: "gatsby-plugin-page-creator",
+    //   options: {
+    //     path: `${__dirname}/src/pages`
+    //   }
+    // },
     {
-      resolve: `gatsby-mdx`,
+      resolve: "gatsby-mdx",
       options: {
-        extensions: [".mdx", ".md"]
+        defaultLayouts: {
+          default: require.resolve("./src/components/MDXTextPage.jsx")
+        }
       }
     },
     "gatsby-plugin-styled-components",
