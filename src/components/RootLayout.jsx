@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import { Box, Head, Header, Provider } from "@undataforum/components";
 
-const Layout = ({ children }) => (
+const RootLayout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query LayoutQuery {
+      query DefaultLayoutQuery {
         site {
           siteMetadata {
             title
@@ -33,17 +33,16 @@ const Layout = ({ children }) => (
             url={siteUrl}
             noRobots
           />
-
           <Header links={navLinks} />
-          <Box my={[3, 4]}>{children}</Box>
+          <Box my={[3, 4]}>{children}</Box>;{" "}
         </Fragment>
       </Provider>
     )}
   />
 );
 
-Layout.propTypes = {
+RootLayout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default Layout;
+export default RootLayout;

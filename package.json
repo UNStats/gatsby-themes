@@ -50,8 +50,8 @@
     "npm-check": "^5.9.0",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
   },
   "peerDependencies": {
     "gatsby": "^2.0.117",
