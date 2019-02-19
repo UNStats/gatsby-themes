@@ -21,6 +21,10 @@
       "pre-commit": "lint-staged && pretty-quick --staged"
     }
   },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-theme.git"
