@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import { Head, Provider } from "@undataforum/components";
+import Link from "./Link";
 
 const BlankLayout = ({ children }) => (
   <StaticQuery
@@ -21,7 +22,7 @@ const BlankLayout = ({ children }) => (
         siteMetadata: { title, description, siteUrl }
       }
     }) => (
-      <Provider>
+      <Provider theme={{ internalLink: Link }}>
         <Fragment>
           <Head
             title={title}

@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import { Box, Head, Header, Provider } from "@undataforum/components";
+import Link from "./Link";
 
 const RootLayout = ({ children }) => (
   <StaticQuery
@@ -25,7 +26,7 @@ const RootLayout = ({ children }) => (
         siteMetadata: { title, description, siteUrl, navLinks }
       }
     }) => (
-      <Provider>
+      <Provider theme={{ internalLink: Link }}>
         <Fragment>
           <Head
             title={title}
