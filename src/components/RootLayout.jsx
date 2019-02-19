@@ -34,7 +34,7 @@ const RootLayout = ({ children }) => (
             noRobots
           />
           <Header links={navLinks} />
-          <Box my={[3, 4]}>{children}</Box>;{" "}
+          <Box my={[3, 4]}>{children}</Box>
         </Fragment>
       </Provider>
     )}

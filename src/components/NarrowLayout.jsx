@@ -4,7 +4,7 @@ import DefaultLayout from "./RootLayout";
 import MDXMapping from "./MDXMapping";
 import Narrow from "./Narrow";
 
-const NarrowMDXLayout = ({ children }) => (
+const NarrowLayout = ({ children }) => (
   <DefaultLayout>
     <MDXMapping>
       <Narrow>{children}</Narrow>
@@ -12,8 +12,8 @@ const NarrowMDXLayout = ({ children }) => (
   </DefaultLayout>
 );
 
-NarrowMDXLayout.propTypes = {
+NarrowLayout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default NarrowMDXLayout;
+export default NarrowLayout;

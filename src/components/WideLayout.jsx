@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BlankLayout from "./BlankLayout";
+import RootLayout from "./RootLayout";
 import MDXMapping from "./MDXMapping";
 
-const PreviewMDXLayout = ({ children }) => (
-  <BlankLayout>
+const WideLayout = ({ children }) => (
+  <RootLayout>
     <MDXMapping>{children}</MDXMapping>
-  </BlankLayout>
+  </RootLayout>
 );
 
-PreviewMDXLayout.propTypes = {
+WideLayout.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default PreviewMDXLayout;
+export default WideLayout;

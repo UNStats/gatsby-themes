@@ -1,6 +1,7 @@
 import React from "react";
 import { node, object } from "prop-types";
 import { MDXProvider } from "@mdx-js/tag";
+import { Code } from "@undataforum/components";
 import A from "./A";
 import H1 from "./H1";
 import H2 from "./H2";
@@ -12,7 +13,8 @@ const defaultComponents = {
   a: A,
   h1: H1,
   h2: H2,
-  p: P
+  p: P,
+  pre: Code
 };
 
 // This component makes MDX HTML component mapping reusable.
