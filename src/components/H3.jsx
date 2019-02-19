@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 import { Heading } from "@undataforum/components";
 
-const H2 = ({ children }) => (
-  <Heading as="h2" fontFamily="sans" fontSize="4" mb={3}>
+const H3 = ({ children }) => (
+  <Heading as="h3" fontFamily="sans" fontSize="3" mb={3}>
     {children}
   </Heading>
 );
 
-H2.propTypes = {
+H3.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default H2;
+export default H3;
