@@ -5,7 +5,7 @@ module.exports = {
     title: pkg.name,
     description: pkg.description,
     siteUrl: "https://theme.undataforum.org",
-    navLinks: [
+    navigation: [
       {
         href: "/about",
         text: "About"
@@ -17,6 +17,8 @@ module.exports = {
     ]
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     // Install "gatsby-plugin-page-creator" if the theme should be able to generate pages.
     // {
     //   resolve: "gatsby-plugin-page-creator",
@@ -27,12 +29,11 @@ module.exports = {
     {
       resolve: "gatsby-mdx",
       options: {
+        extensions: [".mdx", ".md"],
         defaultLayouts: {
-          default: require.resolve("./src/components/NarrowLayout.jsx")
+          default: require.resolve("./src/components/ContainerLayout.jsx")
         }
       }
-    },
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-react-helmet"
+    }
   ]
 };

@@ -1,49 +1,50 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
-import { Box, Head, Header, Provider } from "@undataforum/components";
-import Link from "./Link";
+import React from "react";
+import { node } from "prop-types";
+import { graphql, useStaticQuery } from "gatsby";
+import { createGlobalStyle } from "styled-components";
+import Helmet from "react-helmet";
 
-const RootLayout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query DefaultLayoutQuery {
-        site {
-          siteMetadata {
-            title
-            description
-            siteUrl
-            navLinks {
-              href
-              text
-            }
-          }
-        }
+const Style = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:400,700');
+  body {
+    margin: 0;
+  }
+`;
+
+const query = graphql`
+  query RootQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
       }
-    `}
-    render={({
-      site: {
-        siteMetadata: { title, description, siteUrl, navLinks }
-      }
-    }) => (
-      <Provider theme={{ internalLink: Link }}>
-        <Fragment>
-          <Head
-            title={title}
-            description={description}
-            url={siteUrl}
-            noRobots
-          />
-          <Header links={navLinks} />
-          <Box my={[3, 4]}>{children}</Box>
-        </Fragment>
-      </Provider>
-    )}
-  />
-);
+    }
+  }
+`;
+
+const RootLayout = ({ children }) => {
+  const {
+    site: {
+      siteMetadata: { title, description, siteUrl }
+    }
+  } = useStaticQuery(query);
+  return (
+    <>
+      <Style />
+      <Helmet title={title}>
+        <meta property="og:title" content={title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:description" content={description} />
+      </Helmet>
+      {children}
+    </>
+  );
+};
 
 RootLayout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: node.isRequired
 };
 
 export default RootLayout;

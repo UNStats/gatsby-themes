@@ -34,9 +34,10 @@
     "@mdx-js/tag": "^0.16.5",
     "@undataforum/components": "^0.23.0",
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby-mdx": "^0.3.6",
-    "gatsby-plugin-react-helmet": "^3.0.4",
-    "gatsby-plugin-styled-components": "^3.0.5",
+    "gatsby-mdx": "^0.4.0",
+    "gatsby-plugin-react-helmet": "^3.0.7",
+    "gatsby-plugin-styled-components": "^3.0.6",
+    "github-slugger": "^1.2.1",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.3"
@@ -44,14 +45,14 @@
   "devDependencies": {
     "@mdotasia/eslint-config": "^0.6.0",
     "eslint": "^5.14.1",
-    "gatsby": "^2.1.2",
+    "gatsby": "^2.1.19",
     "husky": "^1.3.0",
-    "lint-staged": "^8.1.4",
+    "lint-staged": "^8.1.5",
     "npm-check": "^5.9.0",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "peerDependencies": {
     "gatsby": "^2.1.2",
