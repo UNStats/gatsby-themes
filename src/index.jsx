@@ -16,18 +16,15 @@ export const wrapPageElement = ({ element, props }) => {
     return <RootLayout>{element}</RootLayout>;
   }
   return (
-    <MDXProvider components={components}>
-      <RootLayout>
-        <Header />
-        <Box my={[3, 4]}>{element}</Box>;
-      </RootLayout>
-    </MDXProvider>
+    <RootLayout>
+      <Header />
+      <Box my={[3, 4]}>{element}</Box>;
+    </RootLayout>
   );
 };
 
 export const wrapRootElement = ({ element }) => (
-  // MDXProvider should be placed inside wrapRootElement.
-  // Due to the following bug it needs to be placed inside wrapPageElement.
-  // https://github.com/ChristopherBiscardi/gatsby-mdx/issues/292
-  <Provider theme={{ internalLink: Link }}>{element}</Provider>
+  <MDXProvider components={components}>
+    <Provider theme={{ internalLink: Link }}>{element}</Provider>
+  </MDXProvider>
 );

@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-undataforum",
+  "name": "move-mdxprovider-to-root-element",
   "version": "0.1.0",
   "description": "Gatbsy theme for UN World Data Forum websites.",
   "author": "Thilo Maier <maier@un.org>",
@@ -10,8 +10,7 @@
     "build": "rm -rf ./public && gatsby build",
     "format": "pretty-quick",
     "inspect": "node --inspect-brk node_modules/.bin/gatsby develop",
-    "lint": "eslint --ext .jsx,.js --ignore-path .gitignore .",
-    "upgrade-interactive": "npm-check --update"
+    "lint": "eslint --ext .jsx,.js --ignore-path .gitignore ."
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint"
@@ -21,10 +20,7 @@
       "pre-commit": "lint-staged && pretty-quick --staged"
     }
   },
-  "keywords": [
-    "gatsby",
-    "gatsby-theme"
-  ],
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-theme.git"
