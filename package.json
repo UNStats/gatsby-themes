@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "yarn workspaces run clean",
-    "start": "yarn workspace docs start"
+    "start": "yarn workspace @undataforum/docs start"
   },
   "workspaces": [
     "themes/*",
