@@ -1,15 +1,21 @@
-import React from "react";
-import { Flex, Box, Hero, RootLayout } from "gatsby-theme-undataforum";
-import { graphql } from "gatsby";
-import About from "./about.mdx";
-import Logo from "../components/Logo";
+import React from 'react';
+import { object } from 'prop-types';
+import { Hero, RootLayout } from 'gatsby-theme-undataforum';
+import { graphql } from 'gatsby';
+import About from './about.mdx';
 
-export default ({ data }) => (
+const Index = ({ data }) => (
   <RootLayout>
     <Hero fluid={data.hero.edges[0].node.fluid} />
     <About />
   </RootLayout>
 );
+
+Index.propTypes = {
+  data: object,
+};
+
+export default Index;
 
 export const query = graphql`
   query {
