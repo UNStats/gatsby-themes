@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link as GatsbyLink } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link as GatsbyLink } from 'gatsby';
 
 const Link = ({ children, href, className }) => (
   <GatsbyLink className={className} to={href}>
@@ -11,11 +11,11 @@ const Link = ({ children, href, className }) => (
 Link.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 Link.defaultProps = {
-  className: ""
+  className: '',
 };
 
 export default Link;

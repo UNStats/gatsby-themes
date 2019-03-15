@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Heading, Link, Text } from "@undataforum/components";
-import Slugger from "github-slugger";
+import React from 'react';
+import styled from 'styled-components';
+import { Heading, Link, Text } from '@undataforum/components';
+import Slugger from 'github-slugger';
 
 const slugger = new Slugger();
 
@@ -14,6 +14,7 @@ const UnstyledLink = styled.a`
   }
 `;
 
+// eslint-disable-next-line
 const headingFactory = ({ as, ...defaultProps }) => ({
   // eslint-disable-next-line
   children,
@@ -23,6 +24,7 @@ const headingFactory = ({ as, ...defaultProps }) => ({
   const id = slugger.slug(children);
   return (
     <Heading
+      displayName="Heading"
       {...defaultProps}
       {...props}
       id={id}
@@ -37,9 +39,9 @@ const headingFactory = ({ as, ...defaultProps }) => ({
 
 const a = props => <Link {...props} />;
 
-const h1 = headingFactory({ as: "h1", fontSize: 5, mb: 4 });
-const h2 = headingFactory({ as: "h2", fontSize: 4, mb: 3 });
-const h3 = headingFactory({ as: "h3", fontSize: 3, mb: 3 });
+const h1 = headingFactory({ as: 'h1', fontSize: 5, mb: 4 });
+const h2 = headingFactory({ as: 'h2', fontSize: 4, mb: 3 });
+const h3 = headingFactory({ as: 'h3', fontSize: 3, mb: 3 });
 
 const p = props => (
   <Text {...props} as="p" fontFamily="serif" lineHeight="copy" mt={0} mb={3} />

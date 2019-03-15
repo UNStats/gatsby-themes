@@ -1,6 +1,6 @@
-import React from "react";
-import { Header } from "@undataforum/components";
-import { graphql, useStaticQuery } from "gatsby";
+import React from 'react';
+import { Header } from '@undataforum/components';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const query = graphql`
   query HeaderQuery {
@@ -18,8 +18,8 @@ const query = graphql`
 const Component = props => {
   const {
     site: {
-      siteMetadata: { navigation }
-    }
+      siteMetadata: { navigation },
+    },
   } = useStaticQuery(query);
   return <Header {...props} links={navigation} />;
 };

@@ -1,10 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { space, color } from "styled-system";
+import React from 'react';
+import { number, string } from 'prop-types';
+import styled from 'styled-components';
+import { space, color as styledColor } from 'styled-system';
 
-const Svg = styled.svg(space, color);
+const Svg = styled.svg(space, styledColor);
 
-export default ({ size = 128, color = "currentcolor", ...props }) => (
+const Logo = ({ size = 128, color = 'currentcolor', ...props }) => (
   <Svg {...props} viewBox="0 0 173 192" width={size} height={size} fill={color}>
     <path
       d="M33.49 0H0V33.49H33.49V0Z"
@@ -118,3 +119,10 @@ export default ({ size = 128, color = "currentcolor", ...props }) => (
     />
   </Svg>
 );
+
+Logo.propTypes = {
+  size: number,
+  color: string,
+};
+
+export default Logo;

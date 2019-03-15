@@ -1,8 +1,8 @@
-import React from "react";
-import { node } from "prop-types";
-import { graphql, useStaticQuery } from "gatsby";
-import { createGlobalStyle } from "styled-components";
-import Helmet from "react-helmet";
+import React from 'react';
+import { node } from 'prop-types';
+import { graphql, useStaticQuery } from 'gatsby';
+import { createGlobalStyle } from 'styled-components';
+import Helmet from 'react-helmet';
 
 const Style = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:400,700');
@@ -26,8 +26,8 @@ const query = graphql`
 const RootLayout = ({ children }) => {
   const {
     site: {
-      siteMetadata: { title, description, siteUrl }
-    }
+      siteMetadata: { title, description, siteUrl },
+    },
   } = useStaticQuery(query);
   return (
     <>
@@ -44,7 +44,7 @@ const RootLayout = ({ children }) => {
 };
 
 RootLayout.propTypes = {
-  children: node.isRequired
+  children: node.isRequired,
 };
 
 export default RootLayout;

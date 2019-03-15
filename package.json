@@ -9,8 +9,8 @@
     "clean": "yarn workspaces run clean",
     "docs": "yarn workspace @undataforum/docs start",
     "demo": "yarn workspace @undataforum/main-website-demo start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "yarn run lint --fix"
   },
   "workspaces": [
     "themes/*",
