@@ -6,6 +6,9 @@ import Helmet from 'react-helmet';
 
 const Style = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:400,700');
+  * {
+    box-sizing: border-box;
+  }
   body {
     margin: 0;
   }
