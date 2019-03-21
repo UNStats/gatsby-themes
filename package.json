@@ -13,8 +13,8 @@
     "lint:fix": "yarn run lint --fix"
   },
   "workspaces": [
-    "themes/*",
-    "examples/*"
+    "examples/*",
+    "themes/*"
   ],
   "devDependencies": {
     "babel-eslint": "^9.0.0",

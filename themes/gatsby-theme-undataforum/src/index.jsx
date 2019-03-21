@@ -3,8 +3,8 @@ import { MDXProvider } from '@mdx-js/tag';
 import { Box, Provider } from '@undataforum/components';
 import Link from './components/Link';
 import components from './components/MDXComponents';
-import Header from './components/Header';
-import RootLayout from './components/RootLayout';
+import Header from './fragments/Header';
+import Root from './layouts/Root';
 
 /* eslint-disable react/prop-types */
 
@@ -13,13 +13,13 @@ export const wrapPageElement = ({ element, props }) => {
     location: { pathname },
   } = props;
   if (pathname === '/') {
-    return <RootLayout>{element}</RootLayout>;
+    return <Root>{element}</Root>;
   }
   return (
-    <RootLayout>
+    <Root>
       <Header />
-      <Box my={[3, 4]}>{element}</Box>;
-    </RootLayout>
+      <Box my={[3, 4]}>{element}</Box>
+    </Root>
   );
 };
 

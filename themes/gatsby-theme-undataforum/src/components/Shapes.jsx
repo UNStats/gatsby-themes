@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { number } from 'prop-types';
 import styled from 'styled-components';
 import { space, color } from 'styled-system';
 

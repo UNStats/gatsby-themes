@@ -3,9 +3,8 @@
   "name": "@undataforum/main-website-demo",
   "version": "0.0.0",
   "scripts": {
-    "clean": "rm -rf node_modules",
     "start": "gatsby develop",
-    "build": "gatsby build"
+    "clean": "rm -rf node_modules"
   },
   "dependencies": {
     "gatsby": "^2.1.19",

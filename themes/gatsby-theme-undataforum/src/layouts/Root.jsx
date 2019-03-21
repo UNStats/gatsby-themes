@@ -26,7 +26,7 @@ const query = graphql`
   }
 `;
 
-const RootLayout = ({ children }) => {
+const Root = ({ children }) => {
   const {
     site: {
       siteMetadata: { title, description, siteUrl },
@@ -46,8 +46,8 @@ const RootLayout = ({ children }) => {
   );
 };
 
-RootLayout.propTypes = {
+Root.propTypes = {
   children: node.isRequired,
 };
 
-export default RootLayout;
+export default Root;

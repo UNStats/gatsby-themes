@@ -1,6 +1,6 @@
 import React from 'react';
 import { node } from 'prop-types';
-import Container from './Container';
+import Container from '../components/Container';
 
 const ContainerLayout = ({ children }) => <Container>{children}</Container>;
 

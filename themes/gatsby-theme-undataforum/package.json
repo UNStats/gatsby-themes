@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-undataforum",
-  "description": "Main forum theme.",
+  "description": "UN World Data Forum Gatsby theme.",
   "version": "0.1.0",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
@@ -11,13 +11,15 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.20.1",
     "@mdx-js/tag": "^0.20.3",
-    "@undataforum/components": "^0.24.0",
+    "@undataforum/components": "^0.25.0",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby-image": "^2.0.33",
     "gatsby-mdx": "^0.4.3",
+    "gatsby-plugin-page-creator": "^2.0.10",
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-sharp": "^2.0.28",
     "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-source-filesystem": "^2.0.27",
     "gatsby-transformer-sharp": "^2.1.17",
     "github-slugger": "^1.2.1",
     "prop-types": "^15.7.2",
@@ -26,8 +28,7 @@
     "styled-system": "^4.0.4"
   },
   "peerDependencies": {
-    "gatsby": "^2.1.18",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "gatsby": "^2.2.3",
+    "react": "^16.8.4"
   }
 }
