@@ -4,7 +4,13 @@
   "version": "0.0.0",
   "scripts": {
     "start": "gatsby develop",
+    "inspect": "node --inspect-brk node_modules/.bin/gatsby develop",
     "clean": "rm -rf node_modules"
+  },
+  "workspaces": {
+    "nohoist": [
+      "gatsby"
+    ]
   },
   "dependencies": {
     "gatsby": "^2.1.19",
