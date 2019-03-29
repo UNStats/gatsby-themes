@@ -163,7 +163,7 @@ const Logo = ({ width, ...props }) => (
 );
 
 Logo.propTypes = {
-  width: oneOfType(number, string).isRequired,
+  width: oneOfType([number, string]).isRequired,
 };
 
 export default Logo;
