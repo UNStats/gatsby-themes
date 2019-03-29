@@ -11,7 +11,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.20.1",
     "@mdx-js/tag": "^0.20.3",
-    "@undataforum/components": "^0.25.0",
+    "@undataforum/components": "^0.26.0",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby-image": "^2.0.33",
     "gatsby-mdx": "^0.4.3",
@@ -28,6 +28,10 @@
     "styled-system": "^4.0.4"
   },
   "peerDependencies": {
+    "gatsby": "^2.2.3",
+    "react": "^16.8.4"
+  },
+  "devDependencies": {
     "gatsby": "^2.2.3",
     "react": "^16.8.4"
   }

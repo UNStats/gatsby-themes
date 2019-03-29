@@ -1,6 +1,7 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/tag';
-import { Box, Provider } from '@undataforum/components';
+import { Box, theme } from '@undataforum/components';
 import Link from './components/Link';
 import components from './components/MDXComponents';
 import Header from './components/Header';
@@ -31,6 +32,8 @@ export const wrapPageElement = ({ element, props }) => {
 // https://github.com/gatsbyjs/gatsby/issues/7747
 export const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>
-    <Provider theme={{ internalLink: Link }}>{element}</Provider>
+    <ThemeProvider theme={{ ...theme, internalLink: Link }}>
+      {element}
+    </ThemeProvider>
   </MDXProvider>
 );
