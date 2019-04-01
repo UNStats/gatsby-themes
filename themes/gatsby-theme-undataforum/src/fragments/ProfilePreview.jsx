@@ -5,9 +5,7 @@ import Img from 'gatsby-image';
 
 export default ProfilePreview;
 
-// Query data required for ProfilePreview from MDX files.
-// Result does not match ProfilePreview's API.
-// Generate avatar sizes small, medium and large.
+// Combine ...ProfilePreview with one of ...SmallAvatar, ...MediumAvatar, ...LargeAvatar.
 export const query = graphql`
   fragment ProfilePreview on Mdx {
     id
@@ -20,19 +18,38 @@ export const query = graphql`
       lastName
       jobtitle
       organization
+    }
+  }
+
+  fragment SmallAvatar on Mdx {
+    frontmatter {
       avatar {
-        small: childImageSharp {
-          fixed(height: 32, width: 32, quality: 85) {
+        childImageSharp {
+          fixed(height: 32, width: 32, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
-        medium: childImageSharp {
-          fixed(height: 64, width: 64, quality: 85) {
+      }
+    }
+  }
+
+  fragment MediumAvatar on Mdx {
+    frontmatter {
+      avatar {
+        childImageSharp {
+          fixed(height: 64, width: 64, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
-        large: childImageSharp {
-          fixed(height: 128, width: 128, quality: 85) {
+      }
+    }
+  }
+
+  fragment LargeAvatar on Mdx {
+    frontmatter {
+      avatar {
+        childImageSharp {
+          fixed(height: 128, width: 128, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -41,40 +58,27 @@ export const query = graphql`
   }
 `;
 
-const profileMap = ({
+// Make queried profile compatible with ProfilePreview.
+export const normalizeProfile = ({
   id,
   fields: { path, slug },
-  frontmatter: { firstName, lastName, jobtitle, organization, avatar },
+  frontmatter: {
+    firstName,
+    lastName,
+    jobtitle,
+    organization,
+    avatar: {
+      childImageSharp: { fixed },
+    },
+  },
 }) => {
   const name = `${firstName} ${lastName}`;
-  const smallAvatar = () => (
-    <Img
-      style={{ borderRadius: '100%' }}
-      alt={name}
-      fixed={avatar.small.fixed}
-    />
-  );
-  const mediumAvatar = () => (
-    <Img
-      style={{ borderRadius: '100%' }}
-      alt={name}
-      fixed={avatar.medium.fixed}
-    />
-  );
-  const largeAvatar = () => (
-    <Img
-      style={{ borderRadius: '100%' }}
-      alt={name}
-      fixed={avatar.large.fixed}
-    />
+  const avatar = () => (
+    <Img style={{ borderRadius: '100%' }} alt={name} fixed={fixed} />
   );
   return {
     id,
-    avatar: {
-      small: smallAvatar,
-      medium: mediumAvatar,
-      large: largeAvatar,
-    },
+    avatar,
     name,
     affiliation: {
       jobtitle,
@@ -83,22 +87,4 @@ const profileMap = ({
     href: path,
     slug,
   };
-};
-
-// Make profile queried from MDX compatible with ProfilePreview with small avatar.
-export const smallAvatarProfileMap = mdxProfile => {
-  const { avatar, ...profile } = profileMap(mdxProfile);
-  return { ...profile, avatar: avatar.small };
-};
-
-// Make profile queried from MDX compatible with ProfilePreview with medium avatar.
-export const mediumAvatarProfileMap = mdxProfile => {
-  const { avatar, ...profile } = profileMap(mdxProfile);
-  return { ...profile, avatar: avatar.medium };
-};
-
-// Make profile queried from MDX compatible with ProfilePreview with large avatar.
-export const largeAvatarProfileMap = mdxProfile => {
-  const { avatar, ...profile } = profileMap(mdxProfile);
-  return { ...profile, avatar: avatar.large };
 };

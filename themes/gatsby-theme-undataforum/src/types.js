@@ -5,6 +5,7 @@ const affiliationType = shape({
   organization: string.isRequired,
 });
 
+// Unlike postType in @undataforum/components, id is required and is used as key in lists.
 export const postType = shape({
   id: string.isRequired,
   title: string.isRequired,
@@ -14,6 +15,7 @@ export const postType = shape({
   href: string,
 });
 
+// Unlike profileType in @undataforum/components, id is required and is used as key in lists.
 export const profileType = shape({
   id: string.isRequired,
   avatar: func.isRequired,

@@ -1,21 +1,13 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { shape, object } from 'prop-types';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import Posts from '../components/Posts';
 import Container from '../components/Container';
-import { postMap } from '../fragments/PostPreview';
-import { ProfilesConsumer } from '../components/ProfilesContext';
 import Profiles from '../components/Profiles';
-import ProfilePreview, {
-  largeAvatarProfileMap,
-} from '../fragments/ProfilePreview';
-
-const removeHref = profile => {
-  // eslint-disable-next-line no-unused-vars
-  const { href, ...rest } = profile;
-  return { ...rest };
-};
+import { normalizePost } from '../fragments/PostPreview';
+import ProfilePreview, { normalizeProfile } from '../fragments/ProfilePreview';
+import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
 
 const Profile = ({
   data: {
@@ -23,49 +15,47 @@ const Profile = ({
     posts: { nodes: postsFromGql },
   },
 }) => {
+  // Extract body with transformed MDX.
   const {
     code: { body },
-    ...profile
   } = profileFromGql;
+  const profile = normalizeProfile(profileFromGql);
+  // Do not link ProfilePreview at the top of the profile page.
+  profile.href = undefined;
+
+  // Use profiles to look up author profiles for posts.
+  const profiles = useNormalizedProfiles();
+
+  // Lookup author profiles for posts.
+  const posts = postsFromGql.map(normalizePost).map(({ authors, ...post }) => ({
+    ...post,
+    authors: function Authors() {
+      return (
+        <Profiles
+          profiles={profiles
+            .filter(({ slug }) => authors.includes(slug))
+            // Omit href to make sure that profiles are not linked.
+            .map(({ id, name, avatar }) => ({ id, name, avatar }))}
+        />
+      );
+    },
+    lead: undefined,
+  }));
+
+  debugger;
   return (
-    <ProfilesConsumer>
-      {({ profilesWithSmallAvatar }) => (
-        <Container>
-          <ProfilePreview
-            profile={removeHref(largeAvatarProfileMap(profile))}
-            mb={4}
-          />
-          <MDXRenderer>{body}</MDXRenderer>
-          <Posts
-            posts={postsFromGql.map(postMap).map(({ authors, ...post }) => {
-              const renderAuthors = () => (
-                <Profiles
-                  profiles={authors
-                    .map(author =>
-                      profilesWithSmallAvatar.find(
-                        ({ slug }) => slug === author
-                      )
-                    )
-                    .map(({ name, avatar }) => ({
-                      name,
-                      avatar,
-                    }))}
-                />
-              );
-              return {
-                ...post,
-                authors: renderAuthors,
-              };
-            })}
-          />
-        </Container>
-      )}
-    </ProfilesConsumer>
+    <Container>
+      <ProfilePreview profile={profile} mb={4} />
+      <MDXRenderer>{body}</MDXRenderer>
+      <Posts posts={posts} />
+    </Container>
   );
 };
 
+// Data returned from Gql is not normalized, therefore keep prop types generic.
 Profile.propTypes = {
-  data: object.isRequired,
+  data: shape({ profile: object.isRequired, posts: object.isRequired })
+    .isRequired,
 };
 
 export default Profile;
@@ -74,16 +64,17 @@ export const profileQuery = graphql`
   query($slug: String!) {
     profile: mdx(fields: { slug: { eq: $slug } }) {
       ...ProfilePreview
+      ...LargeAvatar
       code {
         body
       }
     }
     posts: allMdx(
-      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
       filter: {
         fields: { type: { eq: "post" } }
         frontmatter: { authors: { in: [$slug] } }
       }
+      sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
     ) {
       nodes {
         ...PostPreview

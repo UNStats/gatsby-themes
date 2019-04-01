@@ -8,10 +8,7 @@ const Posts = ({ posts }) => (
     align="center"
     gridGap={3}
     gridTemplateColumns="repeat(auto-fit, 512px)"
-    render={({ id, ...post }) => {
-      debugger;
-      return <PostPreview post={{ ...post }} key={id} />;
-    }}
+    render={({ id, ...post }) => <PostPreview post={{ ...post }} key={id} />}
     values={posts}
   />
 );

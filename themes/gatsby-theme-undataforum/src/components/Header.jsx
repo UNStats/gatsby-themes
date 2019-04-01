@@ -1,27 +1,10 @@
 import React from 'react';
 import { Header } from '@undataforum/components';
-import { graphql, useStaticQuery } from 'gatsby';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
-const query = graphql`
-  query HeaderQuery {
-    site {
-      siteMetadata {
-        navigation {
-          href
-          text
-        }
-      }
-    }
-  }
-`;
-
-const Component = props => {
-  const {
-    site: {
-      siteMetadata: { navigation },
-    },
-  } = useStaticQuery(query);
+const HeaderProxy = props => {
+  const { navigation } = useSiteMetadata();
   return <Header {...props} links={navigation} />;
 };
 
-export default Component;
+export default HeaderProxy;

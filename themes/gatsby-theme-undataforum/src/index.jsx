@@ -6,7 +6,6 @@ import Link from './components/Link';
 import components from './components/MDXComponents';
 import Header from './components/Header';
 import Root from './layouts/Root';
-import { ProfilesProvider } from './components/ProfilesContext';
 
 /* eslint-disable react/prop-types */
 
@@ -18,12 +17,10 @@ export const wrapPageElement = ({ element, props }) => {
     return <Root>{element}</Root>;
   }
   return (
-    <ProfilesProvider>
-      <Root>
-        <Header />
-        <Box my={[3, 4]}>{element}</Box>
-      </Root>
-    </ProfilesProvider>
+    <Root>
+      <Header />
+      <Box my={[3, 4]}>{element}</Box>
+    </Root>
   );
 };
 

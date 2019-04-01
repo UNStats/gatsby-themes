@@ -5,42 +5,34 @@ import { PostPreview } from '@undataforum/components';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import Profiles from '../components/Profiles';
 import Container from '../components/Container';
-import { ProfilesConsumer } from '../components/ProfilesContext';
+import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
 
 const Post = ({ data: { mdx } }) => {
   const {
-    id,
     frontmatter: { title, date, authors },
     code: { body },
   } = mdx;
+  const profiles = useNormalizedProfiles()
+    .filter(({ slug }) => authors.includes(slug))
+    .map(({ id, avatar, name, href }) => ({
+      id,
+      avatar,
+      name,
+      href,
+    }));
   return (
-    <ProfilesConsumer>
-      {({ profilesWithMediumAvatar }) => {
-        const profiles = profilesWithMediumAvatar
-          .filter(({ slug }) => authors.includes(slug))
-          .map(({ avatar, name, href }) => ({
-            avatar,
-            name,
-            href,
-          }));
-        const renderAuthors = () => (
-          <Profiles profiles={profiles} linkProfiles />
-        );
-        return (
-          <Container>
-            <PostPreview
-              post={{
-                id,
-                title,
-                date,
-                authors: renderAuthors,
-              }}
-            />
-            <MDXRenderer>{body}</MDXRenderer>
-          </Container>
-        );
-      }}
-    </ProfilesConsumer>
+    <Container>
+      <PostPreview
+        post={{
+          title,
+          date,
+          authors: function Authors() {
+            return <Profiles profiles={profiles} linkProfiles />;
+          },
+        }}
+      />
+      <MDXRenderer>{body}</MDXRenderer>
+    </Container>
   );
 };
 
@@ -53,15 +45,7 @@ export default Post;
 export const query = graphql`
   query($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
-      id
-      fields {
-        path
-      }
-      frontmatter {
-        title
-        date(formatString: "MMM DD, YYYY")
-        authors
-      }
+      ...PostPreview
       code {
         body
       }

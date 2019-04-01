@@ -1,8 +1,8 @@
 import React from 'react';
 import { node } from 'prop-types';
-import { graphql, useStaticQuery } from 'gatsby';
 import { createGlobalStyle } from 'styled-components';
 import Helmet from 'react-helmet';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
 const Style = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Merriweather:400,700');
@@ -14,24 +14,8 @@ const Style = createGlobalStyle`
   }
 `;
 
-const query = graphql`
-  query RootQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-      }
-    }
-  }
-`;
-
 const Root = ({ children }) => {
-  const {
-    site: {
-      siteMetadata: { title, description, siteUrl },
-    },
-  } = useStaticQuery(query);
+  const { title, description, siteUrl } = useSiteMetadata();
   return (
     <>
       <Style />
