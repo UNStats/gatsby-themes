@@ -1,9 +1,8 @@
 {
   "private": true,
-  "name": "@undataforum/docs",
+  "name": "docs",
   "version": "0.0.0",
   "scripts": {
-    "clean": "rm -rf node_modules",
     "start": "gatsby develop",
     "build": "gatsby build"
   },

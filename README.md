@@ -4,28 +4,38 @@ This is a monorepo containing [Gatsby](https://www.gatsbyjs.org/) themes for UN 
 
 ## Themes
 
-- **`gatsby-theme-undataforum`:** This is the main theme for all forum websites. The eventual name of this theme will be `@undataforum/gatsby-theme-main`. Because of an issue outlined in [this pull request](https://github.com/gatsbyjs/gatsby/pull/10786), the package name needs to be `gatsby-theme-undataforum` instead of a scoped package name, since otherwise component shadowing and `StaticQuery` break.
+### gatsby-theme-undataforum
+
+Main theme for all forum websites. The eventual name of this theme will be `@undataforum/gatsby-theme-main`. Because of an issue outlined in [this pull request](https://github.com/gatsbyjs/gatsby/pull/10786), the package name needs to be `gatsby-theme-undataforum`. A scoped package name would break component shadowing and `StaticQuery`.
 
 ## Examples
 
-### `main-website-demo`
+### main-website-demo
 
-Demo website with mock data to develop new features. In order to launch run
-
-```bash
-yarn run demo
-```
-
-### `docs`
-
-Documentation website with info on how to set up a local development environment and how to use the themes. In order to launch run
+Demo website with mock data to develop and test new features. In order to launch run
 
 ```bash
-yarn run docs
+yarn workspace main-website-demo start
 ```
 
-## CodeSandbox
+### docs
 
-You can explore this repository on [CodeSandbox](https://codesandbox.io):
+Documentation website with info on how to set up a development environment and how to use themes. In order to launch run
 
-https://codesandbox.io/s/github/UNDataForum/gatsby-themes
+```bash
+yarn workspace docs start
+```
+
+## Contributing
+
+Run
+
+```bash
+npx lerna bootstrap
+```
+
+to install all depedencies. If something breaks, you can try going back to a clean slate and reinstall all dependencies:
+
+```bash
+npx lerna clean -y && npx lerna bootstrap
+```

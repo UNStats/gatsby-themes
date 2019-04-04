@@ -1,21 +1,15 @@
 {
   "private": true,
-  "name": "@undataforum/main-website-demo",
+  "name": "main-website-demo",
   "version": "0.0.0",
   "scripts": {
     "start": "gatsby develop",
-    "inspect": "node --inspect-brk node_modules/.bin/gatsby develop",
-    "clean": "rm -rf node_modules"
-  },
-  "workspaces": {
-    "nohoist": [
-      "gatsby"
-    ]
+    "inspect": "node --inspect-brk node_modules/.bin/gatsby develop"
   },
   "dependencies": {
     "gatsby": "^2.1.19",
     "gatsby-source-filesystem": "^2.0.26",
-    "gatsby-theme-undataforum": "*",
+    "gatsby-theme-undataforum": "^0.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
