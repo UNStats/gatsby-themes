@@ -8,6 +8,7 @@ import Profiles from '../components/Profiles';
 import { normalizePost } from '../fragments/PostPreview';
 import ProfilePreview, { normalizeProfile } from '../fragments/ProfilePreview';
 import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
+import Heading from '../components/Heading';
 
 const Profile = ({
   data: {
@@ -47,7 +48,10 @@ const Profile = ({
     <Container>
       <ProfilePreview profile={profile} mb={4} />
       <MDXRenderer>{body}</MDXRenderer>
-      <Posts posts={posts} />
+      <Heading color="text" fontFamily="sans" my={4}>{`Posts by ${
+        profile.name
+      }`}</Heading>
+      <Posts color="text" posts={posts} />
     </Container>
   );
 };

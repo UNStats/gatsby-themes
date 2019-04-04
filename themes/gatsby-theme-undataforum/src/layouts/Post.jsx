@@ -30,6 +30,8 @@ const Post = ({ data: { mdx } }) => {
             return <Profiles profiles={profiles} linkProfiles />;
           },
         }}
+        fontSize={[4, 5]}
+        mb={[3, 4]}
       />
       <MDXRenderer>{body}</MDXRenderer>
     </Container>

@@ -5,8 +5,8 @@
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx .",
-    "lint:fix": "npm run lint --fix"
+    "lint": "eslint --ext .js,.jsx,.html --ignore-path .gitignore .",
+    "fix": "eslint --ext .js,.jsx,.html --ignore-path .gitignore --fix ."
   },
   "workspaces": [
     "examples/*",

@@ -1,10 +1,8 @@
 # @undataforum/gatsby-themes
 
-This is a monorepo containing [Gatsby](https://www.gatsbyjs.org/) themes for UN World data forum websites and example website that use the themes. For starters there is only one theme.
+This is a monorepo containing a [Gatsby](https://www.gatsbyjs.org/) theme for UN World data forum websites and example websites that using the theme.
 
-## Themes
-
-### gatsby-theme-undataforum
+## gatsby-theme-undataforum
 
 Main theme for all forum websites. The eventual name of this theme will be `@undataforum/gatsby-theme-main`. Because of an issue outlined in [this pull request](https://github.com/gatsbyjs/gatsby/pull/10786), the package name needs to be `gatsby-theme-undataforum`. A scoped package name would break component shadowing and `StaticQuery`.
 

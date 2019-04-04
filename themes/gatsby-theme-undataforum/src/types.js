@@ -1,9 +1,30 @@
-import { func, shape, string } from 'prop-types';
+import {
+  arrayOf,
+  func,
+  number,
+  oneOf,
+  oneOfType,
+  shape,
+  string,
+} from 'prop-types';
+
+export const responsiveNumberType = oneOfType([number, arrayOf(number)]);
 
 const affiliationType = shape({
   jobtitle: string.isRequired,
   organization: string.isRequired,
 });
+
+export const colorType = oneOf([
+  'primary',
+  'blue',
+  'green',
+  'red',
+  'yellow',
+  'gray',
+  'black',
+  'white',
+]);
 
 // Unlike postType in @undataforum/components, id is required and is used as key in lists.
 export const postType = shape({

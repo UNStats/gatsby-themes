@@ -1633,10 +1633,10 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@undataforum/components@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.26.0.tgz#6be8a78e1880cad68412a4175dfd5d1a52c60d31"
-  integrity sha512-j4uTGWjo46MJXspWc6Z6Yt3Bc7ZWxdJlOzrnNRSwbTJo9AowjUn/t18c2xMcFsC3V82cgghZwWjypMeKUgi1zA==
+"@undataforum/components@^0.27.0":
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.27.0.tgz#2da0ec4d344a416c72e44bf51fb1f2e882ec72b5"
+  integrity sha512-9Qv5WOixif1uCMtqo31Zq5RJ4dwFOcKYqhwTUQ/Cng0ntr+PiprF7cutSS0AFAdN+zQsSu1VqxIZvOv4gScOfg==
   dependencies:
     prism-react-renderer "^0.1.6"
     prop-types "^15.7.2"
@@ -5776,7 +5776,7 @@ gatsby-cli@^2.5.4:
     yargs "^12.0.5"
     yurnalist "^1.0.2"
 
-gatsby-image@^2.0.33:
+gatsby-image@^2.0.37:
   version "2.0.37"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.37.tgz#9c28c3d8c2a249f6f5eff929be67a761658762df"
   integrity sha512-KdD5LefTmigun2NmvYqoBVXRZ0W0y3Rr9j+yOX6hxU+RJQb9u3gF3vG/dC0Aljwgo2T4zKBqG8wolJ7F2fWj5w==
@@ -5932,9 +5932,9 @@ gatsby-transformer-sharp@^2.1.17:
     sharp "^0.21.3"
 
 gatsby@^2.1.19:
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.11.tgz#6ee356459f460aba0fc571e4f891bb7b2b2c57f9"
-  integrity sha512-+lTO+AONLLaKR9lXemn9IwOVUINHX2HDEanq0GMQWHFKb205Gyac+9otmsEUIFU3PFf6iBqq6h2quIBjKJH2nw==
+  version "2.3.12"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.3.12.tgz#22f1eda449723b4afb3c12ca379fa17d9b19e300"
+  integrity sha512-bHqlP0qP8AZt/W6nBE+N9YVgG/BYTlmVt5HgY2uqq5rj3Y9JKRuyUjtGxyxfM4Q5cpKIOfDJ7wBqdTWxjNiSkw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6372,9 +6372,9 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.
   integrity sha1-TK+tdrxi8C+gObL5Tpo906ORpyU=
 
 graphql-compose@^6.0.3:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-6.1.1.tgz#3764de5b2c48fbbd83d7b43809b76deac53734c2"
-  integrity sha512-54ZRGrbuCsCZw9NCe4k1IScVV0p1c7lkDXXBca0e1KVo80e8LT5+T4fUHaG6R0uXEcMlSijKZmRrbcj+eITNkg==
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-6.1.2.tgz#3ff76645d8751c64b1315a18c68245cb9460b0ff"
+  integrity sha512-ignCmtjcvaA5QQChfG05O0TW/UCbF/m/AiAYGuBJo8Kn1A6Q+OekfXvX7kcwBV626bE27yyZTgQxlv2TYVr+ow==
   dependencies:
     graphql-type-json "^0.2.2"
     object-path "^0.11.4"
