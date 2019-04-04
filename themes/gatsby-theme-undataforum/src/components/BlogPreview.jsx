@@ -92,7 +92,7 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
 
   return (
     <Container {...props}>
-      <Heading color={color} fontFamily="sans" mb={3}>
+      <Heading color={color} fontFamily="sans" mb={4}>
         Blog
       </Heading>
       <Flex {...props} flexDirection={['column', 'row']}>
