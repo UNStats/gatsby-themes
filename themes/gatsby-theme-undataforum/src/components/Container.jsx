@@ -3,7 +3,7 @@ import { node } from 'prop-types';
 import { Box } from '@undataforum/components';
 
 const Container = ({ children }) => (
-  <Box as="main" css="max-width: 48rem;" mx="auto" px={[2, 3, 0]}>
+  <Box css="max-width: 48rem;" mx="auto" px={[2, 3, 0]}>
     {children}
   </Box>
 );
