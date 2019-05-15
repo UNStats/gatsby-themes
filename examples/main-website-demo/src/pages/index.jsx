@@ -1,10 +1,19 @@
 import React from 'react';
 import { object } from 'prop-types';
-import { BlogPreview, Hero, Videos } from 'gatsby-theme-undataforum';
+import { BlogPreview, Header, Hero, Videos } from 'gatsby-theme-undataforum';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
   <>
+    <Header
+      css="
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+      "
+      transparent
+    />
     <Hero fluid={data.hero.nodes[0].fluid} mb={3} />
     <BlogPreview color="text" mb={3} />
     <Videos

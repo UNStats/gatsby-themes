@@ -53,6 +53,7 @@ const Hero = ({ fluid, ...props }) => (
           color="primary"
           fontFamily="sans"
           fontSize={[4, 5, 6]}
+          lineHeight="title"
           textAlign={['center', 'left']}
           mt={0}
           mx={0}
@@ -65,6 +66,7 @@ const Hero = ({ fluid, ...props }) => (
           color="primary"
           fontFamily="sans"
           fontSize={[3, 4, 5]}
+          lineHeight="title"
           textAlign={['center', 'left']}
           m={0}
         >

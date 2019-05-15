@@ -34,8 +34,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       const lead =
         node.frontmatter.lead || node.rawBody.match(/\n\n(.+)\n\n/)[1];
 
-      debugger;
-
       createNodeField({
         node,
         name: 'lead',

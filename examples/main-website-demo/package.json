@@ -7,8 +7,8 @@
     "inspect": "node --inspect-brk --no-lazy node_modules/gatsby/dist/bin/gatsby develop"
   },
   "dependencies": {
-    "gatsby": "^2.1.19",
-    "gatsby-source-filesystem": "^2.0.26",
+    "gatsby": "^2.4.5",
+    "gatsby-source-filesystem": "^2.0.34",
     "gatsby-theme-undataforum": "^0.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",

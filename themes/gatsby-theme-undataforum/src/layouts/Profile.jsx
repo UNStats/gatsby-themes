@@ -43,7 +43,6 @@ const Profile = ({
     lead: undefined,
   }));
 
-  debugger;
   return (
     <Container>
       <ProfilePreview profile={profile} mb={4} />

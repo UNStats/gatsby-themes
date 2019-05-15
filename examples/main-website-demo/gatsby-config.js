@@ -4,13 +4,19 @@ module.exports = {
     siteUrl: 'https://www.undataforum.org',
     description:
       'The 3rd UN World Data Forum will take place from 18-21 October 2020 in Bern, Switzerland.',
-    navigation: [
-      { text: 'About', href: '/about/' },
-      {
-        text: 'Blog',
-        href: '/blog/',
+    navigation: {
+      links: [
+        { text: 'About', href: '/about/' },
+        {
+          text: 'Blog',
+          href: '/blog/',
+        },
+      ],
+      button: {
+        text: 'Register',
+        href: '/register/',
       },
-    ],
+    },
   },
   __experimentalThemes: ['gatsby-theme-undataforum'],
   plugins: [

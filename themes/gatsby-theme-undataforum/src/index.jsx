@@ -1,11 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/tag';
-import { Box, theme } from '@undataforum/components';
-import Link from './components/Link';
+import { Box, Shapes, theme } from '@undataforum/components';
+import { Header, Link } from './components';
 import components from './components/MDXComponents';
-import Header from './components/Header';
-import Root from './layouts/Root';
+import { Root } from './layouts';
 
 /* eslint-disable react/prop-types */
 
@@ -18,7 +17,7 @@ export const wrapPageElement = ({ element, props }) => {
   }
   return (
     <Root>
-      <Header />
+      <Header logo={() => <Shapes height="100%" mr={[2, 3]} />} />
       <Box my={[3, 4]}>{element}</Box>
     </Root>
   );

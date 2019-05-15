@@ -12,8 +12,14 @@ export default () => {
             description
             siteUrl
             navigation {
-              href
-              text
+              links {
+                href
+                text
+              }
+              button {
+                href
+                text
+              }
             }
           }
         }
