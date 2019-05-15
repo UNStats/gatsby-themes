@@ -29,7 +29,6 @@ const headingFactory = ({ as, ...defaultProps }) => ({
       {...props}
       id={id}
       as={as}
-      fontFamily="sans"
       lineHeight="title"
     >
       <UnstyledLink href={`#${id}`}>{children}</UnstyledLink>
@@ -43,8 +42,6 @@ const h1 = headingFactory({ as: 'h1', fontSize: 5, mb: 4 });
 const h2 = headingFactory({ as: 'h2', fontSize: 4, mb: 3 });
 const h3 = headingFactory({ as: 'h3', fontSize: 3, mb: 3 });
 
-const p = props => (
-  <Text {...props} as="p" fontFamily="serif" lineHeight="copy" mt={0} mb={3} />
-);
+const p = props => <Text {...props} as="p" lineHeight="copy" mt={0} mb={3} />;
 
 export default { a, h1, h2, h3, p };

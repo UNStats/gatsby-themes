@@ -23,12 +23,18 @@ export const wrapPageElement = ({ element, props }) => {
   );
 };
 
-// ProfilesProvider should be in wrapRootElement to ensure profiles query is executed only once.
-// Needs to be placed in wrapPageEelement due to this bug:
-// https://github.com/gatsbyjs/gatsby/issues/7747
 export const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>
-    <ThemeProvider theme={{ ...theme, internalLink: Link }}>
+    <ThemeProvider
+      theme={{
+        ...theme,
+        fonts: {
+          body: 'Roboto, sans-serif',
+          monospace: 'Menlo, monospace',
+        },
+        internalLink: Link,
+      }}
+    >
       {element}
     </ThemeProvider>
   </MDXProvider>

@@ -73,13 +73,7 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
       ...post,
       authors: function Authors() {
         return (
-          <Text
-            as="div"
-            color="text"
-            fontFamily="sans"
-            lineHeight="title"
-            mb={3}
-          >
+          <Text as="div" color="text" lineHeight="title" mb={3}>
             {profiles
               .filter(({ slug }) => authors.includes(slug))
               .map(({ name }) => name)
@@ -92,7 +86,7 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
 
   return (
     <Container {...props}>
-      <Heading color={color} fontFamily="sans" mb={4}>
+      <Heading color={color} mb={4}>
         Blog
       </Heading>
       <Flex {...props} flexDirection={['column', 'row']}>

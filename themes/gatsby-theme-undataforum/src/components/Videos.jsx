@@ -13,7 +13,7 @@ const PlayerWrapper = styled(Box)`
 
 const Videos = ({ videos, ...props }) => (
   <Container {...props}>
-    <Heading color="text" fontFamily="sans" mb={4}>
+    <Heading color="text" mb={4}>
       Featured Videos
     </Heading>
     <GridList

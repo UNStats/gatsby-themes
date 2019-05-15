@@ -14,6 +14,10 @@ const Root = ({ children }) => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:description" content={description} />
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+          rel="stylesheet"
+        />
       </Helmet>
       {children}
     </>

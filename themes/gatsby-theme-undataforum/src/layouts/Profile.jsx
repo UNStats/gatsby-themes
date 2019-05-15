@@ -47,9 +47,7 @@ const Profile = ({
     <Container>
       <ProfilePreview profile={profile} mb={4} />
       <MDXRenderer>{body}</MDXRenderer>
-      <Heading color="text" fontFamily="sans" my={4}>{`Posts by ${
-        profile.name
-      }`}</Heading>
+      <Heading color="text" mt={5} mb={4}>{`Posts by ${profile.name}`}</Heading>
       <Posts color="text" posts={posts} />
     </Container>
   );

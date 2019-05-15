@@ -51,7 +51,6 @@ const Hero = ({ fluid, ...props }) => (
         <Heading
           as="h1"
           color="primary"
-          fontFamily="sans"
           fontSize={[4, 5, 6]}
           lineHeight="title"
           textAlign={['center', 'left']}
@@ -64,7 +63,6 @@ const Hero = ({ fluid, ...props }) => (
         <Text
           as="p"
           color="primary"
-          fontFamily="sans"
           fontSize={[3, 4, 5]}
           lineHeight="title"
           textAlign={['center', 'left']}
