@@ -25,8 +25,8 @@ export const query = graphql`
     frontmatter {
       avatar {
         childImageSharp {
-          fixed(height: 32, width: 32, quality: 100) {
-            ...GatsbyImageSharpFixed
+          fixed(height: 32, width: 32) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
@@ -37,8 +37,8 @@ export const query = graphql`
     frontmatter {
       avatar {
         childImageSharp {
-          fixed(height: 64, width: 64, quality: 100) {
-            ...GatsbyImageSharpFixed
+          fixed(height: 64, width: 64) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
@@ -49,8 +49,8 @@ export const query = graphql`
     frontmatter {
       avatar {
         childImageSharp {
-          fixed(height: 128, width: 128, quality: 100) {
-            ...GatsbyImageSharpFixed
+          fixed(height: 128, width: 128) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }

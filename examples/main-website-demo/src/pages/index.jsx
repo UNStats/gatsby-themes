@@ -40,8 +40,8 @@ export const query = graphql`
     hero: allImageSharp(filter: { original: { src: { regex: "/hero/" } } }) {
       nodes {
         id
-        fluid(quality: 100) {
-          ...GatsbyImageSharpFluid
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

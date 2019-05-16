@@ -26,7 +26,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    { resolve: 'gatsby-plugin-sharp', options: { defaultQuality: 75 } },
     'gatsby-plugin-styled-components',
   ],
 };
