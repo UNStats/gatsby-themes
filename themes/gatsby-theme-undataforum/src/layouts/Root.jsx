@@ -10,6 +10,7 @@ const Root = ({ children }) => {
     <>
       <GlobalStyle />
       <Helmet title={title}>
+        <html lang="en" />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
