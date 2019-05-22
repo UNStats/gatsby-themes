@@ -4,12 +4,18 @@
   "version": "0.0.0",
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "clean": "rm -rf ./node_modules",
+    "lint": "eslint . --ignore-path .gitignore --fix"
   },
   "dependencies": {
     "gatsby": "^2.1.19",
     "gatsby-theme-undataforum": "*",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-shopify": "^28.0.0"
   }
 }

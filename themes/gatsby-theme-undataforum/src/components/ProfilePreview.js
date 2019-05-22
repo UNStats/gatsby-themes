@@ -1,7 +1,5 @@
-import React from 'react';
 import { ProfilePreview } from '@undataforum/components';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
 export default ProfilePreview;
 
@@ -57,34 +55,3 @@ export const query = graphql`
     }
   }
 `;
-
-// Make queried profile compatible with ProfilePreview.
-export const normalizeProfile = ({
-  id,
-  fields: { path, slug },
-  frontmatter: {
-    firstName,
-    lastName,
-    jobtitle,
-    organization,
-    avatar: {
-      childImageSharp: { fixed },
-    },
-  },
-}) => {
-  const name = `${firstName} ${lastName}`;
-  const avatar = () => (
-    <Img style={{ borderRadius: '100%' }} alt={name} fixed={fixed} />
-  );
-  return {
-    id,
-    avatar,
-    name,
-    affiliation: {
-      jobtitle,
-      organization,
-    },
-    href: path,
-    slug,
-  };
-};

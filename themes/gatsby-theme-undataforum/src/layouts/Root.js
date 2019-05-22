@@ -4,6 +4,8 @@ import { GlobalStyle } from '@undataforum/components';
 import Helmet from 'react-helmet';
 import useSiteMetadata from '../hooks/useSiteMetadata';
 
+/* eslint-disable jsx-a11y/control-has-associated-label */
+
 const Root = ({ children }) => {
   const { title, description, siteUrl } = useSiteMetadata();
   return (
@@ -24,6 +26,8 @@ const Root = ({ children }) => {
     </>
   );
 };
+
+/* eslint-enable jsx-a11y/control-has-associated-label */
 
 Root.propTypes = {
   children: node.isRequired,

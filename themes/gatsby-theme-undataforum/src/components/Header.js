@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '@undataforum/components';
-import useSiteMetadata from '../hooks/useSiteMetadata';
+import { useSiteMetadata } from '../hooks';
 
 const HeaderProxy = props => {
   const {

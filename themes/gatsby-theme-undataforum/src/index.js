@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/tag';
 import { Box, Shapes, theme } from '@undataforum/components';
 import { Header, Link } from './components';
-import components from './components/MDXComponents';
+import components from './mapping';
 import { Root } from './layouts';
 
 /* eslint-disable react/prop-types */
@@ -39,3 +39,5 @@ export const wrapRootElement = ({ element }) => (
     </ThemeProvider>
   </MDXProvider>
 );
+
+/* eslint-enable react/prop-types */

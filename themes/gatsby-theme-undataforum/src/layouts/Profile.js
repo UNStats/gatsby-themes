@@ -2,13 +2,15 @@ import React from 'react';
 import { shape, object } from 'prop-types';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import Posts from '../components/Posts';
-import Container from '../components/Container';
-import Profiles from '../components/Profiles';
-import { normalizePost } from '../fragments/PostPreview';
-import ProfilePreview, { normalizeProfile } from '../fragments/ProfilePreview';
-import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
-import Heading from '../components/Heading';
+import {
+  Container,
+  Heading,
+  Posts,
+  ProfilePreview,
+  Profiles,
+} from '../components';
+import { normalizePost, normalizeProfile } from '../helpers';
+import { useNormalizedProfiles } from '../hooks';
 
 const Profile = ({
   data: {
@@ -28,20 +30,21 @@ const Profile = ({
   const profiles = useNormalizedProfiles();
 
   // Lookup author profiles for posts.
-  const posts = postsFromGql.map(normalizePost).map(({ authors, ...post }) => ({
-    ...post,
-    authors: function Authors() {
-      return (
-        <Profiles
-          profiles={profiles
-            .filter(({ slug }) => authors.includes(slug))
-            // Omit href to make sure that profiles are not linked.
-            .map(({ id, name, avatar }) => ({ id, name, avatar }))}
-        />
-      );
-    },
-    lead: undefined,
-  }));
+  const posts = postsFromGql.map(normalizePost).map(({ authors, ...post }) => {
+    const renderAuthors = () => (
+      <Profiles
+        profiles={profiles
+          .filter(({ slug }) => authors.includes(slug))
+          // Omit href to make sure that profiles are not linked.
+          .map(({ id, name, avatar }) => ({ id, name, avatar }))}
+      />
+    );
+    return {
+      ...post,
+      authors: renderAuthors,
+      lead: undefined,
+    };
+  });
 
   return (
     <Container>

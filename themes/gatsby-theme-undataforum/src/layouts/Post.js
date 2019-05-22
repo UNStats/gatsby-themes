@@ -20,15 +20,14 @@ const Post = ({ data: { mdx } }) => {
       name,
       href,
     }));
+  const renderAuthors = () => <Profiles profiles={profiles} linkProfiles />;
   return (
     <Container>
       <PostPreview
         post={{
           title,
           date,
-          authors: function Authors() {
-            return <Profiles profiles={profiles} linkProfiles />;
-          },
+          authors: renderAuthors,
         }}
         fontSize={[4, 5]}
         mb={[3, 4]}

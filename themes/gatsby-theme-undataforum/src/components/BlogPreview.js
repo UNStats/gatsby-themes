@@ -3,13 +3,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Flex, Text } from '@undataforum/components';
 import styled from 'styled-components';
 import { borderColor, borderBottom } from 'styled-system';
-import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
-import { normalizePost } from '../fragments/PostPreview';
-import Profiles from './Profiles';
-import Posts from './Posts';
-import Container from './Container';
+import { useNormalizedProfiles } from '../hooks';
+import { normalizePost } from '../helpers';
 import { colorType } from '../types';
+import Container from './Container';
 import Heading from './Heading';
+import Posts from './Posts';
+import Profiles from './Profiles';
 
 const PostsWithBottomBorder = styled(Posts)`
   ${borderBottom}
@@ -50,39 +50,41 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
 
   const tier1Posts = tier1PostsFromGql
     .map(normalizePost)
-    .map(({ authors, ...post }) => ({
-      ...post,
-      authors: function Authors() {
-        return (
-          <Profiles
-            profiles={profiles
-              .filter(({ slug }) => authors.includes(slug))
-              .map(({ id, name, avatar }) => ({
-                id,
-                name,
-                avatar,
-              }))}
-          />
-        );
-      },
-    }));
+    .map(({ authors, ...post }) => {
+      const renderAuthors = () => (
+        <Profiles
+          profiles={profiles
+            .filter(({ slug }) => authors.includes(slug))
+            .map(({ id, name, avatar }) => ({
+              id,
+              name,
+              avatar,
+            }))}
+        />
+      );
+      return {
+        ...post,
+        authors: renderAuthors,
+      };
+    });
 
   const tier2Posts = tier2PostsFromGql
     .map(normalizePost)
-    .map(({ authors, ...post }) => ({
-      ...post,
-      authors: function Authors() {
-        return (
-          <Text as="div" color="text" lineHeight="title" mb={3}>
-            {profiles
-              .filter(({ slug }) => authors.includes(slug))
-              .map(({ name }) => name)
-              .join(', ')}
-          </Text>
-        );
-      },
-      lead: undefined,
-    }));
+    .map(({ authors, ...post }) => {
+      const renderAuthors = () => (
+        <Text as="div" color="text" lineHeight="title" mb={3}>
+          {profiles
+            .filter(({ slug }) => authors.includes(slug))
+            .map(({ name }) => name)
+            .join(', ')}
+        </Text>
+      );
+      return {
+        ...post,
+        authors: renderAuthors,
+        lead: undefined,
+      };
+    });
 
   return (
     <Container {...props}>

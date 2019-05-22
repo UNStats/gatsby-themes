@@ -1,5 +1,8 @@
-exports.onCreateNode = ({ node, getNode, actions }) => {
+export const onCreateNode = ({ node, getNode, actions }) => {
   // Add slug and path to blog post nodes.
+  if (node.internal.type !== 'Mdx') {
+    return;
+  }
   if (node.internal.type === 'Mdx') {
     const { relativePath } = getNode(node.parent);
     if (relativePath.startsWith('posts')) {
@@ -74,7 +77,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   // Create posts.

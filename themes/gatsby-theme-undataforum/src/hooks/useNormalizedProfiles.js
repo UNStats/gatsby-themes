@@ -1,8 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { normalizeProfile } from '../fragments/ProfilePreview';
+import { normalizeProfile } from '../helpers';
 
-// Return normalized profiles.
-export default () => {
+const useNormalizedProfiles = () => {
   const {
     allMdx: { nodes },
   } = useStaticQuery(
@@ -25,3 +24,5 @@ export default () => {
   );
   return nodes.map(normalizeProfile);
 };
+
+export default useNormalizedProfiles;

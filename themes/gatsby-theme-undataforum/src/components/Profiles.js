@@ -5,6 +5,7 @@ import { profileType } from '../types';
 
 const Profiles = ({ profiles, ...props }) => (
   <GridList
+    {...props}
     align="left"
     gridGap={2}
     gridTemplateColumns="repeat(auto-fit, 96px)"

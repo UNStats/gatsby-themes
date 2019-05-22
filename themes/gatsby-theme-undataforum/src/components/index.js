@@ -6,5 +6,6 @@ export { default as Hero } from './Hero';
 export { default as Link } from './Link';
 export { default as Logo } from './Logo';
 export { default as Posts } from './Posts';
+export { default as ProfilePreview } from './ProfilePreview';
 export { default as Profiles } from './Profiles';
 export { default as Videos } from './Videos';
