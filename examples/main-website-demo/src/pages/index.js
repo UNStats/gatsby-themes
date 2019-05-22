@@ -1,6 +1,6 @@
 import React from 'react';
 import { object } from 'prop-types';
-import { BlogPreview, Header, Hero, Videos } from 'gatsby-theme-undataforum';
+import { BlogPreview, Header, Hero, VideoList } from 'gatsby-theme-undataforum';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
@@ -16,7 +16,7 @@ const Index = ({ data }) => (
     />
     <Hero fluid={data.hero.nodes[0].fluid} mb={3} />
     <BlogPreview color="text" mb={3} />
-    <Videos
+    <VideoList
       videos={[
         'OXweXaub8Iw',
         'kVMFjhMRyOw',

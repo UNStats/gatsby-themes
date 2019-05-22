@@ -5,9 +5,9 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import {
   Container,
   Heading,
-  Posts,
+  PostList,
   ProfilePreview,
-  Profiles,
+  ProfileList,
 } from '../components';
 import { normalizePost, normalizeProfile } from '../helpers';
 import { useNormalizedProfiles } from '../hooks';
@@ -32,7 +32,7 @@ const Profile = ({
   // Lookup author profiles for posts.
   const posts = postsFromGql.map(normalizePost).map(({ authors, ...post }) => {
     const renderAuthors = () => (
-      <Profiles
+      <ProfileList
         profiles={profiles
           .filter(({ slug }) => authors.includes(slug))
           // Omit href to make sure that profiles are not linked.
@@ -51,7 +51,7 @@ const Profile = ({
       <ProfilePreview profile={profile} mb={4} />
       <MDXRenderer>{body}</MDXRenderer>
       <Heading color="text" mt={5} mb={4}>{`Posts by ${profile.name}`}</Heading>
-      <Posts color="text" posts={posts} />
+      <PostList color="text" posts={posts} />
     </Container>
   );
 };

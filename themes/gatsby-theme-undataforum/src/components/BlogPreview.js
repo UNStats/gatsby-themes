@@ -8,8 +8,8 @@ import { normalizePost } from '../helpers';
 import { colorType } from '../types';
 import Container from './Container';
 import Heading from './Heading';
-import Posts from './Posts';
-import Profiles from './Profiles';
+import Posts from './PostList';
+import Profiles from './ProfileList';
 
 const PostsWithBottomBorder = styled(Posts)`
   ${borderBottom}

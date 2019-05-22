@@ -1,1 +1,1 @@
-export { BlogPreview, Header, Hero, Videos } from './src/components';
+export { BlogPreview, Header, Hero, VideoList } from './src/components';

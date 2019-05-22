@@ -3,7 +3,7 @@ import { arrayOf } from 'prop-types';
 import { GridList, ProfilePreview } from '@undataforum/components';
 import { profileType } from '../types';
 
-const Profiles = ({ profiles, ...props }) => (
+const ProfileList = ({ profiles, ...props }) => (
   <GridList
     {...props}
     align="left"
@@ -17,8 +17,8 @@ const Profiles = ({ profiles, ...props }) => (
   />
 );
 
-Profiles.propTypes = {
+ProfileList.propTypes = {
   profiles: arrayOf(profileType).isRequired,
 };
 
-export default Profiles;
+export default ProfileList;

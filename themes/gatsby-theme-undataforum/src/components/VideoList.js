@@ -2,16 +2,10 @@ import React from 'react';
 import { arrayOf, string } from 'prop-types';
 import ReactPlayer from 'react-player';
 import { Box, GridList } from '@undataforum/components';
-import styled from 'styled-components';
 import Heading from './Heading';
 import Container from './Container';
 
-const PlayerWrapper = styled(Box)`
-  position: relative;
-  padding-top: 56.25%;
-`;
-
-const Videos = ({ videos, ...props }) => (
+const VideoList = ({ videos, ...props }) => (
   <Container {...props}>
     <Heading color="text" mb={4}>
       Featured Videos
@@ -20,7 +14,12 @@ const Videos = ({ videos, ...props }) => (
       gridGap={3}
       gridTemplateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']}
       render={id => (
-        <PlayerWrapper>
+        <Box
+          css={`
+            position: relative;
+            padding-top: 56.25%;
+          `}
+        >
           <ReactPlayer
             key={id}
             style={{ position: 'absolute', top: 0, left: 0 }}
@@ -29,15 +28,15 @@ const Videos = ({ videos, ...props }) => (
             height="100%"
             light
           />
-        </PlayerWrapper>
+        </Box>
       )}
       values={videos}
     />
   </Container>
 );
 
-Videos.propTypes = {
+VideoList.propTypes = {
   videos: arrayOf(string),
 };
 
-export default Videos;
+export default VideoList;

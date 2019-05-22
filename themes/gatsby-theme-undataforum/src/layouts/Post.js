@@ -3,8 +3,7 @@ import { object } from 'prop-types';
 import { graphql } from 'gatsby';
 import { PostPreview } from '@undataforum/components';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import Profiles from '../components/Profiles';
-import Container from '../components/Container';
+import { Container, ProfileList } from '../components';
 import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
 
 const Post = ({ data: { mdx } }) => {
@@ -20,7 +19,7 @@ const Post = ({ data: { mdx } }) => {
       name,
       href,
     }));
-  const renderAuthors = () => <Profiles profiles={profiles} linkProfiles />;
+  const renderAuthors = () => <ProfileList profiles={profiles} />;
   return (
     <Container>
       <PostPreview
