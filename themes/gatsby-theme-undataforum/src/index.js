@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 import { Box, Shapes, theme } from '@undataforum/components';
 import { Header, Link } from './components';
 import components from './mapping';
