@@ -2,13 +2,8 @@ import React from 'react';
 import { shape, object } from 'prop-types';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import {
-  Container,
-  Heading,
-  PostList,
-  ProfilePreview,
-  ProfileList,
-} from '../components';
+import { Container, Heading } from '@undataforum/components';
+import { PostList, ProfilePreview, ProfileList } from '../components';
 import { normalizePost, normalizeProfile } from '../helpers';
 import { useNormalizedProfiles } from '../hooks';
 
@@ -47,7 +42,7 @@ const Profile = ({
   });
 
   return (
-    <Container>
+    <Container maxWidth={7} px={[2, 3, 0]}>
       <ProfilePreview profile={profile} mb={4} />
       <MDXRenderer>{body}</MDXRenderer>
       <Heading color="text" mt={5} mb={4}>{`Posts by ${profile.name}`}</Heading>

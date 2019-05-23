@@ -1,9 +1,9 @@
 import React from 'react';
 import { object } from 'prop-types';
 import { graphql } from 'gatsby';
-import { PostPreview } from '@undataforum/components';
+import { Container, PostPreview } from '@undataforum/components';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import { Container, ProfileList } from '../components';
+import { ProfileList } from '../components';
 import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
 
 const Post = ({ data: { mdx } }) => {
@@ -21,7 +21,7 @@ const Post = ({ data: { mdx } }) => {
     }));
   const renderAuthors = () => <ProfileList profiles={profiles} />;
   return (
-    <Container>
+    <Container maxWidth={7} px={[2, 3, 0]}>
       <PostPreview
         post={{
           title,

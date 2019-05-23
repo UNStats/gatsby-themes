@@ -1,11 +1,15 @@
 import React from 'react';
 import { node } from 'prop-types';
-import Container from '../components/Container';
+import { Container } from '@undataforum/components';
 
-const ContainerLayout = ({ children }) => <Container>{children}</Container>;
+const Default = ({ children }) => (
+  <Container maxWidth={8} px={[2, 3, 0]}>
+    {children}
+  </Container>
+);
 
-ContainerLayout.propTypes = {
+Default.propTypes = {
   children: node.isRequired,
 };
 
-export default ContainerLayout;
+export default Default;

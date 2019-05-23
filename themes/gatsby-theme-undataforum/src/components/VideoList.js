@@ -1,13 +1,11 @@
 import React from 'react';
 import { arrayOf, object } from 'prop-types';
 import ReactPlayer from 'react-player';
-import { Box, GridList } from '@undataforum/components';
-import Heading from './Heading';
-import Container from './Container';
+import { Box, GridList, Heading } from '@undataforum/components';
 
 const VideoList = ({ videos, ...props }) => (
-  <Container {...props}>
-    <Heading color="text" mb={4}>
+  <Box {...props}>
+    <Heading as="h1" fontSize={5} color="text" mb={4}>
       Featured Videos
     </Heading>
     <GridList
@@ -32,7 +30,7 @@ const VideoList = ({ videos, ...props }) => (
       )}
       values={videos}
     />
-  </Container>
+  </Box>
 );
 
 VideoList.propTypes = {

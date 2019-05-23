@@ -20,8 +20,10 @@ const Index = ({ data }) => (
       "
       transparent
     />
-    <Hero fluid={data.hero.nodes[0].fluid} mb={3} />
-    <Container maxWidth={8}>
+    <Container maxWidth={9}>
+      <Hero fluid={data.hero.nodes[0].fluid} mb={3} />
+    </Container>
+    <Container maxWidth={8} px={[2, 3]}>
       <BlogPreview color="text" mb={3} />
       <VideoList
         videos={[

@@ -1,20 +1,12 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Flex, Text } from '@undataforum/components';
-import styled from 'styled-components';
+import { Box, Flex, Heading, Text } from '@undataforum/components';
 import { borderColor, borderBottom } from 'styled-system';
 import { useNormalizedProfiles } from '../hooks';
 import { normalizePost } from '../helpers';
 import { colorType } from '../types';
-import Container from './Container';
-import Heading from './Heading';
 import PostList from './PostList';
 import Profiles from './ProfileList';
-
-const PostsWithBottomBorder = styled(PostList)`
-  ${borderBottom}
-  ${borderColor}
-`;
 
 const BlogPreview = ({ color = 'primary', ...props }) => {
   // Get normalized profiles for author lookup.
@@ -87,12 +79,16 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
     });
 
   return (
-    <Container {...props}>
-      <Heading color={color} mb={4}>
+    <Box {...props}>
+      <Heading as="h1" fontSize={5} color={color} mb={4}>
         Blog
       </Heading>
       <Flex {...props} flexDirection={['column', 'row']}>
-        <PostsWithBottomBorder
+        <PostList
+          css={`
+            ${borderBottom}
+            ${borderColor}
+          `}
           flex={3}
           posts={tier1Posts}
           borderColor={color}
@@ -104,7 +100,7 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
         />
         <PostList flex={2} posts={tier2Posts} color={color} fontSize={[2, 3]} />
       </Flex>
-    </Container>
+    </Box>
   );
 };
 
