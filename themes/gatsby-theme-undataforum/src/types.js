@@ -16,14 +16,14 @@ const affiliationType = shape({
 });
 
 export const colorType = oneOf([
+  'text',
+  'background',
   'primary',
+  'secondary',
   'blue',
   'green',
   'red',
   'yellow',
-  'gray',
-  'black',
-  'white',
 ]);
 
 // Unlike postType in @undataforum/components, id is required and is used as key in lists.

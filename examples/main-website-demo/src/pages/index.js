@@ -1,6 +1,12 @@
 import React from 'react';
 import { object } from 'prop-types';
-import { BlogPreview, Header, Hero, VideoList } from 'gatsby-theme-undataforum';
+import {
+  BlogPreview,
+  Container,
+  Header,
+  Hero,
+  VideoList,
+} from 'gatsby-theme-undataforum';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => (
@@ -15,17 +21,19 @@ const Index = ({ data }) => (
       transparent
     />
     <Hero fluid={data.hero.nodes[0].fluid} mb={3} />
-    <BlogPreview color="text" mb={3} />
-    <VideoList
-      videos={[
-        'OXweXaub8Iw',
-        'kVMFjhMRyOw',
-        '1dokisXqr6w',
-        'Nx_kVM9MAHc',
-        'VQ9ps16S5ek',
-        'BQdOVcQAons',
-      ]}
-    />
+    <Container maxWidth={8}>
+      <BlogPreview color="text" mb={3} />
+      <VideoList
+        videos={[
+          { id: 'OXweXaub8Iw' },
+          { id: 'kVMFjhMRyOw' },
+          { id: '1dokisXqr6w' },
+          { id: 'Nx_kVM9MAHc' },
+          { id: 'VQ9ps16S5ek' },
+          { id: 'BQdOVcQAons' },
+        ]}
+      />
+    </Container>
   </>
 );
 

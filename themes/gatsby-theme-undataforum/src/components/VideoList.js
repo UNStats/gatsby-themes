@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, string } from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 import ReactPlayer from 'react-player';
 import { Box, GridList } from '@undataforum/components';
 import Heading from './Heading';
@@ -13,15 +13,15 @@ const VideoList = ({ videos, ...props }) => (
     <GridList
       gridGap={3}
       gridTemplateColumns={['1fr', '1fr 1fr', '1fr 1fr 1fr']}
-      render={id => (
+      render={({ id }) => (
         <Box
           css={`
             position: relative;
             padding-top: 56.25%;
           `}
+          key={id}
         >
           <ReactPlayer
-            key={id}
             style={{ position: 'absolute', top: 0, left: 0 }}
             url={`https://www.youtube.com/watch?v=${id}`}
             width="100%"
@@ -36,7 +36,7 @@ const VideoList = ({ videos, ...props }) => (
 );
 
 VideoList.propTypes = {
-  videos: arrayOf(string),
+  videos: arrayOf(object),
 };
 
 export default VideoList;

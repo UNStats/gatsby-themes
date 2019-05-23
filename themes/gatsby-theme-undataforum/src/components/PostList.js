@@ -4,12 +4,7 @@ import { Box, GridList, PostPreview } from '@undataforum/components';
 import { borderColor, borderBottom } from 'styled-system';
 import { colorType, postType, responsiveNumberType } from '../types';
 
-const PostList = ({
-  posts,
-  color = 'primary',
-  fontSize = [3, 4],
-  ...props
-}) => (
+const PostList = ({ posts, color, fontSize, ...props }) => (
   <GridList
     {...props}
     css={`
@@ -20,6 +15,7 @@ const PostList = ({
     `}
     align="center"
     gridGap={3}
+    gridTemplateColumns="1fr"
     render={({ id, ...post }) => (
       <Box
         css={`
@@ -41,6 +37,11 @@ PostList.propTypes = {
   posts: arrayOf(postType).isRequired,
   fontSize: responsiveNumberType,
   color: colorType,
+};
+
+PostList.defaultProps = {
+  color: 'primary',
+  fontSize: [3, 4],
 };
 
 export default PostList;

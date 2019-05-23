@@ -8,10 +8,10 @@ import { normalizePost } from '../helpers';
 import { colorType } from '../types';
 import Container from './Container';
 import Heading from './Heading';
-import Posts from './PostList';
+import PostList from './PostList';
 import Profiles from './ProfileList';
 
-const PostsWithBottomBorder = styled(Posts)`
+const PostsWithBottomBorder = styled(PostList)`
   ${borderBottom}
   ${borderColor}
 `;
@@ -20,7 +20,7 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
   // Get normalized profiles for author lookup.
   const profiles = useNormalizedProfiles();
   // Tier 1 posts are previewed with author avatars and lead.
-  // Tier 2 posts are previewed with author names only and no lead.
+  // Tier 2 posts are previewed with author names and no lead.
   const {
     tier1: { nodes: tier1PostsFromGql },
     tier2: { nodes: tier2PostsFromGql },
@@ -102,7 +102,7 @@ const BlogPreview = ({ color = 'primary', ...props }) => {
           mr={[0, 3, 4]}
           mb={[3, 0]}
         />
-        <Posts flex={2} posts={tier2Posts} color={color} fontSize={[2, 3]} />
+        <PostList flex={2} posts={tier2Posts} color={color} fontSize={[2, 3]} />
       </Flex>
     </Container>
   );
