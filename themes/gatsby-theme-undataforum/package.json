@@ -30,10 +30,6 @@
     "styled-components": "^4.1.3",
     "styled-system": "^4.2.2"
   },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-plugin-shopify": "^28.0.0"
-  },
   "peerDependencies": {
     "gatsby": "^2.2.3",
     "react": "^16.8.4"

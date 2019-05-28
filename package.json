@@ -5,20 +5,19 @@
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "scripts": {
-    "clean": "yarn workspaces run clean",
-    "lint": "yarn workspaces run lint",
+    "clean": "rm -rf ./node_modules && yarn workspaces run clean",
+    "lint": "eslint . --ignore-path .gitignore",
     "format": "pretty-quick"
   },
   "lint-staged": {
     "*.js": [
-      "pretty-quick --staged",
-      "yarn run lint",
+      "eslint --fix",
       "git add"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged && lint-staged"
     }
   },
   "workspaces": [
@@ -26,6 +25,8 @@
     "themes/*"
   ],
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-shopify": "^28.0.0",
     "husky": "^2.3.0",
     "lerna": "^3.13.1",
     "lint-staged": "^8.1.7",
