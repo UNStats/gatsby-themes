@@ -1,7 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
-import { Box, Shapes, theme } from '@undataforum/components';
+import { Box, theme } from '@undataforum/components';
+import { Logo } from '@undataforum/tokens';
 import { Header, Link } from './components';
 import components from './mapping';
 import { Root } from './layouts';
@@ -17,7 +18,7 @@ export const wrapPageElement = ({ element, props }) => {
   }
   return (
     <Root>
-      <Header logo={() => <Shapes height="100%" mr={[2, 3]} />} />
+      <Header logo={() => <Logo height="100%" mr={[2, 3]} />} />
       <Box my={[3, 4]}>{element}</Box>
     </Root>
   );
