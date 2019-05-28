@@ -1,11 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
-import { Box, theme } from '@undataforum/components';
+import { Box, theme as defaultTheme } from '@undataforum/components';
 import { Logo } from '@undataforum/tokens';
-import { Header, Link } from './components';
+import { Header } from './components';
 import components from './mapping';
 import { Root } from './layouts';
+import theme from './theme';
 
 /* eslint-disable react/prop-types */
 
@@ -28,12 +29,8 @@ export const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>
     <ThemeProvider
       theme={{
+        ...defaultTheme,
         ...theme,
-        fonts: {
-          body: 'Roboto, sans-serif',
-          monospace: 'Menlo, monospace',
-        },
-        internalLink: Link,
       }}
     >
       {element}
