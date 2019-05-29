@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-undataforum",
   "description": "UN World Data Forum Gatsby theme.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
