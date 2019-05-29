@@ -32,7 +32,9 @@
     "styled-system": "^4.2.2"
   },
   "peerDependencies": {
-    "gatsby": "^2.2.3",
-    "react": "^16.8.4"
+    "gatsby": "^2.2.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

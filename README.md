@@ -1,39 +1,46 @@
 # @undataforum/gatsby-themes
 
-This is a monorepo containing a [Gatsby](https://www.gatsbyjs.org/) theme for UN World data forum websites and example websites that using the theme.
+This monorepo contains a [Gatsby](https://www.gatsbyjs.org/) theme for United Nations World Data Forum websites and example websites that consume the theme.
 
-## gatsby-theme-undataforum
+## themes/gatsby-theme-undataforum
 
-Main theme for all forum websites. The eventual name of this theme will be `@undataforum/gatsby-theme-main`. Because of an issue outlined in [this pull request](https://github.com/gatsbyjs/gatsby/pull/10786), the package name needs to be `gatsby-theme-undataforum`. A scoped package name would break component shadowing and `StaticQuery`.
+Main Gatsby theme for forum websites. This package will eventually be renamed to `@undataforum/gatsby-theme-main`. Because of an issue outlined in [this pull request](https://github.com/gatsbyjs/gatsby/pull/10786), the package name is to be `gatsby-theme-undataforum` for the time being. A scoped package name would break component shadowing and static queries.
 
-## Examples
+## examples/main-website-demo
 
-### main-website-demo
+This is the mock main forum website used for development. It uses mock data. Run
 
-Demo website with mock data to develop and test new features. In order to launch run
-
-```bash
-yarn workspace main-website-demo start
-```
-
-### docs
-
-Documentation website with info on how to set up a development environment and how to use themes. In order to launch run
-
-```bash
-yarn workspace docs start
-```
+    yarn workspace main-website-demo start
 
 ## Contributing
 
-Run
+### Using Yarn and Lerna
 
-```bash
-npx lerna bootstrap
+Use `yarn` to manage dependencies with [yarn workspaces](https://yarnpkg.com/en/docs/workspaces). Do not use [Lerna](https://lerna.js.org/) and the `lerna` command to manage dependencies. Lerna is used for publishing packages and tagging only. Therefore, `lerna.json` looks like this:
+
+```
+{
+  "packages": ["themes/*"],
+  "npmClient": "yarn",
+  "version": "independent"
+}
 ```
 
-to install all depedencies. If something breaks, you can try going back to a clean slate and reinstall all dependencies:
+Note that `lerna.json` does not include the `useWorkspaces: true` flag and its `packages` declaration is different from the `workspaces` declaration in `package.json`. This ensures that `lerna` does not tag packages in the `examples` directory.
 
-```bash
-npx lerna clean -y && npx lerna bootstrap
-```
+This table shows how each package is handled:
+
+| Package                    | Path       | Dependencies | Publishing and Tagging |
+| :------------------------- | :--------- | :----------- | :--------------------- |
+| `gatsby-theme-undataforum` | `themes`   | `yarn`       | `lerna`                |
+| `main-website-demo`        | `examples` | `yarn`       | n/a                    |
+
+## Conventional Commits
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) to enable autoamtic changelog generation with Lerna.
+
+## Publish with Lerna
+
+In order to publish `gatsby-theme-undataforum` run
+
+    npx lerna publish --conventional-commits --github-release
