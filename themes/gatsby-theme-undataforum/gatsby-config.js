@@ -3,7 +3,6 @@ const path = require('path');
 module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
-    // Pages inside /src/pages are generated for all websites that consume gatsby-theme-undataforum.
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
@@ -28,5 +27,11 @@ module.exports = {
     'gatsby-transformer-sharp',
     { resolve: 'gatsby-plugin-sharp', options: { defaultQuality: 75 } },
     'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-compile-es6-packages',
+      options: {
+        modules: ['gatsby-theme-undataforum'],
+      },
+    },
   ],
 };
