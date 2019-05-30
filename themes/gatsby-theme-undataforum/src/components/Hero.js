@@ -36,7 +36,7 @@ const Hero = ({ fluid, ...props }) => (
       alignItems="center"
       p={4}
     >
-      <Logo height={[4, 4, 5]} mx="auto" mb={4} />
+      <Logo height={4} mx="auto" mb={4} />
       <Text
         as="p"
         color="primary"
