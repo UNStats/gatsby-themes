@@ -1,7 +1,7 @@
 import React from 'react';
 import { node } from 'prop-types';
 import styled from 'styled-components';
-import { Heading, Link, Text } from '@undataforum/components';
+import { Heading, SmartLink, Text } from '@undataforum/components';
 import Slugger from 'github-slugger';
 
 const slugger = new Slugger();
@@ -29,7 +29,7 @@ LinkedHeading.propTypes = {
   children: node,
 };
 
-const Anchor = props => <Link {...props} />;
+const Anchor = props => <SmartLink {...props} />;
 
 const H1 = ({ children, ...props }) => (
   <LinkedHeading {...props} as="h1" fontSize={5} mb={4}>
