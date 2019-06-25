@@ -12,6 +12,7 @@ export const query = graphql`
       path
     }
     frontmatter {
+      title
       firstName
       lastName
       jobtitle

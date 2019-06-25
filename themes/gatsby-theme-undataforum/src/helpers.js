@@ -13,6 +13,7 @@ export const normalizeProfile = ({
   id,
   fields: { path, slug },
   frontmatter: {
+    title,
     firstName,
     lastName,
     jobtitle,
@@ -29,11 +30,10 @@ export const normalizeProfile = ({
   return {
     id,
     avatar,
+    title,
     name,
-    affiliation: {
-      jobtitle,
-      organization,
-    },
+    jobtitle,
+    organization,
     href: path,
     slug,
   };
