@@ -100,7 +100,7 @@ module.exports = {
     posts.data.allMdx.nodes.forEach(({ fields: { path, slug } }) => {
       createPage({
         path,
-        component: require.resolve('./src/layouts/Post.js'),
+        component: require.resolve('./src/templates/Post.js'),
         context: {
           slug,
         },
@@ -124,7 +124,7 @@ module.exports = {
     profiles.data.allMdx.nodes.forEach(({ fields: { path, slug } }) => {
       createPage({
         path,
-        component: require.resolve('./src/layouts/Profile.js'),
+        component: require.resolve('./src/templates/Profile.js'),
         context: {
           slug,
         },

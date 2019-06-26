@@ -5,7 +5,7 @@ import { Box, theme as defaultTheme } from '@undataforum/components';
 import { Logo } from '@undataforum/tokens';
 import { Header } from './components';
 import components from './mapping';
-import { Root } from './layouts';
+import { Root } from './templates';
 import theme from './theme';
 
 /* eslint-disable react/prop-types */
