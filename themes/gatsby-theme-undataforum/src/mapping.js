@@ -17,7 +17,13 @@ const UnstyledLink = styled.a`
 
 const LinkedHeading = ({ children, ...props }) => {
   slugger.reset();
-  const id = slugger.slug(children);
+  let id;
+  id = slugger.slug(children);
+  // ID `privacy-notice` causes uBlock Origin selector #privacy-notice to set `display: none`.
+  // Change ID to prevent heading `Privacy Notice` from being hidden on privacy page.
+  if (id === 'privacy-notice') {
+    id = 'privacy';
+  }
   return (
     <Heading displayName="Heading" {...props} id={id} lineHeight="title">
       <UnstyledLink href={`#${id}`}>{children}</UnstyledLink>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
-import { Box, theme as defaultTheme } from '@undataforum/components';
+import { Box, Flex, theme as defaultTheme } from '@undataforum/components';
 import { Logo } from '@undataforum/tokens';
-import { Header } from './components';
+import { Header, Footer } from './components';
 import components from './mapping';
 import { Root } from './templates';
 import theme from './theme';
@@ -15,12 +15,38 @@ export const wrapPageElement = ({ element, props }) => {
     location: { pathname },
   } = props;
   if (pathname === '/') {
-    return <Root>{element}</Root>;
+    return (
+      <Root>
+        <Flex css="min-height: 100vh;" flexDirection="column">
+          <Box
+            css={`
+              flex: 1;
+            `}
+            mb={[3, 4]}
+          >
+            {element}
+          </Box>
+          <Footer
+            logo={() => <Logo monochrome height={[3, 4]} my={[2, 3]} />}
+          />
+        </Flex>
+      </Root>
+    );
   }
   return (
     <Root>
-      <Header logo={() => <Logo height="100%" mr={[2, 3]} />} />
-      <Box my={[3, 4]}>{element}</Box>
+      <Flex css="min-height: 100vh;" flexDirection="column">
+        <Header logo={() => <Logo height="100%" mr={[2, 3]} />} />
+        <Box
+          css={`
+            flex: 1;
+          `}
+          my={[3, 4]}
+        >
+          {element}
+        </Box>
+        <Footer logo={() => <Logo monochrome height={[3, 4]} my={[2, 3]} />} />
+      </Flex>
     </Root>
   );
 };

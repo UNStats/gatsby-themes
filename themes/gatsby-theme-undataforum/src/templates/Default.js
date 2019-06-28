@@ -3,7 +3,7 @@ import { node } from 'prop-types';
 import { Container } from '@undataforum/components';
 
 const Default = ({ children }) => (
-  <Container maxWidth={8} px={[2, 3, 0]}>
+  <Container maxWidth={7} px={[2, 3, 0]}>
     {children}
   </Container>
 );
