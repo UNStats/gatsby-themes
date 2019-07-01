@@ -7,7 +7,7 @@
     "now-build": "gatsby build",
     "clean": "rm -rf ./node_modules",
     "lint": "eslint . --ignore-path .gitignore --fix",
-    "inspect": "node --inspect-brk --no-lazy node_modules/gatsby/dist/bin/gatsby develop"
+    "inspect": "node --inspect-brk --no-lazy node_modules/.bin/gatsby develop"
   },
   "dependencies": {
     "gatsby": "^2.7.1",
