@@ -14,33 +14,30 @@ This is the mock main forum website used for development. It uses mock data. Run
 
 ## Contributing
 
-### Using Yarn and Lerna
+### Using Yarn vs. Lerna
 
-Use `yarn` to manage dependencies with [yarn workspaces](https://yarnpkg.com/en/docs/workspaces). Do not use [Lerna](https://lerna.js.org/) and the `lerna` command to manage dependencies. Lerna is used for publishing packages and tagging only. Therefore, `lerna.json` looks like this:
+This repository is configured for [yarn workspaces](https://yarnpkg.com/en/docs/workspaces). Since not all of the workspaces are published as NPM packages, they need to be excluded from tagging when publishing packages with [Lerna](https://lerna.js.org/).
+
+Lerna's configuration [`lerna.json`](https://github.com/UNDataForum/gatsby-themes/blob/master/lerna.json) includes only those packages that are published to NPM:
 
 ```
-{
-  "packages": ["themes/*"],
-  "npmClient": "yarn",
-  "version": "independent"
-}
+"packages": ["themes/*"]
 ```
 
-Note that `lerna.json` does not include the `useWorkspaces: true` flag and its `packages` declaration is different from the `workspaces` declaration in `package.json`. This ensures that `lerna` does not tag packages in the `examples` directory.
+and does not include
 
-This table shows how each package is handled:
+```
+"useWorkspaces": true
+```
 
-| Package                    | Path       | Dependencies | Publishing and Tagging |
-| :------------------------- | :--------- | :----------- | :--------------------- |
-| `gatsby-theme-undataforum` | `themes`   | `yarn`       | `lerna`                |
-| `main-website-demo`        | `examples` | `yarn`       | n/a                    |
+This is to keep Lerna from adding tags for packages that are never published and would pollute the repository's tags. Therefore, do not use the `lerna` command for managing dependencies.
 
-## Conventional Commits
+### Publishing the Theme
 
-This project uses [Conventional Commits](https://www.conventionalcommits.org/) to enable autoamtic changelog generation with Lerna.
+The theme is published with Lerna using [Conventional Commits](https://www.conventionalcommits.org/). The publish configuration is in `lerna.json`.
 
-## Publish with Lerna
+Prior to publishing make sure that your `GH_TOKEN` environment variable is configured. Then run
 
-In order to publish `gatsby-theme-undataforum` run
-
-    npx lerna publish --conventional-commits --github-release
+```
+npx lerna publish
+```
