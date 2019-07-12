@@ -6,8 +6,7 @@
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf ./node_modules",
-    "lint": "eslint . --ignore-path .gitignore --fix"
+    "clean": "rm -rf ./node_modules"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.0.19",
