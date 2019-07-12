@@ -2,10 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "examples/main-website-demo/package.json",
+      "src": "site/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "public" }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/examples/main-website-demo/$1" }]
+  "routes": [{ "src": "/(.*)", "dest": "/site/$1" }]
 }
