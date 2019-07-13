@@ -1,0 +1,31 @@
+{
+  "name": "@undataforum/gatsby-theme-profiles",
+  "version": "0.0.0",
+  "description": "A Gatsby theme for profiles.",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/undataforum/gatsby-themes.git",
+    "directory": "themes/profiles"
+  },
+  "scripts": {
+    "clean": "rm -rf ./node_modules"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "dependencies": {
+    "gatsby-plugin-mdx": "^1.0.11",
+    "gatsby-plugin-sharp": "^2.2.6",
+    "gatsby-source-filesystem": "^2.1.4",
+    "gatsby-transformer-sharp": "^2.2.3"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
