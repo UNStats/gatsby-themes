@@ -1,4 +1,7 @@
-module.exports = {
+module.exports = ({
+  assetPath = 'content/assets/profiles',
+  contentPath = 'content/profiles',
+}) => ({
   siteMetadata: {
     title: '@undataforum/gatsby-themes-profiles title placeholder',
     basePath: '/',
@@ -8,16 +11,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: 'content/profiles',
+        path: contentPath,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: 'content/assets/profiles',
+        path: assetPath,
       },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
   ],
-};
+});
