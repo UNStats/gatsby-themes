@@ -1,10 +1,13 @@
+const defaultOptions = require('./index');
+
 module.exports = ({
-  assetPath = 'content/assets/profiles',
-  contentPath = 'content/profiles',
+  assetPath = defaultOptions.assetPath,
+  basePath = defaultOptions.basePath,
+  contentPath = defaultOptions.contentPath,
 }) => ({
   siteMetadata: {
     title: '@undataforum/gatsby-themes-profiles title placeholder',
-    basePath: '/',
+    basePath,
   },
   plugins: [
     { resolve: 'gatsby-plugin-mdx', options: {} },
@@ -12,12 +15,14 @@ module.exports = ({
       resolve: 'gatsby-source-filesystem',
       options: {
         path: contentPath,
+        name: contentPath,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: assetPath,
+        name: assetPath,
       },
     },
     'gatsby-transformer-sharp',
