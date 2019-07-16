@@ -5,9 +5,10 @@
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf ./node_modules && yarn workspaces run clean",
+    "clean": "yarn workspace site run clean",
     "lint": "eslint . --ignore-path .gitignore",
-    "format": "pretty-quick"
+    "format": "pretty-quick",
+    "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "lint-staged": {
     "*.js": [

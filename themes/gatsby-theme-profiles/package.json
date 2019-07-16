@@ -10,7 +10,7 @@
     "directory": "themes/profiles"
   },
   "scripts": {
-    "clean": "rm -rf ./node_modules"
+    "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
     "gatsby": "^2.13.15",
