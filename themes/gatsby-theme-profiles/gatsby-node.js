@@ -1,5 +1,4 @@
 const fs = require('fs');
-const crypto = require('crypto');
 const defaultOptions = require('./index');
 
 module.exports.onPreBootstrap = (
@@ -12,7 +11,7 @@ module.exports.onPreBootstrap = (
   const dirs = [assetPath, contentPath];
   dirs.forEach(dir => {
     if (fs.existsSync(dir)) return;
-    reporter.info(`creating the ${dir} directory`);
+    reporter.info(`Creating directory ${dir}`);
     fs.mkdirSync(dir, { recursive: true });
   });
 };
@@ -29,11 +28,15 @@ const resolveThroughMdx = fieldName => async (source, args, context, info) => {
   return result;
 };
 
-module.exports.sourceNodes = ({ actions, schema }) => {
+module.exports.sourceNodes = (
+  { actions, reporter, schema },
+  { typeName = defaultOptions.typeName }
+) => {
   const { createTypes } = actions;
+  reporter.info(`Adding type ${typeName}`);
   createTypes(
     schema.buildObjectType({
-      name: 'Profile',
+      name: typeName,
       fields: {
         id: { type: 'ID!' },
         avatar: {
@@ -46,7 +49,7 @@ module.exports.sourceNodes = ({ actions, schema }) => {
         lastName: {
           type: 'String!',
         },
-        rank: {
+        honorificTitle: {
           type: 'String',
         },
         jobtitle: {
@@ -72,10 +75,11 @@ module.exports.sourceNodes = ({ actions, schema }) => {
 };
 
 module.exports.onCreateNode = (
-  { node, actions, getNode, createNodeId },
+  { node, actions, getNode, createNodeId, createContentDigest, reporter },
   {
     basePath = defaultOptions.basePath,
     contentPath = defaultOptions.contentPath,
+    typeName = defaultOptions.typeName,
   }
 ) => {
   const { createNode, createParentChildLink } = actions;
@@ -93,31 +97,29 @@ module.exports.onCreateNode = (
   if (node.internal.type === `Mdx` && source === contentPath) {
     const slug =
       node.frontmatter.slug || /(.*)\.mdx/.exec(fileNode.relativePath)[1];
-    const fieldData = {
+    const profile = {
       firstName: node.frontmatter.firstName,
       lastName: node.frontmatter.lastName,
-      rank: node.frontmatter.rank,
+      honorificTitle: node.frontmatter.honorificTitle,
       jobtitle: node.frontmatter.jobtitle,
       organization: node.frontmatter.organization,
       slug,
       path: `${basePath}${slug}`,
     };
-    createNode({
-      ...fieldData,
-      // Required fields.
+    reporter.info(`Creating ${typeName} node from ${node.fileAbsolutePath}`);
+    const profileNode = {
+      ...profile,
       id: createNodeId(`${node.id} >>> Profile`),
+      // Make profile node aware of MDX node.
       parent: node.id,
       children: [],
       internal: {
-        type: 'Profile',
-        contentDigest: crypto
-          .createHash('md5')
-          .update(JSON.stringify(fieldData))
-          .digest('hex'),
-        content: JSON.stringify(fieldData),
-        description: 'Profiles',
+        type: typeName,
+        contentDigest: createContentDigest(profile),
       },
-    });
-    createParentChildLink({ parent: fileNode, child: node });
+    };
+    createNode(profileNode);
+    // Make MDX node aware of derived profile node.
+    createParentChildLink({ parent: node, child: profileNode });
   }
 };
