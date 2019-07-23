@@ -3,7 +3,7 @@ import { object } from 'prop-types';
 import { graphql } from 'gatsby';
 import { Container, PostPreview } from '@undataforum/components';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import { ProfileList } from '../components';
+import { ProfileList } from '../../../gatsby-theme-layout/src/components';
 import useNormalizedProfiles from '../hooks/useNormalizedProfiles';
 
 const Post = ({ data: { mdx } }) => {

@@ -6,11 +6,15 @@ module.exports = ({
   contentPath = defaultOptions.contentPath,
 }) => ({
   siteMetadata: {
-    title: '@undataforum/gatsby-themes-profiles title placeholder',
+    // Title, description, and twitter are required by @undataforum/gatsby-theme-layout.
+    title: 'Title placeholder (@undataforum/gatsby-themes-profiles)',
+    description:
+      'Description placeholder (@undataforum/gatsby-themes-profiles)',
+    twitter: 'Twitter placeholder (@undataforum/gatsby-themes-profiles)',
     basePath,
   },
   plugins: [
-    { resolve: 'gatsby-plugin-mdx', options: {} },
+    '@undataforum/gatsby-theme-layout',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -16,24 +16,18 @@ module.exports.onPreBootstrap = (
   });
 };
 
-const resolveThroughMdx = fieldName => async (source, args, context, info) => {
-  const type = info.schema.getType(`Mdx`);
-  const mdxNode = context.nodeModel.getNodeById({
-    id: source.parent,
-  });
-  const resolver = type.getFields()[fieldName].resolve;
-  const result = await resolver(mdxNode, args, context, {
-    fieldName,
-  });
-  return result;
-};
-
+// TODO Check if createSchemaCustomizaion should be used
 module.exports.sourceNodes = (
-  { actions, reporter, schema },
+  { actions, schema },
   { typeName = defaultOptions.typeName }
 ) => {
   const { createTypes } = actions;
-  reporter.info(`Adding type ${typeName}`);
+
+  // Derive Profile nodes from Mdx nodes.
+  // There are 2 types of fields:
+  // 1: fields whose values exists on the Mdx node
+  // 2: fields that only return values after using a resolver to compute a value
+  // See https://www.christopherbiscardi.com/post/constructing-query-types-in-themes
   createTypes(
     schema.buildObjectType({
       name: typeName,
@@ -41,12 +35,14 @@ module.exports.sourceNodes = (
         id: { type: 'ID!' },
         avatar: {
           type: 'File!',
-          resolve: resolveThroughMdx('avatar'),
         },
         firstName: {
           type: 'String!',
         },
         lastName: {
+          type: 'String!',
+        },
+        name: {
           type: 'String!',
         },
         honorificTitle: {
@@ -58,15 +54,23 @@ module.exports.sourceNodes = (
         organization: {
           type: 'String',
         },
-        slug: {
-          type: 'String!',
-        },
         path: {
           type: 'String!',
         },
+        // Retrieve resolver from Mdx node and run it.
         body: {
           type: 'String!',
-          resolve: resolveThroughMdx('body'),
+          resolve: async (source, args, context, info) => {
+            const type = info.schema.getType(`Mdx`);
+            const mdxNode = context.nodeModel.getNodeById({
+              id: source.parent,
+            });
+            const resolver = type.getFields().body.resolve;
+            const result = await resolver(mdxNode, args, context, {
+              fieldName: 'body',
+            });
+            return result;
+          },
         },
       },
       interfaces: ['Node'],
@@ -75,7 +79,7 @@ module.exports.sourceNodes = (
 };
 
 module.exports.onCreateNode = (
-  { node, actions, getNode, createNodeId, createContentDigest, reporter },
+  { node, actions, getNode, createNodeId, createContentDigest },
   {
     basePath = defaultOptions.basePath,
     contentPath = defaultOptions.contentPath,
@@ -98,15 +102,16 @@ module.exports.onCreateNode = (
     const slug =
       node.frontmatter.slug || /(.*)\.mdx/.exec(fileNode.relativePath)[1];
     const profile = {
+      // Gatsby automatically links `childImageSharpNode`.
+      avatar: node.frontmatter.avatar,
       firstName: node.frontmatter.firstName,
       lastName: node.frontmatter.lastName,
+      name: `${node.frontmatter.firstName} ${node.frontmatter.lastName}`,
       honorificTitle: node.frontmatter.honorificTitle,
       jobtitle: node.frontmatter.jobtitle,
       organization: node.frontmatter.organization,
-      slug,
       path: `${basePath}${slug}`,
     };
-    reporter.info(`Creating ${typeName} node from ${node.fileAbsolutePath}`);
     const profileNode = {
       ...profile,
       id: createNodeId(`${node.id} >>> Profile`),
@@ -122,4 +127,33 @@ module.exports.onCreateNode = (
     // Make MDX node aware of derived profile node.
     createParentChildLink({ parent: node, child: profileNode });
   }
+};
+
+module.exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const {
+    data: {
+      allProfile: { nodes: profiles },
+    },
+  } = await graphql(`
+    query {
+      allProfile(sort: { fields: [lastName, firstName] }) {
+        nodes {
+          id
+          path
+        }
+      }
+    }
+  `);
+
+  profiles.forEach(({ id, path }) => {
+    createPage({
+      path,
+      component: require.resolve('./src/templates/profile.js'),
+      context: {
+        id,
+      },
+    });
+  });
 };

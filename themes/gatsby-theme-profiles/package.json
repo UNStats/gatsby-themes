@@ -7,16 +7,19 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-themes.git",
-    "directory": "themes/profiles"
+    "directory": "themes/gatsby-theme-profiles"
   },
   "scripts": {
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "gatsby-plugin-mdx": "^1.0.11",
+    "@undataforum/components": "^0.37.0",
+    "@undataforum/gatsby-theme-layout": "*",
+    "gatsby-image": "^2.2.6",
     "gatsby-plugin-sharp": "^2.2.6",
     "gatsby-source-filesystem": "^2.1.4",
-    "gatsby-transformer-sharp": "^2.2.3"
+    "gatsby-transformer-sharp": "^2.2.3",
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "gatsby": "^2.13.15",

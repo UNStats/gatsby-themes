@@ -10,7 +10,9 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
+    "@undataforum/components": "^0.37.0",
     "@undataforum/gatsby-theme-profiles": "*",
+    "@undataforum/tokens": "^0.2.4",
     "gatsby": "^2.13.19",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
