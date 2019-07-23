@@ -1657,10 +1657,10 @@
     inquirer "^6.2.0"
     npmlog "^4.1.2"
 
-"@lerna/publish@3.16.2":
-  version "3.16.2"
-  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.16.2.tgz#c3120f962ac2803f7263355222258c24ea62e99a"
-  integrity sha512-6CZhnzO5goChQPqcBEN+6f6wA5ERBYcKB8RlBlsG38H8f8uYNZM6m34ywy1MLihZQA0z/RWrhYWAf4daF+AUkA==
+"@lerna/publish@3.16.3":
+  version "3.16.3"
+  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.16.3.tgz#35f199e82cc08931f352ead6b3269d72389e0e48"
+  integrity sha512-FflnKuWG2usrnhfTY4pBg1e99ITCw4RgWCGtySvRT+BlSI6tzhImqfa4TpQsVpIXn88xyYzo9dvND1G73aRI9w==
   dependencies:
     "@evocateur/libnpmaccess" "^3.1.2"
     "@evocateur/npm-registry-fetch" "^4.0.0"
@@ -7024,9 +7024,9 @@ gatsby-transformer-sharp@^2.2.3:
     sharp "^0.22.1"
 
 gatsby@^2.13.15, gatsby@^2.13.19:
-  version "2.13.35"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.35.tgz#107a1a39d9dd3d3be94f77f407fff70814082d1b"
-  integrity sha512-Llhq1rjyjsA8DZIhBD918Zrd6XlNafbTkaA3obcW7c35WnczdAxFhb/Zc9KFyIuCvjt+9LV/SacKeWqCGUfiHg==
+  version "2.13.36"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.36.tgz#996106d3274565962141654fc1937ee888d6cf9b"
+  integrity sha512-47GfFN6ZWSNfCSv4ocOsH44y3JEFeFFC1pEn+QBwtycQGbV+JdzTXMWUo/7QViaMXjyKcmsx54+FgbkhV3fWNw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -9166,9 +9166,9 @@ lcid@^2.0.0:
     invert-kv "^2.0.0"
 
 lerna@^3.15.0:
-  version "3.16.2"
-  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.16.2.tgz#e1c59df2c28348d0b303da666eb36b87649560cb"
-  integrity sha512-El4BJ3/h2Dw1TIMNk/30v6CXZrX85sVANMan5wmAaEGhlKwUGPV4HZLa7trFYCUSYgT4dL4pN15Vv3L48oYX/A==
+  version "3.16.3"
+  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.16.3.tgz#c786951ea1e0567fa6b89988ff6283b6f8bf359f"
+  integrity sha512-ThrDjDsLAdEzn5tpD+eLdRL+zGU+A/j6IyIJXLtFA1TOnprm1+3bs2eTrNDFRQ46sFrOF0bWgOHbGN0OtTzxcA==
   dependencies:
     "@lerna/add" "3.16.2"
     "@lerna/bootstrap" "3.16.2"
@@ -9182,7 +9182,7 @@ lerna@^3.15.0:
     "@lerna/init" "3.16.0"
     "@lerna/link" "3.16.2"
     "@lerna/list" "3.16.0"
-    "@lerna/publish" "3.16.2"
+    "@lerna/publish" "3.16.3"
     "@lerna/run" "3.16.0"
     "@lerna/version" "3.16.2"
     import-local "^2.0.0"
@@ -13104,7 +13104,12 @@ semver@5.5.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
   integrity sha512-4SJ3dm0WAwWy/NVeioZh5AntkdJoWKxHxcmyP622fOkgHa4z3R0TdBJICINyaSDE6uNwVc8gZr+ZinwZAH4xIA==
 
-semver@^6.0.0, semver@^6.1.0, semver@^6.1.1, semver@^6.2.0:
+semver@^6.0.0, semver@^6.1.1, semver@^6.2.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
+  integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+
+semver@^6.1.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.2.0.tgz#4d813d9590aaf8a9192693d6c85b9344de5901db"
   integrity sha512-jdFC1VdUGT/2Scgbimf7FSx9iJLXoqfglSF+gJeuNWVpiE37OIbc1jywR/GJyFdz3mnkz2/id0L0J/cr0izR5A==
