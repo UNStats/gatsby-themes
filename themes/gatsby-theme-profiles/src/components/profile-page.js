@@ -1,10 +1,8 @@
 import React from 'react';
 import { func, shape, string } from 'prop-types';
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import { Container, ProfilePreview } from '@undataforum/components';
-import { Layout, Seo } from '@undataforum/gatsby-theme-layout';
+import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 
-// TODO populate description for SEO
 const ProfilePage = ({ profile, body, location }) => (
   <Layout location={location}>
     <Seo title={profile.name} />

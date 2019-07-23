@@ -1,1 +1,0 @@
-# @undataforum/gatsby-theme-layout

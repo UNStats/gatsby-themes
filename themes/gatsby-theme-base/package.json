@@ -1,5 +1,5 @@
 {
-  "name": "@undataforum/gatsby-theme-layout",
+  "name": "@undataforum/gatsby-theme-base",
   "version": "0.0.0",
   "description": "A Gatsby theme with a layout.",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-themes.git",
-    "directory": "themes/gatsby-theme-layout"
+    "directory": "themes/gatsby-theme-base"
   },
   "scripts": {
     "purge": "rm -rf ./node_modules"

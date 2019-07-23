@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Title placeholder (@undataforum/gatsby-theme-layout)',
-    description: 'Description placeholder (@undataforum/gatsby-theme-layout)',
-    twitter: 'undataforum',
+    title: 'Title placeholder (@undataforum/gatsby-theme-base)',
+    description: 'Description placeholder (@undataforum/gatsby-theme-base)',
+    twitter: 'Site Twitter handle placeholder (@undataforum/gatsby-theme-base)',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
