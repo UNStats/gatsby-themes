@@ -8,7 +8,6 @@ module.exports = {
     twitter: 'Site Twitter placeholder (from @undataforum/gatsby-theme-base)',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
@@ -23,5 +22,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
   ],
 };
