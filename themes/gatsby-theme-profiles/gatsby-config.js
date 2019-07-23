@@ -6,11 +6,6 @@ module.exports = ({
   contentPath = defaultOptions.contentPath,
 }) => ({
   siteMetadata: {
-    // Title, description, and twitter are required by @undataforum/gatsby-theme-base.
-    title: 'Title placeholder (@undataforum/gatsby-themes-profiles)',
-    description:
-      'Description placeholder (@undataforum/gatsby-themes-profiles)',
-    twitter: 'Twitter handle placeholder (@undataforum/gatsby-themes-profiles)',
     basePath,
   },
   plugins: [
