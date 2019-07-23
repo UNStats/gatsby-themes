@@ -1,27 +1,10 @@
-const path = require('path');
-
 module.exports = {
   plugins: [
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: path.join(__dirname, 'src/pages'),
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
         path: 'content',
-      },
-    },
-    {
-      resolve: 'gatsby-mdx',
-      options: {
-        defaultLayouts: {
-          default: require.resolve('./src/templates/Default.js'),
-        },
       },
     },
     'gatsby-transformer-sharp',

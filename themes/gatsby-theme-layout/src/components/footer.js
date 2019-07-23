@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  DummyLogo,
   FlexList,
   Footer,
   GitHubIcon,
@@ -34,6 +35,7 @@ const FooterProxy = props => {
   return (
     <Footer
       {...props}
+      logo={() => <DummyLogo height={[3, 4]} my={[2, 3]} />}
       links={links}
       social={() => (
         <FlexList

@@ -1,0 +1,36 @@
+{
+  "name": "@undataforum/gatsby-theme-layout",
+  "version": "0.0.0",
+  "description": "A Gatsby theme with a layout.",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/undataforum/gatsby-themes.git",
+    "directory": "themes/gatsby-theme-layout"
+  },
+  "scripts": {
+    "purge": "rm -rf ./node_modules"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.1.0",
+    "@mdx-js/react": "^1.0.27",
+    "@undataforum/components": "^0.37.0",
+    "gatsby-plugin-mdx": "^1.0.15",
+    "gatsby-plugin-page-creator": "^2.1.5",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "prop-types": "^15.7.2",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.13.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
