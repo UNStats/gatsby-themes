@@ -54,6 +54,9 @@ module.exports.sourceNodes = (
         organization: {
           type: 'String',
         },
+        description: {
+          type: 'String',
+        },
         path: {
           type: 'String!',
         },
@@ -99,6 +102,21 @@ module.exports.onCreateNode = (
 
   // Process files in `contentPath` location only.
   if (node.internal.type === `Mdx` && source === contentPath) {
+    // Process description.
+    let description;
+    if (node.frontmatter.description) {
+      description = node.frontmatter.description;
+    } else {
+      const match =
+        // Match first paragraph when there are multiple paragraphs
+        // or first paragraph when there is only 1 parapgraph.
+        node.rawBody.match(/\n\n(.+)\n\n/) || node.rawBody.match(/\n\n(.+)\n/);
+      if (match) {
+        description = match[1];
+      }
+    }
+
+    // Process path.
     let path;
     if (node.frontmatter.slug) {
       path = `/${node.frontmatter.slug}/`;
@@ -118,6 +136,7 @@ module.exports.onCreateNode = (
       jobtitle: node.frontmatter.jobtitle,
       organization: node.frontmatter.organization,
       path,
+      description,
     };
     const profileNode = {
       ...profile,

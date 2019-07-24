@@ -83,3 +83,7 @@ Organization.
 #### `slug` (optional)
 
 By default, this theme derives a profile's slug from its MDX filename: `<slug>.mdx`. If you set the slug in the frontmatter, it takes precedence.
+
+#### `description` (optional)
+
+By default, this theme uses a profile's first paragraph as description meta tag for SEO. If you provide `description` in the frontmatter, it takes precedence over the first paragraph.

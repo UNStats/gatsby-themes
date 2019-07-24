@@ -15,6 +15,7 @@ const ProfileTemplate = ({ location, data }) => {
     jobtitle,
     organization,
     path,
+    description,
     body,
   } = data.profile;
   const profile = {
@@ -29,7 +30,14 @@ const ProfileTemplate = ({ location, data }) => {
     href: path,
   };
 
-  return <ProfilePage profile={profile} body={body} location={location} />;
+  return (
+    <ProfilePage
+      profile={profile}
+      description={description}
+      body={body}
+      location={location}
+    />
+  );
 };
 
 ProfileTemplate.propTypes = {
@@ -54,6 +62,7 @@ export const pageQuery = graphql`
       name
       jobtitle
       organization
+      description
       body
     }
   }
