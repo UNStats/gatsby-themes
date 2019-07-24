@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { createFilePath } = require('gatsby-source-filesystem');
 const defaultOptions = require('./index');
 
 module.exports.onPreBootstrap = (
@@ -16,7 +17,6 @@ module.exports.onPreBootstrap = (
   });
 };
 
-// TODO Check if createSchemaCustomizaion should be used
 module.exports.sourceNodes = (
   { actions, schema },
   { typeName = defaultOptions.typeName }
@@ -99,8 +99,15 @@ module.exports.onCreateNode = (
 
   // Process files in `contentPath` location only.
   if (node.internal.type === `Mdx` && source === contentPath) {
-    const slug =
-      node.frontmatter.slug || /(.*)\.mdx/.exec(fileNode.relativePath)[1];
+    let path;
+    if (node.frontmatter.slug) {
+      path = `/${node.frontmatter.slug}/`;
+    } else {
+      // The `basePath` argument is not the same as theme option `basePath`/
+      path = createFilePath({ node, getNode, basePath: contentPath });
+    }
+    // Add theme's basePath.
+    path = `${basePath}${path}`;
     const profile = {
       // Gatsby automatically links `childImageSharpNode`.
       avatar: node.frontmatter.avatar,
@@ -110,7 +117,7 @@ module.exports.onCreateNode = (
       honorificTitle: node.frontmatter.honorificTitle,
       jobtitle: node.frontmatter.jobtitle,
       organization: node.frontmatter.organization,
-      path: `${basePath}${slug}`,
+      path,
     };
     const profileNode = {
       ...profile,
