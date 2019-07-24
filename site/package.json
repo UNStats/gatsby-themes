@@ -2,10 +2,12 @@
   "private": true,
   "name": "site",
   "version": "0.0.0",
+  "homepage": "https://gatsby-themes.undataforum.now.sh/",
   "scripts": {
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "now-build": "gatsby build",
+    "serve": "gatsby build && gatsby serve",
     "inspect": "gatsby clean && node --inspect node_modules/.bin/gatsby develop",
     "purge": "rm -rf ./node_modules"
   },

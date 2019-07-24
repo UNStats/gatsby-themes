@@ -6,6 +6,7 @@ module.exports = {
     description:
       'Site description placeholder (from @undataforum/gatsby-theme-base)',
     twitter: 'Site Twitter placeholder (from @undataforum/gatsby-theme-base)',
+    siteUrl: 'Site URL placeholder (from @undataforum/gatsby-theme-base)',
   },
   plugins: [
     {
@@ -24,5 +25,6 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
   ],
 };

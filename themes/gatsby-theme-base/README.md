@@ -15,3 +15,7 @@ Site description. Will be used for SEO when no description is set for an individ
 ### `twitter`
 
 Site Twitter handle. Will be used for `twitter:site` and `twitter:creator` if not set for an individual page.
+
+### `siteUrl`
+
+URL from which the production site is served. This is required to generate a sitemap for production deployments.
