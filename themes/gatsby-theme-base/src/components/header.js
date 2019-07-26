@@ -8,9 +8,9 @@ const HeaderProxy = props => {
       {...props}
       logo={() => <DummyLogo height="100%" mr={[2, 3]} />}
       links={[
-        { text: 'Nav item 1', href: '/nav-item-1' },
-        { text: 'Nav item 2', href: '/nav-item-2' },
-        { text: 'Nav item 3', href: '/nav-item-3' },
+        { text: 'Nav item 1', href: '/nav-item-1/' },
+        { text: 'Nav item 2', href: '/nav-item-2/' },
+        { text: 'Nav item 3', href: '/nav-item-3/' },
       ]}
       button={{
         text: 'Button',

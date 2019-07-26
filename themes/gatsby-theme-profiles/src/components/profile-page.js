@@ -16,7 +16,7 @@ const ProfilePage = ({ profile, description, body, location }) => (
 ProfilePage.propTypes = {
   profile: shape({
     avatar: func.isRequired,
-    title: string,
+    honorific: string,
     name: string,
     jobtitle: string,
     organization: string,

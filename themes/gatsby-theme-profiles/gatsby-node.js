@@ -45,7 +45,7 @@ module.exports.sourceNodes = (
         name: {
           type: 'String!',
         },
-        honorificTitle: {
+        honorific: {
           type: 'String',
         },
         jobtitle: {
@@ -132,7 +132,7 @@ module.exports.onCreateNode = (
       firstName: node.frontmatter.firstName,
       lastName: node.frontmatter.lastName,
       name: `${node.frontmatter.firstName} ${node.frontmatter.lastName}`,
-      honorificTitle: node.frontmatter.honorificTitle,
+      honorific: node.frontmatter.honorific,
       jobtitle: node.frontmatter.jobtitle,
       organization: node.frontmatter.organization,
       path,
@@ -155,7 +155,14 @@ module.exports.onCreateNode = (
   }
 };
 
-module.exports.createPages = async ({ graphql, actions }) => {
+module.exports.createPages = async (
+  { graphql, actions },
+  {
+    basePath = defaultOptions.basePath,
+    title = defaultOptions.title,
+    description,
+  }
+) => {
   const { createPage } = actions;
 
   const {
@@ -173,6 +180,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  // Create individual profile pages.
   profiles.forEach(({ id, path }) => {
     createPage({
       path,
@@ -181,5 +189,15 @@ module.exports.createPages = async ({ graphql, actions }) => {
         id,
       },
     });
+  });
+
+  // Create profiles page.
+  createPage({
+    path: `${basePath}/`,
+    component: require.resolve('./src/templates/profiles.js'),
+    context: {
+      title,
+      description,
+    },
   });
 };

@@ -4,13 +4,13 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import ProfilePage from '../components/profile-page';
 
-const ProfileTemplate = ({ location, data }) => {
+const Profile = ({ location, data }) => {
   const {
     id,
     avatar: {
       childImageSharp: { fixed },
     },
-    honorificTitle,
+    honorific,
     name,
     jobtitle,
     organization,
@@ -23,13 +23,12 @@ const ProfileTemplate = ({ location, data }) => {
     avatar: function avatar() {
       return <Img style={{ borderRadius: '100%' }} alt={name} fixed={fixed} />;
     },
-    title: honorificTitle,
+    honorific,
     name,
     jobtitle,
     organization,
     href: path,
   };
-
   return (
     <ProfilePage
       profile={profile}
@@ -40,12 +39,12 @@ const ProfileTemplate = ({ location, data }) => {
   );
 };
 
-ProfileTemplate.propTypes = {
+Profile.propTypes = {
   data: shape({ profile: object.isRequired }).isRequired,
   location: shape({ pathname: string.isRequired }).isRequired,
 };
 
-export default ProfileTemplate;
+export default Profile;
 
 export const pageQuery = graphql`
   query($id: String!) {
@@ -58,7 +57,7 @@ export const pageQuery = graphql`
           }
         }
       }
-      honorificTitle
+      honorific
       name
       jobtitle
       organization

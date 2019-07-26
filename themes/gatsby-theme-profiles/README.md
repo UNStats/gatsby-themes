@@ -22,6 +22,14 @@ Path to folder with MDX profiles. The filename convention is `<slug>.mdx`, e.g. 
 
 This theme creates custom nodes to make querying profiles simple. The default type name is `Profile`. In scenarios when this theme is used more than once (as a direct or indirect dependency), it is necessary to keep different profile collections separate by providing different values to type, e.g. `AuthorProfile` and `SpeakerProfile`. This option is usually modified together with `contentPath`.
 
+#### `title` (default: `Profiles`)
+
+Page title for the index page generated at route `basePath`. Defaults to `Profiles`. Can be set to something like `Speakers` or `Contributors`.
+
+#### `description`
+
+SEO description for the index page generated at route `basePath`. No default.
+
 ### Example theme config
 
 This example shows how to include this theme twice, but keep the profile collections separate:
@@ -60,6 +68,10 @@ Frontmatter for MDX profiles located in `contentPath`.
 
 Relative path to profile picture located in the `assetPath` folder. Filenames of profile pictures can ba anything you like. The recommended filename is `<slug>.jpg`, e.g. `cleric-edis.jpg`. In this case, with default `assetPath` and `contentPath`, the value for `avatar` would be `../assets/profiles/cleric-edis.png`.
 
+#### `honorific` (optional)
+
+Honorific title, e.g. _Her Excellency_ or _His Royal Highness_.
+
 #### `firstName` (required)
 
 First name.
@@ -67,10 +79,6 @@ First name.
 #### `lastName` (required)
 
 Last name.
-
-#### `honorificTitle` (optional)
-
-Honorific title, e.g. Her Excellency or His Royal Highness.
 
 #### `jobtitle` (optional)
 
