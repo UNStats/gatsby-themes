@@ -4,5 +4,5 @@ module.exports = {
   basePath: '/',
   contentPath: 'content/profiles',
   title: 'Profiles',
-  typeName: 'Profile',
+  type: 'profile',
 };

@@ -17,10 +17,7 @@ module.exports.onPreBootstrap = (
   });
 };
 
-module.exports.sourceNodes = (
-  { actions, schema },
-  { typeName = defaultOptions.typeName }
-) => {
+module.exports.sourceNodes = ({ actions, schema }) => {
   const { createTypes } = actions;
 
   // Derive Profile nodes from Mdx nodes.
@@ -30,9 +27,12 @@ module.exports.sourceNodes = (
   // See https://www.christopherbiscardi.com/post/constructing-query-types-in-themes
   createTypes(
     schema.buildObjectType({
-      name: typeName,
+      name: 'Profile',
       fields: {
         id: { type: 'ID!' },
+        type: {
+          type: 'String!',
+        },
         avatar: {
           type: 'File!',
         },
@@ -86,7 +86,7 @@ module.exports.onCreateNode = (
   {
     basePath = defaultOptions.basePath,
     contentPath = defaultOptions.contentPath,
-    typeName = defaultOptions.typeName,
+    type = defaultOptions.type,
   }
 ) => {
   const { createNode, createParentChildLink } = actions;
@@ -127,6 +127,7 @@ module.exports.onCreateNode = (
     // Add theme's basePath.
     path = `${basePath}${path}`;
     const profile = {
+      type,
       // Gatsby automatically links `childImageSharpNode`.
       avatar: node.frontmatter.avatar,
       firstName: node.frontmatter.firstName,
@@ -145,7 +146,7 @@ module.exports.onCreateNode = (
       parent: node.id,
       children: [],
       internal: {
-        type: typeName,
+        type: 'Profile',
         contentDigest: createContentDigest(profile),
       },
     };
@@ -161,6 +162,7 @@ module.exports.createPages = async (
     basePath = defaultOptions.basePath,
     title = defaultOptions.title,
     description,
+    type = defaultOptions.type,
   }
 ) => {
   const { createPage } = actions;
@@ -169,16 +171,19 @@ module.exports.createPages = async (
     data: {
       allProfile: { nodes: profiles },
     },
-  } = await graphql(`
-    query {
-      allProfile(sort: { fields: [lastName, firstName] }) {
-        nodes {
-          id
-          path
+  } = await graphql(
+    `
+      query($type: String!) {
+        allProfile(filter: { type: { eq: $type } }) {
+          nodes {
+            id
+            path
+          }
         }
       }
-    }
-  `);
+    `,
+    { type }
+  );
 
   // Create individual profile pages.
   profiles.forEach(({ id, path }) => {
@@ -198,6 +203,7 @@ module.exports.createPages = async (
     context: {
       title,
       description,
+      type,
     },
   });
 };

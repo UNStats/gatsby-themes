@@ -16,11 +16,11 @@ Root URL for all profiles. By default profiles are served from `/`. When using t
 
 #### `contentPath` (default: `/content/profiles`)
 
-Path to folder with MDX profiles. The filename convention is `<slug>.mdx`, e.g. `cleric-edis.mdx`. If you do not set a slug in the frontmatter, the base name, in this example `cleric-edis` is used as slug.
+Path to folder with MDX profiles. The filename convention is `<slug>.mdx`, e.g. `cleric-edis.mdx`. If you do not set a slug in the frontmatter, the base name, in this example `cleric-edis`, is used as slug.
 
-#### `typeName` (default: `Profile`)
+#### `type` (default: `profile`)
 
-This theme creates custom nodes to make querying profiles simple. The default type name is `Profile`. In scenarios when this theme is used more than once (as a direct or indirect dependency), it is necessary to keep different profile collections separate by providing different values to type, e.g. `AuthorProfile` and `SpeakerProfile`. This option is usually modified together with `contentPath`.
+If this theme is configured multiple times in `gatsby-config.js`, you can distinguish different profile collections with the `type` field in GraphQL queries, e.g. type `author` for author profiles and type `speaker` for speaker profiles.
 
 #### `title` (default: `Profiles`)
 

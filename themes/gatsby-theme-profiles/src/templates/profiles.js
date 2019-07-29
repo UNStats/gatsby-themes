@@ -46,8 +46,11 @@ Profiles.propTypes = {
 export default Profiles;
 
 export const pageQuery = graphql`
-  query {
-    allProfile {
+  query($type: String!) {
+    allProfile(
+      sort: { fields: [lastName, firstName], order: ASC }
+      filter: { type: { eq: $type } }
+    ) {
       nodes {
         id
         avatar {
