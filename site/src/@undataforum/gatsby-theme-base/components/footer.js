@@ -1,18 +1,18 @@
 import React from 'react';
 import {
-  DummyLogo,
   FlexList,
   Footer,
   SocialIcon,
   TwitterIcon,
   GitHubIcon,
 } from '@undataforum/components';
+import { Logo } from '@undataforum/tokens';
 
-const FooterProxy = props => {
+const ShadowedFooter = props => {
   return (
     <Footer
       {...props}
-      logo={() => <DummyLogo height={[3, 4]} my={[2, 3]} />}
+      logo={() => <Logo monochrome height={[3, 4]} my={[2, 3]} />}
       links={[
         { text: 'Contact', href: '/contact' },
         { text: 'Copyright', href: '/copyright' },
@@ -28,9 +28,9 @@ const FooterProxy = props => {
                 return (
                   <SocialIcon
                     color="inherit"
-                    href="https://github.com/undataforum"
-                    render={() => <GitHubIcon width={[32, 48]} p={[1, 2]} />}
-                    key="github"
+                    href="https://twitter.com/undataforum"
+                    render={() => <TwitterIcon width={[32, 48]} p={[1, 2]} />}
+                    key="twitter"
                   />
                 );
               },
@@ -40,9 +40,9 @@ const FooterProxy = props => {
                 return (
                   <SocialIcon
                     color="inherit"
-                    href="https://twitter.com/undataforum"
-                    render={() => <TwitterIcon width={[32, 48]} p={[1, 2]} />}
-                    key="twitter"
+                    href="https://github.com/undataforum"
+                    render={() => <GitHubIcon width={[32, 48]} p={[1, 2]} />}
+                    key="github"
                   />
                 );
               },
@@ -55,4 +55,4 @@ const FooterProxy = props => {
   );
 };
 
-export default FooterProxy;
+export default ShadowedFooter;
