@@ -7,5 +7,10 @@
       "config": { "distDir": "public" }
     }
   ],
+  "build": {
+    "env": {
+      "NPM_RC": "@npmrc"
+    }
+  },
   "routes": [{ "src": "/(.*)", "dest": "/site/$1" }]
 }
