@@ -1,7 +1,7 @@
 // Default theme options.
 module.exports = {
   assetPath: 'content/assets/posts',
-  basePath: '/',
+  basePath: '',
   contentPath: 'content/posts',
   title: 'Blog',
   type: 'post',

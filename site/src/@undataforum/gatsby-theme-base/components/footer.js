@@ -14,10 +14,10 @@ const ShadowedFooter = props => {
       {...props}
       logo={() => <Logo monochrome height={[3, 4]} my={[2, 3]} />}
       links={[
-        { text: 'Contact', href: '/contact' },
-        { text: 'Copyright', href: '/copyright' },
-        { text: 'Privacy Notice', href: '/privacy' },
-        { text: 'Terms of Use', href: '/terms' },
+        { text: 'Contact', href: '/contact/' },
+        { text: 'Copyright', href: '/copyright/' },
+        { text: 'Privacy Notice', href: '/privacy/' },
+        { text: 'Terms of Use', href: '/terms/' },
       ]}
       social={() => (
         <FlexList

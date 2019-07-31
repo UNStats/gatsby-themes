@@ -1,7 +1,7 @@
 // Default theme options.
 module.exports = {
   assetPath: 'content/assets/profiles',
-  basePath: '/',
+  basePath: '',
   contentPath: 'content/profiles',
   title: 'Profiles',
   type: 'profile',
