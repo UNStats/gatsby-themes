@@ -15,7 +15,7 @@ const Posts = ({ data, pageContext, location }) => {
         return (
           <ProfileList
             profiles={authors.map(author => ({
-              name: author.name,
+              id: author.id,
               avatar() {
                 return (
                   <Img
@@ -25,6 +25,7 @@ const Posts = ({ data, pageContext, location }) => {
                   />
                 );
               },
+              name: author.name,
             }))}
           />
         );
@@ -45,7 +46,7 @@ const Posts = ({ data, pageContext, location }) => {
 };
 
 Posts.propTypes = {
-  data: shape({ allProfile: object.isRequired }).isRequired,
+  data: shape({ allPost: object.isRequired }).isRequired,
   pageContext: shape({ title: string.isRequired, description: string }),
   location: shape({ pathname: string.isRequired }).isRequired,
 };
@@ -72,6 +73,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        date(formatString: "MMM DD, YYYY")
         description
         path
       }

@@ -14,7 +14,7 @@ const Post = ({ location, data }) => {
       return (
         <ProfileList
           profiles={authors.map(author => ({
-            name: author.name,
+            id: author.id,
             avatar() {
               return (
                 <Img
@@ -24,6 +24,7 @@ const Post = ({ location, data }) => {
                 />
               );
             },
+            name: author.name,
             href: author.path,
           }))}
         />

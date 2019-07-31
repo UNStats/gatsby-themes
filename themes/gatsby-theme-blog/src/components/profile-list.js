@@ -22,7 +22,7 @@ ProfileList.propTypes = {
       id: string.isRequired,
       avatar: func.isRequired,
       name: string.isRequired,
-      href: string.isRequired,
+      href: string,
     })
   ).isRequired,
 };
