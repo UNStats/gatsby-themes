@@ -6,8 +6,8 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: '@undataforum/gatsby-theme-profiles',
-      options: { basePath: '/profiles' },
+      resolve: '@undataforum/gatsby-theme-blog',
+      options: { basePath: '/blog' },
     },
   ],
 };

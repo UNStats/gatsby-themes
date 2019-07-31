@@ -6,7 +6,6 @@ import ProfilePage from '../components/profile-page';
 
 const Profile = ({ location, data }) => {
   const {
-    id,
     avatar: {
       childImageSharp: { fixed },
     },
@@ -14,20 +13,17 @@ const Profile = ({ location, data }) => {
     name,
     jobtitle,
     organization,
-    path,
     description,
     body,
   } = data.profile;
   const profile = {
-    id,
-    avatar: function avatar() {
+    avatar() {
       return <Img style={{ borderRadius: '100%' }} alt={name} fixed={fixed} />;
     },
     honorific,
     name,
     jobtitle,
     organization,
-    href: path,
   };
   return (
     <ProfilePage

@@ -2,8 +2,6 @@
   "private": true,
   "name": "@undataforum/gatsby-themes",
   "description": "Gatsby themes and examples for forum websites.",
-  "author": "Thilo Maier <maier@un.org>",
-  "license": "MIT",
   "scripts": {
     "clean": "yarn workspace site run clean",
     "lint": "eslint . --ignore-path .gitignore",

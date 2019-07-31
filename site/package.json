@@ -2,6 +2,8 @@
   "private": true,
   "name": "site",
   "version": "0.0.0",
+  "author": "Thilo Maier <maier@un.org>",
+  "license": "MIT",
   "homepage": "https://gatsby-themes.undataforum.now.sh/",
   "scripts": {
     "develop": "gatsby develop",
@@ -13,7 +15,7 @@
   },
   "dependencies": {
     "@undataforum/components": "^0.39.0",
-    "@undataforum/gatsby-theme-profiles": "*",
+    "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/tokens": "^0.3.0",
     "gatsby": "^2.13.19",
     "prop-types": "^15.7.2",

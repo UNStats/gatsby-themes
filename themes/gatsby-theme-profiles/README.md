@@ -10,7 +10,7 @@ A [Gatsby](https://www.gatsbyjs.org/) theme to create profile pages.
 
 Path to folder with profile pictures.
 
-#### `basePath` (default: ``)
+#### `basePath` (default: "")
 
 Root URL for all profiles. By default profiles are served from `/`. When using this theme together with other themes, you should change this option to `/profiles`.
 
@@ -26,9 +26,9 @@ If this theme is configured multiple times in `gatsby-config.js`, you can distin
 
 Page title for the index page generated at route `basePath`. Defaults to `Profiles`. Can be set to something like `Speakers` or `Contributors`.
 
-#### `description`
+#### `description` (optional)
 
-SEO description for the index page generated at route `basePath`. No default.
+SEO description for the index page generated at route `basePath`.
 
 ### Example theme config
 

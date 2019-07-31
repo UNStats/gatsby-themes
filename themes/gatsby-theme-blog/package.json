@@ -1,7 +1,7 @@
 {
-  "name": "@undataforum/gatsby-theme-profiles",
+  "name": "@undataforum/gatsby-theme-blog",
   "version": "0.0.0",
-  "description": "A Gatsby theme for profiles.",
+  "description": "A Gatsby theme for a blog.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-themes.git",
-    "directory": "themes/gatsby-theme-profiles"
+    "directory": "themes/gatsby-theme-blog"
   },
   "scripts": {
     "purge": "rm -rf ./node_modules"
@@ -21,19 +21,18 @@
   "dependencies": {
     "@undataforum/components": "^0.39.0",
     "@undataforum/gatsby-theme-base": "*",
-    "gatsby-image": "^2.2.6",
-    "gatsby-plugin-sharp": "^2.2.6",
-    "gatsby-source-filesystem": "^2.1.4",
-    "gatsby-transformer-sharp": "^2.2.3",
+    "@undataforum/gatsby-theme-profiles": "*",
+    "gatsby-image": "^2.2.7",
+    "gatsby-source-filesystem": "^2.1.6",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "gatsby": "^2.13.15",
+    "gatsby": "^2.13.44",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "gatsby": "^2.13.15",
+    "gatsby": "^2.13.44",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }

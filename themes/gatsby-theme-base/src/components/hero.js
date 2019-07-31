@@ -1,9 +1,8 @@
 import React from 'react';
 import { object } from 'prop-types';
 import { height } from 'styled-system';
-import { Box, Flex, Text } from '@undataforum/components';
+import { Box, DummyLogo, Flex, Text } from '@undataforum/components';
 import Img from 'gatsby-image';
-import { Logo } from '@undataforum/tokens';
 
 const Hero = ({ fluid, ...props }) => (
   <Box
@@ -36,7 +35,7 @@ const Hero = ({ fluid, ...props }) => (
       alignItems="center"
       p={4}
     >
-      <Logo height={4} mx="auto" mb={4} />
+      <DummyLogo height={4} mx="auto" mb={4} />
       <Text
         as="p"
         color="primary"
