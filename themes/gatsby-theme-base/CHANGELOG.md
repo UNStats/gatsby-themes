@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/undataforum/gatsby-themes/compare/@undataforum/gatsby-theme-base@0.1.0...@undataforum/gatsby-theme-base@0.2.0) (2019-08-01)
+
+### Features
+
+- **blog:** Theme option to render header in root ([4b49106](https://github.com/undataforum/gatsby-themes/commit/4b49106)), closes [#69](https://github.com/undataforum/gatsby-themes/issues/69)
+
 # 0.1.0 (2019-07-31)
 
 ### Bug Fixes
