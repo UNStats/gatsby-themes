@@ -10,11 +10,8 @@
     "gatsby-theme",
     "gatsby-plugin"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/undataforum/gatsby-themes.git",
-    "directory": "themes/gatsby-theme-blog"
-  },
+  "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog#readme",
+  "repository": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog",
   "scripts": {
     "purge": "rm -rf ./node_modules"
   },
