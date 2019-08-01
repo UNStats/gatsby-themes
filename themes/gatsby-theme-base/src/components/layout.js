@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, shape, string } from 'prop-types';
+import { bool, node, shape, string } from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import { Box, Flex, GlobalStyle } from '@undataforum/components';
 import { MDXProvider } from '@mdx-js/react';
@@ -12,13 +12,13 @@ import H2 from './h2';
 import H3 from './h3';
 import P from './p';
 
-const Layout = ({ children, location }) => (
+const Layout = ({ alwaysRenderHeader, location, children }) => (
   <MDXProvider components={{ a: A, h1: H1, h2: H2, h3: H3, p: P }}>
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
         <Flex css="min-height: 100vh;" flexDirection="column">
-          {location.pathname !== '/' && <Header />}
+          {(alwaysRenderHeader || location.pathname !== '/') && <Header />}
           <Box
             css={`
               flex: 1;
@@ -35,8 +35,13 @@ const Layout = ({ children, location }) => (
 );
 
 Layout.propTypes = {
-  children: node,
+  alwaysRenderHeader: bool,
   location: shape({ pathname: string.isRequired }).isRequired,
+  children: node,
+};
+
+Layout.defaultProps = {
+  alwaysRenderHeader: false,
 };
 
 export default Layout;

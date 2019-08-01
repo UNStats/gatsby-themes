@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     {
       resolve: '@undataforum/gatsby-theme-blog',
-      options: {},
+      options: { alwaysRenderHeader: true },
     },
   ],
 };

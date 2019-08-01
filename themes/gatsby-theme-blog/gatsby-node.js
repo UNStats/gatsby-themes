@@ -163,6 +163,7 @@ module.exports.createPages = async (
     title = defaultOptions.title,
     description,
     type = defaultOptions.type,
+    alwaysRenderHeader = defaultOptions.alwaysRenderHeader,
   }
 ) => {
   const { createPage } = actions;
@@ -204,6 +205,7 @@ module.exports.createPages = async (
       title,
       description,
       type,
+      alwaysRenderHeader,
     },
   });
 };
