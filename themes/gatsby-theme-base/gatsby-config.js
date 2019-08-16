@@ -22,6 +22,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/templates/default.js'),
         },
+        gatsbyRemarkPlugins: ['gatsby-remark-smartypants'],
       },
     },
     'gatsby-plugin-react-helmet',
