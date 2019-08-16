@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/compare/@undataforum/gatsby-theme-blog@0.2.1...@undataforum/gatsby-theme-blog@0.2.2) (2019-08-16)
+
+
+### Bug Fixes
+
+* Strip MD from description (posts & profiles) ([2f4a9b7](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/commit/2f4a9b7)), closes [#76](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/issues/76)
+
+
+
+
+
 ## [0.2.1](https://github.com/undataforum/gatsby-themes/compare/@undataforum/gatsby-theme-blog@0.2.0...@undataforum/gatsby-theme-blog@0.2.1) (2019-08-01)
 
 **Note:** Version bump only for package @undataforum/gatsby-theme-blog

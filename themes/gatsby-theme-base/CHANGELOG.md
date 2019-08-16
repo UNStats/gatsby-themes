@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/compare/@undataforum/gatsby-theme-base@0.2.1...@undataforum/gatsby-theme-base@0.3.0) (2019-08-16)
+
+
+### Features
+
+* **base:** Add gatsby-remark-smartypants ([745c989](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/commit/745c989)), closes [#74](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/issues/74)
+* **base:** Add support for .md suffix ([9fd3b57](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/commit/9fd3b57)), closes [#78](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/issues/78)
+
+
+
+
+
 ## [0.2.1](https://github.com/undataforum/gatsby-themes/compare/@undataforum/gatsby-theme-base@0.2.0...@undataforum/gatsby-theme-base@0.2.1) (2019-08-01)
 
 
