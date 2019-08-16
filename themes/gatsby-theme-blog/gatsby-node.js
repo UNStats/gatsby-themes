@@ -1,5 +1,7 @@
 const fs = require('fs');
 const { createFilePath } = require('gatsby-source-filesystem');
+const remark = require('remark');
+const strip = require('strip-markdown');
 const defaultOptions = require('./index');
 
 module.exports.onPreBootstrap = (
@@ -113,7 +115,11 @@ module.exports.onCreateNode = (
         // or first paragraph when there is only 1 parapgraph.
         node.rawBody.match(/\n\n(.+)\n\n/) || node.rawBody.match(/\n\n(.+)\n/);
       if (match) {
-        description = match[1];
+        // Strip Markdown.
+        description = remark()
+          .use(strip)
+          .processSync(match[1])
+          .contents.trim();
       }
     }
 

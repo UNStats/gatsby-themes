@@ -13,6 +13,11 @@
     "inspect": "gatsby clean && node --inspect node_modules/.bin/gatsby develop",
     "purge": "rm -rf ./node_modules"
   },
+  "workspaces": {
+    "nohoist": [
+      "gatsby"
+    ]
+  },
   "dependencies": {
     "@undataforum/components": "^0.39.0",
     "@undataforum/gatsby-theme-blog": "*",
