@@ -2,7 +2,7 @@ const fs = require('fs');
 const { createFilePath } = require('gatsby-source-filesystem');
 const remark = require('remark');
 const strip = require('strip-markdown');
-const defaultOptions = require('./index');
+const defaultOptions = require('./defaultOptions');
 
 module.exports.onPreBootstrap = (
   { reporter },
@@ -55,6 +55,12 @@ module.exports.sourceNodes = ({ actions, schema }) => {
           // Link profiles by slug.
           extensions: {
             link: { by: 'slug' },
+          },
+        },
+        images: {
+          type: '[File]',
+          extensions: {
+            fileByRelativePath: {},
           },
         },
         description: {
@@ -141,8 +147,9 @@ module.exports.onCreateNode = (
       date: node.frontmatter.date,
       // Contains author slugs.
       authors: node.frontmatter.authors,
-      path,
+      images: node.frontmatter.images,
       description,
+      path,
     };
     const postNode = {
       ...post,

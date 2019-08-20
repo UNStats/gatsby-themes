@@ -6,7 +6,7 @@ import PostPage from '../components/post-page';
 import ProfileList from '../components/profile-list';
 
 const Post = ({ location, data }) => {
-  const { title, date, authors, description, body } = data.post;
+  const { title, date, authors, images, description, body } = data.post;
   const post = {
     title,
     date,
@@ -31,9 +31,14 @@ const Post = ({ location, data }) => {
       );
     },
   };
+  // If post has images, extract fluid images.
+  const fluidImages = images
+    ? images.map(image => image.childImageSharp.fluid)
+    : undefined;
   return (
     <PostPage
       post={post}
+      images={fluidImages}
       description={description}
       body={body}
       location={location}
@@ -62,6 +67,13 @@ export const pageQuery = graphql`
             fixed(height: 64, width: 64) {
               ...GatsbyImageSharpFixed_withWebp
             }
+          }
+        }
+      }
+      images {
+        childImageSharp {
+          fluid(maxWidth: 1024, quality: 80) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

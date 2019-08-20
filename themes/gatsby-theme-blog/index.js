@@ -1,10 +1,1 @@
-// Default theme options.
-module.exports = {
-  assetPath: 'content/assets/posts',
-  basePath: '',
-  contentPath: 'content/posts',
-  title: 'Blog',
-  type: 'post',
-  profileType: 'profile',
-  alwaysRenderHeader: false,
-};
+export { default as Image } from './src/components/image';

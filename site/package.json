@@ -23,6 +23,7 @@
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/tokens": "^0.3.0",
     "gatsby": "^2.13.19",
+    "gatsby-image": "^2.2.8",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
