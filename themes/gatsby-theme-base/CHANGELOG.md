@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/compare/@undataforum/gatsby-theme-base@0.3.0...@undataforum/gatsby-theme-base@0.4.0) (2019-08-20)
+
+
+### Features
+
+* Add support for inline images in posts ([507eb47](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/commit/507eb47)), closes [#84](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/issues/84)
+
+
+
+
+
 # [0.3.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/compare/@undataforum/gatsby-theme-base@0.2.1...@undataforum/gatsby-theme-base@0.3.0) (2019-08-16)
 
 
