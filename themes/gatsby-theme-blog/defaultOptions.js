@@ -6,5 +6,4 @@ module.exports = {
   title: 'Blog',
   type: 'post',
   profileType: 'profile',
-  alwaysRenderHeader: false,
 };

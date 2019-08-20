@@ -34,10 +34,6 @@ Page title for the index page generated at route `basePath`. Defaults to `Posts`
 
 SEO description for the index page generated at route `basePath`.
 
-#### `alwaysRenderHeader` (default: false)
-
-By default, the header is not rendered on the root page. The root page often has a layout that is very different from any other page. If you want the header to be rendered on the root page, set to `true`.
-
 ### Example theme config
 
 This example shows how to include this theme twice, but keep the post collections separate:

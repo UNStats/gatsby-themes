@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, object, shape, string } from 'prop-types';
+import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PostsPage from '../components/posts-page';
@@ -41,7 +41,6 @@ const Posts = ({ data, pageContext, location }) => {
       title={pageContext.title}
       description={pageContext.description}
       location={location}
-      alwaysRenderHeader={pageContext.alwaysRenderHeader}
     />
   );
 };
@@ -51,7 +50,6 @@ Posts.propTypes = {
   pageContext: shape({
     title: string.isRequired,
     description: string,
-    alwaysRenderHeader: bool,
   }),
   location: shape({ pathname: string.isRequired }).isRequired,
 };
