@@ -3,6 +3,7 @@
   "name": "@undataforum/gatsby-themes",
   "description": "Gatsby themes and examples for forum websites.",
   "scripts": {
+    "start": "yarn workspace site run develop",
     "clean": "yarn workspace site run clean",
     "lint": "eslint . --ignore-path .gitignore",
     "format": "pretty-quick",

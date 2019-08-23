@@ -117,9 +117,8 @@ module.exports.onCreateNode = (
       description = node.frontmatter.description;
     } else {
       const match =
-        // Match first paragraph when there are multiple paragraphs
-        // or first paragraph when there is only 1 parapgraph.
-        node.rawBody.match(/\n\n(.+)\n\n/) || node.rawBody.match(/\n\n(.+)\n/);
+        // Match first para when there is import statement, then first para when there is no import statement.
+        node.rawBody.match(/;\n\n(.+)/) || node.rawBody.match(/\n\n(.+)/);
       if (match) {
         // Strip Markdown.
         description = remark()
