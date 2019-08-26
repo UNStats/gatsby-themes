@@ -20,7 +20,7 @@ module.exports = (
   const fileNode = getNode(node.parent);
   const source = fileNode.sourceInstanceName;
 
-  const { createNode, createParentChildLink } = actions;
+  const { createNode } = actions;
 
   // Process files in `contentPath` location only.
   if (source === contentPath) {
@@ -33,13 +33,17 @@ module.exports = (
         // Match first para when there is import statement, then first para when there is no import statement.
         node.rawBody.match(/;\n\n(.+)/) || node.rawBody.match(/\n\n(.+)/);
       if (match) {
-        // Strip Markdown.
-        description = remark()
-          .use(strip)
-          .processSync(match[1])
-          .contents.trim();
+        description = match[1];
       }
     }
+
+    // Use this ID to link node that processes any Markdown in description.
+    const descriptionNodeId = createNodeId(
+      `${type}-description-${description}`
+    );
+
+    // Use this ID to link node that processes Markdown in title.
+    const titleNodeId = createNodeId(`${type}-title-${node.frontmatter.title}`);
 
     // Process path.
     let path;
@@ -55,12 +59,14 @@ module.exports = (
     const post = {
       slug,
       type,
-      title: node.frontmatter.title,
+      // Foreign key reference to node that will be created further down.
+      title___NODE: titleNodeId,
       date: node.frontmatter.date,
       // Contains author slugs.
       authors: node.frontmatter.authors,
       images: node.frontmatter.images,
-      description,
+      // Foreign key reference to node that will be created further down.
+      description___NODE: descriptionNodeId,
       path,
     };
     const postNode = {
@@ -76,7 +82,45 @@ module.exports = (
       },
     };
     createNode(postNode);
-    // Make MDX node aware of derived post node.
-    createParentChildLink({ parent: node, child: postNode });
+
+    // Create description node that processes Markdown in description.
+    // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
+    const descriptionNode = {
+      id: descriptionNodeId,
+      parent: postNode.id,
+      children: [],
+      internal: {
+        type: `${type}Description`,
+        contentDigest: createContentDigest(description),
+        mediaType: 'text/markdown',
+        content: description,
+      },
+      // Strip Markdown.
+      text: remark()
+        .use(strip)
+        .processSync(description)
+        .contents.trim(),
+    };
+    createNode(descriptionNode);
+
+    // Create title node that processes Markdown in title.
+    // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
+    const titleNode = {
+      id: titleNodeId,
+      parent: postNode.id,
+      children: [],
+      internal: {
+        type: `${type}Title`,
+        contentDigest: createContentDigest(node.frontmatter.title),
+        mediaType: 'text/markdown',
+        content: node.frontmatter.title,
+      },
+      // Strip Markdown.
+      text: remark()
+        .use(strip)
+        .processSync(node.frontmatter.title)
+        .contents.trim(),
+    };
+    createNode(titleNode);
   }
 };

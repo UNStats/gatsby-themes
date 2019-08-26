@@ -11,6 +11,7 @@
   },
   "rules": {
     "id-length": "off",
+    "babel/camelcase": "off",
     "babel/object-curly-spacing": ["error", "always"],
     "shopify/jsx-no-hardcoded-content": "off"
   }

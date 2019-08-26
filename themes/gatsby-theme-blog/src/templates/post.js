@@ -8,7 +8,7 @@ import ProfileList from '../components/profile-list';
 const Post = ({ location, data }) => {
   const { title, date, authors, images, description, body } = data.post;
   const post = {
-    title,
+    title: title.text,
     date,
     authors() {
       return (
@@ -39,7 +39,7 @@ const Post = ({ location, data }) => {
     <PostPage
       post={post}
       images={fluidImages}
-      description={description}
+      description={description.text}
       body={body}
       location={location}
     />
@@ -56,7 +56,12 @@ export default Post;
 export const pageQuery = graphql`
   query($id: String!) {
     post(id: { eq: $id }) {
-      title
+      title {
+        childMdx {
+          body
+        }
+        text
+      }
       date(formatString: "MMM DD, YYYY")
       authors {
         id
@@ -77,7 +82,12 @@ export const pageQuery = graphql`
           }
         }
       }
-      description
+      description {
+        childMdx {
+          body
+        }
+        text
+      }
       body
     }
   }

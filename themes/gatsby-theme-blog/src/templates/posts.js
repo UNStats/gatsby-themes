@@ -10,7 +10,7 @@ const Posts = ({ data, pageContext, location }) => {
     const { id, title, authors, date, description, path } = post;
     return {
       id,
-      title,
+      title: title.text,
       authors() {
         return (
           <ProfileList
@@ -31,7 +31,7 @@ const Posts = ({ data, pageContext, location }) => {
         );
       },
       date,
-      lead: description,
+      lead: description.text,
       href: path,
     };
   });
@@ -64,7 +64,12 @@ export const pageQuery = graphql`
     ) {
       nodes {
         id
-        title
+        title {
+          childMdx {
+            body
+          }
+          text
+        }
         authors {
           id
           name
@@ -77,7 +82,12 @@ export const pageQuery = graphql`
           }
         }
         date(formatString: "MMM DD, YYYY")
-        description
+        description {
+          childMdx {
+            body
+          }
+          text
+        }
         path
       }
     }

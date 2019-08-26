@@ -19,9 +19,6 @@ module.exports = ({ actions, schema }) => {
         type: {
           type: 'String!',
         },
-        title: {
-          type: 'String!',
-        },
         date: {
           type: 'Date!',
           // Enable date formatting in GraphQL queries.
@@ -41,9 +38,6 @@ module.exports = ({ actions, schema }) => {
           extensions: {
             fileByRelativePath: {},
           },
-        },
-        description: {
-          type: 'String',
         },
         path: {
           type: 'String!',
