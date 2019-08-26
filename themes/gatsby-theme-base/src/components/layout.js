@@ -18,7 +18,7 @@ const Layout = ({ location, children }) => (
       <>
         <GlobalStyle />
         <Flex css="min-height: 100vh;" flexDirection="column">
-          {location.pathname !== '/' && <Header />}
+          {location.pathname !== '/' && <Header pathname={location.pathname} />}
           <Box
             css={`
               flex: 1;
