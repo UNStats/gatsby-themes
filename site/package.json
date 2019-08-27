@@ -8,8 +8,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "clean": "gatsby clean",
-    "now-build": "gatsby build",
-    "serve": "gatsby build && gatsby serve",
+    "build": "gatsby clean && gatsby build",
     "inspect": "gatsby clean && node --inspect node_modules/.bin/gatsby develop",
     "purge": "rm -rf ./node_modules"
   },
