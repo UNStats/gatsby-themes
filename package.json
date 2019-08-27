@@ -4,6 +4,7 @@
   "description": "Gatsby themes and examples for forum websites.",
   "scripts": {
     "start": "yarn workspace site run develop",
+    "build": "rm -rf public && yarn workspace site run build && mv site/public/ public",
     "clean": "yarn workspace site run clean",
     "lint": "eslint . --ignore-path .gitignore",
     "format": "pretty-quick",
