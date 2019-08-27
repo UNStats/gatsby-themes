@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/compare/@undataforum/gatsby-theme-base@0.4.0...@undataforum/gatsby-theme-base@0.5.0) (2019-08-27)
+
+
+### Features
+
+* Add default 404 page ([8cff0be](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/commit/8cff0be)), closes [#39](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/issues/39)
+
+
+
+
+
 # [0.4.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base/compare/@undataforum/gatsby-theme-base@0.3.0...@undataforum/gatsby-theme-base@0.4.0) (2019-08-20)
 
 

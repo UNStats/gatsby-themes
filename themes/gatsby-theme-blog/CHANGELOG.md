@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/compare/@undataforum/gatsby-theme-blog@0.3.0...@undataforum/gatsby-theme-blog@0.4.0) (2019-08-27)
+
+
+### Bug Fixes
+
+* Fix regex that extracts first para as lead ([024347f](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/commit/024347f)), closes [#86](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/issues/86)
+
+
+### Features
+
+* Process title and lead/description with MDX ([6bbe720](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/commit/6bbe720)), closes [#82](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/issues/82)
+
+
+
+
+
 # [0.3.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/compare/@undataforum/gatsby-theme-blog@0.2.2...@undataforum/gatsby-theme-blog@0.3.0) (2019-08-20)
 
 

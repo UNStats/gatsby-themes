@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-profiles",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A Gatsby theme for profiles.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@undataforum/components": "^0.40.0",
-    "@undataforum/gatsby-theme-base": "^0.4.0",
+    "@undataforum/gatsby-theme-base": "^0.5.0",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-sharp": "^2.2.6",
     "gatsby-source-filesystem": "^2.1.4",
