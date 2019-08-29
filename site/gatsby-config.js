@@ -7,7 +7,15 @@ module.exports = {
   plugins: [
     {
       resolve: '@undataforum/gatsby-theme-blog',
-      options: {},
+      options: { basePath: '/blog' },
+    },
+    {
+      resolve: '@undataforum/gatsby-theme-events',
+      options: {
+        basePath: '/events',
+        description:
+          'Events leading up to the United Nations World Data Forum.',
+      },
     },
   ],
 };
