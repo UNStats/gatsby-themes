@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/compare/@undataforum/gatsby-theme-blog@0.4.0...@undataforum/gatsby-theme-blog@0.5.0) (2019-08-30)
+
+
+### Features
+
+* Export Header ([121e341](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/commit/121e341))
+
+
+
+
+
 # [0.4.0](https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog/compare/@undataforum/gatsby-theme-blog@0.3.0...@undataforum/gatsby-theme-blog@0.4.0) (2019-08-27)
 
 
