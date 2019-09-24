@@ -17,7 +17,7 @@ EventPage.propTypes = {
   event: shape({
     type: string.isRequired,
     title: func.isRequired,
-    start: string.isRequired,
+    date: string.isRequired,
     duration: string.isRequired,
     speakers: func.isRequired,
   }).isRequired,
