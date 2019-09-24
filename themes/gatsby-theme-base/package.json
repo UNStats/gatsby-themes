@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-base",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A Gatsby theme with a layout.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
