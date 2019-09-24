@@ -10,6 +10,12 @@ module.exports = ({
     basePath,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-compile-es6-packages',
+      options: {
+        modules: ['@undataforum/gatsby-theme-blog'],
+      },
+    },
     '@undataforum/gatsby-theme-base',
     {
       resolve: '@undataforum/gatsby-theme-profiles',

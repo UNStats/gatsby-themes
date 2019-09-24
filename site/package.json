@@ -12,20 +12,15 @@
     "inspect": "gatsby clean && node --inspect node_modules/.bin/gatsby develop",
     "purge": "rm -rf ./node_modules"
   },
-  "workspaces": {
-    "nohoist": [
-      "gatsby"
-    ]
-  },
   "dependencies": {
     "@undataforum/components": "^0.42.0",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
     "@undataforum/tokens": "^0.3.5",
-    "gatsby": "^2.13.19",
+    "gatsby": "^2.15.22",
     "gatsby-image": "^2.2.8",
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }

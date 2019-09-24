@@ -8,33 +8,30 @@
   "keywords": [
     "gatsby",
     "gatsby-theme",
-    "gatsby-plugin"
+    "gatsby-plugin",
+    "undataforum"
   ],
   "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-events#readme",
   "repository": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-events",
   "scripts": {
     "purge": "rm -rf ./node_modules"
   },
+  "peerDependencies": {
+    "gatsby": "^2.15.21",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
   "dependencies": {
     "@undataforum/components": "^0.42.0",
     "@undataforum/gatsby-theme-base": "^0.6.0",
     "@undataforum/gatsby-theme-profiles": "^0.2.0",
     "gatsby-image": "^2.2.14",
+    "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-source-filesystem": "^2.1.18",
     "luxon": "^1.17.2",
     "prop-types": "^15.7.2",
     "remark": "^11.0.1",
     "strip-markdown": "^3.1.1"
-  },
-  "peerDependencies": {
-    "gatsby": "^2.14.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
-  },
-  "devDependencies": {
-    "gatsby": "^2.14.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
   },
   "publishConfig": {
     "access": "public"
