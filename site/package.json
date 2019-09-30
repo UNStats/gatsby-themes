@@ -13,14 +13,14 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@undataforum/components": "^0.42.0",
+    "@undataforum/components": "0.42.0",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
-    "@undataforum/tokens": "^0.3.5",
-    "gatsby": "^2.15.22",
-    "gatsby-image": "^2.2.8",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "@undataforum/tokens": "0.3.5",
+    "gatsby": "2.15.28",
+    "gatsby-image": "2.2.23",
+    "prop-types": "15.7.2",
+    "react": "16.10.1",
+    "react-dom": "16.10.1"
   }
 }
