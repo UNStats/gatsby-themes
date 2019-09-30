@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "site",
+  "version": "0.0.0",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "homepage": "https://gatsby-themes.undataforum.now.sh/",
