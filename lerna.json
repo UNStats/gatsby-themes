@@ -1,13 +1,13 @@
 {
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": "true",
   "command": {
     "publish": {
       "allowBranch": "master",
+      "bump": "minor",
       "conventionalCommits": true,
-      "createRelease": "github",
       "message": "chore(release): Publish"
     }
-  },
-  "packages": ["themes/*"],
-  "npmClient": "yarn",
-  "version": "independent"
+  }
 }
