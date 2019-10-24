@@ -26,7 +26,7 @@
     "site"
   ],
   "devDependencies": {
-    "@changesets/cli": "^2.1.2",
+    "@changesets/cli": "2.1.2",
     "eslint": "6.5.1",
     "eslint-plugin-shopify": "31.0.0",
     "husky": "3.0.9",
