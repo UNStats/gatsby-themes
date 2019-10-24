@@ -1,5 +1,7 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base"],
+  "automerge": false,
+  "labels": ["dependencies"],
+  "reviewers": ["454de6e"],
+  "semanticCommits": false
 }
