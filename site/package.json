@@ -17,8 +17,8 @@
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
     "@undataforum/tokens": "0.3.5",
-    "gatsby": "2.17.4",
-    "gatsby-image": "2.2.29",
+    "gatsby": "2.17.6",
+    "gatsby-image": "2.2.30",
     "prop-types": "15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0"
