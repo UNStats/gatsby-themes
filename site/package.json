@@ -13,7 +13,7 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@undataforum/assets": "^0.1.0",
+    "@undataforum/assets": "0.1.0",
     "@undataforum/components": "0.47.0",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",

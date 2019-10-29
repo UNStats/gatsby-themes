@@ -1776,7 +1776,7 @@
     lodash.unescape "4.0.1"
     semver "^6.3.0"
 
-"@undataforum/assets@^0.1.0":
+"@undataforum/assets@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.1.0.tgz#7b248a2e57bba04c09d349263bab5556f6a9fb0f"
   integrity sha512-vfrsGqB7RhyXh6wc9WFJi/zWz4IwEEiEnseaQTmZb4WeBc5cXuiev0b/hD53Y77HFcEcv0N+95tXfCmn+0vHnw==
