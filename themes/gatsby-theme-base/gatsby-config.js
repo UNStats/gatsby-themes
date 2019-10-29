@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: 'Site URL placeholder (from @undataforum/gatsby-theme-base)',
   },
   plugins: [
+    'gatsby-plugin-theme-ui',
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
@@ -32,7 +33,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-sitemap',
   ],
 };

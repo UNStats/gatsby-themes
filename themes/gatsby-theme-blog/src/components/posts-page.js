@@ -1,13 +1,12 @@
 import React from 'react';
 import { arrayOf, shape, string, func } from 'prop-types';
 import { Container, GridList, PostPreview } from '@undataforum/components';
-import { H1, Layout, Seo } from '@undataforum/gatsby-theme-base';
+import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const PostsPage = ({ posts, title, description, location }) => (
-  <Layout location={location}>
-    <Seo title={title} description={description} />
-    <Container maxWidth={7} px={[2, 3, 0]}>
-      <H1>{title}</H1>
+  <Layout location={location} title={title} description={description}>
+    <Container maxWidth="narrow">
+      <Styled.h1>{title}</Styled.h1>
       <GridList
         align="center"
         gridGap={3}
@@ -28,7 +27,7 @@ PostsPage.propTypes = {
       title: string.isRequired,
       authors: func.isRequired,
       date: string.isRequired,
-      lead: string.isRequired,
+      description: string.isRequired,
       href: string.isRequired,
     })
   ).isRequired,

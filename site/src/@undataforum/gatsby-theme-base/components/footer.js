@@ -6,13 +6,19 @@ import {
   TwitterIcon,
   GitHubIcon,
 } from '@undataforum/components';
-import { Logo } from '@undataforum/tokens';
+import { Logo } from '@undataforum/assets';
 
 const ShadowedFooter = props => {
   return (
     <Footer
       {...props}
-      logo={() => <Logo monochrome height={[3, 4]} my={[2, 3]} />}
+      logo={() => (
+        <Logo
+          monochrome
+          height={['logo.medium', 'logo.medium', 'logo.large']}
+          my={[2, 3]}
+        />
+      )}
       links={[
         { text: 'Contact', href: '/contact/' },
         { text: 'Copyright', href: '/copyright/' },

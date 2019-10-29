@@ -16,6 +16,7 @@ const Event = ({ location, data }) => {
     moderators,
     speakers,
     description,
+    registration,
     body,
   } = data.event;
 
@@ -63,6 +64,7 @@ const Event = ({ location, data }) => {
         />
       );
     },
+    links: { registration },
   };
   return (
     <EventPage
@@ -124,6 +126,7 @@ export const pageQuery = graphql`
         }
         text
       }
+      registration
       body
     }
   }

@@ -18,6 +18,7 @@ const Events = ({ data, pageContext, location }) => {
       moderators,
       speakers,
       description,
+      registration,
       path,
     } = event;
 
@@ -65,7 +66,7 @@ const Events = ({ data, pageContext, location }) => {
           </Box>
         );
       },
-      href: path,
+      links: { page: path, registration },
     };
   });
   return (
@@ -134,6 +135,7 @@ export const pageQuery = graphql`
           }
           text
         }
+        registration
         path
       }
     }

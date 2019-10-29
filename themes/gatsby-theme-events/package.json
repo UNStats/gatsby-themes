@@ -22,13 +22,13 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@undataforum/components": "^0.42.0",
+    "@undataforum/components": "^0.47.0",
     "@undataforum/gatsby-theme-base": "^0.6.2",
     "@undataforum/gatsby-theme-profiles": "^0.2.2",
     "gatsby-image": "^2.2.14",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
-    "gatsby-source-filesystem": "^2.1.18",
-    "luxon": "^1.17.2",
+    "gatsby-source-filesystem": "^2.1.35",
+    "luxon": "^1.20.0",
     "prop-types": "^15.7.2",
     "remark": "^11.0.1",
     "strip-markdown": "^3.1.1"
