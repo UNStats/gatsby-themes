@@ -1,18 +1,16 @@
 import React from 'react';
 import { object } from 'prop-types';
-import { height } from 'styled-system';
 import { Box, DummyLogo, Flex, Text } from '@undataforum/components';
 import Img from 'gatsby-image';
 
 const Hero = ({ fluid, ...props }) => (
   <Box
     {...props}
-    css={`
-      ${height}
-      position: relative;
-      max-height: 100vh;
-    `}
-    height={['100vh', 6, '40vh']}
+    sx={{
+      height: ['100vh', 6, '40vh'],
+      position: 'relative',
+      maxHeight: '100vh',
+    }}
   >
     <Img
       fluid={fluid}
@@ -26,23 +24,25 @@ const Hero = ({ fluid, ...props }) => (
       }}
     />
     <Flex
-      css={`
-        background-color: rgba(255, 255, 255, 0.8);
-        height: 100%;
-      `}
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      p={4}
+      sx={{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 4,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        height: '100%',
+      }}
     >
       <DummyLogo height={4} mx="auto" mb={4} />
       <Text
         as="p"
-        color="primary"
-        fontSize={[3, 4, 5]}
-        lineHeight="title"
-        textAlign="center"
-        m={0}
+        sx={{
+          color: 'primary',
+          fontSize: [3, 4, 5],
+          lineHeight: 'heading',
+          textAlign: 'center',
+          m: 0,
+        }}
       >
         18-21 October 2020 in Bern, Switzerland
       </Text>

@@ -12,7 +12,9 @@ const FooterProxy = props => {
   return (
     <Footer
       {...props}
-      logo={() => <DummyLogo height={[3, 4]} my={[2, 3]} />}
+      logo={() => (
+        <DummyLogo height={['logo.medium', 'logo.large']} my={[2, 3]} />
+      )}
       links={[
         { text: 'Contact', href: '/contact/' },
         { text: 'Copyright', href: '/copyright/' },

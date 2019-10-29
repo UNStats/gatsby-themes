@@ -2,6 +2,7 @@ const pkg = require('./package.json');
 
 module.exports = {
   siteMetadata: {
+    title: 'Test Site',
     siteUrl: pkg.homepage,
   },
   plugins: [
@@ -13,8 +14,6 @@ module.exports = {
       resolve: '@undataforum/gatsby-theme-events',
       options: {
         basePath: '/events',
-        description:
-          'Events leading up to the United Nations World Data Forum.',
       },
     },
   ],

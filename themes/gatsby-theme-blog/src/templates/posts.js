@@ -31,7 +31,7 @@ const Posts = ({ data, pageContext, location }) => {
         );
       },
       date,
-      lead: description.text,
+      description: description.text,
       href: path,
     };
   });

@@ -67,6 +67,9 @@ module.exports = (
     const displayDate = startDate.toLocaleString(DateTime.DATETIME_FULL);
     const duration = `${endDate.diff(startDate, 'minutes').minutes} minutes`;
 
+    // Registration link.
+    const registration = node.frontmatter.registration;
+
     const event = {
       slug,
       type,
@@ -83,6 +86,7 @@ module.exports = (
       speakers: node.frontmatter.speakers,
       // Foreign key reference to node that will be created further down.
       description___NODE: descriptionNodeId,
+      registration,
       path,
     };
     const eventNode = {
