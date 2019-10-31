@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-events
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [[`a9de868`](https://github.com/UNDataForum/gatsby-themes/commit/a9de868b834b0178637449e299461a916a9a16b1)]:
+  - @undataforum/gatsby-theme-base@0.8.0
+  - @undataforum/gatsby-theme-profiles@0.3.1
+
 ## 0.2.0
 
 ### Minor Changes
