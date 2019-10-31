@@ -1787,15 +1787,15 @@
     lodash.unescape "4.0.1"
     semver "^6.3.0"
 
-"@undataforum/assets@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.1.0.tgz#7b248a2e57bba04c09d349263bab5556f6a9fb0f"
-  integrity sha512-vfrsGqB7RhyXh6wc9WFJi/zWz4IwEEiEnseaQTmZb4WeBc5cXuiev0b/hD53Y77HFcEcv0N+95tXfCmn+0vHnw==
+"@undataforum/assets@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.1.1.tgz#c0e8df4c0f4197eddf95d602e53beb4be6b732aa"
+  integrity sha512-y/ZskncZm+NCn/UKB3JVAGUAKoeAso9jBV4CBgaE11WuXsb4XixF4iF1wj+APxccG+3VzcVUDgrJ1OoQ2UgWfg==
   dependencies:
     "@theme-ui/components" "^0.2.45"
     prop-types "^15.7.2"
 
-"@undataforum/components@^0.47.0", "@undataforum/components@^0.47.1":
+"@undataforum/components@0.47.1", "@undataforum/components@^0.47.0":
   version "0.47.1"
   resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.47.1.tgz#7622490ac41d8fc9ca947233474c27b6ccd39f5f"
   integrity sha512-IczugKzCNDTv/3eZ5O6p3qRnfU72jk85ARy3F49tHjmnRjaE72dEEAjzjVvai2m5XdBTQICvALNqoF220HjGmg==
