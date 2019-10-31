@@ -54,6 +54,9 @@ module.exports = ({ actions, schema }) => {
             link: { by: 'slug' },
           },
         },
+        registration: {
+          type: 'String',
+        },
         path: {
           type: 'String!',
         },
