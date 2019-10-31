@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-events
 
+## 0.2.2
+
+### Patch Changes
+
+- [`fcb2972`](https://github.com/UNDataForum/gatsby-themes/commit/fcb2972bfc21bfa68e47c20cb6e99ed358f27c2b) [#146](https://github.com/UNDataForum/gatsby-themes/pull/146) Thanks [@454de6e](https://github.com/454de6e)! - Add registration prop to GraphQL Event type
+
 ## 0.2.1
 
 ### Patch Changes

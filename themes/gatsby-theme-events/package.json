@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-events",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A Gatsby theme for events.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
