@@ -3,5 +3,15 @@
   "automerge": false,
   "labels": ["dependencies"],
   "reviewers": ["454de6e"],
-  "semanticCommits": false
+  "semanticCommits": false,
+  "packageRules": [
+    {
+      "sourceUrlPrefixes": ["https://github.com/undataforum/design-system"],
+      "groupName": "undataforum/design-system packages"
+    },
+    {
+      "sourceUrlPrefixes": ["https://github.com/atlassian/changesets"],
+      "groupName": "atlassian/changesets packages"
+    }
+  ]
 }
