@@ -1,9 +1,9 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@0.2.1/schema.json",
+  "$schema": "https://unpkg.com/@changesets/config@0.2.3/schema.json",
   "changelog": [
     "@changesets/changelog-github",
     { "repo": "undataforum/gatsby-themes" }
   ],
   "commit": false,
-  "access": "private"
+  "access": "restricted"
 }
