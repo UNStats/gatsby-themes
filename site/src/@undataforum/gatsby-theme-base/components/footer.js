@@ -33,10 +33,10 @@ const ShadowedFooter = props => {
               render() {
                 return (
                   <SocialIcon
-                    color="inherit"
                     href="https://twitter.com/undataforum"
                     render={() => <TwitterIcon width={[32, 48]} p={[1, 2]} />}
                     key="twitter"
+                    variant="primary"
                   />
                 );
               },
@@ -45,10 +45,10 @@ const ShadowedFooter = props => {
               render() {
                 return (
                   <SocialIcon
-                    color="inherit"
                     href="https://github.com/undataforum"
                     render={() => <GitHubIcon width={[32, 48]} p={[1, 2]} />}
                     key="github"
+                    variant="primary"
                   />
                 );
               },
@@ -57,6 +57,7 @@ const ShadowedFooter = props => {
           mb={[1, 2]}
         />
       )}
+      variant="primary"
     />
   );
 };
