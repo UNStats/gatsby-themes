@@ -11,8 +11,12 @@
     "gatsby-plugin",
     "undataforum"
   ],
-  "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-profiles#readme",
-  "repository": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-profiles",
+  "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-profiles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unataforum/gatsby-themes.git",
+    "directory": "themes/gatsby-theme-profiles"
+  },
   "publishConfig": {
     "access": "public"
   },
