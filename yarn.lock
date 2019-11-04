@@ -1787,18 +1787,18 @@
     lodash.unescape "4.0.1"
     semver "^6.3.0"
 
-"@undataforum/assets@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.1.1.tgz#c0e8df4c0f4197eddf95d602e53beb4be6b732aa"
-  integrity sha512-y/ZskncZm+NCn/UKB3JVAGUAKoeAso9jBV4CBgaE11WuXsb4XixF4iF1wj+APxccG+3VzcVUDgrJ1OoQ2UgWfg==
+"@undataforum/assets@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.2.0.tgz#8e84accf21d0e04026d2c46117a6e5197b463b45"
+  integrity sha512-40LSEM4g0L51WYFH8BugqhnoydlnLB508ONimQ3GVsWA7eBl2TSLuwogyS65xNOm22ZrCpEgNuRr0Wl0worTPg==
   dependencies:
     "@theme-ui/components" "^0.2.45"
     prop-types "^15.7.2"
 
-"@undataforum/components@0.47.1", "@undataforum/components@^0.47.0":
-  version "0.47.1"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.47.1.tgz#7622490ac41d8fc9ca947233474c27b6ccd39f5f"
-  integrity sha512-IczugKzCNDTv/3eZ5O6p3qRnfU72jk85ARy3F49tHjmnRjaE72dEEAjzjVvai2m5XdBTQICvALNqoF220HjGmg==
+"@undataforum/components@0.48.0", "@undataforum/components@^0.48.0":
+  version "0.48.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.48.0.tgz#54ffa9c61b4de008d6a70b5f61592779df0b6118"
+  integrity sha512-56X82Ujqt/07fujymGjl828bmWfRujxkt5juaTuHRIL5lWEvSjz5NFx52fDpqXL+uOFmWya/Odh5l7B2i7pwnQ==
   dependencies:
     "@emotion/core" "^10.0.21"
     "@mdx-js/react" "^1.5.1"
