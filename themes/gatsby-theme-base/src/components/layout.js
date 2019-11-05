@@ -3,6 +3,7 @@ import { node, shape, string } from 'prop-types';
 import { Box, Flex } from '@undataforum/components';
 import { Styled } from 'theme-ui';
 import { Global } from '@emotion/core';
+
 import Header from './header';
 import Footer from './footer';
 import Seo from './seo';

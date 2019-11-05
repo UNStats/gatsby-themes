@@ -1,7 +1,9 @@
 const fs = require('fs');
+
 const { createFilePath } = require('gatsby-source-filesystem');
 const remark = require('remark');
 const strip = require('strip-markdown');
+
 const defaultOptions = require('./index');
 
 module.exports.onPreBootstrap = (

@@ -2,6 +2,7 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const remark = require('remark');
 const strip = require('strip-markdown');
 const { DateTime } = require('luxon');
+
 const defaultOptions = require('../defaultOptions');
 
 module.exports = (

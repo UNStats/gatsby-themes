@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Box, Heading } from '@undataforum/components';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
+
 import EventsPage from '../components/events-page';
 import ProfileList from '../components/profile-list';
 

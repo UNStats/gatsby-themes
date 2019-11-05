@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const defaultOptions = require('../defaultOptions');
 
 module.exports = (

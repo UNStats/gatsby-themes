@@ -2,6 +2,7 @@ import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
 import ProfilesPage from '../components/profiles-page';
 
 const Profiles = ({ data, pageContext, location }) => {

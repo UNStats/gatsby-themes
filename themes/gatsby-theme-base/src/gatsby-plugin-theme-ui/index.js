@@ -1,5 +1,6 @@
 import { theme as defaultTheme } from '@undataforum/components';
 import merge from 'deepmerge';
+
 import Link from '../components/link';
 
 const theme = merge(defaultTheme, {
