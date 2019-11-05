@@ -2,6 +2,7 @@ import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
 import PostsPage from '../components/posts-page';
 import ProfileList from '../components/profile-list';
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
 import { Text } from '@undataforum/components';
+
 import DefaultPage from '../components/default-page';
 
 const NotFound = ({ location }) => (
