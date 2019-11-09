@@ -1,21 +1,17 @@
 import React from 'react';
 import { arrayOf, shape, string, func } from 'prop-types';
-import { Container, GridList, EventPreview } from '@undataforum/components';
+import { Container, Grid, EventPreview } from '@undataforum/components';
 import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const EventsPage = ({ events, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container maxWidth="narrow">
       <Styled.h1>{title}</Styled.h1>
-      <GridList
-        align="center"
-        gridGap={3}
-        gridTemplateColumns="1fr"
-        render={({ id, ...event }) => (
+      <Grid gap={4}>
+        {events.map(({ id, ...event }) => (
           <EventPreview event={{ ...event }} mb={3} key={id} />
-        )}
-        values={events}
-      />
+        ))}
+      </Grid>
     </Container>
   </Layout>
 );

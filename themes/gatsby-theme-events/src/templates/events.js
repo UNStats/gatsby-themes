@@ -2,11 +2,10 @@ import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { Box, Heading } from '@undataforum/components';
+import { Avatars, Box, Heading } from '@undataforum/components';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 import EventsPage from '../components/events-page';
-import ProfileList from '../components/profile-list';
 
 const Events = ({ data, pageContext, location }) => {
   const events = data.allEvent.nodes.map(event => {
@@ -43,8 +42,8 @@ const Events = ({ data, pageContext, location }) => {
       duration,
       speakers() {
         return (
-          <ProfileList
-            profiles={profiles.map(profile => ({
+          <Avatars
+            values={profiles.map(profile => ({
               id: profile.id,
               avatar() {
                 return (
@@ -57,6 +56,7 @@ const Events = ({ data, pageContext, location }) => {
               },
               name: profile.name,
             }))}
+            mb={3}
           />
         );
       },

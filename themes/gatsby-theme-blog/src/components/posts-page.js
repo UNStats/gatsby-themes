@@ -1,21 +1,17 @@
 import React from 'react';
 import { arrayOf, shape, string, func } from 'prop-types';
-import { Container, GridList, PostPreview } from '@undataforum/components';
+import { Container, Grid, PostPreview } from '@undataforum/components';
 import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const PostsPage = ({ posts, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container maxWidth="narrow">
       <Styled.h1>{title}</Styled.h1>
-      <GridList
-        align="center"
-        gridGap={3}
-        gridTemplateColumns="1fr"
-        render={({ id, ...post }) => (
-          <PostPreview post={{ ...post }} fontSize={[3, 4]} mb={3} key={id} />
-        )}
-        values={posts}
-      />
+      <Grid gap={4}>
+        {posts.map(({ id, ...post }) => (
+          <PostPreview post={{ ...post }} key={id} fontSize={[3, 4]} />
+        ))}
+      </Grid>
     </Container>
   </Layout>
 );
