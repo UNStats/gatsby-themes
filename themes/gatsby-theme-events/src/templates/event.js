@@ -3,10 +3,9 @@ import { object, shape, string } from 'prop-types';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
-import { Heading } from '@undataforum/components';
+import { Avatars, Heading } from '@undataforum/components';
 
 import EventPage from '../components/event-page';
-import ProfileList from '../components/profile-list';
 
 const Event = ({ location, data }) => {
   const {
@@ -27,7 +26,7 @@ const Event = ({ location, data }) => {
     profiles = [
       ...moderators.map(moderator => ({
         ...moderator,
-        badges: [{ text: 'Moderator', mode: 'secondary' }],
+        name: `${moderator.name} (Moderator)`,
       })),
       ...speakers,
     ];
@@ -46,8 +45,8 @@ const Event = ({ location, data }) => {
     duration,
     speakers() {
       return (
-        <ProfileList
-          profiles={profiles.map(profile => ({
+        <Avatars
+          values={profiles.map(profile => ({
             id: profile.id,
             avatar() {
               return (
@@ -60,8 +59,8 @@ const Event = ({ location, data }) => {
             },
             name: profile.name,
             href: profile.path,
-            badges: profile.badges,
           }))}
+          mb={3}
         />
       );
     },

@@ -2,9 +2,9 @@ import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { Avatars } from '@undataforum/components';
 
 import PostsPage from '../components/posts-page';
-import ProfileList from '../components/profile-list';
 
 const Posts = ({ data, pageContext, location }) => {
   const posts = data.allPost.nodes.map(post => {
@@ -14,8 +14,8 @@ const Posts = ({ data, pageContext, location }) => {
       title: title.text,
       authors() {
         return (
-          <ProfileList
-            profiles={authors.map(author => ({
+          <Avatars
+            values={authors.map(author => ({
               id: author.id,
               avatar() {
                 return (
@@ -28,6 +28,7 @@ const Posts = ({ data, pageContext, location }) => {
               },
               name: author.name,
             }))}
+            mb={3}
           />
         );
       },

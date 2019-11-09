@@ -1829,18 +1829,18 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@undataforum/assets@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.2.0.tgz#8e84accf21d0e04026d2c46117a6e5197b463b45"
-  integrity sha512-40LSEM4g0L51WYFH8BugqhnoydlnLB508ONimQ3GVsWA7eBl2TSLuwogyS65xNOm22ZrCpEgNuRr0Wl0worTPg==
+"@undataforum/assets@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.2.1.tgz#c228209c912384c8bc8e6fa8ebd85a686f87a284"
+  integrity sha512-IFBpMlXF/jALPwYlW3qAiKx3Z4+GJBWvBYmXLs3Eo+NpZq3gzz+UHH8BCC7d7Tx+ZJtPMJnSZMI7xWh1B/2xfg==
   dependencies:
     "@theme-ui/components" "^0.2.45"
     prop-types "^15.7.2"
 
-"@undataforum/components@0.48.0", "@undataforum/components@^0.48.0":
-  version "0.48.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.48.0.tgz#54ffa9c61b4de008d6a70b5f61592779df0b6118"
-  integrity sha512-56X82Ujqt/07fujymGjl828bmWfRujxkt5juaTuHRIL5lWEvSjz5NFx52fDpqXL+uOFmWya/Odh5l7B2i7pwnQ==
+"@undataforum/components@0.50.0", "@undataforum/components@^0.50.0":
+  version "0.50.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.50.0.tgz#f83960f15483387750b754d0a30cb90e39b85784"
+  integrity sha512-x7iim6mTlrnGmZi4IL0KA34CY6R7lVs7krchQCFUjtHXhrRJHfydCAV1Cy48eF57gQ8CjleqLJ7XZdVmHRib5g==
   dependencies:
     "@emotion/core" "^10.0.21"
     "@mdx-js/react" "^1.5.1"

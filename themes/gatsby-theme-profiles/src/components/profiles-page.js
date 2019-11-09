@@ -1,22 +1,28 @@
 import React from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
-import { Container, GridList, ProfilePreview } from '@undataforum/components';
+import {
+  Container,
+  Grid,
+  ProfilePreview,
+  SmartLink,
+} from '@undataforum/components';
 import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const ProfilesPage = ({ profiles, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container>
       <Styled.h1>{title}</Styled.h1>
-      <GridList
-        align="center"
-        gridGap={3}
-        gridTemplateColumns="repeat(auto-fit, 256px)"
-        render={({ id, ...profile }) => (
-          <ProfilePreview profile={profile} key={id} />
-        )}
-        values={profiles}
-        mb={4}
-      />
+      <Grid gridGap={4} mb={4}>
+        {profiles.map(({ id, href, ...profile }) => (
+          <SmartLink
+            css={{ ':hover': { textDecoration: 'none' } }}
+            href={href}
+            key={id}
+          >
+            <ProfilePreview profile={profile} />
+          </SmartLink>
+        ))}
+      </Grid>
     </Container>
   </Layout>
 );

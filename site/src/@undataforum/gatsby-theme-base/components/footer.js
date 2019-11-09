@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FlexList,
-  Footer,
-  SocialIcon,
-  TwitterIcon,
-  GitHubIcon,
-} from '@undataforum/components';
+import { Footer, SocialIcons } from '@undataforum/components';
 import { Logo } from '@undataforum/assets';
 
 const ShadowedFooter = props => {
@@ -25,36 +19,14 @@ const ShadowedFooter = props => {
         { text: 'Privacy Notice', href: '/privacy/' },
         { text: 'Terms of Use', href: '/terms/' },
       ]}
-      social={() => (
-        <FlexList
-          render={icon => icon.render()}
-          values={[
-            {
-              render() {
-                return (
-                  <SocialIcon
-                    href="https://twitter.com/undataforum"
-                    render={() => <TwitterIcon width={[32, 48]} p={[1, 2]} />}
-                    key="twitter"
-                    variant="primary"
-                  />
-                );
-              },
-            },
-            {
-              render() {
-                return (
-                  <SocialIcon
-                    href="https://github.com/undataforum"
-                    render={() => <GitHubIcon width={[32, 48]} p={[1, 2]} />}
-                    key="github"
-                    variant="primary"
-                  />
-                );
-              },
-            },
-          ]}
-          mb={[1, 2]}
+      social={variant => (
+        <SocialIcons
+          usernames={{
+            twitter: 'UNDataForum',
+            github: 'UNDataForum',
+            email: 'dataforum@un.org',
+          }}
+          variant={variant}
         />
       )}
       variant="primary"
