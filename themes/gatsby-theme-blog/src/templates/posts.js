@@ -1,8 +1,7 @@
 import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { Avatars } from '@undataforum/components';
+import { Names } from '@undataforum/components';
 
 import PostsPage from '../components/posts-page';
 
@@ -13,24 +12,7 @@ const Posts = ({ data, pageContext, location }) => {
       id,
       title: title.text,
       authors() {
-        return (
-          <Avatars
-            values={authors.map(author => ({
-              id: author.id,
-              avatar() {
-                return (
-                  <Img
-                    style={{ borderRadius: '100%' }}
-                    alt={author.name}
-                    fixed={author.avatar.childImageSharp.fixed}
-                  />
-                );
-              },
-              name: author.name,
-            }))}
-            mb={3}
-          />
-        );
+        return <Names values={authors.map(({ name }) => name)} mb={3} />;
       },
       date,
       description: description.text,
@@ -73,15 +55,7 @@ export const pageQuery = graphql`
           text
         }
         authors {
-          id
           name
-          avatar {
-            childImageSharp {
-              fixed(height: 64, width: 64) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
-            }
-          }
         }
         date(formatString: "MMM DD, YYYY")
         description {
