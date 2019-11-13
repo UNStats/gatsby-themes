@@ -12,7 +12,6 @@ const ShadowedHeader = props => (
       { href: '/profiles/', text: 'Profiles' },
       { href: '/test/', text: 'Test' },
     ]}
-    height={[64, 80, 96]}
   />
 );
 
