@@ -5,11 +5,11 @@ import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const EventsPage = ({ events, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
-    <Container maxWidth="narrow">
+    <Container>
       <Styled.h1>{title}</Styled.h1>
-      <Grid gap={4}>
+      <Grid gap={4} columns={[1, null, 2]}>
         {events.map(({ id, ...event }) => (
-          <EventPreview event={{ ...event }} mb={3} key={id} />
+          <EventPreview event={{ ...event }} key={id} />
         ))}
       </Grid>
     </Container>
