@@ -5,7 +5,7 @@ import { DummyLogo, Header } from '@undataforum/components';
 const HeaderProxy = props => (
   <Header
     {...props}
-    logo={() => <DummyLogo height="100%" mr={[2, 3]} />}
+    logo={() => <DummyLogo scaleTo="height" />}
     links={[
       { text: 'Nav item 1', href: '/nav-item-1/' },
       { text: 'Nav item 2', href: '/nav-item-2/' },
@@ -15,7 +15,6 @@ const HeaderProxy = props => (
       text: 'Button',
       href: '/button',
     }}
-    height={[64, 80, 96]}
   />
 );
 

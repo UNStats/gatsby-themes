@@ -22,8 +22,8 @@ const Layout = ({ location, children, ...props }) => (
       }}
     />
     <Flex sx={{ flexDirection: 'column', minHeight: '100vh' }}>
-      {location.pathname !== '/' && <Header mb={[3, 4]} />}
-      <Box sx={{ flex: 1, mb: [3, 4] }}>{children}</Box>
+      {location.pathname !== '/' && <Header />}
+      <Box sx={{ flex: 1 }}>{children}</Box>
       <Footer />
     </Flex>
   </Styled.root>

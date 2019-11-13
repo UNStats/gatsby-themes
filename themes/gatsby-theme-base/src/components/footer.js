@@ -1,16 +1,14 @@
 import React from 'react';
-import { DummyLogo, Footer, SocialIcons } from '@undataforum/components';
-
-/*
-
-*/
+import { Box, DummyLogo, Footer, SocialIcons } from '@undataforum/components';
 
 const FooterProxy = props => {
   return (
     <Footer
       {...props}
       logo={() => (
-        <DummyLogo height={['logo.medium', 'logo.large']} my={[2, 3]} />
+        <Box sx={{ height: 'height.medium', mb: 1 }}>
+          <DummyLogo scaleTo="height" />
+        </Box>
       )}
       links={[
         { text: 'Contact', href: '/contact/' },
