@@ -1,8 +1,7 @@
 import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { Avatars, Box, Heading } from '@undataforum/components';
+import { Box, Names, Heading } from '@undataforum/components';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 import EventsPage from '../components/events-page';
@@ -23,9 +22,16 @@ const Events = ({ data, pageContext, location }) => {
     } = event;
 
     let profiles = speakers;
-    // Merge moderators and speakers for EventPreview.
+    // Add "(Moderator)" after name.
+    // Combine moderators and speakers for EventPreview.
     if (moderators) {
-      profiles = [...moderators, ...speakers];
+      profiles = [
+        ...moderators.map(moderator => ({
+          ...moderator,
+          name: `${moderator.name} (Moderator)`,
+        })),
+        ...speakers,
+      ];
     }
 
     return {
@@ -41,24 +47,7 @@ const Events = ({ data, pageContext, location }) => {
       date: displayDate,
       duration,
       speakers() {
-        return (
-          <Avatars
-            values={profiles.map(profile => ({
-              id: profile.id,
-              avatar() {
-                return (
-                  <Img
-                    style={{ borderRadius: '100%' }}
-                    alt={profile.name}
-                    fixed={profile.avatar.childImageSharp.fixed}
-                  />
-                );
-              },
-              name: profile.name,
-            }))}
-            mb={3}
-          />
-        );
+        return <Names values={profiles.map(({ name }) => name)} mb={3} />;
       },
       description() {
         return (
@@ -109,26 +98,10 @@ export const pageQuery = graphql`
         displayDate
         duration
         moderators {
-          id
           name
-          avatar {
-            childImageSharp {
-              fixed(height: 64, width: 64) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
-            }
-          }
         }
         speakers {
-          id
           name
-          avatar {
-            childImageSharp {
-              fixed(height: 64, width: 64) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
-            }
-          }
         }
         description {
           childMdx {

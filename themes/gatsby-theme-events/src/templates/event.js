@@ -21,7 +21,8 @@ const Event = ({ location, data }) => {
   } = data.event;
 
   let profiles = speakers;
-  // Add moderator badge to moderators.
+  // Add "(Moderator)" after name.
+  // Combine moderators and speakers for EventPreview.
   if (moderators) {
     profiles = [
       ...moderators.map(moderator => ({
