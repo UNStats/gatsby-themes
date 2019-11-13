@@ -5,7 +5,7 @@ import { Logo } from '@undataforum/assets';
 const ShadowedHeader = props => (
   <Header
     {...props}
-    logo={() => <Logo height="100%" mr={[2, 3]} />}
+    logo={() => <Logo scaleTo="height" />}
     links={[
       { href: '/blog/', text: 'Blog' },
       { href: '/events/', text: 'Events' },

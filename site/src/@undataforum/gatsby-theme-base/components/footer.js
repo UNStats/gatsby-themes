@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, SocialIcons } from '@undataforum/components';
+import { Box, Footer, SocialIcons } from '@undataforum/components';
 import { Logo } from '@undataforum/assets';
 
 const ShadowedFooter = props => {
@@ -7,11 +7,14 @@ const ShadowedFooter = props => {
     <Footer
       {...props}
       logo={() => (
-        <Logo
-          monochrome
-          height={['logo.medium', 'logo.medium', 'logo.large']}
-          my={[2, 3]}
-        />
+        <Box
+          sx={{
+            height: ['height.medium', null, 'height.large'],
+            mb: [2, 3, 4],
+          }}
+        >
+          <Logo scaleTo="height" monochrome />
+        </Box>
       )}
       links={[
         { text: 'Contact', href: '/contact/' },
