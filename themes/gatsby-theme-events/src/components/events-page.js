@@ -1,12 +1,19 @@
 import React from 'react';
 import { arrayOf, shape, string, func } from 'prop-types';
-import { Container, Grid, EventPreview } from '@undataforum/components';
-import { Layout, Styled } from '@undataforum/gatsby-theme-base';
+import {
+  Container,
+  Grid,
+  Heading,
+  EventPreview,
+} from '@undataforum/components';
+import { Layout } from '@undataforum/gatsby-theme-base';
 
 const EventsPage = ({ events, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container>
-      <Styled.h1>{title}</Styled.h1>
+      <Heading as="h1" sx={{ mb: [3, null, 4] }}>
+        {title}
+      </Heading>
       <Grid gap={4} columns={[1, null, 2]}>
         {events.map(({ id, ...event }) => (
           <EventPreview event={{ ...event }} key={id} />

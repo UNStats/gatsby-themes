@@ -134,7 +134,9 @@ module.exports = (
         type: `${type}Title`,
         contentDigest: createContentDigest(node.frontmatter.title),
         mediaType: 'text/markdown',
-        content: node.frontmatter.title,
+        // Workaround to process any Markdown in title, such as quotes and dashes.
+        // Without adding # the result would be wrapped in <p> which cannot be nested inside a heading.
+        content: `# ${node.frontmatter.title}`,
       },
       // Strip Markdown.
       text: remark()

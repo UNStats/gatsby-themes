@@ -3,7 +3,7 @@ import { object, shape, string } from 'prop-types';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
-import { Avatars, Heading } from '@undataforum/components';
+import { Avatars } from '@undataforum/components';
 
 import EventPage from '../components/event-page';
 
@@ -36,11 +36,8 @@ const Event = ({ location, data }) => {
   const event = {
     type: displayType,
     title() {
-      return (
-        <Heading as="h1" fontSize={[4, 5]}>
-          <MDXRenderer>{title.childMdx.body}</MDXRenderer>
-        </Heading>
-      );
+      // Return processed Markdown wrapped in Styled.h1.
+      return <MDXRenderer>{title.childMdx.body}</MDXRenderer>;
     },
     date: displayDate,
     duration,

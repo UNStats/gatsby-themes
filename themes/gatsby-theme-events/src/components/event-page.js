@@ -6,7 +6,7 @@ import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 const EventPage = ({ event, title, description, body, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container maxWidth="narrow">
-      <EventPreview event={event} mb={[3, 4]} />
+      <EventPreview event={event} mb={3} />
       <MDXRenderer>{body}</MDXRenderer>
     </Container>
   </Layout>

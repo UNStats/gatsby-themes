@@ -1,7 +1,7 @@
 import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
-import { Box, Names, Heading } from '@undataforum/components';
+import { Heading, Names } from '@undataforum/components';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 import EventsPage from '../components/events-page';
@@ -38,9 +38,13 @@ const Events = ({ data, pageContext, location }) => {
       id,
       type: displayType,
       title() {
+        // title.text is text only with Markdown stripped and quotes and dashes not processed.
+        // This allows using an h2 as heading to create a consistent heading hierarchy.
+        // Alternatively, we could return <MDXRenderer>{title.childMdx.Body}</MDXRenderer>.
+        // This returns a Styled.h1 and messes up the heading hierarchy.
         return (
-          <Heading as="h1" fontSize={[4, 5]} color="text">
-            <MDXRenderer>{title.childMdx.body}</MDXRenderer>
+          <Heading as="h2" sx={{ mb: 3 }}>
+            {title.text}
           </Heading>
         );
       },
@@ -50,11 +54,8 @@ const Events = ({ data, pageContext, location }) => {
         return <Names values={profiles.map(({ name }) => name)} mb={3} />;
       },
       description() {
-        return (
-          <Box color="text">
-            <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-          </Box>
-        );
+        // Returns processed Markdown wrapped in Styled.p.
+        return <MDXRenderer>{description.childMdx.body}</MDXRenderer>;
       },
       links: { page: path, registration },
     };
