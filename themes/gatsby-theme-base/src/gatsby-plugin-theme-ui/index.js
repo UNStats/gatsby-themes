@@ -11,29 +11,28 @@ const theme = merge(defaultTheme, {
   link: {
     internal: Link,
   },
+  // h1-h6 and p have top margins 0 and only set bottom margins.
   styles: {
     h1: {
-      fontSize: 5,
-      lineHeight: 'heading',
       mt: 0,
-      mb: [3, 4],
     },
     h2: {
-      fontSize: 4,
-      lineHeight: 'heading',
       mt: 0,
-      mb: [2, 3],
     },
     h3: {
-      fontSize: 3,
-      lineHeight: 'heading',
       mt: 0,
-      mb: [2, 3],
+    },
+    h4: {
+      mt: 0,
+    },
+    h5: {
+      mt: 0,
+    },
+    h6: {
+      mt: 0,
     },
     p: {
-      lineHeight: 'body',
       mt: 0,
-      mb: 3,
     },
   },
 });
