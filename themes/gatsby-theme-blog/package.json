@@ -29,10 +29,10 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@undataforum/components": "^0.51.0",
+    "@undataforum/components": "^0.53.0",
     "@undataforum/gatsby-theme-base": "^0.9.0",
     "@undataforum/gatsby-theme-profiles": "^0.4.0",
-    "gatsby-image": "^2.2.7",
+    "gatsby-image": "^2.2.33",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-source-filesystem": "^2.1.35",
     "prop-types": "^15.7.2",
