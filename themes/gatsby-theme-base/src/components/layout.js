@@ -22,7 +22,7 @@ const Layout = ({ location, children, ...props }) => (
       }}
     />
     <Flex sx={{ flexDirection: 'column', minHeight: '100vh' }}>
-      {location.pathname !== '/' && <Header />}
+      {location.pathname !== '/' && <Header mb={3} />}
       <Box sx={{ flex: 1 }}>{children}</Box>
       <Footer />
     </Flex>
