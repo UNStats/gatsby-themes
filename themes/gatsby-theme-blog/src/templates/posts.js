@@ -5,20 +5,19 @@ import { Names } from '@undataforum/components';
 
 import PostsPage from '../components/posts-page';
 
+export const normalize = ({ id, title, authors, date, description, path }) => ({
+  id,
+  title: title.text,
+  authors() {
+    return <Names values={authors.map(({ name }) => name)} mb={3} />;
+  },
+  date,
+  description: description.text,
+  href: path,
+});
+
 const Posts = ({ data, pageContext, location }) => {
-  const posts = data.allPost.nodes.map(post => {
-    const { id, title, authors, date, description, path } = post;
-    return {
-      id,
-      title: title.text,
-      authors() {
-        return <Names values={authors.map(({ name }) => name)} mb={3} />;
-      },
-      date,
-      description: description.text,
-      href: path,
-    };
-  });
+  const posts = data.allPost.nodes.map(normalize);
   return (
     <PostsPage
       posts={posts}
@@ -40,31 +39,31 @@ Posts.propTypes = {
 
 export default Posts;
 
-export const pageQuery = graphql`
+export const fragment = graphql`
+  fragment Post on Post {
+    id
+    title {
+      text
+    }
+    authors {
+      name
+    }
+    date(formatString: "MMM DD, YYYY")
+    description {
+      text
+    }
+    path
+  }
+`;
+
+export const query = graphql`
   query($type: String!) {
     allPost(
       sort: { fields: date, order: DESC }
       filter: { type: { eq: $type } }
     ) {
       nodes {
-        id
-        title {
-          childMdx {
-            body
-          }
-          text
-        }
-        authors {
-          name
-        }
-        date(formatString: "MMM DD, YYYY")
-        description {
-          childMdx {
-            body
-          }
-          text
-        }
-        path
+        ...Post
       }
     }
   }
