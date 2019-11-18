@@ -1687,6 +1687,14 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.0.23"
 
+"@theme-ui/color@^0.2.49":
+  version "0.2.49"
+  resolved "https://registry.yarnpkg.com/@theme-ui/color/-/color-0.2.49.tgz#599276ca0dcf94c00c4f35a7b38b6833b3b35bfe"
+  integrity sha512-vUs1SnIzhDjYDyXzidtE62gKELylSw79fSYeNM//DQrNngupTZFWlyAga+MdcS9UYjWJ9Z/ueR0mfy6qlWdlpQ==
+  dependencies:
+    "@styled-system/css" "^5.0.23"
+    polished "^3.4.1"
+
 "@theme-ui/components@^0.2.45":
   version "0.2.49"
   resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.2.49.tgz#3c7e02ec96aac790d1d9408cd3f1591cef3168c6"
@@ -1959,6 +1967,20 @@
   dependencies:
     "@emotion/core" "^10.0.21"
     "@mdx-js/react" "^1.5.1"
+    "@theme-ui/components" "^0.2.45"
+    "@theme-ui/preset-base" "^0.2.44"
+    deepmerge "^4.2.2"
+    prop-types "^15.7.2"
+    theme-ui "^0.2.44"
+
+"@undataforum/components@^0.54.0":
+  version "0.54.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.54.0.tgz#5b62a2cdf1fc5d03626ad0805cf218d872c84d82"
+  integrity sha512-b3E1vg3AdkJKV5mpy8gPqyPiYCwJNjiloYF5k4XoIlqvGBAnycm3qUQNlXlN0KvCnpgWkNAdsw/Gkmi8kbUwzg==
+  dependencies:
+    "@emotion/core" "^10.0.21"
+    "@mdx-js/react" "^1.5.1"
+    "@theme-ui/color" "^0.2.49"
     "@theme-ui/components" "^0.2.45"
     "@theme-ui/preset-base" "^0.2.44"
     deepmerge "^4.2.2"
@@ -10825,6 +10847,13 @@ pnp-webpack-plugin@^1.5.0:
   integrity sha512-jd9olUr9D7do+RN8Wspzhpxhgp1n6Vd0NtQ4SFkmIACZoEL1nkyAdW9Ygrinjec0vgDcWjscFQQ1gDW8rsfKTg==
   dependencies:
     ts-pnp "^1.1.2"
+
+polished@^3.4.1:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.2.tgz#b4780dad81d64df55615fbfc77acb52fd17d88cd"
+  integrity sha512-9Rch6iMZckABr6EFCLPZsxodeBpXMo9H4fRlfR/9VjMEyy5xpo1/WgXlJGgSjPyVhEZNycbW7UmYMNyWS5MI0g==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
 
 portfinder@^1.0.25:
   version "1.0.25"
