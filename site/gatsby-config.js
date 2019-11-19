@@ -8,7 +8,11 @@ module.exports = {
   plugins: [
     {
       resolve: '@undataforum/gatsby-theme-blog',
-      options: { basePath: '/blog' },
+      options: {
+        basePath: '/blog',
+        description:
+          'Blog posts authored by the United Nations World Data Forum community.',
+      },
     },
     {
       resolve: '@undataforum/gatsby-theme-events',

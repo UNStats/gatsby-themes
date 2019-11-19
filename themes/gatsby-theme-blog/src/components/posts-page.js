@@ -28,7 +28,7 @@ PostsPage.propTypes = {
     })
   ).isRequired,
   title: string.isRequired,
-  description: string,
+  description: string.isRequired,
   location: shape({ pathname: string.isRequired }).isRequired,
 };
 

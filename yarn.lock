@@ -1974,20 +1974,6 @@
     prop-types "^15.7.2"
     theme-ui "^0.2.44"
 
-"@undataforum/components@^0.54.0":
-  version "0.54.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.54.0.tgz#5b62a2cdf1fc5d03626ad0805cf218d872c84d82"
-  integrity sha512-b3E1vg3AdkJKV5mpy8gPqyPiYCwJNjiloYF5k4XoIlqvGBAnycm3qUQNlXlN0KvCnpgWkNAdsw/Gkmi8kbUwzg==
-  dependencies:
-    "@emotion/core" "^10.0.21"
-    "@mdx-js/react" "^1.5.1"
-    "@theme-ui/color" "^0.2.49"
-    "@theme-ui/components" "^0.2.45"
-    "@theme-ui/preset-base" "^0.2.44"
-    deepmerge "^4.2.2"
-    prop-types "^15.7.2"
-    theme-ui "^0.2.44"
-
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
@@ -6336,13 +6322,6 @@ gatsby-cli@^2.8.12:
     ink "^2.5.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.19.tgz#670a0eefe8fc8517c5b87573be6cd817d4b1a96a"
-  integrity sha512-Fp5PBmAuqL+V5FTqjQ6d2Ow7a9OY6GlJVlS5wl/bbbGjRDtYJe7tqAxWThzeKDkLAsKUz2RP8AiJOSLWn1bDRg==
-  dependencies:
-    ci-info "2.0.0"
-
 gatsby-core-utils@^1.0.20:
   version "1.0.20"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.20.tgz#f4788c2591fa7165c87f0ee5e8edf664c91978ea"
@@ -6557,27 +6536,6 @@ gatsby-source-filesystem@2.1.38, gatsby-source-filesystem@^2.1.38:
     file-type "^12.4.0"
     fs-extra "^8.1.0"
     gatsby-core-utils "^1.0.20"
-    got "^7.1.0"
-    md5-file "^3.2.3"
-    mime "^2.4.4"
-    pretty-bytes "^5.3.0"
-    progress "^2.0.3"
-    read-chunk "^3.2.0"
-    valid-url "^1.0.9"
-    xstate "^4.6.7"
-
-gatsby-source-filesystem@^2.1.35:
-  version "2.1.37"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.1.37.tgz#2738e3031028730952e042cf45421873c2f18d58"
-  integrity sha512-RCTgRDFwHzH+WG0aFL39TB276lnaRwrSuTlulOTBGbITA6+zaIhmpjQk/gdhl3FQUz7tw3Or+xMhcqghsoAeCA==
-  dependencies:
-    "@babel/runtime" "^7.7.2"
-    better-queue "^3.8.10"
-    bluebird "^3.7.1"
-    chokidar "3.3.0"
-    file-type "^12.4.0"
-    fs-extra "^8.1.0"
-    gatsby-core-utils "^1.0.19"
     got "^7.1.0"
     md5-file "^3.2.3"
     mime "^2.4.4"
