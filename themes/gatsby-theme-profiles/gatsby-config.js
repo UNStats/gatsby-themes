@@ -1,4 +1,4 @@
-const defaultOptions = require('./index');
+const defaultOptions = require('./defaultOptions');
 
 module.exports = ({
   assetPath = defaultOptions.assetPath,
