@@ -1,5 +1,19 @@
 # @undataforum/gatsby-theme-base
 
+## 0.10.0
+
+### Minor Changes
+
+- [`94b467a`](https://github.com/UNDataForum/gatsby-themes/commit/94b467a2ae6da9d828133b0bd0f9b16e84140642) [#149](https://github.com/UNDataForum/gatsby-themes/pull/149) Thanks [@454de6e](https://github.com/454de6e)! - Remove Hero from theme-base
+
+### Patch Changes
+
+- [`d6cdf12`](https://github.com/UNDataForum/gatsby-themes/commit/d6cdf12ef789b0f32678b8213296da06de038930) [#180](https://github.com/UNDataForum/gatsby-themes/pull/180) Thanks [@454de6e](https://github.com/454de6e)! - Update dependency @undataforum/components to v0.53.0
+
+* [`0132d2a`](https://github.com/UNDataForum/gatsby-themes/commit/0132d2a0ea72ab526b466a472f34bf61da851950) [#181](https://github.com/UNDataForum/gatsby-themes/pull/181) Thanks [@454de6e](https://github.com/454de6e)! - Upgrade dependencies
+
+- [`dcf2266`](https://github.com/UNDataForum/gatsby-themes/commit/dcf22668731ed6c55f373c4f814cd83ed62e8d64) [#181](https://github.com/UNDataForum/gatsby-themes/pull/181) Thanks [@454de6e](https://github.com/454de6e)! - Set top margins of h1-h6 and p to zero
+
 ## 0.9.0
 
 ### Minor Changes

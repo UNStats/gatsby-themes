@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "site",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Thilo Maier <maier@un.org>",
   "homepage": "https://gatsby-themes.undataforum.now.sh/",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@undataforum/assets": "0.3.0",
     "@undataforum/components": "0.56.0",
-    "@undataforum/gatsby-theme-base": "^0.9.0",
+    "@undataforum/gatsby-theme-base": "^0.10.0",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
     "gatsby": "2.17.17",

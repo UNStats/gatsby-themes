@@ -1,5 +1,20 @@
 # @undataforum/gatsby-theme-events
 
+## 0.3.1
+
+### Patch Changes
+
+- [`b1d9da3`](https://github.com/UNDataForum/gatsby-themes/commit/b1d9da3f1ed6e12bc6b5194dd353c1231c8e6774) [#173](https://github.com/UNDataForum/gatsby-themes/pull/173) Thanks [@454de6e](https://github.com/454de6e)! - Display events with grid on events page
+
+* [`6ed0b63`](https://github.com/UNDataForum/gatsby-themes/commit/6ed0b6380ddd72ebeb8607ed2419e4db937e119f) [#181](https://github.com/UNDataForum/gatsby-themes/pull/181) Thanks [@454de6e](https://github.com/454de6e)! - Fix layout inconsistencies in event pages
+
+- [`c8f253d`](https://github.com/UNDataForum/gatsby-themes/commit/c8f253d675d79c9959e2d87b83ad835e20c41ad5) [#180](https://github.com/UNDataForum/gatsby-themes/pull/180) Thanks [@454de6e](https://github.com/454de6e)! - Update dependencies
+
+* [`7f78ea3`](https://github.com/UNDataForum/gatsby-themes/commit/7f78ea3a414fa4bfacdf0410c46cb5e7336699fe) [#175](https://github.com/UNDataForum/gatsby-themes/pull/175) Thanks [@454de6e](https://github.com/454de6e)! - Display moderators and speakers with names instead of avatars on events page
+* Updated dependencies [[`d6cdf12`](https://github.com/UNDataForum/gatsby-themes/commit/d6cdf12ef789b0f32678b8213296da06de038930), [`0132d2a`](https://github.com/UNDataForum/gatsby-themes/commit/0132d2a0ea72ab526b466a472f34bf61da851950), [`94b467a`](https://github.com/UNDataForum/gatsby-themes/commit/94b467a2ae6da9d828133b0bd0f9b16e84140642), [`c8f253d`](https://github.com/UNDataForum/gatsby-themes/commit/c8f253d675d79c9959e2d87b83ad835e20c41ad5), [`dcf2266`](https://github.com/UNDataForum/gatsby-themes/commit/dcf22668731ed6c55f373c4f814cd83ed62e8d64)]:
+  - @undataforum/gatsby-theme-base@0.10.0
+  - @undataforum/gatsby-theme-profiles@0.4.1
+
 ## 0.3.0
 
 ### Minor Changes

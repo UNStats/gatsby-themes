@@ -1,5 +1,21 @@
 # site
 
+## 0.1.0
+
+### Minor Changes
+
+- [`94b467a`](https://github.com/UNDataForum/gatsby-themes/commit/94b467a2ae6da9d828133b0bd0f9b16e84140642) [#149](https://github.com/UNDataForum/gatsby-themes/pull/149) Thanks [@454de6e](https://github.com/454de6e)! - Add basic layout to homepage
+
+### Patch Changes
+
+- [`d6cdf12`](https://github.com/UNDataForum/gatsby-themes/commit/d6cdf12ef789b0f32678b8213296da06de038930) [#180](https://github.com/UNDataForum/gatsby-themes/pull/180) Thanks [@454de6e](https://github.com/454de6e)! - Update dependency @undataforum/components to v0.53.0
+
+* [`71bc803`](https://github.com/UNDataForum/gatsby-themes/commit/71bc80346b0a620523f4deec68681c75739574f0) [#178](https://github.com/UNDataForum/gatsby-themes/pull/178) Thanks [@454de6e](https://github.com/454de6e)! - Remove height prop from shadowed Header
+* Updated dependencies [[`d6cdf12`](https://github.com/UNDataForum/gatsby-themes/commit/d6cdf12ef789b0f32678b8213296da06de038930), [`0132d2a`](https://github.com/UNDataForum/gatsby-themes/commit/0132d2a0ea72ab526b466a472f34bf61da851950), [`b1d9da3`](https://github.com/UNDataForum/gatsby-themes/commit/b1d9da3f1ed6e12bc6b5194dd353c1231c8e6774), [`04782f4`](https://github.com/UNDataForum/gatsby-themes/commit/04782f4e108d7dcfcaa60983adf07604957a5217), [`94b467a`](https://github.com/UNDataForum/gatsby-themes/commit/94b467a2ae6da9d828133b0bd0f9b16e84140642), [`6ed0b63`](https://github.com/UNDataForum/gatsby-themes/commit/6ed0b6380ddd72ebeb8607ed2419e4db937e119f), [`c8f253d`](https://github.com/UNDataForum/gatsby-themes/commit/c8f253d675d79c9959e2d87b83ad835e20c41ad5), [`dcf2266`](https://github.com/UNDataForum/gatsby-themes/commit/dcf22668731ed6c55f373c4f814cd83ed62e8d64), [`7f78ea3`](https://github.com/UNDataForum/gatsby-themes/commit/7f78ea3a414fa4bfacdf0410c46cb5e7336699fe), [`25e308a`](https://github.com/UNDataForum/gatsby-themes/commit/25e308a100d491c5c18efa74b775dd4aa5736553)]:
+  - @undataforum/gatsby-theme-base@0.10.0
+  - @undataforum/gatsby-theme-events@0.3.1
+  - @undataforum/gatsby-theme-blog@0.7.1
+
 ## 0.0.2
 
 ### Patch Changes
