@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-blog
 
+## 0.7.2
+
+### Patch Changes
+
+- [`7957a8e`](https://github.com/UNDataForum/gatsby-themes/commit/7957a8e9c1b41fc0dfec4b9e085860de1c5649ce) [#196](https://github.com/UNDataForum/gatsby-themes/pull/196) Thanks [@454de6e](https://github.com/454de6e)! - Fix description meta tag for posts page
+- Updated dependencies [[`7ccd66a`](https://github.com/UNDataForum/gatsby-themes/commit/7ccd66ad19c57d316c20416ffdb2259f1aa09011), [`11356a9`](https://github.com/UNDataForum/gatsby-themes/commit/11356a96ac527f950863bf0418b9cea3ac6f1d29)]:
+  - @undataforum/gatsby-theme-profiles@0.4.2
+
 ## 0.7.1
 
 ### Patch Changes

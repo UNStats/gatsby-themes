@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.4.2
+
+### Patch Changes
+
+- [`7ccd66a`](https://github.com/UNDataForum/gatsby-themes/commit/7ccd66ad19c57d316c20416ffdb2259f1aa09011) [#193](https://github.com/UNDataForum/gatsby-themes/pull/193) Thanks [@454de6e](https://github.com/454de6e)! - Display profiles with multi-column Grid
+
+* [`11356a9`](https://github.com/UNDataForum/gatsby-themes/commit/11356a96ac527f950863bf0418b9cea3ac6f1d29) [#196](https://github.com/UNDataForum/gatsby-themes/pull/196) Thanks [@454de6e](https://github.com/454de6e)! - Fix description meta tag for profiles page
+
 ## 0.4.1
 
 ### Patch Changes

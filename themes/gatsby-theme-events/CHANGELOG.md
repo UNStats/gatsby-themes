@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-events
 
+## 0.3.2
+
+### Patch Changes
+
+- [`85d6181`](https://github.com/UNDataForum/gatsby-themes/commit/85d61812fec76e6fc976d0b71bf110fb7233d963) [#196](https://github.com/UNDataForum/gatsby-themes/pull/196) Thanks [@454de6e](https://github.com/454de6e)! - Fix missing description prop in events page
+- Updated dependencies [[`7ccd66a`](https://github.com/UNDataForum/gatsby-themes/commit/7ccd66ad19c57d316c20416ffdb2259f1aa09011), [`11356a9`](https://github.com/UNDataForum/gatsby-themes/commit/11356a96ac527f950863bf0418b9cea3ac6f1d29)]:
+  - @undataforum/gatsby-theme-profiles@0.4.2
+
 ## 0.3.1
 
 ### Patch Changes
