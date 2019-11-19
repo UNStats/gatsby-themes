@@ -5,7 +5,7 @@ module.exports = async (
   {
     basePath = defaultOptions.basePath,
     title = defaultOptions.title,
-    description,
+    description = defaultOptions.description,
     type = defaultOptions.type,
   }
 ) => {
