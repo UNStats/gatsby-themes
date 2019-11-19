@@ -14,6 +14,8 @@ module.exports = {
       resolve: '@undataforum/gatsby-theme-events',
       options: {
         basePath: '/events',
+        description:
+          'Events in preparation of the 2020 United Nations World Data Forum.',
       },
     },
     {
