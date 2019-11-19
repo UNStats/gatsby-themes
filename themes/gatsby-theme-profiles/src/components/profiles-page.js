@@ -12,7 +12,7 @@ const ProfilesPage = ({ profiles, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container>
       <Styled.h1>{title}</Styled.h1>
-      <Grid gridGap={4} mb={4}>
+      <Grid gap={2} columns={[1, 2, 3]}>
         {profiles.map(({ id, href, ...profile }) => (
           <SmartLink
             css={{ ':hover': { textDecoration: 'none' } }}
