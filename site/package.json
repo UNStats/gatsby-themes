@@ -17,7 +17,7 @@
     "@undataforum/gatsby-theme-base": "^0.10.0",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
-    "gatsby": "2.17.17",
+    "gatsby": "2.18.0",
     "gatsby-image": "2.2.33",
     "gatsby-source-filesystem": "2.1.38",
     "prop-types": "15.7.2",
