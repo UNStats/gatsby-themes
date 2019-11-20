@@ -4,6 +4,7 @@ module.exports = ({
   assetPath = defaultOptions.assetPath,
   basePath = defaultOptions.basePath,
   contentPath = defaultOptions.contentPath,
+  type = defaultOptions.type,
 }) => ({
   siteMetadata: {
     basePath,
@@ -16,18 +17,19 @@ module.exports = ({
       },
     },
     '@undataforum/gatsby-theme-base',
+    // You can Filter File nodes by sourceInstanceName:
+    // https://www.gatsbyjs.org/packages/gatsby-source-filesystem/#how-to-query
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: contentPath,
-        name: contentPath,
+        name: type,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: assetPath,
-        name: assetPath,
       },
     },
     'gatsby-transformer-sharp',

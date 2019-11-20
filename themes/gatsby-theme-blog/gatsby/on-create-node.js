@@ -6,11 +6,7 @@ const defaultOptions = require('../defaultOptions');
 
 module.exports = (
   { node, actions, getNode, createNodeId, createContentDigest },
-  {
-    basePath = defaultOptions.basePath,
-    contentPath = defaultOptions.contentPath,
-    type = defaultOptions.type,
-  }
+  { basePath = defaultOptions.basePath, type = defaultOptions.type }
 ) => {
   // Process MDX nodes only.
   if (node.internal.type !== `Mdx`) {
@@ -19,12 +15,12 @@ module.exports = (
 
   // Parent fileNode makes `name` option from `gatsby-source-filename` available as `sourceInstanceName`.
   const fileNode = getNode(node.parent);
-  const source = fileNode.sourceInstanceName;
-
-  const { createNode } = actions;
+  const name = fileNode.sourceInstanceName;
 
   // Process files in `contentPath` location only.
-  if (source === contentPath) {
+  if (name === type) {
+    const { createNode } = actions;
+
     // Process description.
     let description;
     if (node.frontmatter.description) {
@@ -46,13 +42,14 @@ module.exports = (
     // Use this ID to link node that processes Markdown in title.
     const titleNodeId = createNodeId(`${type}-title-${node.frontmatter.title}`);
 
-    // Process path.
+    // Process path and slug.
     let path;
     if (node.frontmatter.slug) {
       path = `/${node.frontmatter.slug}/`;
     } else {
-      // The `basePath` argument is not the same as theme option `basePath`/
-      path = createFilePath({ node, getNode, basePath: contentPath });
+      // relativePath in corresponding file node is relative to contentPath from corresponding gatsby-source-filesystem config.
+      // Therefore, pass in '' for basePath (argument basePath is different from theme option basePath.
+      path = createFilePath({ node, getNode, basePath: '' });
     }
     const slug = path.slice(1, -1);
     // Add theme's basePath.
