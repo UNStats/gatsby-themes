@@ -6,14 +6,8 @@ const defaultOptions = require('../defaultOptions');
 
 module.exports = (
   { node, actions, getNode, createNodeId, createContentDigest },
-  {
-    basePath = defaultOptions.basePath,
-    contentPath = defaultOptions.contentPath,
-    type = defaultOptions.type,
-  }
+  { basePath = defaultOptions.basePath, type = defaultOptions.type }
 ) => {
-  const { createNode, createParentChildLink } = actions;
-
   // Process MDX nodes only.
   if (node.internal.type !== `Mdx`) {
     return;
@@ -21,10 +15,12 @@ module.exports = (
 
   // Parent fileNode makes `name` option from `gatsby-source-filename` available as `sourceInstanceName`.
   const fileNode = getNode(node.parent);
-  const source = fileNode.sourceInstanceName;
+  const name = fileNode.sourceInstanceName;
 
-  // Process files in `contentPath` location only.
-  if (source === contentPath) {
+  // Process profiles from specific source only.
+  if (name === type) {
+    const { createNode, createParentChildLink } = actions;
+
     // Process description.
     let description;
     if (node.frontmatter.description) {
@@ -43,13 +39,14 @@ module.exports = (
       }
     }
 
-    // Process path.
+    // Process path and slug.
     let path;
     if (node.frontmatter.slug) {
       path = `/${node.frontmatter.slug}/`;
     } else {
-      // The `basePath` argument is not the same as theme option `basePath`.
-      path = createFilePath({ node, getNode, basePath: contentPath });
+      // relativePath in corresponding file node is relative to contentPath from corresponding gatsby-source-filesystem config.
+      // Therefore, pass in '' for basePath (argument basePath is different from theme option basePath.
+      path = createFilePath({ node, getNode, basePath: '' });
     }
     // We need slug to create a reproducible ID for foreign key linking.
     const slug = path.slice(1, -1);
