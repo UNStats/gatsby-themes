@@ -8,10 +8,11 @@ import {
 } from '@undataforum/components';
 import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
-const ProfilesPage = ({ profiles, title, description, location }) => (
+const ProfilesPage = ({ profiles, render, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
     <Container>
       <Styled.h1>{title}</Styled.h1>
+      {render && render()}
       <Grid gap={2} columns={[1, 2, 3]}>
         {profiles.map(({ id, href, ...profile }) => (
           <SmartLink
@@ -39,6 +40,7 @@ ProfilesPage.propTypes = {
       href: string,
     })
   ),
+  render: func,
   title: string.isRequired,
   description: string.isRequired,
   location: shape({ pathname: string.isRequired }).isRequired,
