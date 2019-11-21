@@ -5,6 +5,8 @@ jobtitle: Staff Scientist
 organization: Ritchie Inc
 avatar: ../assets/profiles/cleric-edis.png
 description: Description from the frontmatter.
+roles:
+  - Organizer
 ---
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco. Architecto beatae vitae dicta sunt explicabo. Do eiusmod tempor incididunt ut labore et dolore magna aliqua. Itaque earum rerum hic tenetur a sapiente delectus.

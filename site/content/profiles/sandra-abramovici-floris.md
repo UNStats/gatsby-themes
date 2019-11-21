@@ -5,6 +5,8 @@ lastName: Abramovici-Floris
 jobtitle: Help Desk Operator
 organization: Kunze, Lehner and Kutch
 avatar: ../assets/profiles/sandra-abramovici-floris.png
+roles:
+  - Committee
 ---
 
 Nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.

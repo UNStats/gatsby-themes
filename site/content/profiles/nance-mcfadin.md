@@ -4,6 +4,9 @@ lastName: McFadin
 jobtitle: Help Desk Operator
 organization: Schuster-Senger
 avatar: ../assets/profiles/nance-mcfadin.png
+roles:
+  - Committee
+  - Organizer
 ---
 
 Inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Et harum quidem rerum facilis est et expedita distinctio.

@@ -64,6 +64,7 @@ module.exports = (
       honorific: node.frontmatter.honorific,
       jobtitle: node.frontmatter.jobtitle,
       organization: node.frontmatter.organization,
+      roles: node.frontmatter.roles,
       path,
       description,
     };

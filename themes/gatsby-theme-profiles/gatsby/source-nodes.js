@@ -44,6 +44,9 @@ module.exports = ({ actions, schema }) => {
         description: {
           type: 'String',
         },
+        roles: {
+          type: '[String!]',
+        },
         path: {
           type: 'String!',
         },
