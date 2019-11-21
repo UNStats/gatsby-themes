@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.4.3
+
+### Patch Changes
+
+- [`7204313`](https://github.com/UNDataForum/gatsby-themes/commit/7204313df825cd0e1f3c944802d9d597905ffa21) [#201](https://github.com/UNDataForum/gatsby-themes/pull/201) Thanks [@454de6e](https://github.com/454de6e)! - Fix processing of path in onCreateNode
+
 ## 0.4.2
 
 ### Patch Changes
