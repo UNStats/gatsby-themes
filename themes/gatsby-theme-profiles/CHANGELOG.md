@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.5.0
+
+### Minor Changes
+
+- [`0633f10`](https://github.com/UNDataForum/gatsby-themes/commit/0633f1067971fed18a5bc617d52cafeeb089b31d) [#203](https://github.com/UNDataForum/gatsby-themes/pull/203) Thanks [@454de6e](https://github.com/454de6e)! - Add roles to profiles
+
 ## 0.4.3
 
 ### Patch Changes
