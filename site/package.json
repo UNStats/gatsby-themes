@@ -18,11 +18,13 @@
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
     "cross-env": "6.0.3",
+    "deepmerge": "^4.2.2",
     "gatsby": "2.18.5",
     "gatsby-image": "2.2.34",
     "gatsby-source-filesystem": "2.1.39",
     "prop-types": "15.7.2",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "typeface-roboto": "^0.0.75"
   }
 }
