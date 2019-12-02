@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-base
 
+## 0.10.1
+
+### Patch Changes
+
+- [`a29861d`](https://github.com/UNDataForum/gatsby-themes/commit/a29861d7325fee0bdc93628d5c2d106b78e4667f) [#213](https://github.com/UNDataForum/gatsby-themes/pull/213) Thanks [@454de6e](https://github.com/454de6e)! - Remove custom fonts from base theme
+
+* [`ff4b462`](https://github.com/UNDataForum/gatsby-themes/commit/ff4b46269d2931f234707b827bd2368729c8eaf8) Thanks [@454de6e](https://github.com/454de6e)! - Update @undataforum/components to v0.56.1
+
 ## 0.10.0
 
 ### Minor Changes

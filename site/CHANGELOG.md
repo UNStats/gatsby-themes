@@ -1,5 +1,19 @@
 # site
 
+## 0.2.1
+
+### Patch Changes
+
+- [`838adf7`](https://github.com/UNDataForum/gatsby-themes/commit/838adf73f0da99f10425ddd78b6dbe1a96bbba43) [#213](https://github.com/UNDataForum/gatsby-themes/pull/213) Thanks [@454de6e](https://github.com/454de6e)! - Add custom font Roboto to site
+
+* [`7af9d98`](https://github.com/UNDataForum/gatsby-themes/commit/7af9d98391a9d8c5fb4386f1784b33cd34f98230) [#218](https://github.com/UNDataForum/gatsby-themes/pull/218) Thanks [@454de6e](https://github.com/454de6e)! - Fix missing title in homepage
+
+- [`e3db20a`](https://github.com/UNDataForum/gatsby-themes/commit/e3db20acc695a11aa523c66b9b77d035001202f5) [#209](https://github.com/UNDataForum/gatsby-themes/pull/209) Thanks [@454de6e](https://github.com/454de6e)! - Disable Gatsby telemetry
+- Updated dependencies [[`a29861d`](https://github.com/UNDataForum/gatsby-themes/commit/a29861d7325fee0bdc93628d5c2d106b78e4667f), [`ff4b462`](https://github.com/UNDataForum/gatsby-themes/commit/ff4b46269d2931f234707b827bd2368729c8eaf8)]:
+  - @undataforum/gatsby-theme-base@0.10.1
+  - @undataforum/gatsby-theme-blog@0.7.5
+  - @undataforum/gatsby-theme-events@0.3.5
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-events
 
+## 0.3.5
+
+### Patch Changes
+
+- [`ff4b462`](https://github.com/UNDataForum/gatsby-themes/commit/ff4b46269d2931f234707b827bd2368729c8eaf8) Thanks [@454de6e](https://github.com/454de6e)! - Update @undataforum/components to v0.56.1
+- Updated dependencies [[`a29861d`](https://github.com/UNDataForum/gatsby-themes/commit/a29861d7325fee0bdc93628d5c2d106b78e4667f), [`03eea0d`](https://github.com/UNDataForum/gatsby-themes/commit/03eea0d5d545f89eedf58be0eb428691815ddc8c), [`ff4b462`](https://github.com/UNDataForum/gatsby-themes/commit/ff4b46269d2931f234707b827bd2368729c8eaf8)]:
+  - @undataforum/gatsby-theme-base@0.10.1
+  - @undataforum/gatsby-theme-profiles@0.5.1
+
 ## 0.3.4
 
 ### Patch Changes
