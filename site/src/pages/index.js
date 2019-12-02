@@ -21,7 +21,11 @@ const Homepage = ({ location, data }) => {
   const posts = data.allPost.nodes.map(normalizePost);
   const events = data.allEvent.nodes.map(normalizeEvent);
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      title="Homepage"
+      description={data.site.siteMetadata.description}
+    >
       <Header
         links={[
           { href: '/blog/', text: 'Blog' },
@@ -119,6 +123,11 @@ export default Homepage;
 
 export const query = graphql`
   {
+    site {
+      siteMetadata {
+        description
+      }
+    }
     allPost(
       limit: 3
       sort: { fields: date, order: DESC }

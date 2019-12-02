@@ -3,6 +3,7 @@ const pkg = require('./package.json');
 module.exports = {
   siteMetadata: {
     title: 'Test Site',
+    description: 'This description overrides any placeholder descriptions.',
     siteUrl: pkg.homepage,
   },
   plugins: [
