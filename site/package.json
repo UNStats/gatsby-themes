@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@undataforum/assets": "0.3.0",
-    "@undataforum/components": "0.56.0",
+    "@undataforum/components": "0.56.1",
     "@undataforum/gatsby-theme-base": "^0.10.0",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
