@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.5.2
+
+### Patch Changes
+
+- [`5465367`](https://github.com/UNDataForum/gatsby-themes/commit/54653673fedc7f2c71168fc22823bc431759623c) [#220](https://github.com/UNDataForum/gatsby-themes/pull/220) Thanks [@454de6e](https://github.com/454de6e)! - Fix repo URL in package.json
+
 ## 0.5.1
 
 ### Patch Changes
