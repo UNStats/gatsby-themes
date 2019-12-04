@@ -20,6 +20,11 @@ const Event = ({ location, data }) => {
     body,
   } = data.event;
 
+  const attachments = data.allFile.nodes.map(({ base, publicURL }) => ({
+    text: base,
+    href: publicURL,
+  }));
+
   let profiles = speakers;
   // Add "(Moderator)" after name.
   // Combine moderators and speakers for EventPreview.
@@ -69,6 +74,7 @@ const Event = ({ location, data }) => {
       event={event}
       title={title.text}
       description={description.text}
+      attachments={attachments}
       body={body}
       location={location}
     />
@@ -82,8 +88,10 @@ Event.propTypes = {
 
 export default Event;
 
-export const pageQuery = graphql`
-  query($id: String!) {
+// Retrieve event with provided event ID.
+// Retrieve links to PDFs of presentations.
+export const query = graphql`
+  query($id: String!, $regex: String!) {
     event(id: { eq: $id }) {
       displayType
       title {
@@ -126,6 +134,15 @@ export const pageQuery = graphql`
       }
       registration
       body
+    }
+    allFile(
+      filter: { extension: { eq: "pdf" }, relativePath: { regex: $regex } }
+      sort: { fields: [publicURL], order: ASC }
+    ) {
+      nodes {
+        base
+        publicURL
+      }
     }
   }
 `;
