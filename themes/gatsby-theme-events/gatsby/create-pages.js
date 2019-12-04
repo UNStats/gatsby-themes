@@ -22,6 +22,7 @@ module.exports = async (
           nodes {
             id
             path
+            slug
           }
         }
       }
@@ -30,12 +31,14 @@ module.exports = async (
   );
 
   // Create individual post pages.
-  events.forEach(({ id, path }) => {
+  events.forEach(({ id, path, slug }) => {
     createPage({
       path,
       component: require.resolve('../src/templates/event.js'),
       context: {
         id,
+        // Regex to select files whose relative path starts with the slug.
+        regex: `/^${slug}/`,
       },
     });
   });
