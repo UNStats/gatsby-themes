@@ -1,7 +1,12 @@
 {
   "private": true,
-  "name": "@undataforum/gatsby-themes",
-  "description": "Gatsby themes and examples for forum websites.",
+  "workspaces": [
+    "themes/*",
+    "site"
+  ],
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "start": "yarn workspace site run develop",
     "build": "rm -rf public && yarn workspace site run build && mv site/public/ public",
@@ -21,10 +26,6 @@
       "pre-commit": "pretty-quick --staged && lint-staged"
     }
   },
-  "workspaces": [
-    "themes/*",
-    "site"
-  ],
   "devDependencies": {
     "@changesets/changelog-github": "0.1.1",
     "@changesets/cli": "2.4.0",
