@@ -87,6 +87,8 @@ export const fragment = graphql`
     title {
       text
     }
+    startDate
+    endDate
     displayDate
     duration
     moderators {
@@ -106,7 +108,7 @@ export const fragment = graphql`
   }
 `;
 
-export const pageQuery = graphql`
+export const query = graphql`
   query($type: String!) {
     allEvent(
       sort: { fields: startDate, order: DESC }

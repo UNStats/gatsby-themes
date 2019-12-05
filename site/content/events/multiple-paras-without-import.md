@@ -1,8 +1,8 @@
 ---
 type: Webinar
 title: Aliqua est minim ex mollit sunt anim ipsum et laborum occaecat
-start: 2019-08-29T14:00
-end: 2019-08-29T15:15
+start: 2019-08-27T14:00
+end: 2019-08-27T15:15
 zone: Asia/Bangkok
 speakers:
   - sandra-abramovici-floris

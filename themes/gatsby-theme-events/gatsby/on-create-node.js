@@ -80,8 +80,8 @@ module.exports = (
       displayType: node.frontmatter.type,
       // Foreign key reference to node that will be created further down.
       title___NODE: titleNodeId,
-      startDate,
-      endDate,
+      startDate: startDate.toUTC().toString(),
+      endDate: endDate.toUTC().toString(),
       displayDate,
       duration,
       // Contains moderator slugs.
