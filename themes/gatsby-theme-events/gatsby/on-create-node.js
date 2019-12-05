@@ -26,11 +26,17 @@ module.exports = (
     if (node.frontmatter.description) {
       description = node.frontmatter.description;
     } else {
-      const match =
-        // Match first para when there is import statement, then first para when there is no import statement.
-        node.rawBody.match(/;\n\n(.+)/) || node.rawBody.match(/\n\n(.+)/);
+      // Four scenarios for which we need to match first paragraph:
+      // - multiple paras with import statement
+      // - multiple paras without import statement
+      // - one para with import statement
+      // - one para without import statement
+      // Regex:
+      // - match subsequent non-empty lines (but not lines starting with "import")
+      // - lookbehind and there should be two line feeds (\n)
+      const match = node.rawBody.match(/(?<=\n{2})((?!import).+\n)+/);
       if (match) {
-        description = match[1];
+        description = match[0];
       }
     }
 
