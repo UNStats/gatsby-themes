@@ -1,8 +1,8 @@
 ---
 type: Webinar
 title: 'Quis laborum ipsum "non mollit" ex magna consectetur id amet voluptate'
-start: 2019-08-27T09:00
-end: 2019-08-27T10:30
+start: 2019-08-29T09:00
+end: 2019-08-29T10:30
 zone: America/New_York
 moderators:
   - cleric-edis
