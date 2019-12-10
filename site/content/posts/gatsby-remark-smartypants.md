@@ -7,7 +7,14 @@ authors:
   - nance-mcfadin
 ---
 
-All the magic of [retext-smartypants](https://github.com/retextjs/retext-smartypants) is available when editing Markdown files.
+Aliquip ea sunt eiusmod reprehenderit eiusmod nulla tempor nulla ad. Irure sit
+amet ipsum ad culpa in magna veniam qui commodo ad nisi dolore amet. Mollit ex
+irure dolor occaecat id ad ipsum qui sunt ea et aliquip est. Proident consequat
+enim aliqua sint dolor id reprehenderit amet laborum.
+
+All the magic of
+[retext-smartypants](https://github.com/retextjs/retext-smartypants) is
+available when editing Markdown files.
 
 ## Create smart quotes
 
@@ -16,12 +23,15 @@ All the magic of [retext-smartypants](https://github.com/retextjs/retext-smartyp
 
 ## Create smart ellipses
 
-- Convert triple dot characters without space to ellipses character: Smartypants...
-- Convert triple dot characters with space to ellipses character: Smartypants. . .
+- Convert triple dot characters without space to ellipses character:
+  Smartypants...
+- Convert triple dot characters with space to ellipses character: Smartypants. .
+  .
 
 ## Create smart quotes from backticks
 
-Convert double backticks into an opening double quote and double straight single quotes into a closing double quote: ``Smartypants!''
+Convert double backticks into an opening double quote and double straight single
+quotes into a closing double quote: ``Smartypants!''
 
 ## Create smart dashes
 
