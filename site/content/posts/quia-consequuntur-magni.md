@@ -1,5 +1,6 @@
 ---
-title: Quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt
+title:
+  Quia "consequuntur magni" dolores eos qui ratione voluptatem sequi nesciunt
 date: 2019-04-04
 authors:
   - cleric-edis
@@ -10,11 +11,11 @@ authors:
 ---
 
 Incididunt irure cupidatat est in id adipisicing sit duis aute ea nulla
-cupidatat cillum. In culpa dolor enim qui est. Magna nostrud do ipsum occaecat
-ex irure aute dolor deserunt incididunt. Et Lorem qui proident dolor enim. Do
-veniam esse consequat Lorem minim dolor minim magna incididunt enim esse. Aliqua
-aliquip amet non adipisicing ullamco. Dolore Lorem labore minim sint aliqua
-labore.
+cupidatat cillum. In **culpa dolor enim** qui est. Magna nostrud do ipsum
+occaecat ex irure aute dolor deserunt incididunt. Et Lorem qui proident dolor
+enim. Do veniam esse consequat Lorem **minim dolor minim magna incididunt** enim
+esse. Aliqua aliquip amet non adipisicing ullamco. Dolore Lorem labore minim
+sint aliqua labore.
 
 Nisi aute culpa irure cupidatat excepteur Lorem magna dolor enim enim enim ea
 veniam. Eu quis culpa laboris do voluptate dolore esse ullamco proident enim et
