@@ -1,5 +1,28 @@
 # @undataforum/gatsby-theme-events
 
+## 0.4.1
+
+### Patch Changes
+
+- [`6dda6fd`](https://github.com/UNDataForum/gatsby-themes/commit/6dda6fdb6bfc515ba0acfd18026a515cd3412166)
+  [#244](https://github.com/UNDataForum/gatsby-themes/pull/244) - Fix styling
+  for attachment links
+
+* [`2d92998`](https://github.com/UNDataForum/gatsby-themes/commit/2d92998044b182854ef562894a219fb9f8e6a60a)
+  [#238](https://github.com/UNDataForum/gatsby-themes/pull/238) - Fix sort order
+  on events page
+
+- [`1b1ae34`](https://github.com/UNDataForum/gatsby-themes/commit/1b1ae34a59575f70df2ac3c88704b89bc7302ba9)
+  [#237](https://github.com/UNDataForum/gatsby-themes/pull/237) - Fix regex to
+  match first para in event .md files
+
+* [`aceefb4`](https://github.com/UNDataForum/gatsby-themes/commit/aceefb4cdb9be865d4db95a37463e900cbb2db69)
+  [#246](https://github.com/UNDataForum/gatsby-themes/pull/246) - Remove line
+  feeds from description text
+* Updated dependencies
+  [[`e7dce18`](https://github.com/UNDataForum/gatsby-themes/commit/e7dce184713de98b94eed4dc1cb87c8db32f46b5)]:
+  - @undataforum/gatsby-theme-profiles@0.5.3
+
 ## 0.4.0
 
 ### Minor Changes
