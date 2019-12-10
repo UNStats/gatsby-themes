@@ -3,14 +3,24 @@ firstName: Nance
 lastName: McFadin
 jobtitle: Help Desk Operator
 organization: Schuster-Senger
+description: Description from the frontmatter.
 avatar: ../assets/profiles/nance-mcfadin.png
 roles:
   - Committee
   - Organizer
 ---
 
-Inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Et harum quidem rerum facilis est et expedita distinctio.
+In duis sit occaecat dolore eu. Sint officia officia reprehenderit labore
+proident. Sint tempor mollit ipsum occaecat consequat id. In dolor laborum
+occaecat deserunt incididunt est. Voluptate culpa commodo reprehenderit occaecat
+laboris Lorem amet consectetur consectetur ea consequat esse aute. Ut cillum
+enim exercitation labore id.
 
-Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Aliqua cupidatat anim excepteur cupidatat aliquip nostrud sint non nulla
+incididunt adipisicing. Quis duis ullamco fugiat adipisicing aute consectetur
+culpa do culpa est ad qui deserunt officia. Aliqua ex enim duis nisi pariatur
+ullamco.
 
-Animi, id est laborum et dolorum fuga. Eaque ipsa quae ab illo inventore veritatis et quasi. Fugiat quo voluptas nulla pariatur? Fugiat quo voluptas nulla pariatur?
+Pariatur ea duis labore culpa veniam amet sit magna cillum ipsum velit dolor
+excepteur id. Duis sint qui qui ad duis eu dolor pariatur nostrud enim. Dolore
+nostrud irure sint elit ut veniam do enim ut quis magna consequat exercitation.
