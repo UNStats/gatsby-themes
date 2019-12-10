@@ -103,7 +103,8 @@ module.exports = (
       text: remark()
         .use(strip)
         .processSync(description)
-        .contents.trim(),
+        .contents.replace(/\n/g, ' ')
+        .trim(),
     };
     createNode(descriptionNode);
 

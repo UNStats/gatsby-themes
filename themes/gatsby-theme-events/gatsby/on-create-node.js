@@ -119,11 +119,12 @@ module.exports = (
         mediaType: 'text/markdown',
         content: description,
       },
-      // Strip Markdown.
+      // Strip Markdown, line breaks and white space.
       text: remark()
         .use(strip)
         .processSync(description)
-        .contents.trim(),
+        .contents.replace(/\n/g, ' ')
+        .trim(),
     };
     createNode(descriptionNode);
 

@@ -15,9 +15,10 @@ registration: /registration
 import { Badge } from '@undataforum/components';
 
 You should see an entire paragraph in the preview. This event covers the test
-case multiple paragraphs with import statement before the first paragraph. This
-is a filler sentence to make the first paragraph longer. If you see this
-sentence in the preview and it is the last sentence, everything works fine.
+case **multiple paragraphs** with import statement **before** the first
+paragraph. This is a filler sentence to make the **first paragraph longer**. If
+you see this sentence in the preview and it is the last sentence, everything
+works fine.
 
 Anim do laborum fugiat laboris aliqua eu et sint minim amet consequat sit.
 Commodo irure eiusmod enim eu enim cupidatat proident ipsum mollit sint eu.
