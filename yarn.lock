@@ -1998,20 +1998,6 @@
     prop-types "^15.7.2"
     theme-ui "^0.2.44"
 
-"@undataforum/components@^0.56.1":
-  version "0.56.1"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.56.1.tgz#0ee3e7d4b86ced650dbd6134da2d951dcd786e1e"
-  integrity sha512-zGzwoMAQCWQLQZvFfP6GKmXAv3VhpFmg8dtUISmNDAwgt8Zg5BwB6/BpQIbItD75OpxKb9A4td0MDTh20aohIw==
-  dependencies:
-    "@emotion/core" "^10.0.21"
-    "@mdx-js/react" "^1.5.1"
-    "@theme-ui/color" "^0.2.49"
-    "@theme-ui/components" "^0.2.45"
-    "@theme-ui/preset-base" "^0.2.44"
-    deepmerge "^4.2.2"
-    prop-types "^15.7.2"
-    theme-ui "^0.2.44"
-
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
