@@ -1,6 +1,11 @@
 import React from 'react';
 import { func, shape, string, arrayOf } from 'prop-types';
-import { Container, EventPreview, NewTabLink } from '@undataforum/components';
+import {
+  Container,
+  EventPreview,
+  Link,
+  NewTabLink,
+} from '@undataforum/components';
 import { Layout, MDXRenderer, Styled } from '@undataforum/gatsby-theme-base';
 
 const EventPage = ({
@@ -21,7 +26,9 @@ const EventPage = ({
           <ul>
             {attachments.map(({ text, href }) => (
               <li key={text}>
-                <NewTabLink href={href}>{text}</NewTabLink>
+                <Link as={NewTabLink} href={href}>
+                  {text}
+                </Link>
               </li>
             ))}
           </ul>
