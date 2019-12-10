@@ -22,20 +22,27 @@ module.exports = (
     const { createNode, createParentChildLink } = actions;
 
     // Process description.
+    // For profiles description is used only for SEO and never in previews.
     let description;
     if (node.frontmatter.description) {
       description = node.frontmatter.description;
     } else {
-      const match =
-        // Match first paragraph when there are multiple paragraphs
-        // or first paragraph when there is only 1 parapgraph.
-        node.rawBody.match(/\n\n(.+)\n\n/) || node.rawBody.match(/\n\n(.+)\n/);
+      // Four scenarios for which we need to match first paragraph:
+      // - multiple paras with import statement
+      // - multiple paras without import statement
+      // - one para with import statement
+      // - one para without import statement
+      // Regex:
+      // - match subsequent non-empty lines (but not lines starting with "import")
+      // - lookbehind and there should be two line feeds (\n)
+      const match = node.rawBody.match(/(?<=\n{2})((?!import).+\n)+/);
       if (match) {
-        // Strip Markdown.
+        // Strip Markdown, line breaks and white space.
         description = remark()
           .use(strip)
-          .processSync(match[1])
-          .contents.trim();
+          .processSync(match[0])
+          .contents.replace(/\n/g, ' ')
+          .trim();
       }
     }
 
