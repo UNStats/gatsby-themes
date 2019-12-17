@@ -10,7 +10,7 @@ import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const ProfilesPage = ({ profiles, render, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
-    <Container>
+    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
       <Styled.h1>{title}</Styled.h1>
       {render && render()}
       <Grid gap={4} columns={[1, 2, 3]}>

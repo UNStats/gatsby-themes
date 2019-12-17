@@ -5,7 +5,7 @@ import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 const PostPage = ({ post, images, description, body, location }) => (
   <Layout location={location} title={post.title} description={description}>
-    <Container maxWidth="narrow">
+    <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
       <PostPreview post={post} fontSize={[4, 5]} mb={[3, 4]} />
       <MDXRenderer images={images}>{body}</MDXRenderer>
     </Container>

@@ -7,7 +7,7 @@ import Layout from './layout';
 
 const DefaultPage = ({ title, description, location, children }) => (
   <Layout location={location} title={title} description={description}>
-    <Container maxWidth="narrow">
+    <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
       <Styled.h1>{title}</Styled.h1>
       {children}
     </Container>

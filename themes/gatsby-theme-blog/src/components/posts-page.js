@@ -5,7 +5,7 @@ import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 
 const PostsPage = ({ posts, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
-    <Container mb={3}>
+    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4], mb: 4 }}>
       <Styled.h1>{title}</Styled.h1>
       <Grid gap={4} columns={[1, null, 2]}>
         {posts.map(({ id, ...post }) => (
