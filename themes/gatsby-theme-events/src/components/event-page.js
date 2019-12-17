@@ -17,7 +17,7 @@ const EventPage = ({
   location,
 }) => (
   <Layout location={location} title={title} description={description}>
-    <Container maxWidth="narrow">
+    <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
       <EventPreview event={event} mb={3} />
       <MDXRenderer>{body}</MDXRenderer>
       {attachments.length > 0 && (

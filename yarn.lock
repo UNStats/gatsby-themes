@@ -1822,24 +1822,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@undataforum/components@0.61.0":
+"@undataforum/components@0.61.0", "@undataforum/components@^0.61.0":
   version "0.61.0"
   resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.61.0.tgz#5b586151731843520d6cb027488b120ec37f19b1"
   integrity sha512-J6Kn9vrrIZIWxBmIsagbSafXpnM6Lq5g80GWCSDhHTfVl9gIlC4c0pMUGNSLkF2qvr/As7EQdp1ErNNdlbv9oQ==
-  dependencies:
-    "@emotion/core" "^10.0.21"
-    "@mdx-js/react" "^1.5.1"
-    "@theme-ui/color" "^0.2.49"
-    "@theme-ui/components" "^0.2.45"
-    "@theme-ui/preset-base" "^0.2.44"
-    deepmerge "^4.2.2"
-    prop-types "^15.7.2"
-    theme-ui "^0.2.44"
-
-"@undataforum/components@^0.59.0":
-  version "0.59.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.59.0.tgz#d82851f010ce0853bf6b6a98d4b0e13809613bb9"
-  integrity sha512-vetP40DTaH2CHHEuhu0nvXhAqLwJSj87ipa0QZihJOcANNRjlNmYEB1xq5FJTG7VcoTtwURclJwE49RJz9DkBQ==
   dependencies:
     "@emotion/core" "^10.0.21"
     "@mdx-js/react" "^1.5.1"
@@ -6192,19 +6178,10 @@ gatsby-graphiql-explorer@^0.2.31:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
-gatsby-image@2.2.37:
+gatsby-image@2.2.37, gatsby-image@^2.2.37:
   version "2.2.37"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.37.tgz#dc7e6b15860e1d505925d0a08cd390f7d32efec0"
   integrity sha512-nm1PgitbK4ZR9YQ3mTlAXDXXNM/7JT2LYDFqTlWe1y78nhA6RfIfm+4bsNH5HCEUaYhZiedpkqguJiIYWYPsLg==
-  dependencies:
-    "@babel/runtime" "^7.7.6"
-    object-fit-images "^3.2.4"
-    prop-types "^15.7.2"
-
-gatsby-image@^2.2.36, gatsby-image@^2.2.6:
-  version "2.2.36"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.36.tgz#9fd6fe9f6fde62d1e8fb2cabe50bc51c40a78521"
-  integrity sha512-a5a/+busxSnKUWdZuWvCrMybLpHS6czK2Ltrt2Xa6ZIkGL/bZU4KR6t5ku8iO91Q0u32ss81WA2JwUCcctVDdA==
   dependencies:
     "@babel/runtime" "^7.7.6"
     object-fit-images "^3.2.4"
@@ -6302,10 +6279,10 @@ gatsby-plugin-react-helmet@^3.1.18:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
-gatsby-plugin-sharp@^2.3.2:
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.3.8.tgz#71ad4cb2fd9829a6be5b517705c97f9e37c585b8"
-  integrity sha512-paRIZvg6lVxDhUwPlKGg5WpRQWtghHfXx92g3K7vYKtb0uIYpNUHgvb3qhUDWT/lFULxeHxAB2oO4fYoPdKoWw==
+gatsby-plugin-sharp@^2.3.9:
+  version "2.3.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.3.9.tgz#8c0febc808bf271be0556e0e2ab608b741056326"
+  integrity sha512-+SG6ZfoeMRC5AVDw1QpVrdHmOvuyJjTA+bcwvavDKbZoMsiDG5QdTDGgJogr0Ak9VBwOj0V3Y3cMpMoNtvEg6g==
   dependencies:
     "@babel/runtime" "^7.7.6"
     async "^2.6.3"
@@ -13318,9 +13295,9 @@ text-table@0.2.0, text-table@^0.2.0:
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
 theme-ui@^0.2.44:
-  version "0.2.49"
-  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.49.tgz#3803952907e74e6835d40b063aed0d46c213e2d9"
-  integrity sha512-hgULYonGu8iY3delv/GrMx4L/3nAJyEu55gEAAK3GDKVEVf4VNng3lM9/tgx4kUizTFVEB5MN5y+1JTHHOQLXQ==
+  version "0.2.52"
+  resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.2.52.tgz#c041a32b0b257fc8ecbae273e14e92abd48c0f2d"
+  integrity sha512-JFujorP5aFxIm1UyVCtefN5baXjwh5TXHKFYNWgAP+3rqVvggIr46uSMrRNvDjyhFOQiMK8YI8ctPQrrhcETpw==
   dependencies:
     "@emotion/is-prop-valid" "^0.8.1"
     "@styled-system/css" "^5.0.16"

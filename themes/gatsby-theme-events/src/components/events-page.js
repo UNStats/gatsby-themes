@@ -10,7 +10,7 @@ import { Layout } from '@undataforum/gatsby-theme-base';
 
 const EventsPage = ({ events, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
-    <Container>
+    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4], mb: 3 }}>
       <Heading as="h1" sx={{ mb: [3, null, 4] }}>
         {title}
       </Heading>

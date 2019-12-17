@@ -63,7 +63,7 @@ const Homepage = ({ location, data }) => {
         }}
         mb={3}
       />
-      <Container>
+      <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
         <Box
           sx={{
             display: 'grid',
