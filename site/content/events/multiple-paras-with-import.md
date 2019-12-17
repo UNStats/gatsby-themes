@@ -12,7 +12,7 @@ speakers:
 registration: /registration
 ---
 
-import { Badge } from '@undataforum/components';
+import { Badge, Box, Video } from '@undataforum/components';
 
 You should see an entire paragraph in the preview. This event covers the test
 case **multiple paragraphs** with import statement **before** the first
@@ -37,3 +37,9 @@ velit ad mollit. Laboris officia non consectetur cillum deserunt voluptate magna
 eiusmod laboris eu amet ea commodo. Laborum ipsum voluptate ex ut eu tempor elit
 ad minim officia nulla amet labore aute. Non dolore consequat elit dolore Lorem
 exercitation in ex elit.
+
+## Recording
+
+<Box mb={3}>
+  <Video id="Vb0c_sIzoUw" title="Webinar: Quis laborum ipsum non mollit ex magna consectetur id amet voluptate" ratio={16/9} />
+</Box>
