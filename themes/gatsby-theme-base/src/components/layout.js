@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, shape, string } from 'prop-types';
+import { node } from 'prop-types';
 import { Box, Flex } from '@undataforum/components';
 import { Styled } from 'theme-ui';
 import { Global } from '@emotion/core';
@@ -8,7 +8,7 @@ import Header from './header';
 import Footer from './footer';
 import Seo from './seo';
 
-const Layout = ({ location, children, ...props }) => (
+const Layout = ({ children, ...props }) => (
   <Styled.root>
     <Seo {...props} />
     <Global
@@ -22,7 +22,7 @@ const Layout = ({ location, children, ...props }) => (
       }}
     />
     <Flex sx={{ flexDirection: 'column', minHeight: '100vh' }}>
-      {location.pathname !== '/' && <Header mb={3} />}
+      <Header mb={3} />
       <Box sx={{ flex: 1 }}>{children}</Box>
       <Footer />
     </Flex>
@@ -30,7 +30,6 @@ const Layout = ({ location, children, ...props }) => (
 );
 
 Layout.propTypes = {
-  location: shape({ pathname: string.isRequired }).isRequired,
   children: node,
 };
 
