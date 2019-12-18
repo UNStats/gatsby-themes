@@ -1,12 +1,11 @@
 import React from 'react';
-import { shape, string, object } from 'prop-types';
+import { shape, object } from 'prop-types';
 import {
   Box,
   Card,
   Container,
   EventPreview,
   Grid,
-  Header,
   Hero,
   PostPreview,
 } from '@undataforum/components';
@@ -17,28 +16,11 @@ import { normalize as normalizeEvent } from '@undataforum/gatsby-theme-events';
 import { Logo } from '@undataforum/assets';
 import Img from 'gatsby-image';
 
-const Homepage = ({ location, data }) => {
+const Homepage = ({ data }) => {
   const posts = data.allPost.nodes.map(normalizePost);
   const events = data.allEvent.nodes.map(normalizeEvent);
   return (
-    <Layout
-      location={location}
-      title="Homepage"
-      description={data.site.siteMetadata.description}
-    >
-      <Header
-        links={[
-          { href: '/blog/', text: 'Blog' },
-          { href: '/events/', text: 'Events' },
-          { href: '/profiles/', text: 'Profiles' },
-          { href: '/test/', text: 'Test' },
-        ]}
-        variant="transparent"
-        position="absolute"
-        top={0}
-        right={0}
-        left={0}
-      />
+    <Layout title="Homepage" description={data.site.siteMetadata.description}>
       <Hero
         image={() => (
           <Img
@@ -116,7 +98,6 @@ Homepage.propTypes = {
     allPost: object.isRequired,
     allEvent: object.isRequired,
   }).isRequired,
-  location: shape({ pathname: string.isRequired }).isRequired,
 };
 
 export default Homepage;
