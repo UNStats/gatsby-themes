@@ -16,6 +16,7 @@ import { normalize as normalizeEvent } from '@undataforum/gatsby-theme-events';
 import { Logo } from '@undataforum/assets';
 import Img from 'gatsby-image';
 
+import About from '../components/about';
 import Experience from '../components/experience';
 
 const Homepage = ({ data }) => {
@@ -47,6 +48,7 @@ const Homepage = ({ data }) => {
         }}
         mb={3}
       />
+      <About />
       <Experience />
       <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
         <Box
