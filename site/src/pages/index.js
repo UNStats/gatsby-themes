@@ -2,54 +2,37 @@ import React from 'react';
 import { shape, object } from 'prop-types';
 import {
   Box,
-  Card,
   Container,
   EventPreview,
   Grid,
-  Hero,
   PostPreview,
 } from '@undataforum/components';
 import { Layout, Styled } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
 import { normalize as normalizePost } from '@undataforum/gatsby-theme-blog';
 import { normalize as normalizeEvent } from '@undataforum/gatsby-theme-events';
-import { Logo } from '@undataforum/assets';
-import Img from 'gatsby-image';
 
 import About from '../components/about';
 import Experience from '../components/experience';
+import Hero from '../components/hero';
 
+// If you change the hero image, you need to update the page query:
+// - update filename regex,
+// - update maxWidth to avoid blurry images.
 const Homepage = ({ data }) => {
   const posts = data.allPost.nodes.map(normalizePost);
   const events = data.allEvent.nodes.map(normalizeEvent);
   return (
     <Layout title="Homepage" description={data.site.siteMetadata.description}>
       <Hero
-        image={() => (
-          <Img
-            style={{ height: '100%', width: '100%' }}
-            fluid={data.hero.nodes[0].fluid}
-          />
-        )}
-        logo={() => <Logo scaleTo="height" />}
-        text="18-21 October 2020 in Bern, Switzerland"
-        action={{
-          text: 'Submit your proposal',
-          href: '/2020/call-for-proposals',
-        }}
-        promo={() => {
-          // Remove description due to space constraints.
-          const event = { ...events[0], description: undefined };
-          return (
-            <Card sx={{ maxWidth: 512, variant: 'pairings.branded' }}>
-              <EventPreview event={event} />
-            </Card>
-          );
-        }}
-        mb={3}
+        alt="View of Bern, Switzerland. The river Aare with its distinct blue water is in the foreground. The hills surrounding Bern in the background."
+        title="View of Bern"
+        fluid={data.hero.nodes[0].fluid}
+        mt={-3}
+        mb={[3, 4]}
       />
-      <About />
-      <Experience />
+      <About mb={[3, 4]} />
+      <Experience mb={[3, 4]} />
       <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
         <Box
           sx={{
@@ -128,10 +111,14 @@ export const query = graphql`
         ...Event
       }
     }
-    hero: allImageSharp(filter: { original: { src: { regex: "/hero/" } } }) {
+    hero: allImageSharp(
+      filter: {
+        original: { src: { regex: "/s-ratanak-vp5M_15_SNo-unsplash/" } }
+      }
+    ) {
       nodes {
         id
-        fluid {
+        fluid(maxWidth: 4032) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
