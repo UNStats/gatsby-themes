@@ -12,7 +12,7 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@theme-ui/color": "^0.2.49",
+    "@theme-ui/color": "0.2.49",
     "@undataforum/assets": "0.3.0",
     "@undataforum/components": "0.61.0",
     "@undataforum/gatsby-theme-base": "*",
