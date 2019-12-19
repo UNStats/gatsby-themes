@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container, Text } from '@undataforum/components';
 
-const About = () => (
+const About = ({ ...props }) => (
   <Container
+    {...props}
     sx={{
       maxWidth: 'width.narrow',
       fontSize: 3,
       textAlign: 'center',
       px: [2, 3, 4],
-      mb: [4, null, 5],
     }}
   >
     <Text>

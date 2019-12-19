@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Container, Grid, Text } from '@undataforum/components';
 
-const Experience = () => (
-  <Container sx={{ maxWidth: 'width.wide', px: [2, 3, 4], mb: [4, null, 5] }}>
+const Experience = ({ ...props }) => (
+  <Container {...props} sx={{ maxWidth: 'width.wide', px: [2, 3, 4] }}>
     <Grid gap={[3, 4]} columns={[1, 2, 4]}>
       <Box>
         <Text sx={{ fontSize: 5, fontWeight: 'heading' }}>Labore</Text>
