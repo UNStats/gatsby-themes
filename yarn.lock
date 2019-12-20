@@ -1593,14 +1593,6 @@
     "@styled-system/css" "^5.0.23"
     polished "^3.4.1"
 
-"@theme-ui/color@^0.2.49":
-  version "0.2.49"
-  resolved "https://registry.yarnpkg.com/@theme-ui/color/-/color-0.2.49.tgz#599276ca0dcf94c00c4f35a7b38b6833b3b35bfe"
-  integrity sha512-vUs1SnIzhDjYDyXzidtE62gKELylSw79fSYeNM//DQrNngupTZFWlyAga+MdcS9UYjWJ9Z/ueR0mfy6qlWdlpQ==
-  dependencies:
-    "@styled-system/css" "^5.0.23"
-    polished "^3.4.1"
-
 "@theme-ui/components@^0.2.45":
   version "0.2.50"
   resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.2.50.tgz#ce5e6f102f48964a5f999bf23755d6ea57d3faf5"
@@ -1830,14 +1822,13 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@undataforum/components@0.61.0", "@undataforum/components@^0.61.0":
-  version "0.61.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.61.0.tgz#5b586151731843520d6cb027488b120ec37f19b1"
-  integrity sha512-J6Kn9vrrIZIWxBmIsagbSafXpnM6Lq5g80GWCSDhHTfVl9gIlC4c0pMUGNSLkF2qvr/As7EQdp1ErNNdlbv9oQ==
+"@undataforum/components@0.62.0", "@undataforum/components@^0.62.0":
+  version "0.62.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.62.0.tgz#f2635202bac48fbb9d1eeb5b391daee2c2b9187a"
+  integrity sha512-rIhz3v8k6N2e0i3S7NZ/r6kDLpG3rKK3ufrxL5BqjZlWRKldOhkBcaOqV84o2wb19/kKjkGDjhKif+ybS4hoUA==
   dependencies:
     "@emotion/core" "^10.0.21"
     "@mdx-js/react" "^1.5.1"
-    "@theme-ui/color" "^0.2.49"
     "@theme-ui/components" "^0.2.45"
     "@theme-ui/preset-base" "^0.2.44"
     deepmerge "^4.2.2"
