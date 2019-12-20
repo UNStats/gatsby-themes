@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-base
 
+## 0.10.3
+
+### Patch Changes
+
+- [`6b89f58`](https://github.com/UNDataForum/gatsby-themes/commit/6b89f58a210fd3329a832673b3b21aa30dab22ba)
+  [#257](https://github.com/UNDataForum/gatsby-themes/pull/257) - Restore normal
+  header on homepage
+
 ## 0.10.2
 
 ### Patch Changes
