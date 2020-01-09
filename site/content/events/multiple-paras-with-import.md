@@ -12,7 +12,7 @@ speakers:
 registration: /registration
 ---
 
-import { Badge, Box, Video } from '@undataforum/components';
+import { Box, Video } from '@undataforum/components';
 
 You should see an entire paragraph in the preview. This event covers the test
 case **multiple paragraphs** with import statement **before** the first
@@ -26,10 +26,6 @@ Reprehenderit commodo aliqua do quis exercitation irure esse. Deserunt mollit
 ipsum non dolore mollit laboris voluptate ad. Commodo culpa veniam duis esse
 magna dolore velit veniam sint incididunt enim officia anim. Ut officia ipsum
 sit cupidatat exercitation dolore irure.
-
-<p>
-<Badge value={{ text: 'Test'}} />
-</p>
 
 Voluptate ad occaecat enim sit aute do. Culpa enim nisi qui laboris magna id
 occaecat. Cupidatat velit qui labore laborum cupidatat ex tempor. Id eiusmod

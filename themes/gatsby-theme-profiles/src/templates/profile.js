@@ -27,13 +27,9 @@ export const normalize = ({
 
 const Profile = ({ location, data }) => {
   const { description, roles, body, ...profile } = data.profile;
-  let badges;
-  if (roles) {
-    badges = roles.map(role => ({ text: role }));
-  }
   return (
     <ProfilePage
-      profile={{ ...normalize(profile), badges }}
+      profile={{ ...normalize(profile), badges: roles }}
       description={description}
       body={body}
       location={location}

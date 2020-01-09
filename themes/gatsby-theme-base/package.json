@@ -9,6 +9,7 @@
     "gatsby",
     "gatsby-theme",
     "gatsby-plugin",
+    "theme-ui",
     "undataforum"
   ],
   "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base",
@@ -24,26 +25,26 @@
     "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
-    "gatsby": "^2.17.4",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "gatsby": "^2.18.20",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "theme-ui": "^0.2.52"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.22",
     "@mdx-js/mdx": "^1.5.3",
     "@mdx-js/react": "^1.5.3",
-    "@undataforum/components": "^0.62.0",
+    "@undataforum/components": "^0.66.3",
+    "@undataforum/preset": "^0.1.2",
     "deepmerge": "^4.2.2",
-    "gatsby-image": "^2.2.37",
+    "gatsby-image": "^2.2.38",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
-    "gatsby-plugin-mdx": "^1.0.64",
-    "gatsby-plugin-page-creator": "^2.1.37",
-    "gatsby-plugin-react-helmet": "^3.1.18",
-    "gatsby-plugin-sitemap": "^2.2.24",
+    "gatsby-plugin-mdx": "^1.0.67",
+    "gatsby-plugin-page-creator": "^2.1.38",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sitemap": "^2.2.25",
     "gatsby-plugin-theme-ui": "^0.2.53",
-    "gatsby-remark-smartypants": "^2.1.19",
+    "gatsby-remark-smartypants": "^2.1.20",
     "prop-types": "^15.7.2",
-    "react-helmet": "^5.2.1",
-    "theme-ui": "^0.2.44"
+    "react-helmet": "^5.2.1"
   }
 }
