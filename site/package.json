@@ -12,8 +12,8 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.27",
-    "@mdx-js/react": "^1.5.3",
+    "@emotion/core": "10.0.27",
+    "@mdx-js/react": "1.5.3",
     "@theme-ui/color": "0.2.53",
     "@undataforum/assets": "0.4.1",
     "@undataforum/components": "0.66.3",
@@ -28,7 +28,7 @@
     "prop-types": "15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "theme-ui": "^0.2.52",
+    "theme-ui": "0.2.52",
     "typeface-roboto": "0.0.75"
   }
 }
