@@ -26,7 +26,7 @@ const EventPage = ({
           <ul>
             {attachments.map(({ text, href }) => (
               <li key={text}>
-                <Link as={NewTabLink} href={href}>
+                <Link as={NewTabLink} variant="branded" href={href}>
                   {text}
                 </Link>
               </li>

@@ -1,4 +1,4 @@
-import { theme as defaultTheme } from '@undataforum/components';
+import preset from '@undataforum/preset';
 import merge from 'deepmerge';
 
 import Link from '../components/link';
@@ -8,7 +8,7 @@ import Link from '../components/link';
 // Import this theme via
 // `import theme from "@undataforum/gatsby-theme-base/src/gatsby-plugin-theme-ui`
 // and then merge your changes like below.
-const theme = merge(defaultTheme, {
+const theme = merge(preset, {
   link: {
     internal: Link,
   },

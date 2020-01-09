@@ -9,6 +9,7 @@
     "gatsby",
     "gatsby-theme",
     "gatsby-plugin",
+    "theme-ui",
     "undataforum"
   ],
   "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-blog",
@@ -24,17 +25,18 @@
     "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
-    "gatsby": "^2.15.21",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "gatsby": "^2.18.21",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "theme-ui": "^0.2.52"
   },
   "dependencies": {
-    "@undataforum/components": "^0.62.0",
+    "@undataforum/components": "^0.66.3",
     "@undataforum/gatsby-theme-base": "^0.10.1",
     "@undataforum/gatsby-theme-profiles": "^0.5.3",
-    "gatsby-image": "^2.2.37",
+    "gatsby-image": "^2.2.38",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
-    "gatsby-source-filesystem": "^2.1.43",
+    "gatsby-source-filesystem": "^2.1.46",
     "prop-types": "^15.7.2",
     "remark": "^11.0.1",
     "strip-markdown": "^3.1.0"
