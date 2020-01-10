@@ -1820,10 +1820,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@undataforum/components@0.66.3", "@undataforum/components@^0.66.3":
-  version "0.66.3"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.66.3.tgz#94c4ce485889b4f1b6efa7ce12997dc34e0e757a"
-  integrity sha512-08FA99sRVS6H9aQNPZJXH7MGkuW6p6MAgagfvgxn9p6ig2CAXpyAzaS/50nYzvVwaAU7Oa6M+FkKfgRGCapWHg==
+"@undataforum/components@0.66.4", "@undataforum/components@^0.66.4":
+  version "0.66.4"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.66.4.tgz#3fbb70c8dcae963be38164cb3ebc8b327d5f2ae8"
+  integrity sha512-sVBsQXwn8uf3d6V6ZILAHRWAgMZXgs18Z7+L1c6aPaS+nehTWjIS0RjgfaLsZG87ptPIqFyAhtHEVbSVD+62zw==
   dependencies:
     "@emotion/core" "^10.0.27"
     "@mdx-js/react" "^1.5.3"

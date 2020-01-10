@@ -31,7 +31,7 @@
     "theme-ui": "^0.2.52"
   },
   "dependencies": {
-    "@undataforum/components": "^0.66.3",
+    "@undataforum/components": "^0.66.4",
     "@undataforum/gatsby-theme-base": "^0.10.2",
     "@undataforum/gatsby-theme-profiles": "^0.5.3",
     "gatsby-image": "^2.2.38",
