@@ -16,7 +16,7 @@
     "@mdx-js/react": "1.5.3",
     "@theme-ui/color": "0.2.53",
     "@undataforum/assets": "0.4.1",
-    "@undataforum/components": "0.66.4",
+    "@undataforum/components": "0.67.0",
     "@undataforum/gatsby-theme-base": "*",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
