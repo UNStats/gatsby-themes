@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-events
 
+## 0.5.1
+
+### Patch Changes
+
+- [`27f2b60`](https://github.com/UNDataForum/gatsby-themes/commit/27f2b603f3f7e9efaa8877cfc8534e31688c19da)
+  [#297](https://github.com/UNDataForum/gatsby-themes/pull/297) - Add more space
+  after event type tag in EventPreview via render prop
+
 ## 0.5.0
 
 ### Minor Changes
