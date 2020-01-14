@@ -1,5 +1,20 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.6.0
+
+### Minor Changes
+
+- [`1a9bb6b`](https://github.com/UNDataForum/gatsby-themes/commit/1a9bb6bdb98905587d1702a593a1e703f566a89e)
+  [#284](https://github.com/UNDataForum/gatsby-themes/pull/284) - Add theme-ui
+  to peerDependencies
+
+### Patch Changes
+
+- Updated dependencies
+  [[`1a9bb6b`](https://github.com/UNDataForum/gatsby-themes/commit/1a9bb6bdb98905587d1702a593a1e703f566a89e),
+  [`a1b9513`](https://github.com/UNDataForum/gatsby-themes/commit/a1b9513e5deb6f329944aa7c011a8f26ec92005b)]:
+  - @undataforum/gatsby-theme-base@0.11.0
+
 ## 0.5.3
 
 ### Patch Changes
