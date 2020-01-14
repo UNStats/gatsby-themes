@@ -33,21 +33,26 @@ export const normalize = ({
   return {
     id,
     type: displayType,
-    title() {
+    title(align) {
       // title.text is text only with Markdown stripped and quotes and dashes not processed.
       // This allows using an h2 as heading to create a consistent heading hierarchy.
       // Alternatively, we could return <MDXRenderer>{title.childMdx.Body}</MDXRenderer>.
       // This returns a Styled.h1 and messes up the heading hierarchy.
       return (
-        <Heading as="h2" sx={{ mb: 3 }}>
+        <Heading
+          as="h2"
+          sx={{ fontSize: [3, 4, 5], textAlign: align, mt: 1, mb: 3 }}
+        >
           {title.text}
         </Heading>
       );
     },
     date: displayDate,
     duration,
-    speakers() {
-      return <Names values={profiles.map(({ name }) => name)} mb={3} />;
+    speakers(align) {
+      return (
+        <Names align={align} values={profiles.map(({ name }) => name)} mb={3} />
+      );
     },
     description() {
       // Returns processed Markdown wrapped in Styled.p.
