@@ -1,5 +1,6 @@
 import preset from '@undataforum/preset';
 import merge from 'deepmerge';
+import { NewTabLink } from '@undataforum/components';
 
 import Link from '../components/link';
 
@@ -10,6 +11,7 @@ import Link from '../components/link';
 // and then merge your changes like below.
 const theme = merge(preset, {
   link: {
+    external: NewTabLink,
     internal: Link,
   },
   // h1-h6 and p have top margins 0 and only set bottom margins.
