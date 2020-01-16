@@ -18,6 +18,7 @@ const Seo = ({ title, description, keywords, lang, meta, creator }) => {
     `
   );
 
+  const prettyTitle = `${title} | ${site.siteMetadata.title}`;
   // Use site description as backup description.
   const metaDescription = description || site.siteMetadata.description;
   // Use site twitter username as backup creator.
@@ -28,8 +29,7 @@ const Seo = ({ title, description, keywords, lang, meta, creator }) => {
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={prettyTitle}
       meta={[
         {
           name: 'description',
@@ -37,7 +37,7 @@ const Seo = ({ title, description, keywords, lang, meta, creator }) => {
         },
         {
           property: 'og:title',
-          content: title,
+          content: prettyTitle,
         },
         {
           property: 'og:description',
