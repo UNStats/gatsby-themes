@@ -1,5 +1,17 @@
 # @undataforum/gatsby-theme-base
 
+## 0.11.1
+
+### Patch Changes
+
+- [`e209e9a`](https://github.com/UNDataForum/gatsby-themes/commit/e209e9a512268939834b9df324f5fe578d802a57)
+  [#303](https://github.com/UNDataForum/gatsby-themes/pull/303) - Fix og:title
+  meta tag in Seo component
+
+* [`931681f`](https://github.com/UNDataForum/gatsby-themes/commit/931681f5815a1ab402c3cb5fd1fb2b909f56f760)
+  [#306](https://github.com/UNDataForum/gatsby-themes/pull/306) - Use NewTabLink
+  for external links
+
 ## 0.11.0
 
 ### Minor Changes
