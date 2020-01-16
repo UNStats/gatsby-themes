@@ -61,7 +61,7 @@ const Seo = ({ title, description, keywords, lang, meta, creator }) => {
         },
         {
           name: 'twitter:title',
-          content: title,
+          content: prettyTitle,
         },
         {
           name: 'twitter:description',
