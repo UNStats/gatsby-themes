@@ -7,7 +7,7 @@
   "scripts": {
     "develop": "cross-env GATSBY_TELEMETRY_DISABLED=1 gatsby develop",
     "build": "cross-env GATSBY_TELEMETRY_DISABLED=1 gatsby build",
-    "clean": "gatsby clean",
+    "clean": "cross-env GATSBY_TELEMETRY_DISABLED=1 gatsby clean",
     "inspect": "gatsby clean && node --inspect node_modules/.bin/gatsby develop",
     "purge": "rm -rf ./node_modules"
   },
