@@ -1,7 +1,6 @@
 import React from 'react';
 import { shape, object } from 'prop-types';
 import {
-  Box,
   Container,
   EventPreview,
   Grid,
@@ -22,60 +21,49 @@ import Hero from '../components/hero';
 const Homepage = ({ data }) => {
   const posts = data.allPost.nodes.map(normalizePost);
   const events = data.allEvent.nodes.map(normalizeEvent);
+  // eslint-disable-next-line no-unused-vars
+  const { description, ...promotedEvent } = events[0];
   return (
     <Layout title="Homepage" description={data.site.siteMetadata.description}>
       <Hero
-        alt="View of Bern, Switzerland. The river Aare with its distinct blue water is in the foreground. The hills surrounding Bern in the background."
-        title="View of Bern"
         fluid={data.hero.nodes[0].fluid}
+        title="View of Bern, Switzerland"
+        alt="View of Bern, Switzerland. The river Aare with its distinct blue water is in the foreground. The hills surrounding Bern in the background."
+        event={() => (
+          <EventPreview
+            event={promotedEvent}
+            colors={{
+              text: 'background',
+              background: 'secondary',
+              accent: 'background',
+            }}
+            align={['center', 'start']}
+          />
+        )}
         mt={-3}
-        mb={[3, 4]}
+        mb={[4, 5]}
       />
-      <About mb={[3, 4]} />
-      <Experience mb={[3, 4]} />
-      <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateAreas: [
-              '"posts" "events"',
-              '"posts" "events"',
-              '"posts posts posts events events"',
-            ],
-            gridTemplateColumns: ['1fr', '1fr', 'repeat(5, 1fr)'],
-            gridGap: [3, 4, 5],
-          }}
-        >
-          <Box
-            sx={{
-              gridArea: 'posts',
-            }}
-          >
-            <Styled.h1>Blog</Styled.h1>
-            <Grid gap={3} columns={1}>
-              {posts.map(({ id, ...post }) => (
-                <PostPreview
-                  post={{ ...post }}
-                  fontSize={[3, 4]}
-                  mb={3}
-                  key={id}
-                />
-              ))}
-            </Grid>
-          </Box>
-          <Box
-            sx={{
-              gridArea: 'events',
-            }}
-          >
-            <Styled.h1>Events</Styled.h1>
-            <Grid gap={3} columns={1}>
-              {events.map(({ id, ...event }) => (
-                <EventPreview event={{ ...event }} mb={3} key={id} />
-              ))}
-            </Grid>
-          </Box>
-        </Box>
+      <About mb={[4, 5]} />
+      <Experience mb={[4, 5]} />
+      <Container
+        sx={{
+          maxWidth: 'width.default',
+          px: [2, 3, 4],
+          mb: 4,
+        }}
+      >
+        <Styled.h1>Webinars</Styled.h1>
+        <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
+          {events.map(({ id, ...event }) => (
+            <EventPreview event={{ ...event }} key={id} />
+          ))}
+        </Grid>
+        <Styled.h1>Blog</Styled.h1>
+        <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
+          {posts.map(({ id, ...post }) => (
+            <PostPreview post={{ ...post }} fontSize={[3, 4]} key={id} />
+          ))}
+        </Grid>
       </Container>
     </Layout>
   );
@@ -98,7 +86,7 @@ export const query = graphql`
       }
     }
     allPost(
-      limit: 3
+      limit: 4
       sort: { fields: date, order: DESC }
       filter: { type: { eq: "post" } }
     ) {
@@ -106,7 +94,11 @@ export const query = graphql`
         ...Post
       }
     }
-    allEvent(limit: 2, filter: { type: { eq: "event" } }) {
+    allEvent(
+      limit: 4
+      sort: { fields: startDate, order: DESC }
+      filter: { type: { eq: "event" } }
+    ) {
       nodes {
         ...Event
       }

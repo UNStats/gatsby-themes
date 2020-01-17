@@ -1,6 +1,6 @@
 ---
 type: Webinar
-title: Qui consectetur cupidatat ipsum aliquip est deserunt irure officia et
+title: Qui consectetur cupidatat ipsum aliquip est deserunt irure
 start: 2019-08-25T14:00
 end: 2019-08-25T14:30
 zone: Europe/Berlin
