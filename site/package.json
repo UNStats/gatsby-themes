@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.27",
-    "@mdx-js/react": "1.5.4",
+    "@mdx-js/react": "1.5.5",
     "@theme-ui/color": "0.2.53",
     "@undataforum/assets": "0.4.1",
     "@undataforum/components": "0.67.0",
