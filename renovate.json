@@ -12,6 +12,10 @@
     {
       "packagePatterns": ["@changesets"],
       "groupName": "atlassian/changesets packages"
+    },
+    {
+      "sourceUrlPrefixes": ["https://github.com/system-ui/theme-ui"],
+      "groupName": "Theme UI packages"
     }
   ],
   "schedule": "every weekend"
