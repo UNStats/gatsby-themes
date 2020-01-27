@@ -22,7 +22,7 @@
     "@undataforum/gatsby-theme-events": "*",
     "cross-env": "7.0.0",
     "deepmerge": "4.2.2",
-    "gatsby": "2.18.25",
+    "gatsby": "2.19.7",
     "gatsby-image": "2.2.39",
     "gatsby-source-filesystem": "2.1.46",
     "prop-types": "15.7.2",
