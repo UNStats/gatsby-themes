@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, DummyLogo, Footer, SocialIcons } from '@undataforum/components';
+import { Box } from 'theme-ui';
+import { DummyLogo, Footer, SocialIcons } from '@undataforum/components';
 
 const FooterProxy = props => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { object, string } from 'prop-types';
 import Img from 'gatsby-image';
-import { Box } from '@undataforum/components';
+import { Box } from 'theme-ui';
 
 const Image = ({ alt, fluid, title, ...props }) => (
   <Box mb={3} {...props}>

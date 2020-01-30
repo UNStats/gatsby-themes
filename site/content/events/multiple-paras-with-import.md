@@ -12,7 +12,7 @@ speakers:
 registration: /registration
 ---
 
-import { Box, Video } from '@undataforum/components';
+import { Box } from 'theme-ui'; import { Video } from '@undataforum/components';
 
 You should see an entire paragraph in the preview. This event covers the test
 case **multiple paragraphs** with import statement **before** the first

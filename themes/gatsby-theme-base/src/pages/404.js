@@ -1,6 +1,6 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
-import { Text } from '@undataforum/components';
+import { Text } from 'theme-ui';
 
 import DefaultPage from '../components/default-page';
 

@@ -1,12 +1,8 @@
 import React from 'react';
 import { func, shape, string, arrayOf } from 'prop-types';
-import {
-  Container,
-  EventPreview,
-  Link,
-  NewTabLink,
-} from '@undataforum/components';
-import { Layout, MDXRenderer, Styled } from '@undataforum/gatsby-theme-base';
+import { Container, Link, Styled } from 'theme-ui';
+import { EventPreview, NewTabLink } from '@undataforum/components';
+import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 const EventPage = ({
   event,

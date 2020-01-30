@@ -1,11 +1,12 @@
 import React from 'react';
 import { arrayOf, shape, string, func } from 'prop-types';
-import { Container, Grid, PostPreview } from '@undataforum/components';
-import { Layout, Styled } from '@undataforum/gatsby-theme-base';
+import { Container, Grid, Styled } from 'theme-ui';
+import { PostPreview } from '@undataforum/components';
+import { Layout } from '@undataforum/gatsby-theme-base';
 
 const PostsPage = ({ posts, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
-    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4], mb: 4 }}>
+    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
       <Styled.h1>{title}</Styled.h1>
       <Grid gap={4} columns={[1, null, 2]}>
         {posts.map(({ id, ...post }) => (

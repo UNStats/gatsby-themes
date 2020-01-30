@@ -1,12 +1,8 @@
 import React from 'react';
 import { shape, object } from 'prop-types';
-import {
-  Container,
-  EventPreview,
-  Grid,
-  PostPreview,
-} from '@undataforum/components';
-import { Layout, Styled } from '@undataforum/gatsby-theme-base';
+import { Container, Grid, Styled } from 'theme-ui';
+import { EventPreview, PostPreview } from '@undataforum/components';
+import { Layout } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
 import { normalize as normalizePost } from '@undataforum/gatsby-theme-blog';
 import { normalize as normalizeEvent } from '@undataforum/gatsby-theme-events';
@@ -49,7 +45,6 @@ const Homepage = ({ data }) => {
         sx={{
           maxWidth: 'width.default',
           px: [2, 3, 4],
-          mb: 4,
         }}
       >
         <Styled.h1>Webinars</Styled.h1>
@@ -59,7 +54,7 @@ const Homepage = ({ data }) => {
           ))}
         </Grid>
         <Styled.h1>Blog</Styled.h1>
-        <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
+        <Grid gap={[4, 5]} columns={[1, null, 2]}>
           {posts.map(({ id, ...post }) => (
             <PostPreview post={{ ...post }} fontSize={[3, 4]} key={id} />
           ))}

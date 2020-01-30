@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, Text } from '@undataforum/components';
+import { Box, Container, Grid, Text } from 'theme-ui';
 
 const Experience = ({ ...props }) => (
   <Container {...props} sx={{ maxWidth: 'width.wide', px: [2, 3, 4] }}>

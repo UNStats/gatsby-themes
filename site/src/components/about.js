@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text } from '@undataforum/components';
+import { Container, Text } from 'theme-ui';
 
 const About = ({ ...props }) => (
   <Container

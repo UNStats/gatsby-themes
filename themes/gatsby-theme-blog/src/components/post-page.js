@@ -1,6 +1,7 @@
 import React from 'react';
 import { arrayOf, func, object, shape, string } from 'prop-types';
-import { Container, PostPreview } from '@undataforum/components';
+import { Container } from 'theme-ui';
+import { PostPreview } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 const PostPage = ({ post, images, description, body, location }) => (

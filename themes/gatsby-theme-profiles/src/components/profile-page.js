@@ -1,6 +1,7 @@
 import React from 'react';
 import { func, shape, string } from 'prop-types';
-import { Container, ProfilePreview } from '@undataforum/components';
+import { Container } from 'theme-ui';
+import { ProfilePreview } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 const ProfilePage = ({ profile, description, body, location }) => (
