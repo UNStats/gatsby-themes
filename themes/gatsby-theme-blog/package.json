@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-blog",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "A Gatsby theme for a blog.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@undataforum/components": "^0.70.1",
-    "@undataforum/gatsby-theme-base": "^0.11.0",
-    "@undataforum/gatsby-theme-profiles": "^0.6.0",
+    "@undataforum/gatsby-theme-base": "^0.12.0",
+    "@undataforum/gatsby-theme-profiles": "^0.7.0",
     "gatsby-image": "^2.2.38",
     "gatsby-source-filesystem": "^2.1.46",
     "prop-types": "^15.7.2",
