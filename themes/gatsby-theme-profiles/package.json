@@ -34,7 +34,6 @@
     "@undataforum/components": "^0.70.1",
     "@undataforum/gatsby-theme-base": "^0.11.0",
     "gatsby-image": "^2.2.38",
-    "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.12",
