@@ -1,16 +1,12 @@
 import React from 'react';
 import { arrayOf, func, shape, string } from 'prop-types';
-import {
-  Container,
-  Grid,
-  ProfilePreview,
-  SmartLink,
-} from '@undataforum/components';
-import { Layout, Styled } from '@undataforum/gatsby-theme-base';
+import { Container, Grid, Styled } from 'theme-ui';
+import { ProfilePreview, SmartLink } from '@undataforum/components';
+import { Layout } from '@undataforum/gatsby-theme-base';
 
 const ProfilesPage = ({ profiles, render, title, description, location }) => (
   <Layout location={location} title={title} description={description}>
-    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4], mb: 4 }}>
+    <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
       <Styled.h1>{title}</Styled.h1>
       {render && render()}
       <Grid gap={4} columns={[1, 2, 3]}>

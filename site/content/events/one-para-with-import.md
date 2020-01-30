@@ -12,7 +12,7 @@ speakers:
   - suzy-cahan
 ---
 
-import { Box } from '@undataforum/components';
+import { Box } from 'theme-ui';
 
 You should see an entire paragraph in the preview. This event covers the test
 case one paragraph with import statement before the paragraph. This is a filler

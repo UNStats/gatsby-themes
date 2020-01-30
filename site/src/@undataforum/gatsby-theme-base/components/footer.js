@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Footer, SocialIcons } from '@undataforum/components';
+import { Box } from 'theme-ui';
+import { Footer, SocialIcons } from '@undataforum/components';
 import { Logo } from '@undataforum/assets';
 
 const ShadowedFooter = props => {

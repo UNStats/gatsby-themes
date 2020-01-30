@@ -12,11 +12,8 @@
     "purge": "rm -rf ./node_modules"
   },
   "dependencies": {
-    "@emotion/core": "10.0.27",
-    "@mdx-js/react": "1.5.5",
-    "@theme-ui/color": "0.2.53",
     "@undataforum/assets": "0.4.1",
-    "@undataforum/components": "0.67.0",
+    "@undataforum/components": "0.70.1",
     "@undataforum/gatsby-theme-base": "*",
     "@undataforum/gatsby-theme-blog": "*",
     "@undataforum/gatsby-theme-events": "*",
@@ -28,7 +25,7 @@
     "prop-types": "15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "theme-ui": "0.2.52",
+    "theme-ui": "0.3.1",
     "typeface-roboto": "0.0.75"
   }
 }

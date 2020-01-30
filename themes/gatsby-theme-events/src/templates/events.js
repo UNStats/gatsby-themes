@@ -1,7 +1,8 @@
 import React from 'react';
 import { object, shape, string } from 'prop-types';
 import { graphql } from 'gatsby';
-import { Heading, Names } from '@undataforum/components';
+import { Heading } from 'theme-ui';
+import { Names } from '@undataforum/components';
 import { MDXRenderer } from '@undataforum/gatsby-theme-base';
 
 import EventsPage from '../components/events-page';
