@@ -1,5 +1,27 @@
 # @undataforum/gatsby-theme-events
 
+## 0.6.0
+
+### Minor Changes
+
+- [`02d88be`](https://github.com/UNDataForum/gatsby-themes/commit/02d88be836e5d17e48de8f7c913cecec06be151c)
+  [#324](https://github.com/UNDataForum/gatsby-themes/pull/324) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update theme-ui to v0.3.x
+
+* [`02d88be`](https://github.com/UNDataForum/gatsby-themes/commit/02d88be836e5d17e48de8f7c913cecec06be151c)
+  [#324](https://github.com/UNDataForum/gatsby-themes/pull/324) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update theme-ui to v0.3.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`6133caa`](https://github.com/UNDataForum/gatsby-themes/commit/6133caa75c17d0bbebea0736b101daba453005cc),
+  [`02d88be`](https://github.com/UNDataForum/gatsby-themes/commit/02d88be836e5d17e48de8f7c913cecec06be151c),
+  [`8aee8ec`](https://github.com/UNDataForum/gatsby-themes/commit/8aee8ecab69d8f2ece5cf42476af4d51634902c4),
+  [`02d88be`](https://github.com/UNDataForum/gatsby-themes/commit/02d88be836e5d17e48de8f7c913cecec06be151c)]:
+  - @undataforum/gatsby-theme-base@0.12.0
+  - @undataforum/gatsby-theme-profiles@0.7.0
+
 ## 0.5.1
 
 ### Patch Changes
