@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   siteMetadata: {
     title: 'Site title placeholder (from @undataforum/gatsby-theme-base)',
@@ -10,12 +8,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-theme-ui',
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: path.join(__dirname, 'src/pages'),
-      },
-    },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
