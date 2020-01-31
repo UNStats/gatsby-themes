@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-base
 
+## 0.12.1
+
+### Patch Changes
+
+- [`4a7f14a`](https://github.com/UNDataForum/gatsby-themes/commit/4a7f14a0f86c45e85bf04c0bfc6912755c865569)
+  Thanks [@454de6e](https://github.com/454de6e)! - Update preset with revised
+  colors and update all dependencies
+
 ## 0.12.0
 
 ### Minor Changes
