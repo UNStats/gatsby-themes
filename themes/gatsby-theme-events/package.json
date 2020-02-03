@@ -28,7 +28,7 @@
     "gatsby": "^2.18.21",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "theme-ui": "^0.2.52"
+    "theme-ui": "^0.3.1"
   },
   "dependencies": {
     "@undataforum/components": "^0.70.2",
