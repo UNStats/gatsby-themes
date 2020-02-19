@@ -1,4 +1,4 @@
 .cache
-.env
+.eslintcache
 node_modules
 public

@@ -4,27 +4,23 @@
     "themes/*",
     "site"
   ],
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "start": "yarn workspace site run develop",
     "build": "rm -rf public && yarn workspace site run build && mv site/public/ public",
     "clean": "yarn workspace site run clean",
-    "lint": "eslint . --ignore-path .gitignore",
-    "format": "pretty-quick",
-    "purge": "rm -rf ./node_modules && yarn workspaces run purge",
-    "release": "yarn changeset publish && git push --follow-tags"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
+    "lint": "yarn run lint:code && yarn run lint:other",
+    "lint:code": "eslint . --cache --ext .js,.jsx --ignore-path .gitignore",
+    "lint:other": "yarn run prettier --check",
+    "prettier": "prettier \"**/*.{md,css,yaml,yml}\" --ignore-path .gitignore",
+    "format": "yarn run format:code && yarn run format:other",
+    "format:code": "yarn run lint:code --fix",
+    "format:other": "yarn run prettier --write",
+    "release": "yarn changeset publish && git push --follow-tags",
+    "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "devDependencies": {
@@ -35,7 +31,6 @@
     "husky": "4.2.3",
     "lint-staged": "10.0.7",
     "now": "17.0.3",
-    "prettier": "1.19.1",
-    "pretty-quick": "2.0.1"
+    "prettier": "1.19.1"
   }
 }
