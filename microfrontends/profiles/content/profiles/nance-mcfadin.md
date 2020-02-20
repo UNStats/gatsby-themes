@@ -4,7 +4,7 @@ lastName: McFadin
 jobtitle: Help Desk Operator
 organization: Schuster-Senger
 description: Description from the frontmatter.
-avatar: ../assets/profiles/nance-mcfadin.png
+avatar: ../assets/nance-mcfadin.png
 roles:
   - Committee
   - Organizer

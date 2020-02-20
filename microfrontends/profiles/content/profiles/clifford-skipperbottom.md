@@ -4,7 +4,7 @@ firstName: Clifford
 lastName: Skipperbottom
 jobtitle: Senior Financial Analyst
 organization: Block, Bruen and Gerlach
-avatar: ../assets/profiles/clifford-skipperbottom.png
+avatar: ../assets/clifford-skipperbottom.png
 ---
 
 Sint pariatur mollit voluptate magna consequat in deserunt elit incididunt sunt.
