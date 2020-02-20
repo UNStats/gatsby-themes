@@ -4,7 +4,7 @@ firstName: Sandra
 lastName: Abramovici-Floris
 jobtitle: Help Desk Operator
 organization: Kunze, Lehner and Kutch
-avatar: ../assets/profiles/sandra-abramovici-floris.png
+avatar: ../assets/sandra-abramovici-floris.png
 roles:
   - Committee
 ---

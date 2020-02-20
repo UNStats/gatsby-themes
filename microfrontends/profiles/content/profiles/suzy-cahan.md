@@ -3,7 +3,7 @@ firstName: Suzy
 lastName: Cahan
 jobtitle: Research Assitant
 organization: Hickle-Emmerich
-avatar: ../assets/profiles/suzy-cahan.png
+avatar: ../assets/suzy-cahan.png
 ---
 
 Culpa sit deserunt mollit mollit Lorem ea. Id sint laborum in veniam esse

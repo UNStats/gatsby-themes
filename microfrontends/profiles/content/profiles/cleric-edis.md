@@ -3,7 +3,7 @@ firstName: Cleric
 lastName: Edis
 jobtitle: Staff Scientist
 organization: Ritchie Inc
-avatar: ../assets/profiles/cleric-edis.png
+avatar: ../assets/cleric-edis.png
 roles:
   - Organizer
 ---
