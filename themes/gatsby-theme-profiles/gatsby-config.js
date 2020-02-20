@@ -1,32 +1,25 @@
-const defaultOptions = require('./defaultOptions');
+const withDefaults = require('./utils/default-options');
 
-module.exports = ({
-  assetPath = defaultOptions.assetPath,
-  basePath = defaultOptions.basePath,
-  contentPath = defaultOptions.contentPath,
-  type = defaultOptions.type,
-}) => ({
-  siteMetadata: {
-    basePath,
-  },
-  plugins: [
-    '@undataforum/gatsby-theme-base',
-    // You can Filter File nodes by sourceInstanceName:
-    // https://www.gatsbyjs.org/packages/gatsby-source-filesystem/#how-to-query
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: contentPath,
-        name: type,
+module.exports = themeOptions => {
+  const { contentPath, assetPath, collection } = withDefaults(themeOptions);
+  return {
+    plugins: [
+      '@undataforum/gatsby-theme-base',
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          path: contentPath,
+          name: collection,
+        },
       },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: assetPath,
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          path: assetPath,
+        },
       },
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-  ],
-});
+      'gatsby-transformer-sharp',
+      'gatsby-plugin-sharp',
+    ],
+  };
+};
