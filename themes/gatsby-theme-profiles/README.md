@@ -2,9 +2,6 @@
 
 A [Gatsby](https://www.gatsbyjs.org/) theme to create profile pages.
 
-This theme adds GraphQL type `Profile` which can be queried with `profile` and
-`allProfile` queries.
-
 ## Usage
 
 ### Theme options
@@ -63,7 +60,8 @@ each key corresponds to the GraphQL type listed in the following section.
 
 ### GraphQL Profile type
 
-The GraphQL Profile type makes no assumptions about what the underlying data
+This theme adds GraphQL type `Profile` which can be queried with `profile` and
+`allProfile` queries. Type `Profile` makes no assumptions about what the underlying data
 source is.
 
 | Field          | Type        | Description                                                                                                                                                                                                                                                                   |

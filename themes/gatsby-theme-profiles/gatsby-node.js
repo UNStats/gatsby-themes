@@ -133,6 +133,7 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
     component: require.resolve('./src/templates/profiles-query'),
     context: {
       collection,
+      lang: 'en',
     },
   });
 };
