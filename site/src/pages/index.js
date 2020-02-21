@@ -1,10 +1,9 @@
 import React from 'react';
 import { shape, object } from 'prop-types';
 import { Container, Grid, Styled } from 'theme-ui';
-import { EventPreview, PostPreview } from '@undataforum/components';
+import { EventPreview, Names, PostPreview } from '@undataforum/components';
 import { Layout } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
-import { normalize as normalizePost } from '@undataforum/gatsby-theme-blog';
 import { normalize as normalizeEvent } from '@undataforum/gatsby-theme-events';
 
 import About from '../components/about';
@@ -15,7 +14,7 @@ import Hero from '../components/hero';
 // - update filename regex,
 // - update maxWidth to avoid blurry images.
 const Homepage = ({ data }) => {
-  const posts = data.allPost.nodes.map(normalizePost);
+  const posts = data.allPost.nodes;
   const events = data.allEvent.nodes.map(normalizeEvent);
   // eslint-disable-next-line no-unused-vars
   const { description, ...promotedEvent } = events[0];
@@ -55,9 +54,28 @@ const Homepage = ({ data }) => {
         </Grid>
         <Styled.h1>Blog</Styled.h1>
         <Grid gap={[4, 5]} columns={[1, null, 2]}>
-          {posts.map(({ id, ...post }) => (
-            <PostPreview post={{ ...post }} fontSize={[3, 4]} key={id} />
-          ))}
+          {posts.map(({ id, ...post }) => {
+            const {
+              title: { text: title },
+              date,
+              authors,
+              path,
+            } = post;
+            return (
+              <PostPreview
+                post={{
+                  title,
+                  date,
+                  authors: (
+                    <Names values={authors.map(({ name }) => name)} mb={3} />
+                  ),
+                  href: path,
+                }}
+                fontSize={[3, 4]}
+                key={id}
+              />
+            );
+          })}
         </Grid>
       </Container>
     </Layout>
@@ -86,7 +104,15 @@ export const query = graphql`
       filter: { collection: { eq: "blog" } }
     ) {
       nodes {
-        ...Post
+        id
+        title {
+          text
+        }
+        date(formatString: "MMM DD, YYYY")
+        authors {
+          name
+        }
+        path
       }
     }
     allEvent(

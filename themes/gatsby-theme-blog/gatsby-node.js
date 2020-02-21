@@ -111,7 +111,7 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
   posts.forEach(({ id, path: href }) => {
     createPage({
       path: href,
-      component: require.resolve('./src/templates/post.js'),
+      component: require.resolve('./src/templates/post-query.js'),
       context: {
         id,
       },
@@ -121,9 +121,10 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
   // Create posts page.
   createPage({
     path: urlResolve(basePath),
-    component: require.resolve('./src/templates/posts.js'),
+    component: require.resolve('./src/templates/posts-query.js'),
     context: {
       collection,
+      lang: 'en',
     },
   });
 };
