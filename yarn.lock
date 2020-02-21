@@ -1946,24 +1946,24 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@undataforum/assets@0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.4.1.tgz#1a003cf68b3f907e9116b695a7e928125dccc36c"
-  integrity sha512-5qn2Wrm2HmRfh69MHrUWwkKjVhVBs7qqrlJfM0d/DL7n/QUJ3Qfn3o5NKj4KXldr50wAE25vxyz0XAzirVMyoQ==
+"@undataforum/assets@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.5.0.tgz#9fd89da5968efb0dffee55521f2762bd1ff31bf8"
+  integrity sha512-Gd0DSyzaoSPuoPF+78+WKZNG1N+q29KoVnf2GNSjU46HjZsAiGKktoqg3ODJBRQXsmaT9zFRveBX7pmI5E1L/Q==
   dependencies:
     prop-types "^15.7.2"
 
-"@undataforum/components@0.70.2", "@undataforum/components@^0.70.2":
-  version "0.70.2"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.70.2.tgz#b0a495688c63b098f5b832727dc0a95d1670a2b6"
-  integrity sha512-hB1sqGrQ2QFMFyWZH//EqG8vK1QCB2Q3qs2eCkwxSobCLNrZUN9qDx79isZWqm0WBgKeX9uUumojoe37TVak/A==
-  dependencies:
-    prop-types "^15.7.2"
-
-"@undataforum/components@^0.71.0":
+"@undataforum/components@0.71.0", "@undataforum/components@^0.71.0":
   version "0.71.0"
   resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.71.0.tgz#65dd723990a31b39779afe9ffba0983625609e3d"
   integrity sha512-lip4o2I1ASHDhr5MUTnT8p8/gT4CLRWUqYEldfITmOT0mQq2V5SogkqZsDV68FCCJSkW50fK6L2/d8gzwmLB1g==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@undataforum/components@^0.70.2":
+  version "0.70.2"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.70.2.tgz#b0a495688c63b098f5b832727dc0a95d1670a2b6"
+  integrity sha512-hB1sqGrQ2QFMFyWZH//EqG8vK1QCB2Q3qs2eCkwxSobCLNrZUN9qDx79isZWqm0WBgKeX9uUumojoe37TVak/A==
   dependencies:
     prop-types "^15.7.2"
 
@@ -14758,9 +14758,9 @@ xmlhttprequest-ssl@~1.5.4:
   integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
 
 xstate@^4.7.2:
-  version "4.7.7"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.7.7.tgz#3533edec1f8d72f147009301f071dc35f1a5ac33"
-  integrity sha512-ctV7gShkDe+HOLP1MV78FRqWhNtmMJvtGjlgP10N6MeELVxGbvc54WrwfBv0e/xyjSaqveM48Pohut71naqVNA==
+  version "4.7.8"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.7.8.tgz#a12ae521b105711b06cf95ab2652c1640d75d62d"
+  integrity sha512-pRCBefTPvQRJWpvFi9xP4PkgozqpppKjC4xM1WjeFWxIroV1b7Jch4tnky30ZO4ywpVyn8bQMNRIC+5tuTfEKQ==
 
 xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.2"

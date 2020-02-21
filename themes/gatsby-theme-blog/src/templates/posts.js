@@ -8,9 +8,7 @@ import PostsPage from '../components/posts-page';
 export const normalize = ({ id, title, authors, date, description, path }) => ({
   id,
   title: title.text,
-  authors() {
-    return <Names values={authors.map(({ name }) => name)} mb={3} />;
-  },
+  authors: <Names values={authors.map(({ name }) => name)} mb={3} />,
   date,
   description: description.text,
   href: path,
@@ -57,10 +55,10 @@ export const fragment = graphql`
 `;
 
 export const query = graphql`
-  query($type: String!) {
+  query($collection: String!) {
     allPost(
       sort: { fields: date, order: DESC }
-      filter: { type: { eq: $type } }
+      filter: { collection: { eq: $collection } }
     ) {
       nodes {
         ...Post

@@ -15,8 +15,8 @@ module.exports = ({ actions, schema }) => {
         slug: {
           type: 'ID!',
         },
-        // Type is used to distinguish different post collections.
-        type: {
+        // Distinguish different post collections.
+        collection: {
           type: 'String!',
         },
         date: {
@@ -27,14 +27,14 @@ module.exports = ({ actions, schema }) => {
           },
         },
         authors: {
-          type: '[Profile]!',
+          type: '[Profile!]!',
           // Link profiles by slug.
           extensions: {
             link: { by: 'slug' },
           },
         },
         images: {
-          type: '[File]',
+          type: '[File!]',
           extensions: {
             fileByRelativePath: {},
           },

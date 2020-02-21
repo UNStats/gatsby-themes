@@ -12,8 +12,8 @@ module.exports = {
       resolve: '@undataforum/gatsby-theme-blog',
       options: {
         basePath: '/blog',
-        description:
-          'Blog posts authored by the United Nations World Data Forum community.',
+        contentPath: 'content/posts',
+        assetPath: 'content/assets/posts',
       },
     },
     {

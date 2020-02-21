@@ -1,14 +1,8 @@
-const defaultOptions = require('../defaultOptions');
+const withDefaults = require('../utils/default-options');
+const urlResolve = require('../utils/url-resolve');
 
-module.exports = async (
-  { graphql, actions },
-  {
-    basePath = defaultOptions.basePath,
-    title = defaultOptions.title,
-    description = defaultOptions.description,
-    type = defaultOptions.type,
-  }
-) => {
+module.exports = async ({ graphql, actions }, themeOptions) => {
+  const { basePath, collection } = withDefaults(themeOptions);
   const { createPage } = actions;
 
   const {
@@ -17,8 +11,8 @@ module.exports = async (
     },
   } = await graphql(
     `
-      query($type: String!) {
-        allPost(filter: { type: { eq: $type } }) {
+      query($collection: String!) {
+        allPost(filter: { collection: { eq: $collection } }) {
           nodes {
             id
             path
@@ -26,7 +20,7 @@ module.exports = async (
         }
       }
     `,
-    { type }
+    { collection }
   );
 
   // Create individual post pages.
@@ -42,12 +36,10 @@ module.exports = async (
 
   // Create posts page.
   createPage({
-    path: `${basePath}/`,
+    path: urlResolve(basePath),
     component: require.resolve('../src/templates/posts.js'),
     context: {
-      title,
-      description,
-      type,
+      collection,
     },
   });
 };

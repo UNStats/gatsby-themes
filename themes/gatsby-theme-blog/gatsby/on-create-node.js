@@ -1,13 +1,17 @@
+const path = require('path');
+
 const { createFilePath } = require('gatsby-source-filesystem');
 const remark = require('remark');
 const strip = require('strip-markdown');
 
-const defaultOptions = require('../defaultOptions');
+const withDefaults = require('../utils/default-options');
+const urlResolve = require('../utils/url-resolve');
 
 module.exports = (
   { node, actions, getNode, createNodeId, createContentDigest },
-  { basePath = defaultOptions.basePath, type = defaultOptions.type }
+  themeOptions
 ) => {
+  const { basePath, collection } = withDefaults(themeOptions);
   // Process MDX nodes only.
   if (node.internal.type !== `Mdx`) {
     return;
@@ -18,7 +22,7 @@ module.exports = (
   const name = fileNode.sourceInstanceName;
 
   // Process files in `contentPath` location only.
-  if (name === type) {
+  if (name === collection) {
     const { createNode } = actions;
 
     // Process description.
@@ -42,27 +46,27 @@ module.exports = (
 
     // Use this ID to link node that processes any Markdown in description.
     const descriptionNodeId = createNodeId(
-      `${type}-description-${description}`
+      `${collection}-description-${description}`
     );
 
     // Use this ID to link node that processes Markdown in title.
-    const titleNodeId = createNodeId(`${type}-title-${node.frontmatter.title}`);
+    const titleNodeId = createNodeId(
+      `${collection}-title-${node.frontmatter.title}`
+    );
 
     // Process path and slug.
-    let path;
+    let slug;
     if (node.frontmatter.slug) {
-      path = `/${node.frontmatter.slug}/`;
+      slug = node.frontmatter.slug;
     } else {
       // relativePath in corresponding file node is relative to contentPath from corresponding gatsby-source-filesystem config.
       // Therefore, pass in '' for basePath (argument basePath is different from theme option basePath.
-      path = createFilePath({ node, getNode, basePath: '' });
+      slug = path.basename(createFilePath({ node, getNode, basePath: '' }));
     }
-    const slug = path.slice(1, -1);
-    // Add theme's basePath.
-    path = `${basePath}${path}`;
+    const href = urlResolve(basePath, slug);
     const post = {
       slug,
-      type,
+      collection,
       // Foreign key reference to node that will be created further down.
       title___NODE: titleNodeId,
       date: node.frontmatter.date,
@@ -71,12 +75,12 @@ module.exports = (
       images: node.frontmatter.images,
       // Foreign key reference to node that will be created further down.
       description___NODE: descriptionNodeId,
-      path,
+      path: href,
     };
     const postNode = {
       ...post,
       // Generated ID is namespaced to plugin.name.
-      id: createNodeId(`${type}-${slug}`),
+      id: createNodeId(`${collection}-${slug}`),
       // Make post node aware of MDX node.
       parent: node.id,
       children: [],
@@ -94,7 +98,7 @@ module.exports = (
       parent: postNode.id,
       children: [],
       internal: {
-        type: `${type}Description`,
+        type: `${collection}Description`,
         contentDigest: createContentDigest(description),
         mediaType: 'text/markdown',
         content: description,
@@ -115,7 +119,7 @@ module.exports = (
       parent: postNode.id,
       children: [],
       internal: {
-        type: `${type}Title`,
+        type: `${collection}Title`,
         contentDigest: createContentDigest(node.frontmatter.title),
         mediaType: 'text/markdown',
         content: node.frontmatter.title,
