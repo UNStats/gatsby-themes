@@ -11,27 +11,23 @@ const Post = ({ location, data }) => {
   const post = {
     title: title.text,
     date,
-    authors() {
-      return (
-        <Avatars
-          values={authors.map(author => ({
-            id: author.id,
-            avatar() {
-              return (
-                <Img
-                  style={{ borderRadius: '100%' }}
-                  alt={author.name}
-                  fixed={author.avatar.childImageSharp.fixed}
-                />
-              );
-            },
-            name: author.name,
-            href: author.path,
-          }))}
-          mb={3}
-        />
-      );
-    },
+    authors: (
+      <Avatars
+        values={authors.map(author => ({
+          id: author.id,
+          avatar: (
+            <Img
+              style={{ borderRadius: '100%' }}
+              alt={author.name}
+              fixed={author.avatar.childImageSharp.fixed}
+            />
+          ),
+          name: author.name,
+          href: author.path,
+        }))}
+        mb={3}
+      />
+    ),
   };
   // If post has images, extract fluid images.
   const fluidImages = images

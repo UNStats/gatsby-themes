@@ -1,40 +1,20 @@
 # @undataforum/gatsby-theme-blog
 
-A [Gatsby](https://www.gatsbyjs.org/) theme to create a blog.
+A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) to create a blog with post pages and a posts overview page. This theme can also be used for news articles.
 
 ## Usage
 
 ### Theme options
 
-#### `assetPath` (default: `/content/assets/posts`)
+| Key           | Default Value    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :------------ | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `basePath`    | `/`              | Root url for all posts. Should be changed to `/blog` in most cases. `basePath` is used in Gatsby lifecycle methods to generate individual post pages and the posts overview page.                                                                                                                                                                                                                                                          |
+| `contentPath` | `content/blog`   | Location of profile MDX files. The filename convention is `<slug>.md`, e.g. `the-power-of-new-data-sources.md`. If you do not set a slug in the frontmatter, the MDX file's base name, in this example `the-power-of-new-data-sources`, is used as slug. `contentPath` is used to configure plugin `gatsby-source-filesystem`. Any file in `contentPath` is part of the GraphQL `Mdx` collection.                                          |
+| `assetPath`   | `content/assets` | Location of assets for blog posts. `assetPath` is used to configure plugin `gatsby-source-filesystem`. Any image in `assetPath` can be linked to a post by adding it to the frontmatter `images` array via relative path. Images can follow any file name convention you like.                                                                                                                                                             |
+| `collection`  | `blog`           | The `collection` option is supplied to the `name` option of plugin `gatsby-source-filesystem` for the `contentPath` definition. This makes it possible to filter `File` nodes by `collection` using `sourceInstanceName`. If you configure this theme more than once in `gatsby-config.js`, you can use `collection` to distinguish different post collections, e.g. collection `blog` for a blog and collection `news` for news articles. |
+| `profiles`    | `undefined`      | If `profiles` is not set, frontmatter `authors` is interpreted as an array of author names and rendered as such. If `profiles` is set, it refers to a specific collection of profiles created with `@undataforum/gatsby-theme-profiles`. In this case frontmatter `authors` is interpreted as array of author slugs that each reference a profile in the collection defined by the `profiles` option.                                      |
 
-Path to folder with pictures for blog posts.
-
-#### `basePath` (default: "")
-
-Root URL for blog. By default, the blog is served from `/`. When using this theme together with other themes, you should change this option to `/blog`.
-
-#### `contentPath` (default: `/content/posts`)
-
-Path to folder with MDX blog posts. The filename convention is `<slug>.mdx`, e.g. `a-very-interesting-article.mdx`. If you do not set a slug in the frontmatter, the base name, in this example `a-very-interesting-article` is used as slug.
-
-#### `type` (default: `post`)
-
-If this theme is configured multiple times in `gatsby-config.js`, you can distinguish different post collections with the `type` field in GraphQL queries, e.g. type `blog` for blog posts and type `news` news articles.
-
-#### `profileType` (default: `profile`)
-
-This theme uses `@undataforum/gatsby-theme-profiles` to manage profile pages of blog post authors. The frontmatter of each post contains one or more links to profiles via profile slugs. Referenced profiles must be part of the `profileType` collection of profiles.
-
-#### `title` (default: `Blog`)
-
-Page title for the index page generated at route `basePath`. Defaults to `Posts`. Can be set to something like `Blog` or `News`.
-
-#### `description` (optional)
-
-SEO description for the index page generated at route `basePath`.
-
-### Example theme config
+This example config shows how to configure two separate posts collections:
 
 This example shows how to include this theme twice, but keep the post collections separate:
 
@@ -46,44 +26,50 @@ module.exports = {
       resolve: `@undataforum/gatsby-theme-blog`,
       options: {
         basePath: '/news',
-        assetPath: '/assets/news',
         contentPath: '/content/news',
-        type: 'news'
+        assetPath: '/assets/news',
+        collection: 'news'
       },
     },
         {
       resolve: `@undataforum/gatsby-theme-blog`,
       options: {
         basePath: `/blog`,
-        assetPath: `/assets/blog`,
         contentPath: '/content/blog',
-        type: 'blog`
+        assetPath: `/assets/blog`,
+        collection: 'blog`
       },
     },
   ],
 }
 ```
 
-### Frontmatter
+### MDX frontmatter
 
-Frontmatter for MDX profiles located in `contentPath`.
+Frontmatter keys for MDX posts located in `contentPath`. The YAML type of
+each key corresponds to the GraphQL type listed in the following section.
 
-#### `title` (required)
+| Key           | Required | Description                                                                                                                                                                                     |
+| :------------ | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | yes      | Post title.                                                                                                                                                                                     |
+| `date`        | yes      | Date in `YYYY-mm-DD` format. This is the date as it should appear on the website. There is no timezone magic happening anywhere.                                                                |
+| `authors`     | yes      | If theme option `profiles` is not set, this is a list of author names. If theme option `profiles` is set, this is a list of author slugs that references profiles in the `profiles` collection. |
+| `slug`        | no       | The default slug is the post MDX file's base name. This value overrides the default.                                                                                                            |
+| `description` | no       | The default description for SEO purposes is the first paragraph in a post MDX file. This value overrrides the default.                                                                          |
+| `images`      | no       | List of relative paths to images that can be included into a post via MDX.                                                                                                                      |
 
-Post title.
+### GraphQL Profile type
 
-#### `date` (required)
+This theme adds GraphQL type `Post` which can be queried with `post` and
+`allPost` queries. Type `Post` makes no assumptions about what the underlying data
+source is.
 
-Date formatted as `YYYY-mm-DD`. The date as it should appear on the site. There is no timezone magic happening anywhere.
-
-#### `authors` (required)
-
-List of profile slugs referencing profiles in the `profileType` collection. `profileType` is a theme option.
-
-#### `slug` (optional)
-
-By default, this theme derives a posts's slug from its MDX filename: `<slug>.mdx`. If you set a slug in the frontmatter, it takes precedence.
-
-#### `description` (optional)
-
-By default, this theme uses a post's first paragraph as description meta tag for SEO. If you provide `description` in the frontmatter, it takes precedence over the first paragraph.
+| Field     | Type                          | Description                                                                                    |
+| :-------- | :---------------------------- | :--------------------------------------------------------------------------------------------- |
+| `id`      | `ID!`                         | Gatsby node GUID.                                                                              |
+| `slug`    | `ID!`                         | Alternative ID used for querying and building the graph.                                       |
+| `date`    | `Date!`                       |                                                                                                |
+| `authors` | `[String!]!` or `[Profile!]!` | Type depends on theme option `profiles`.                                                       |
+| `body`    | `String`                      | A string representation of the body of the profile page. For MDX pages this is the MDX `body`. |
+| `images`  | `[File!]`                     | Relative paths to images.                                                                      |
+| `path`    | `String!`                     | Path to generated page.                                                                        |

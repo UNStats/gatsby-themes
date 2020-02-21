@@ -1,14 +1,11 @@
 const fs = require('fs');
 
-const defaultOptions = require('../defaultOptions');
+const withDefaults = require('../utils/default-options');
 
-module.exports = (
-  { reporter },
-  {
-    assetPath = defaultOptions.assetPath,
-    contentPath = defaultOptions.contentPath,
-  }
-) => {
+// Ensure that content directories exist.
+// contentPath and assetPath are relative to the root of the project to which this theme has been added as dependency.
+module.exports = ({ reporter }, themeOptions) => {
+  const { contentPath, assetPath } = withDefaults(themeOptions);
   const dirs = [assetPath, contentPath];
   dirs.forEach(dir => {
     if (fs.existsSync(dir)) return;

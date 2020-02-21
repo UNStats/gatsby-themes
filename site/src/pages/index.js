@@ -83,7 +83,7 @@ export const query = graphql`
     allPost(
       limit: 4
       sort: { fields: date, order: DESC }
-      filter: { type: { eq: "post" } }
+      filter: { collection: { eq: "blog" } }
     ) {
       nodes {
         ...Post
