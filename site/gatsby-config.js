@@ -7,15 +7,8 @@ module.exports = {
     siteUrl: pkg.homepage,
   },
   plugins: [
+    'blog',
     'profiles',
-    {
-      resolve: '@undataforum/gatsby-theme-blog',
-      options: {
-        basePath: '/blog',
-        contentPath: 'content/posts',
-        assetPath: 'content/assets/posts',
-      },
-    },
     {
       resolve: '@undataforum/gatsby-theme-events',
       options: {

@@ -5,7 +5,7 @@ authors:
   - suzy-cahan
   - sandra-abramovici-floris
 images:
-  - ../assets/posts/carlos-muza-hpjSkU2UYSU-unsplash.jpg
+  - ../assets/carlos-muza-hpjSkU2UYSU-unsplash.jpg
 ---
 
 import { Image } from '@undataforum/gatsby-theme-blog';
