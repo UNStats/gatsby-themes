@@ -1967,10 +1967,10 @@
   dependencies:
     prop-types "^15.7.2"
 
-"@undataforum/preset@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/preset/-/preset-0.4.0.tgz#442b2a48cf0ba281c6ba28a94389a282b984deb1"
-  integrity sha512-B687V0uPH1R71ryaTRtPJAYJk7koO6aotvDcdzUo2kD0Z47u3wmcnGFvxwiYrP4LAtzkSqEkkLMJLnlKPPSlkQ==
+"@undataforum/preset@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/preset/-/preset-0.5.0.tgz#26fd590eb0b9537fc5dc8738aa900c99f986f462"
+  integrity sha512-sGV+DNYN+Qz2zxN6oAJo9QyNhuKg7RKqYhsp3mB0cPvKMv+n6Zw2ta6FuIO0kPiO+opY+nGOReagDGbDrgkQ8w==
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
