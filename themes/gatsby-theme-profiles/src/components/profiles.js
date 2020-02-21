@@ -31,8 +31,6 @@ const Profiles = ({
     cache
   );
   return (
-    // eslint-disable-next-line no-warning-comments
-    // TODO Add page description (use SEO component).
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
       <Layout
@@ -42,7 +40,7 @@ const Profiles = ({
       >
         <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
           <Styled.h1>
-            <FormattedMessage id="profiles.title" />
+            <FormattedMessage id={`${collection}.title`} />
           </Styled.h1>
           {blurb}
           <Grid gap={4} columns={[1, 2, 3]}>
@@ -88,10 +86,13 @@ const Profiles = ({
 };
 
 Profiles.propTypes = {
-  data: shape({ allProfile: object.isRequired }).isRequired,
-  pageContext: shape({ collection: string.isRequired }),
-  location: shape({ pathname: string.isRequired }).isRequired,
   blurb: node,
+  data: shape({ allProfile: object.isRequired }).isRequired,
+  pageContext: shape({
+    collection: string.isRequired,
+    lang: string.isRequired,
+  }),
+  location: shape({ pathname: string.isRequired }).isRequired,
 };
 
 export default Profiles;
