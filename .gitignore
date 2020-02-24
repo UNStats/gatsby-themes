@@ -1,4 +1,5 @@
 .cache
 .eslintcache
+.now
 node_modules
 public

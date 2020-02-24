@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "scope": "undataforum",
   "routes": [
     { "handle": "filesystem" },
     {
