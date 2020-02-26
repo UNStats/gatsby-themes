@@ -1,5 +1,6 @@
 ---
-title: Quia "consequuntur magni" dolores eos qui ratione voluptatem sequi nesciunt
+title:
+  Quia "consequuntur magni" dolores eos qui ratione voluptatem sequi nesciunt
 date: 2019-04-04
 authors:
   - cleric-edis

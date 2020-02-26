@@ -1,6 +1,7 @@
 # @undataforum/gatsby-theme-profiles
 
-A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) to create profile pages and a profiles overview page.
+A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) to create profile pages
+and a profiles overview page.
 
 ## Usage
 
@@ -61,8 +62,8 @@ each key corresponds to the GraphQL type listed in the following section.
 ### GraphQL Profile type
 
 This theme adds GraphQL type `Profile` which can be queried with `profile` and
-`allProfile` queries. Type `Profile` makes no assumptions about what the underlying data
-source is.
+`allProfile` queries. Type `Profile` makes no assumptions about what the
+underlying data source is.
 
 | Field          | Type        | Description                                                                                                                                                                                                                                                                   |
 | :------------- | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
