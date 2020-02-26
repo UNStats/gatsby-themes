@@ -18,12 +18,13 @@ esse. Aliqua aliquip amet non adipisicing ullamco. Dolore Lorem labore minim
 sint aliqua labore.
 
 Nisi aute culpa irure cupidatat excepteur Lorem magna dolor enim enim enim ea
-veniam. Eu [quis culpa laboris](/blog) do voluptate dolore esse ullamco proident
-enim et commodo. Lorem nostrud id esse culpa mollit ad eu sunt eiusmod. Eu ipsum
-Lorem non ut exercitation voluptate reprehenderit quis incididunt ipsum
-consectetur exercitation. Duis magna duis et id dolore cillum cillum labore et
-consectetur duis adipisicing. Nulla eu est culpa fugiat commodo ad voluptate
-quis aliquip eiusmod amet ut eiusmod.
+veniam. Eu [internal link](/blog) do voluptate dolore
+[external link](https://github.com/undataforum) proident enim et commodo. Lorem
+nostrud id esse culpa mollit ad eu sunt eiusmod. Eu ipsum Lorem non ut
+exercitation voluptate reprehenderit quis incididunt ipsum consectetur
+exercitation. Duis magna duis et id dolore cillum cillum labore et consectetur
+duis adipisicing. Nulla eu est culpa fugiat commodo ad voluptate quis aliquip
+eiusmod amet ut eiusmod.
 
 Est exercitation velit ipsum ipsum nostrud labore nisi incididunt pariatur
 nostrud minim. Enim amet mollit laboris magna. Esse et reprehenderit proident
