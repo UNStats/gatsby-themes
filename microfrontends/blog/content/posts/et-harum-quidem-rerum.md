@@ -8,8 +8,7 @@ images:
   - ../assets/carlos-muza-hpjSkU2UYSU-unsplash.jpg
 ---
 
-import { Box } from 'theme-ui';
-import Img from 'gatsby-image';
+import { Box } from 'theme-ui'; import Img from 'gatsby-image';
 
 Laboris proident do ex mollit est ea ad nulla quis aute. Dolore labore est qui
 sunt sunt non eu fugiat sunt. Ullamco consectetur velit consectetur est. Velit
@@ -26,9 +25,11 @@ Lorem laborum officia officia commodo ad elit amet consectetur non amet Lorem
 labore.
 
 <Box mb={3}>
-  <Img fluid={props.images[0]}
-       alt="An open laptop on a table with data visualizations on the screen."
-       title="Laptops are very important tools for statisticians." />
+  <Img
+    fluid={props.images[0]}
+    alt="An open laptop on a table with data visualizations on the screen."
+    title="Laptops are very important tools for statisticians."
+  />
 </Box>
 
 Et cupidatat et quis ullamco cillum sit. Qui id magna incididunt sint elit

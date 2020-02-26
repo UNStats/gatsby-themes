@@ -1,6 +1,8 @@
 # @undataforum/gatsby-theme-blog
 
-A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) to create a blog with post pages and a posts overview page. This theme can also be used for news articles.
+A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) to create a blog with
+post pages and a posts overview page. This theme can also be used for news
+articles.
 
 ## Usage
 
@@ -16,7 +18,8 @@ A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) to create a blog with po
 
 This example config shows how to configure two separate posts collections:
 
-This example shows how to include this theme twice, but keep the post collections separate:
+This example shows how to include this theme twice, but keep the post
+collections separate:
 
 ```
 // gatsby-config.js
@@ -46,8 +49,8 @@ module.exports = {
 
 ### MDX frontmatter
 
-Frontmatter keys for MDX posts located in `contentPath`. The YAML type of
-each key corresponds to the GraphQL type listed in the following section.
+Frontmatter keys for MDX posts located in `contentPath`. The YAML type of each
+key corresponds to the GraphQL type listed in the following section.
 
 | Key           | Required | Description                                                                                                                                                                                     |
 | :------------ | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,8 +64,8 @@ each key corresponds to the GraphQL type listed in the following section.
 ### GraphQL Profile type
 
 This theme adds GraphQL type `Post` which can be queried with `post` and
-`allPost` queries. Type `Post` makes no assumptions about what the underlying data
-source is.
+`allPost` queries. Type `Post` makes no assumptions about what the underlying
+data source is.
 
 | Field     | Type                          | Description                                                                                    |
 | :-------- | :---------------------------- | :--------------------------------------------------------------------------------------------- |
