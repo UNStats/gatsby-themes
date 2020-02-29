@@ -23,8 +23,8 @@
     "gatsby-source-filesystem": "2.1.48",
     "profiles": "*",
     "prop-types": "15.7.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "theme-ui": "0.3.1",
     "typeface-roboto": "0.0.75"
   }
