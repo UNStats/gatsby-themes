@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@undataforum/gatsby-theme-blog": "*",
-    "gatsby-image": "2.2.41"
+    "gatsby-image": "2.2.42"
   }
 }

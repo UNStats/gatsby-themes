@@ -1,10 +1,9 @@
 import React from 'react';
 import { shape, object } from 'prop-types';
-import { Container, Grid, Styled } from 'theme-ui';
+import { Button, Container, Flex, Grid, Heading, Styled, Text } from 'theme-ui';
 import { EventPreview, Names, PostPreview } from '@undataforum/components';
 import { Layout } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
-import { normalize as normalizeEvent } from '@undataforum/gatsby-theme-events';
 
 import About from '../components/about';
 import Experience from '../components/experience';
@@ -15,26 +14,60 @@ import Hero from '../components/hero';
 // - update maxWidth to avoid blurry images.
 const Homepage = ({ data }) => {
   const posts = data.allPost.nodes;
-  const events = data.allEvent.nodes.map(normalizeEvent);
-  // eslint-disable-next-line no-unused-vars
-  const { description, ...promotedEvent } = events[0];
+  const events = data.allEvent.nodes;
   return (
     <Layout title="Homepage" description={data.site.siteMetadata.description}>
       <Hero
         fluid={data.hero.nodes[0].fluid}
         title="View of Bern, Switzerland"
         alt="View of Bern, Switzerland. The river Aare with its distinct blue water is in the foreground. The hills surrounding Bern in the background."
-        event={() => (
-          <EventPreview
-            event={promotedEvent}
-            colors={{
-              text: 'background',
-              background: 'secondary',
-              accent: 'background',
+        highlight={
+          <Flex
+            sx={{
+              flexDirection: 'column',
+              alignItems: ['center', 'flex-start'],
             }}
+          >
+            <Heading
+              as="h2"
+              sx={{
+                textAlign: ['center', 'left'],
+                mb: [2, 3],
+              }}
+            >
+              Call for session proposals
+            </Heading>
+            <Text
+              as="p"
+              sx={{ textAlign: ['center', 'left'], mb: [3, null, 4] }}
+            >
+              The call for session proposals for the United Nations World Data
+              Forum 2020 is open. Please submit your proposals through 31
+              January 2020.
+            </Text>
+            <Button variant="highlight">Submit your proposal</Button>
+          </Flex>
+        }
+        promotion={
+          <EventPreview
             align={['center', 'start']}
+            event={{
+              tag: events[0].displayType,
+              title: (
+                <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                  {events[0].title.text}
+                </Heading>
+              ),
+              date: events[0].displayDate,
+              duration: events[0].duration,
+              links: {
+                page: events[0].path,
+                registration: events[0].registration,
+              },
+            }}
+            variant="promotion"
           />
-        )}
+        }
         mt={-3}
         mb={[4, 5]}
       />
@@ -48,14 +81,39 @@ const Homepage = ({ data }) => {
       >
         <Styled.h1>Webinars</Styled.h1>
         <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
-          {events.map(({ id, ...event }) => (
-            <EventPreview event={{ ...event }} key={id} />
-          ))}
+          {events.map(event => {
+            const {
+              id,
+              displayType,
+              title: { text: title },
+              displayDate,
+              duration,
+              path,
+              registration,
+            } = event;
+            return (
+              <EventPreview
+                event={{
+                  tag: displayType,
+                  title: (
+                    <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                      {title}
+                    </Heading>
+                  ),
+                  date: displayDate,
+                  duration,
+                  links: { page: path, registration },
+                }}
+                key={id}
+              />
+            );
+          })}
         </Grid>
         <Styled.h1>Blog</Styled.h1>
         <Grid gap={[4, 5]} columns={[1, null, 2]}>
-          {posts.map(({ id, ...post }) => {
+          {posts.map(post => {
             const {
+              id,
               title: { text: title },
               date,
               authors,
@@ -64,7 +122,11 @@ const Homepage = ({ data }) => {
             return (
               <PostPreview
                 post={{
-                  title,
+                  title: (
+                    <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                      {title}
+                    </Heading>
+                  ),
                   date,
                   authors: (
                     <Names values={authors.map(({ name }) => name)} mb={3} />
@@ -121,7 +183,17 @@ export const query = graphql`
       filter: { type: { eq: "event" } }
     ) {
       nodes {
-        ...Event
+        displayType
+        title {
+          childMdx {
+            body
+          }
+          text
+        }
+        displayDate
+        duration
+        path
+        registration
       }
     }
     hero: allImageSharp(
