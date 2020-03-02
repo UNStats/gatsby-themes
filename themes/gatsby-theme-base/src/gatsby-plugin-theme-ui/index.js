@@ -17,6 +17,39 @@ import Link from '../components/link';
 // Use Gatsby's Link for internal links.
 // Open external links in new tab.
 const theme = merge(preset, {
+  badges: {
+    highlight: {
+      color: 'primary',
+      bg: 'background',
+    },
+    promotion: {
+      color: 'secondary',
+      bg: 'background',
+    },
+  },
+  buttons: {
+    // Buttons inside highlight box on homepage.
+    highlight: {
+      variant: 'buttons.default',
+      color: 'primary',
+      bg: 'background',
+    },
+    promotion: {
+      variant: 'buttons.default',
+      color: 'secondary',
+      bg: 'background',
+    },
+    outline: {
+      highlight: {
+        variant: 'buttons.outline.default',
+        color: 'background',
+      },
+      promotion: {
+        variant: 'buttons.outline.default',
+        color: 'background',
+      },
+    },
+  },
   link: {
     external: NewTabLink,
     internal: Link,

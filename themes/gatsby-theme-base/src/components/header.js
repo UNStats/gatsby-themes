@@ -1,11 +1,13 @@
 import React from 'react';
-import { DummyLogo, Header } from '@undataforum/components';
+import { Header } from '@undataforum/components';
+
+import Logo from './logo';
 
 // Shadow this file to customize header.
 const HeaderProxy = props => (
   <Header
     {...props}
-    logo={() => <DummyLogo scaleTo="height" />}
+    logo={<Logo scaleTo="height" />}
     links={[
       { text: 'Nav item 1', href: '/nav-item-1/' },
       { text: 'Nav item 2', href: '/nav-item-2/' },

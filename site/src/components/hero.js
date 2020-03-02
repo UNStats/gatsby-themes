@@ -1,15 +1,15 @@
 import React from 'react';
-import { object, string, func } from 'prop-types';
-import { Box, Button, Container, Flex, Grid, Text } from 'theme-ui';
+import { object, string, node } from 'prop-types';
+import { Box, Container, Flex, Grid, Text } from 'theme-ui';
 import Img from 'gatsby-image';
 
-const Hero = ({ fluid, title, alt, event, ...props }) => (
+const Hero = ({ fluid, title, alt, highlight, promotion, ...props }) => (
   <Container {...props} sx={{ maxWidth: 'width.wide' }}>
     <Grid
       sx={{
         gridTemplateAreas: [
-          '"hero" "promobox1" "promobox2"',
-          '"hero hero hero promobox1 promobox1" "hero hero hero promobox2 promobox2"',
+          '"hero" "highlight" "promotion"',
+          '"hero hero hero highlight highlight" "hero hero hero promotion promotion"',
         ],
         gridTemplateColumns: ['1fr', 'repeat(5, 1fr)'],
         gridGap: 2,
@@ -96,44 +96,25 @@ const Hero = ({ fluid, title, alt, event, ...props }) => (
           </Text>
         </Flex>
       </Box>
-      <Flex
+      <Box
         sx={{
-          flexDirection: 'column',
-          alignItems: ['center', 'flex-start'],
-          gridArea: 'promobox1',
+          gridArea: 'highlight',
           px: [2, 3, 4],
           py: 4,
           variant: 'pairings.primary',
         }}
       >
-        <Text
-          sx={{
-            fontSize: [3, 4, 5],
-            fontWeight: 'bold',
-            lineHeight: 'heading',
-            textAlign: ['center', 'left'],
-            mb: [2, 3],
-          }}
-        >
-          Call for session proposals
-        </Text>
-        <Text as="p" sx={{ textAlign: ['center', 'left'], mb: [3, null, 4] }}>
-          The call for session proposals for the United Nations World Data Forum
-          2020 is open. Please submit your proposals through 31 January 2020.
-        </Text>
-        <Button sx={{ variant: 'pairings.branded' }}>
-          Submit your proposal
-        </Button>
-      </Flex>
+        {highlight}
+      </Box>
       <Box
         sx={{
-          gridArea: 'promobox2',
+          gridArea: 'promotion',
           px: [2, 3, 4],
           py: 4,
           variant: 'pairings.secondary',
         }}
       >
-        {event()}
+        {promotion}
       </Box>
     </Grid>
   </Container>
@@ -146,8 +127,8 @@ Hero.propTypes = {
   title: string.isRequired,
   // Hero image alt text.
   alt: string.isRequired,
-  // Render function for event to be promoted.
-  event: func.isRequired,
+  highlight: node.isRequired,
+  promotion: node.isRequired,
 };
 
 export default Hero;
