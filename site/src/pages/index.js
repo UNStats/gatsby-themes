@@ -183,6 +183,7 @@ export const query = graphql`
       filter: { type: { eq: "event" } }
     ) {
       nodes {
+        id
         displayType
         title {
           childMdx {
