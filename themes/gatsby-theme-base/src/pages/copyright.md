@@ -3,7 +3,7 @@ title: Copyright
 description: Copyright notice for United Nations World Data Forum websites.
 ---
 
-Copyright © 2019 United Nations
+Copyright © 2020 United Nations
 
 All rights reserved.
 
