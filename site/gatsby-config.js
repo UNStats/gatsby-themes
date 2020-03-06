@@ -9,12 +9,7 @@ module.exports = {
   plugins: [
     'blog',
     'profiles',
-    {
-      resolve: '@undataforum/gatsby-theme-events',
-      options: {
-        basePath: '/events',
-      },
-    },
+    'webinars',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

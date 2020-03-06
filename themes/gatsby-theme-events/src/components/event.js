@@ -97,7 +97,7 @@ const Event = ({ data, pageContext: { lang }, location }) => {
               <ul>
                 {attachments.map(({ text, href }) => (
                   <li key={text}>
-                    <Link as={NewTabLink} variant="branded" href={href}>
+                    <Link as={NewTabLink} href={href} variant="primary">
                       {text}
                     </Link>
                   </li>
