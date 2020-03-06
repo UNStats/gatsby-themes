@@ -9,11 +9,11 @@ speakers:
 ---
 
 You should see an entire paragraph in the preview. This event covers the test
-case multiple paragraphs without import statement before the first paragraph.
-This is a filler sentence to make the first paragraph longer. This is another
-filler sentence to make the first paragraph even longer. And this is yet another
-filler sentence to make the first paragraph really long. If you see this
-sentence in the preview and it is the last sentence, everything works fine.
+case **multiple paragraphs without import statement before the first
+paragraph**. This is a filler sentence to make the first paragraph longer. This
+is another filler sentence to make the first paragraph even longer. And this is
+yet another filler sentence to make the first paragraph really long. If you see
+this sentence in the preview and it is the last sentence, everything works fine.
 
 Ea est aliquip amet excepteur occaecat commodo. Voluptate non culpa velit
 deserunt veniam proident ut non voluptate commodo laborum sit id. Consequat

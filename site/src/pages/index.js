@@ -4,6 +4,8 @@ import { Button, Container, Flex, Grid, Heading, Styled, Text } from 'theme-ui';
 import { EventPreview, Names, PostPreview } from '@undataforum/components';
 import { Layout } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
+import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
+import { messages } from '@undataforum/gatsby-theme-events';
 
 import About from '../components/about';
 import Experience from '../components/experience';
@@ -15,132 +17,146 @@ import Hero from '../components/hero';
 const Homepage = ({ data }) => {
   const posts = data.allPost.nodes;
   const events = data.allEvent.nodes;
+
+  // We need to localize props that are not React components:
+  // https://github.com/formatjs/react-intl/blob/master/docs/API.md#createintl
+  const cache = createIntlCache();
+  const intl = createIntl(
+    {
+      locale: 'en',
+      messages: messages.en,
+    },
+    cache
+  );
+
   return (
-    <Layout title="Homepage" description={data.site.siteMetadata.description}>
-      <Hero
-        fluid={data.hero.nodes[0].fluid}
-        title="View of Bern, Switzerland"
-        alt="View of Bern, Switzerland. The river Aare with its distinct blue water is in the foreground. The hills surrounding Bern in the background."
-        highlight={
-          <Flex
-            sx={{
-              flexDirection: 'column',
-              alignItems: ['center', 'flex-start'],
-            }}
-          >
-            <Heading
-              as="h2"
+    // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
+    <RawIntlProvider value={intl}>
+      <Layout title="Homepage" description={data.site.siteMetadata.description}>
+        <Hero
+          fluid={data.hero.nodes[0].fluid}
+          title="View of Bern, Switzerland"
+          alt="View of Bern, Switzerland. The river Aare with its distinct blue water is in the foreground. The hills surrounding Bern in the background."
+          highlight={
+            <Flex
               sx={{
-                textAlign: ['center', 'left'],
-                mb: [2, 3],
+                flexDirection: 'column',
+                alignItems: ['center', 'flex-start'],
               }}
             >
-              Call for session proposals
-            </Heading>
-            <Text
-              as="p"
-              sx={{ textAlign: ['center', 'left'], mb: [3, null, 4] }}
-            >
-              The call for session proposals for the United Nations World Data
-              Forum 2020 is open. Please submit your proposals through 31
-              January 2020.
-            </Text>
-            <Button variant="highlight">Submit your proposal</Button>
-          </Flex>
-        }
-        promotion={
-          <EventPreview
-            align={['center', 'start']}
-            event={{
-              tag: events[0].displayType,
-              title: (
-                <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                  {events[0].title.text}
-                </Heading>
-              ),
-              date: events[0].displayDate,
-              duration: events[0].duration,
-              links: {
-                page: events[0].path,
-                registration: events[0].registration,
-              },
-            }}
-            variant="promotion"
-          />
-        }
-        mt={-3}
-        mb={[4, 5]}
-      />
-      <About mb={[4, 5]} />
-      <Experience mb={[4, 5]} />
-      <Container
-        sx={{
-          maxWidth: 'width.default',
-          px: [2, 3, 4],
-        }}
-      >
-        <Styled.h1>Webinars</Styled.h1>
-        <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
-          {events.map(event => {
-            const {
-              id,
-              displayType,
-              title: { text: title },
-              displayDate,
-              duration,
-              path,
-              registration,
-            } = event;
-            return (
-              <EventPreview
-                event={{
-                  tag: displayType,
-                  title: (
-                    <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                      {title}
-                    </Heading>
-                  ),
-                  date: displayDate,
-                  duration,
-                  links: { page: path, registration },
+              <Heading
+                as="h2"
+                sx={{
+                  textAlign: ['center', 'left'],
+                  mb: [2, 3],
                 }}
-                key={id}
-              />
-            );
-          })}
-        </Grid>
-        <Styled.h1>Blog</Styled.h1>
-        <Grid gap={[4, 5]} columns={[1, null, 2]}>
-          {posts.map(post => {
-            const {
-              id,
-              title: { text: title },
-              date,
-              authors,
-              path,
-            } = post;
-            return (
-              <PostPreview
-                post={{
-                  title: (
-                    <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                      {title}
-                    </Heading>
-                  ),
-                  date,
-                  authors: (
-                    <Names values={authors.map(({ name }) => name)} mb={3} />
-                  ),
-                  href: path,
-                }}
-                fontSize={[3, 4]}
-                key={id}
-              />
-            );
-          })}
-        </Grid>
-      </Container>
-    </Layout>
+              >
+                Call for session proposals
+              </Heading>
+              <Text
+                as="p"
+                sx={{ textAlign: ['center', 'left'], mb: [3, null, 4] }}
+              >
+                The call for session proposals for the United Nations World Data
+                Forum 2020 is open. Please submit your proposals through 31
+                January 2020.
+              </Text>
+              <Button variant="highlight">Submit your proposal</Button>
+            </Flex>
+          }
+          promotion={
+            <EventPreview
+              align={['center', 'start']}
+              event={{
+                tag: intl.formatMessage({ id: `${events[0].collection}.tag` }),
+                title: (
+                  <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                    {events[0].title.text}
+                  </Heading>
+                ),
+                date: events[0].displayDate,
+                duration: events[0].duration,
+                registrationLink: events[0].registrationLink,
+                href: events[0].path,
+              }}
+              variant="promotion"
+            />
+          }
+          mt={-3}
+          mb={[4, 5]}
+        />
+        <About mb={[4, 5]} />
+        <Experience mb={[4, 5]} />
+        <Container
+          sx={{
+            maxWidth: 'width.default',
+            px: [2, 3, 4],
+          }}
+        >
+          <Styled.h1>Webinars</Styled.h1>
+          <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
+            {events.map(event => {
+              const {
+                id,
+                collection,
+                title: { text: title },
+                displayDate,
+                duration,
+                path,
+                registrationLink,
+              } = event;
+              return (
+                <EventPreview
+                  event={{
+                    tag: intl.formatMessage({ id: `${collection}.tag` }),
+                    title: (
+                      <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                        {title}
+                      </Heading>
+                    ),
+                    date: displayDate,
+                    duration,
+                    registrationLink,
+                    href: path,
+                  }}
+                  key={id}
+                />
+              );
+            })}
+          </Grid>
+          <Styled.h1>Blog</Styled.h1>
+          <Grid gap={[4, 5]} columns={[1, null, 2]}>
+            {posts.map(post => {
+              const {
+                id,
+                title: { text: title },
+                date,
+                authors,
+                path,
+              } = post;
+              return (
+                <PostPreview
+                  post={{
+                    title: (
+                      <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                        {title}
+                      </Heading>
+                    ),
+                    date,
+                    authors: (
+                      <Names values={authors.map(({ name }) => name)} mb={3} />
+                    ),
+                    href: path,
+                  }}
+                  fontSize={[3, 4]}
+                  key={id}
+                />
+              );
+            })}
+          </Grid>
+        </Container>
+      </Layout>
+    </RawIntlProvider>
   );
 };
 
@@ -180,11 +196,11 @@ export const query = graphql`
     allEvent(
       limit: 4
       sort: { fields: startDate, order: DESC }
-      filter: { type: { eq: "event" } }
+      filter: { collection: { eq: "events" } }
     ) {
       nodes {
         id
-        displayType
+        collection
         title {
           childMdx {
             body
@@ -193,8 +209,8 @@ export const query = graphql`
         }
         displayDate
         duration
+        registrationLink
         path
-        registration
       }
     }
     hero: allImageSharp(
