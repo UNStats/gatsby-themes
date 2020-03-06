@@ -31,15 +31,15 @@
     "theme-ui": "^0.3.1"
   },
   "dependencies": {
-    "@undataforum/components": "^0.71.0",
+    "@undataforum/components": "^0.73.0",
     "@undataforum/gatsby-theme-base": "^0.12.1",
-    "gatsby-core-utils": "^1.0.28",
-    "gatsby-image": "^2.2.41",
-    "gatsby-plugin-sharp": "^2.4.5",
-    "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-sharp": "^2.3.14",
+    "gatsby-core-utils": "^1.0.30",
+    "gatsby-image": "^2.2.43",
+    "gatsby-plugin-sharp": "^2.4.7",
+    "gatsby-source-filesystem": "^2.1.50",
+    "gatsby-transformer-sharp": "^2.3.17",
     "prop-types": "^15.7.2",
-    "react-intl": "^3.12.0",
+    "react-intl": "^4.1.1",
     "remark": "^11.0.1",
     "strip-markdown": "^3.1.0"
   }
