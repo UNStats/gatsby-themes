@@ -13,18 +13,19 @@
   },
   "dependencies": {
     "@undataforum/assets": "0.5.0",
-    "@undataforum/components": "0.72.0",
+    "@undataforum/components": "0.73.0",
     "@undataforum/gatsby-theme-base": "*",
     "@undataforum/gatsby-theme-events": "*",
     "cross-env": "7.0.0",
     "deepmerge": "4.2.2",
-    "gatsby": "2.19.25",
+    "gatsby": "2.19.28",
     "gatsby-image": "2.2.42",
     "gatsby-source-filesystem": "2.1.48",
     "profiles": "*",
     "prop-types": "15.7.2",
     "react": "16.13.0",
     "react-dom": "16.13.0",
+    "react-intl": "^4.1.1",
     "theme-ui": "0.3.1",
     "typeface-roboto": "0.0.75"
   }

@@ -21,21 +21,21 @@ This example config shows how to configure two separate profiles collections:
 module.exports = {
   plugins: [
     {
-      resolve: `@undataforum/gatsby-theme-profiles`,
+      resolve: '@undataforum/gatsby-theme-profiles',
       options: {
-        basePath: `/author-profiles`,
+        basePath: '/author-profiles',
         contentPath: 'content/author-profiles',
-        assetPath: `content/assets/author-profiles`,
-        collection: 'author-profiles`
+        assetPath: 'content/assets/author-profiles',
+        collection: 'author-profiles'
       },
     },
         {
-      resolve: `@undataforum/gatsby-theme-profiles`,
+      resolve: '@undataforum/gatsby-theme-profiles',
       options: {
-        basePath: `/speaker-profiles`,
+        basePath: '/speaker-profiles',
         contentPath: 'content/speaker-profiles',
-        assetPath: `content/assets/speaker-profiles`,
-        collection: 'speaker-profiles`
+        assetPath: 'content/assets/speaker-profiles',
+        collection: 'speaker-profiles'
       },
     },
   ],
@@ -78,6 +78,6 @@ underlying data source is.
 | `jobtitle`     | `String`    |                                                                                                                                                                                                                                                                               |
 | `organization` | `String`    |                                                                                                                                                                                                                                                                               |
 | `description`  | `String`    |                                                                                                                                                                                                                                                                               |
-| `body`         | `String`    | A string representation of the body of the profile page. For MDX pages this is the MDX `body`.                                                                                                                                                                                | `roles` | `[String!]` | A role is an identifier that can be used to lookup a role name. A profile can have more than one role. |
+| `body`         | `String!`   | A string representation of the body of the profile page. For MDX pages this is the MDX `body`.                                                                                                                                                                                | `roles` | `[String!]` | A role is an identifier that can be used to lookup a role name. A profile can have more than one role. |
 | `roles`        | `[String!]` | A role is an identifier that can be used to lookup a role name. A profile can have more than one role.                                                                                                                                                                        |
 | `path`         | `String!`   | Path to generated page.                                                                                                                                                                                                                                                       |

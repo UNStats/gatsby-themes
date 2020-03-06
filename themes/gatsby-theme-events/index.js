@@ -1,1 +1,1 @@
-export { normalize } from './src/templates/events';
+export { default as messages } from './src/i18n/messages';

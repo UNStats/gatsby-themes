@@ -31,13 +31,13 @@
     "theme-ui": "^0.3.1"
   },
   "dependencies": {
-    "@undataforum/components": "^0.70.2",
+    "@undataforum/components": "^0.73.0",
     "@undataforum/gatsby-theme-base": "^0.12.1",
-    "@undataforum/gatsby-theme-profiles": "^0.7.1",
-    "gatsby-image": "^2.2.38",
-    "gatsby-source-filesystem": "^2.1.47",
+    "gatsby-image": "^2.2.42",
+    "gatsby-source-filesystem": "^2.1.48",
     "luxon": "^1.22.0",
     "prop-types": "^15.7.2",
+    "react-intl": "^4.1.0",
     "remark": "^11.0.1",
     "strip-markdown": "^3.1.1"
   }

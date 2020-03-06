@@ -18,9 +18,6 @@ articles.
 
 This example config shows how to configure two separate posts collections:
 
-This example shows how to include this theme twice, but keep the post
-collections separate:
-
 ```
 // gatsby-config.js
 module.exports = {
@@ -35,12 +32,12 @@ module.exports = {
       },
     },
         {
-      resolve: `@undataforum/gatsby-theme-blog`,
+      resolve: '@undataforum/gatsby-theme-blog',
       options: {
-        basePath: `/blog`,
+        basePath: '/blog',
         contentPath: '/content/blog',
-        assetPath: `/assets/blog`,
-        collection: 'blog`
+        assetPath: '/assets/blog',
+        collection: 'blog'
       },
     },
   ],
@@ -52,14 +49,14 @@ module.exports = {
 Frontmatter keys for MDX posts located in `contentPath`. The YAML type of each
 key corresponds to the GraphQL type listed in the following section.
 
-| Key           | Required | Description                                                                                                                                                                                     |
-| :------------ | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`       | yes      | Post title.                                                                                                                                                                                     |
-| `date`        | yes      | Date in `YYYY-mm-DD` format. This is the date as it should appear on the website. There is no timezone magic happening anywhere.                                                                |
-| `authors`     | yes      | If theme option `profiles` is not set, this is a list of author names. If theme option `profiles` is set, this is a list of author slugs that references profiles in the `profiles` collection. |
-| `slug`        | no       | The default slug is the post MDX file's base name. This value overrides the default.                                                                                                            |
-| `description` | no       | The default description for SEO purposes is the first paragraph in a post MDX file. This value overrrides the default.                                                                          |
-| `images`      | no       | List of relative paths to images that can be included into a post via MDX.                                                                                                                      |
+| Key           | Required | Description                                                                                                                                                                                                                |
+| :------------ | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | yes      | Post title.                                                                                                                                                                                                                |
+| `date`        | yes      | Date in `yyyy-MM-dd` format. This is the date as it should appear on the website. There is no timezone magic happening anywhere.                                                                                           |
+| `authors`     | no       | If theme option `profiles` is not set, this is a list of author names. If theme option `profiles` is set, this is a list of author slugs that references profiles from the collection provided in theme option `profiles`. |
+| `slug`        | no       | The default slug is the post MDX file's base name. This value overrides the default.                                                                                                                                       |
+| `description` | no       | The default description for SEO purposes is the first paragraph in a post MDX file. This value overrrides the default.                                                                                                     |
+| `images`      | no       | List of relative paths to images that can be included into a post via MDX.                                                                                                                                                 |
 
 ### GraphQL Profile type
 
@@ -67,12 +64,13 @@ This theme adds GraphQL type `Post` which can be queried with `post` and
 `allPost` queries. Type `Post` makes no assumptions about what the underlying
 data source is.
 
-| Field     | Type                          | Description                                                                                    |
-| :-------- | :---------------------------- | :--------------------------------------------------------------------------------------------- |
-| `id`      | `ID!`                         | Gatsby node GUID.                                                                              |
-| `slug`    | `ID!`                         | Alternative ID used for querying and building the graph.                                       |
-| `date`    | `Date!`                       |                                                                                                |
-| `authors` | `[String!]!` or `[Profile!]!` | Type depends on theme option `profiles`.                                                       |
-| `body`    | `String`                      | A string representation of the body of the profile page. For MDX pages this is the MDX `body`. |
-| `images`  | `[File!]`                     | Relative paths to images.                                                                      |
-| `path`    | `String!`                     | Path to generated page.                                                                        |
+| Field        | Type                          | Description                                                                                    |
+| :----------- | :---------------------------- | :--------------------------------------------------------------------------------------------- |
+| `id`         | `ID!`                         | Gatsby node GUID.                                                                              |
+| `slug`       | `ID!`                         | Alternative ID used for querying and building the graph.                                       |
+| `collection` | `String!`                     | Distinguish separate post collections.                                                         |
+| `date`       | `Date!`                       |                                                                                                |
+| `authors`    | `[String!]!` or `[Profile!]!` | Type depends on theme option `profiles`.                                                       |
+| `body`       | `String!`                     | A string representation of the body of the profile page. For MDX pages this is the MDX `body`. |
+| `images`     | `[File!]`                     | Relative paths to images.                                                                      |
+| `path`       | `String!`                     | Path to generated page.                                                                        |
