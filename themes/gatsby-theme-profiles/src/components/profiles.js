@@ -56,9 +56,10 @@ const Profiles = ({
               } = profile;
               return (
                 <SmartLink
+                  key={id}
                   css={{ ':hover': { textDecoration: 'none' } }}
                   href={path}
-                  key={id}
+                  variant="inherit"
                 >
                   <ProfilePreview
                     profile={{
