@@ -196,7 +196,7 @@ export const query = graphql`
     allEvent(
       limit: 4
       sort: { fields: startDate, order: DESC }
-      filter: { collection: { eq: "events" } }
+      filter: { collection: { eq: "webinars" } }
     ) {
       nodes {
         id
