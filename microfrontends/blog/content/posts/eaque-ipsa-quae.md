@@ -8,10 +8,10 @@ slug: custom-slug
 ---
 
 Culpa dolore sit eiusmod nulla in eiusmod ea irure. Pariatur pariatur ipsum
-consequat et labore sit tempor quis eu ad. Eu id amet pariatur culpa cupidatat
-sunt anim eiusmod aliqua eu reprehenderit. Exercitation sunt est sint elit. Esse
-eiusmod anim ad voluptate qui esse eu fugiat cillum adipisicing consequat labore
-tempor.
+consequat et labore sit tempor quis eu ad. **Eu id amet pariatur culpa cupidatat
+sunt anim eiusmod aliqua eu reprehenderit.** Exercitation sunt est sint elit.
+Esse eiusmod anim ad voluptate qui esse eu fugiat cillum adipisicing consequat
+labore tempor.
 
 Dolore in eu officia et labore eu commodo excepteur commodo officia. Eiusmod
 commodo veniam exercitation magna magna exercitation reprehenderit. Est irure ut

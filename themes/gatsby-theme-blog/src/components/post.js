@@ -1,6 +1,6 @@
 import React from 'react';
 import { object, shape, string } from 'prop-types';
-import { Container } from 'theme-ui';
+import { Container, Heading } from 'theme-ui';
 import { Avatars, PostPreview } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
@@ -23,7 +23,11 @@ const Post = ({ data, location }) => {
       <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
         <PostPreview
           post={{
-            title,
+            title: (
+              <Heading as="h1" sx={{ textAlign: 'start', mb: 3 }}>
+                {title}
+              </Heading>
+            ),
             date,
             authors: (
               <Avatars

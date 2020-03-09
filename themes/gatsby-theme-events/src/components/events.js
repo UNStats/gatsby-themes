@@ -43,8 +43,9 @@ const Events = ({
           </Styled.h1>
           {blurb}
           <Grid gap={4} columns={[1, null, 2]}>
-            {events.map(({ id, ...event }) => {
+            {events.map(event => {
               const {
+                id,
                 title: { text: title },
                 displayDate: date,
                 duration,
