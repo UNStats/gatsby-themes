@@ -11,9 +11,9 @@ authors:
 ---
 
 Incididunt irure cupidatat est in id adipisicing sit duis aute ea nulla
-cupidatat cillum. In **culpa dolor enim** qui est. Magna nostrud do ipsum
+cupidatat cillum. **In culpa dolor enim qui est.** Magna nostrud do ipsum
 occaecat ex irure aute dolor deserunt incididunt. Et Lorem qui proident dolor
-enim. Do veniam esse consequat Lorem **minim dolor minim magna incididunt** enim
+enim. Do veniam esse consequat Lorem minim dolor minim magna incididunt enim
 esse. Aliqua aliquip amet non adipisicing ullamco. Dolore Lorem labore minim
 sint aliqua labore.
 
