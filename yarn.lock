@@ -11659,6 +11659,24 @@ react-hot-loader@^4.12.18:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
+react-intl@4.1.1, react-intl@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.1.1.tgz#f6e409f6fb114740d603db9fe35881252cd78944"
+  integrity sha512-aQ3yzQJaLXALwBX1tV2Wllp2heNjDTfNJPbk2jX1Cc2mMI4O2DwI5A3BzqSvgTtiiaQN3jMYTYGQElWdNAZDwA==
+  dependencies:
+    "@formatjs/intl-displaynames" "^1.2.1"
+    "@formatjs/intl-listformat" "^1.4.1"
+    "@formatjs/intl-relativetimeformat" "^4.5.9"
+    "@formatjs/intl-unified-numberformat" "^3.2.0"
+    "@formatjs/intl-utils" "^2.2.0"
+    "@types/hoist-non-react-statics" "^3.3.1"
+    "@types/invariant" "^2.2.31"
+    hoist-non-react-statics "^3.3.2"
+    intl-format-cache "^4.2.21"
+    intl-messageformat "^8.2.1"
+    intl-messageformat-parser "^4.1.0"
+    shallow-equal "^1.2.1"
+
 react-intl@^3.12.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-3.12.0.tgz#98ef1c94434cc25a8c67448e1e283e6bfe11b2fc"
@@ -11683,24 +11701,6 @@ react-intl@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.1.0.tgz#7f1989bb7fe809a1f1c2cd4b60fea20a7ef59f0d"
   integrity sha512-Zy87BSKy4t6JzEFYTiOOHGvpVsXowVJUspQpTSN+PZwpP9/EXx+ub4aKHIiYmY+26uFjgd8y0a/08jfV6iKOKw==
-  dependencies:
-    "@formatjs/intl-displaynames" "^1.2.1"
-    "@formatjs/intl-listformat" "^1.4.1"
-    "@formatjs/intl-relativetimeformat" "^4.5.9"
-    "@formatjs/intl-unified-numberformat" "^3.2.0"
-    "@formatjs/intl-utils" "^2.2.0"
-    "@types/hoist-non-react-statics" "^3.3.1"
-    "@types/invariant" "^2.2.31"
-    hoist-non-react-statics "^3.3.2"
-    intl-format-cache "^4.2.21"
-    intl-messageformat "^8.2.1"
-    intl-messageformat-parser "^4.1.0"
-    shallow-equal "^1.2.1"
-
-react-intl@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.1.1.tgz#f6e409f6fb114740d603db9fe35881252cd78944"
-  integrity sha512-aQ3yzQJaLXALwBX1tV2Wllp2heNjDTfNJPbk2jX1Cc2mMI4O2DwI5A3BzqSvgTtiiaQN3jMYTYGQElWdNAZDwA==
   dependencies:
     "@formatjs/intl-displaynames" "^1.2.1"
     "@formatjs/intl-listformat" "^1.4.1"
