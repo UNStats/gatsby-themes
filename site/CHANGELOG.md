@@ -1,5 +1,31 @@
 # site
 
+## 0.5.0
+
+### Minor Changes
+
+- [`69196d2`](https://github.com/UNDataForum/gatsby-themes/commit/69196d22067ba7805392f8e7f8ba5f34765327e9)
+  [#358](https://github.com/UNDataForum/gatsby-themes/pull/358) Thanks
+  [@454de6e](https://github.com/454de6e)! - Move blog posts to separate
+  microfrontend
+
+* [`5f525e2`](https://github.com/UNDataForum/gatsby-themes/commit/5f525e28e8076f56c70b921a4e05eb7c580de4c6)
+  [#380](https://github.com/UNDataForum/gatsby-themes/pull/380) Thanks
+  [@454de6e](https://github.com/454de6e)! - Move webinars to microfrontend
+
+### Patch Changes
+
+- Updated dependencies
+  [[`4d062f8`](https://github.com/UNDataForum/gatsby-themes/commit/4d062f81f0bcaf383994c050db9e8dadcc633504),
+  [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c),
+  [`d0e8a4f`](https://github.com/UNDataForum/gatsby-themes/commit/d0e8a4fec35a213c77089badc4de91876f145bf0),
+  [`614d05f`](https://github.com/UNDataForum/gatsby-themes/commit/614d05fdbd5b1c8d23d667cc995405fc175fea66),
+  [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c),
+  [`a223eed`](https://github.com/UNDataForum/gatsby-themes/commit/a223eed4fdb4aae9274b042e5db77dad09bd1caf),
+  [`4d062f8`](https://github.com/UNDataForum/gatsby-themes/commit/4d062f81f0bcaf383994c050db9e8dadcc633504)]:
+  - @undataforum/gatsby-theme-events@0.7.0
+  - @undataforum/gatsby-theme-base@0.12.2
+
 ## 0.4.1
 
 ### Patch Changes

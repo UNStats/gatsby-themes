@@ -1,5 +1,43 @@
 # @undataforum/gatsby-theme-blog
 
+## 0.10.0
+
+### Minor Changes
+
+- [`1cd5c30`](https://github.com/UNDataForum/gatsby-themes/commit/1cd5c307cb8985a8cc0bb721f88b279b5d8dd7c8)
+  [#360](https://github.com/UNDataForum/gatsby-themes/pull/360) Thanks
+  [@454de6e](https://github.com/454de6e)! - Localize title and description of
+  posts overview page
+
+* [`86d9d01`](https://github.com/UNDataForum/gatsby-themes/commit/86d9d0160898ea09c43bcff9a0496c841121391d)
+  [#353](https://github.com/UNDataForum/gatsby-themes/pull/353) Thanks
+  [@454de6e](https://github.com/454de6e)! - Redefine theme options
+
+### Patch Changes
+
+- [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)
+  [#376](https://github.com/UNDataForum/gatsby-themes/pull/376) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update copyright in licenses to 2020
+
+* [`614d05f`](https://github.com/UNDataForum/gatsby-themes/commit/614d05fdbd5b1c8d23d667cc995405fc175fea66)
+  [#331](https://github.com/UNDataForum/gatsby-themes/pull/331) Thanks
+  [@renovate](https://github.com/apps/renovate)! - Fix incorrect version of peer
+  dependency theme-ui
+
+- [`f943402`](https://github.com/UNDataForum/gatsby-themes/commit/f94340217c41a49e530d6095ab460a8db2b8847a)
+  [#388](https://github.com/UNDataForum/gatsby-themes/pull/388) Thanks
+  [@454de6e](https://github.com/454de6e)! - Fix header sizes on posts page
+
+* [`f588403`](https://github.com/UNDataForum/gatsby-themes/commit/f588403b11fb0b1671b29d6a7188e447a298d0ac)
+  [#356](https://github.com/UNDataForum/gatsby-themes/pull/356) Thanks
+  [@454de6e](https://github.com/454de6e)! - Refactor gatsby-node.js
+
+* Updated dependencies
+  [[`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c),
+  [`d0e8a4f`](https://github.com/UNDataForum/gatsby-themes/commit/d0e8a4fec35a213c77089badc4de91876f145bf0),
+  [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)]:
+  - @undataforum/gatsby-theme-base@0.12.2
+
 ## 0.9.1
 
 ### Patch Changes
