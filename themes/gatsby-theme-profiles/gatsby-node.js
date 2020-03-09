@@ -95,7 +95,7 @@ module.exports.sourceNodes = ({ actions, schema }) => {
 };
 
 module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
-  const { basePath, collection } = withDefaults(themeOptions);
+  const { basePath, collection, postCollection } = withDefaults(themeOptions);
   const { createPage } = actions;
 
   const {
@@ -108,6 +108,7 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
         allProfile(filter: { collection: { eq: $collection } }) {
           nodes {
             id
+            slug
             path
           }
         }
@@ -117,15 +118,55 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
   );
 
   // Create individual profile pages.
-  profiles.forEach(({ id, path: href }) => {
+  for (const { id, slug, path: href } of profiles) {
+    let posts;
+    if (postCollection) {
+      // Query posts with current profile author.
+      ({
+        data: {
+          allPost: { nodes: posts },
+        },
+      } = await graphql(
+        `
+          query($collection: String!, $slug: ID!) {
+            allPost(
+              filter: {
+                authors: { elemMatch: { slug: { eq: $slug } } }
+                collection: { eq: $collection }
+              }
+              sort: { fields: [date, title___text], order: [DESC, ASC] }
+            ) {
+              nodes {
+                id
+                title {
+                  childMdx {
+                    body
+                  }
+                  text
+                }
+                authors {
+                  id
+                  name
+                }
+                date(formatString: "MMM DD, YYYY")
+                path
+              }
+            }
+          }
+        `,
+        { collection: postCollection, slug }
+      ));
+    }
     createPage({
       path: href,
       component: require.resolve('./src/templates/profile-query'),
       context: {
         id,
+        lang: 'en',
+        posts,
       },
     });
-  });
+  }
 
   // Create profiles page.
   createPage({
