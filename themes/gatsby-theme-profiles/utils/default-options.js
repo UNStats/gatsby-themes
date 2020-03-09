@@ -3,5 +3,6 @@ module.exports = options => {
   const contentPath = options.contentPath || 'content/profiles';
   const assetPath = options.assetPath || 'content/assets';
   const collection = options.collection || 'profiles';
-  return { basePath, contentPath, assetPath, collection };
+  const postCollection = options.postCollection || undefined;
+  return { basePath, contentPath, assetPath, collection, postCollection };
 };

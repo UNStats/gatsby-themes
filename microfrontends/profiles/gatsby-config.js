@@ -6,6 +6,7 @@ module.exports = {
         basePath: '/profiles',
         contentPath: `${__dirname}/content/profiles`,
         assetPath: `${__dirname}/content/assets`,
+        postCollection: 'blog',
       },
     },
   ],
