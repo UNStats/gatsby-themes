@@ -76,7 +76,7 @@ const Events = ({
                   event={{
                     tag: intl.formatMessage({ id: `${collection}.tag` }),
                     title: (
-                      <Heading as="h1" sx={{ textAlign: 'start', mb: 3 }}>
+                      <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
                         {title}
                       </Heading>
                     ),
