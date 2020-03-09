@@ -1,5 +1,49 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.8.0
+
+### Minor Changes
+
+- [`f505bc9`](https://github.com/UNDataForum/gatsby-themes/commit/f505bc90b32de0e36745dd4adc39f6326c0cbba5)
+  [#363](https://github.com/UNDataForum/gatsby-themes/pull/363) Thanks
+  [@454de6e](https://github.com/454de6e)! - Display posts on profile pages
+
+* [`5e28808`](https://github.com/UNDataForum/gatsby-themes/commit/5e28808a1cde42cadd01cc0de433fa70166b8eba)
+  [#346](https://github.com/UNDataForum/gatsby-themes/pull/346) Thanks
+  [@454de6e](https://github.com/454de6e)! - Refactor theme-profiles to enable
+  new features
+
+- [`edfaa44`](https://github.com/UNDataForum/gatsby-themes/commit/edfaa44021fac069acba4357bf5212a421d36bcc)
+  [#349](https://github.com/UNDataForum/gatsby-themes/pull/349) Thanks
+  [@454de6e](https://github.com/454de6e)! - Localize title and description of
+  profiles overview page
+
+### Patch Changes
+
+- [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)
+  [#376](https://github.com/UNDataForum/gatsby-themes/pull/376) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update copyright in licenses to 2020
+
+* [`614d05f`](https://github.com/UNDataForum/gatsby-themes/commit/614d05fdbd5b1c8d23d667cc995405fc175fea66)
+  [#331](https://github.com/UNDataForum/gatsby-themes/pull/331) Thanks
+  [@renovate](https://github.com/apps/renovate)! - Fix incorrect version of peer
+  dependency theme-ui
+
+- [`9f83b89`](https://github.com/UNDataForum/gatsby-themes/commit/9f83b89916e1081d4176387dcf5f0bea7fc40f99)
+  [#382](https://github.com/UNDataForum/gatsby-themes/pull/382) Thanks
+  [@454de6e](https://github.com/454de6e)! - Fix links in profiles overview page
+
+* [`18a1d12`](https://github.com/UNDataForum/gatsby-themes/commit/18a1d128887132a459bf395014c1197ff0d6cc4d)
+  [#360](https://github.com/UNDataForum/gatsby-themes/pull/360) Thanks
+  [@454de6e](https://github.com/454de6e)! - Fix localication bug in profiles
+  overview page
+
+* Updated dependencies
+  [[`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c),
+  [`d0e8a4f`](https://github.com/UNDataForum/gatsby-themes/commit/d0e8a4fec35a213c77089badc4de91876f145bf0),
+  [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)]:
+  - @undataforum/gatsby-theme-base@0.12.2
+
 ## 0.7.1
 
 ### Patch Changes

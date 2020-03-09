@@ -1,5 +1,23 @@
 # @undataforum/gatsby-theme-base
 
+## 0.12.2
+
+### Patch Changes
+
+- [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)
+  [#376](https://github.com/UNDataForum/gatsby-themes/pull/376) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update copyright in licenses to 2020
+
+* [`d0e8a4f`](https://github.com/UNDataForum/gatsby-themes/commit/d0e8a4fec35a213c77089badc4de91876f145bf0)
+  [#377](https://github.com/UNDataForum/gatsby-themes/pull/377) Thanks
+  [@454de6e](https://github.com/454de6e)! - Fix links not rendering properly in
+  Markdown pages
+
+- [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)
+  [#376](https://github.com/UNDataForum/gatsby-themes/pull/376) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update copyright to 2020 in
+  copyright page
+
 ## 0.12.1
 
 ### Patch Changes

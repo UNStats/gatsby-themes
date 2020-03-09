@@ -1,5 +1,41 @@
 # @undataforum/gatsby-theme-events
 
+## 0.7.0
+
+### Minor Changes
+
+- [`4d062f8`](https://github.com/UNDataForum/gatsby-themes/commit/4d062f81f0bcaf383994c050db9e8dadcc633504)
+  [#378](https://github.com/UNDataForum/gatsby-themes/pull/378) Thanks
+  [@454de6e](https://github.com/454de6e)! - Redefine options for
+  gatsby-theme-events
+
+* [`4d062f8`](https://github.com/UNDataForum/gatsby-themes/commit/4d062f81f0bcaf383994c050db9e8dadcc633504)
+  [#378](https://github.com/UNDataForum/gatsby-themes/pull/378) Thanks
+  [@454de6e](https://github.com/454de6e)! - Redefine options for
+  gatsby-theme-events
+
+### Patch Changes
+
+- [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)
+  [#376](https://github.com/UNDataForum/gatsby-themes/pull/376) Thanks
+  [@454de6e](https://github.com/454de6e)! - Update copyright in licenses to 2020
+
+* [`614d05f`](https://github.com/UNDataForum/gatsby-themes/commit/614d05fdbd5b1c8d23d667cc995405fc175fea66)
+  [#331](https://github.com/UNDataForum/gatsby-themes/pull/331) Thanks
+  [@renovate](https://github.com/apps/renovate)! - Fix incorrect version of peer
+  dependency theme-ui
+
+- [`a223eed`](https://github.com/UNDataForum/gatsby-themes/commit/a223eed4fdb4aae9274b042e5db77dad09bd1caf)
+  [#390](https://github.com/UNDataForum/gatsby-themes/pull/390) Thanks
+  [@454de6e](https://github.com/454de6e)! - Change event headings to h2 in
+  events overview page
+
+- Updated dependencies
+  [[`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c),
+  [`d0e8a4f`](https://github.com/UNDataForum/gatsby-themes/commit/d0e8a4fec35a213c77089badc4de91876f145bf0),
+  [`f4f92db`](https://github.com/UNDataForum/gatsby-themes/commit/f4f92db2970fe0dc1412c9f96e14337c60c3107c)]:
+  - @undataforum/gatsby-theme-base@0.12.2
+
 ## 0.6.1
 
 ### Patch Changes
