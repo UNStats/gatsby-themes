@@ -43,42 +43,44 @@ const Profile = ({ data, pageContext: { lang, posts }, location }) => {
             mb={4}
           />
           <MDXRenderer>{body}</MDXRenderer>
-          <Styled.h2>
-            <FormattedMessage id="relatedPosts" values={{ name }} />
-          </Styled.h2>
-          {posts && (
-            <Grid gap={4} columns={1}>
-              {posts.map(({ id, ...post }) => {
-                const {
-                  title: { text: title },
-                  authors,
-                  date,
-                  path,
-                } = post;
-                return (
-                  <PostPreview
-                    post={{
-                      title: (
-                        <Heading as="h3" sx={{ textAlign: 'start', mb: 3 }}>
-                          {title}
-                        </Heading>
-                      ),
-                      authors: (
-                        <Names
-                          values={authors.map(
-                            ({ name: authorName }) => authorName
-                          )}
-                          mb={3}
-                        />
-                      ),
-                      date,
-                      href: path,
-                    }}
-                    key={id}
-                  />
-                );
-              })}
-            </Grid>
+          {posts.length > 0 && (
+            <>
+              <Styled.h2>
+                <FormattedMessage id="relatedPosts" values={{ name }} />
+              </Styled.h2>
+              <Grid gap={4} columns={1}>
+                {posts.map(({ id, ...post }) => {
+                  const {
+                    title: { text: title },
+                    authors,
+                    date,
+                    path,
+                  } = post;
+                  return (
+                    <PostPreview
+                      post={{
+                        title: (
+                          <Heading as="h3" sx={{ textAlign: 'start', mb: 3 }}>
+                            {title}
+                          </Heading>
+                        ),
+                        authors: (
+                          <Names
+                            values={authors.map(
+                              ({ name: authorName }) => authorName
+                            )}
+                            mb={3}
+                          />
+                        ),
+                        date,
+                        href: path,
+                      }}
+                      key={id}
+                    />
+                  );
+                })}
+              </Grid>
+            </>
           )}
         </Container>
       </Layout>
