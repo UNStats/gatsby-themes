@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.8.1
+
+### Patch Changes
+
+- [`9069527`](https://github.com/UNDataForum/gatsby-themes/commit/9069527f5735abf05d08d15c35e5b6ca58b851be)
+  [#392](https://github.com/UNDataForum/gatsby-themes/pull/392) Thanks
+  [@454de6e](https://github.com/454de6e)! - Suppress related posts heading on
+  profile pages when there are none
+
 ## 0.8.0
 
 ### Minor Changes

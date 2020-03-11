@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-profiles",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A Gatsby theme for profiles.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
