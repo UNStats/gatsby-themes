@@ -1,35 +1,32 @@
 import React from 'react';
-import { object, shape, string } from 'prop-types';
+import { object, shape, string, arrayOf } from 'prop-types';
 import { Container, Heading } from 'theme-ui';
 import { Avatars, PostPreview } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 
-const Post = ({ data, location }) => {
-  const {
-    title: { text: title },
-    date,
-    authors,
-    description: { text: description },
-    body,
-    images,
-  } = data.post;
+const PostPage = ({ data, location }) => {
+  const { title, date, authors, description, body, images } = data.post;
   // If post defines images in frontmatter, extract fluid images.
   const fluidImages = images
     ? images.map(image => image.childImageSharp.fluid)
     : undefined;
   return (
-    <Layout location={location} title={title} description={description}>
+    <Layout
+      location={location}
+      title={title.text}
+      description={description.text}
+    >
       <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
         <PostPreview
           post={{
             title: (
               <Heading as="h1" sx={{ textAlign: 'start', mb: 3 }}>
-                {title}
+                {title.text}
               </Heading>
             ),
             date,
-            authors: (
+            authors: authors ? (
               <Avatars
                 values={authors.map(author => ({
                   id: author.id,
@@ -45,9 +42,10 @@ const Post = ({ data, location }) => {
                 }))}
                 mb={3}
               />
+            ) : (
+              undefined
             ),
           }}
-          fontSize={[4, 5]}
           mb={[3, 4]}
         />
         <MDXRenderer images={fluidImages}>{body}</MDXRenderer>
@@ -56,9 +54,16 @@ const Post = ({ data, location }) => {
   );
 };
 
-Post.propTypes = {
-  data: shape({ post: object.isRequired }).isRequired,
+PostPage.propTypes = {
+  data: shape({
+    post: shape({
+      title: shape({ text: string.isRequired }).isRequired,
+      date: string.isRequired,
+      authors: arrayOf(object.isRequired),
+      description: shape({ text: string.isRequired }).isRequired,
+    }).isRequired,
+  }).isRequired,
   location: shape({ pathname: string.isRequired }).isRequired,
 };
 
-export default Post;
+export default PostPage;

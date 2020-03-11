@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, object, shape, string } from 'prop-types';
+import { node, shape, string, arrayOf } from 'prop-types';
 import { Container, Grid, Heading, Styled } from 'theme-ui';
 import { Names, PostPreview } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
@@ -12,7 +12,7 @@ import {
 
 import messages from '../i18n/messages';
 
-const Posts = ({
+const PostsPage = ({
   blurb,
   data,
   pageContext: { collection, lang },
@@ -44,29 +44,28 @@ const Posts = ({
           {blurb}
           <Grid gap={4} columns={[1, null, 2]}>
             {posts.map(post => {
-              const {
-                id,
-                title: { text: title },
-                authors,
-                date,
-                description: {
-                  childMdx: { body },
-                },
-                path,
-              } = post;
+              const { id, title, authors, date, description, path } = post;
               return (
                 <PostPreview
                   post={{
                     title: (
                       <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                        {title}
+                        {title.text}
                       </Heading>
                     ),
-                    authors: (
+                    // Authors is optional, but if it exists it can be empty array.
+                    authors: authors ? (
                       <Names values={authors.map(({ name }) => name)} mb={3} />
+                    ) : (
+                      undefined
                     ),
                     date,
-                    description: <MDXRenderer>{body}</MDXRenderer>,
+                    // Description is optional.
+                    description: description ? (
+                      <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+                    ) : (
+                      undefined
+                    ),
                     href: path,
                   }}
                   key={id}
@@ -80,9 +79,24 @@ const Posts = ({
   );
 };
 
-Posts.propTypes = {
+PostsPage.propTypes = {
   blurb: node,
-  data: shape({ allPost: object.isRequired }).isRequired,
+  data: shape({
+    allPost: shape({
+      nodes: arrayOf(
+        shape({
+          title: shape({ text: string.isRequired }).isRequired,
+          authors: arrayOf(shape({ name: string.isRequired }).isRequired),
+          date: string.isRequired,
+          description: shape({
+            childMdx: shape({ body: string.isRequired }).isRequired,
+            text: string.isRequired,
+          }),
+          path: string.isRequired,
+        }).isRequired
+      ).isRequired,
+    }).isRequired,
+  }),
   pageContext: shape({
     collection: string.isRequired,
     lang: string.isRequired,
@@ -90,4 +104,4 @@ Posts.propTypes = {
   location: shape({ pathname: string.isRequired }).isRequired,
 };
 
-export default Posts;
+export default PostsPage;
