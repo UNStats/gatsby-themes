@@ -41,6 +41,13 @@ module.exports.sourceNodes = ({ actions, schema }) => {
         collection: {
           type: 'String!',
         },
+        authors: {
+          type: '[Profile!]',
+          // Link profiles by slug.
+          extensions: {
+            link: { by: 'slug' },
+          },
+        },
         date: {
           type: 'Date!',
           // Enable date formatting in GraphQL queries.
@@ -48,21 +55,14 @@ module.exports.sourceNodes = ({ actions, schema }) => {
             dateformat: {},
           },
         },
-        authors: {
-          type: '[Profile!]!',
-          // Link profiles by slug.
-          extensions: {
-            link: { by: 'slug' },
-          },
+        path: {
+          type: 'String!',
         },
         images: {
           type: '[File!]',
           extensions: {
             fileByRelativePath: {},
           },
-        },
-        path: {
-          type: 'String!',
         },
         // Retrieve resolver from Mdx node and run it.
         body: {

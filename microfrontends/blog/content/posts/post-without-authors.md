@@ -1,8 +1,6 @@
 ---
-title: Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+title: This is a post without authors
 date: 2019-03-21
-authors:
-  - cleric-edis
 ---
 
 Id ad do excepteur eiusmod amet id cillum minim ad consequat. Tempor est Lorem

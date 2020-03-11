@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-import PostPage from '../components/post';
+import PostPage from '../components/post-page';
 
 export default PostPage;
 
@@ -8,9 +8,6 @@ export const query = graphql`
   query($id: String!) {
     post(id: { eq: $id }) {
       title {
-        childMdx {
-          body
-        }
         text
       }
       date(formatString: "MMM DD, YYYY")

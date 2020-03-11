@@ -2,7 +2,7 @@ import React from 'react';
 import { shape, object } from 'prop-types';
 import { Button, Container, Flex, Grid, Heading, Styled, Text } from 'theme-ui';
 import { EventPreview, Names, PostPreview } from '@undataforum/components';
-import { Layout } from '@undataforum/gatsby-theme-base';
+import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import { messages } from '@undataforum/gatsby-theme-events';
@@ -127,25 +127,29 @@ const Homepage = ({ data }) => {
           <Styled.h1>Blog</Styled.h1>
           <Grid gap={[4, 5]} columns={[1, null, 2]}>
             {posts.map(post => {
-              const {
-                id,
-                title: { text: title },
-                date,
-                authors,
-                path,
-              } = post;
+              const { id, title, date, authors, description, path } = post;
               return (
                 <PostPreview
                   post={{
                     title: (
                       <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                        {title}
+                        {title.text}
                       </Heading>
                     ),
                     date,
-                    authors: (
+                    // Authors prop is optional.
+                    authors: authors ? (
                       <Names values={authors.map(({ name }) => name)} mb={3} />
+                    ) : (
+                      undefined
                     ),
+                    // Description is optional.
+                    description: description ? (
+                      <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+                    ) : (
+                      undefined
+                    ),
+
                     href: path,
                   }}
                   fontSize={[3, 4]}
@@ -189,6 +193,11 @@ export const query = graphql`
         date(formatString: "MMM DD, YYYY")
         authors {
           name
+        }
+        description {
+          childMdx {
+            body
+          }
         }
         path
       }
