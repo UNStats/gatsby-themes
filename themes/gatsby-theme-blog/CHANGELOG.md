@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-blog
 
+## 0.11.0
+
+### Minor Changes
+
+- [`e366331`](https://github.com/UNDataForum/gatsby-themes/commit/e366331b12cbea994ae853fd0adec216d35c1bb5)
+  [#395](https://github.com/UNDataForum/gatsby-themes/pull/395) Thanks
+  [@454de6e](https://github.com/454de6e)! - Make PostPage and PostsPage
+  components more robust with regards to optional props
+
 ## 0.10.0
 
 ### Minor Changes
