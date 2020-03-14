@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "@undataforum/gatsby-theme-profiles": "*",
-    "deepmerge": "^4.2.2"
+    "deepmerge": "4.2.2"
   }
 }
