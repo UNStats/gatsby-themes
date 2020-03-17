@@ -11,9 +11,6 @@ export const query = graphql`
     event(id: { eq: $id }) {
       collection
       title {
-        childMdx {
-          body
-        }
         text
       }
       displayDate

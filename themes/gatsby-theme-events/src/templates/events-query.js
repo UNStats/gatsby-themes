@@ -14,9 +14,6 @@ export const query = graphql`
         id
         collection
         title {
-          childMdx {
-            body
-          }
           text
         }
         startDate
@@ -33,7 +30,6 @@ export const query = graphql`
           childMdx {
             body
           }
-          text
         }
         registrationLink
         path
