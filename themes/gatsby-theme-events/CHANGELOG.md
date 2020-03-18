@@ -1,5 +1,26 @@
 # @undataforum/gatsby-theme-events
 
+## 0.8.0
+
+### Minor Changes
+
+- [`1ac16a8`](https://github.com/UNDataForum/gatsby-themes/commit/1ac16a8dc70bb94d1df94e14bd48fecb64884c52)
+  [#407](https://github.com/UNDataForum/gatsby-themes/pull/407) Thanks
+  [@454de6e](https://github.com/454de6e)! - Make description prop optional in
+  events overview page
+
+* [`1ac16a8`](https://github.com/UNDataForum/gatsby-themes/commit/1ac16a8dc70bb94d1df94e14bd48fecb64884c52)
+  [#407](https://github.com/UNDataForum/gatsby-themes/pull/407) Thanks
+  [@454de6e](https://github.com/454de6e)! - Make description prop optional in
+  events overview page
+
+### Patch Changes
+
+- [`9034d23`](https://github.com/UNDataForum/gatsby-themes/commit/9034d23659f4a6b44705614785b9cd1b18c43c13)
+  [#404](https://github.com/UNDataForum/gatsby-themes/pull/404) Thanks
+  [@454de6e](https://github.com/454de6e)! - Remove unnecessary props from
+  GraphQL queries
+
 ## 0.7.0
 
 ### Minor Changes

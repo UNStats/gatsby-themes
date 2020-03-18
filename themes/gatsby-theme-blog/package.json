@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-blog",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "A Gatsby theme for a blog.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
