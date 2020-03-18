@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-blog
 
+## 0.11.1
+
+### Patch Changes
+
+- [`a3ba5ef`](https://github.com/UNDataForum/gatsby-themes/commit/a3ba5ef1a8b732c8f9323fc55899264df8d27455)
+  [#407](https://github.com/UNDataForum/gatsby-themes/pull/407) Thanks
+  [@454de6e](https://github.com/454de6e)! - Backport changes from events to
+  posts
+
 ## 0.11.0
 
 ### Minor Changes
