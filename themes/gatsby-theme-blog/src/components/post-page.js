@@ -61,6 +61,7 @@ PostPage.propTypes = {
       date: string.isRequired,
       authors: arrayOf(object.isRequired),
       description: shape({ text: string.isRequired }).isRequired,
+      body: string.isRequired,
     }).isRequired,
   }).isRequired,
   location: shape({ pathname: string.isRequired }).isRequired,

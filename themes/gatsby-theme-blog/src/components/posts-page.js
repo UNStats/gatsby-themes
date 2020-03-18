@@ -53,18 +53,14 @@ const PostsPage = ({
                         {title.text}
                       </Heading>
                     ),
-                    // Authors is optional, but if it exists it can be empty array.
-                    authors: authors ? (
+                    // Authors is optional.
+                    authors: authors && (
                       <Names values={authors.map(({ name }) => name)} mb={3} />
-                    ) : (
-                      undefined
                     ),
                     date,
                     // Description is optional.
-                    description: description ? (
+                    description: description && (
                       <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-                    ) : (
-                      undefined
                     ),
                     href: path,
                   }}
@@ -90,7 +86,6 @@ PostsPage.propTypes = {
           date: string.isRequired,
           description: shape({
             childMdx: shape({ body: string.isRequired }).isRequired,
-            text: string.isRequired,
           }),
           path: string.isRequired,
         }).isRequired

@@ -31,9 +31,6 @@ export const query = graphql`
         }
       }
       description {
-        childMdx {
-          body
-        }
         text
       }
       body
