@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, object, shape, string } from 'prop-types';
+import { arrayOf, node, shape, string } from 'prop-types';
 import { Container, Grid, Heading, Styled } from 'theme-ui';
 import { EventPreview, Names } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
@@ -11,6 +11,7 @@ import {
 } from 'react-intl';
 
 import messages from '../i18n/messages';
+import decorate from '../../utils/decorate-moderators';
 
 const Events = ({
   blurb,
@@ -46,48 +47,48 @@ const Events = ({
             {events.map(event => {
               const {
                 id,
-                title: { text: title },
-                displayDate: date,
+                title,
+                displayDate,
                 duration,
                 moderators,
                 speakers,
-                description: {
-                  childMdx: { body },
-                },
+                description,
                 registrationLink,
-                path: href,
+                path,
               } = event;
-              // EventPreview has speakers prop only and does not distinguish between moderators and speakers.
-              // Consolidate moderators and speakers into profiles. Add "(Moderator)" after moderator's name.
-              let profiles = speakers;
-              if (moderators) {
+
+              // Consolidate moderators and speakers for EventPreview.
+              let profiles;
+              if (moderators && speakers) {
                 profiles = [
-                  ...moderators.map(moderator => ({
-                    ...moderator,
-                    name: `${moderator.name} (${intl.formatMessage({
-                      id: `${collection}.moderator`,
-                    })})`,
-                  })),
+                  ...decorate(moderators, lang, messages, collection),
                   ...speakers,
                 ];
+              } else if (moderators) {
+                profiles = decorate(moderators, lang, messages, collection);
+              } else {
+                profiles = speakers;
               }
+
               return (
                 <EventPreview
                   event={{
                     tag: intl.formatMessage({ id: `${collection}.tag` }),
                     title: (
                       <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                        {title}
+                        {title.text}
                       </Heading>
                     ),
-                    date,
+                    date: displayDate,
                     duration,
                     speakers: profiles && (
                       <Names values={profiles.map(({ name }) => name)} mb={3} />
                     ),
-                    description: <MDXRenderer>{body}</MDXRenderer>,
+                    description: description && (
+                      <MDXRenderer>{description.childMdx.body}</MDXRenderer>
+                    ),
                     registrationLink,
-                    href,
+                    href: path,
                   }}
                   key={id}
                 />
@@ -102,7 +103,24 @@ const Events = ({
 
 Events.propTypes = {
   blurb: node,
-  data: shape({ allEvent: object.isRequired }).isRequired,
+  data: shape({
+    allEvent: shape({
+      nodes: arrayOf(
+        shape({
+          title: shape({ text: string.isRequired }).isRequired,
+          displayDate: string.isRequired,
+          duration: string.isRequired,
+          moderators: arrayOf(shape({ name: string.isRequired }).isRequired),
+          speakers: arrayOf(shape({ name: string.isRequired }).isRequired),
+          description: shape({
+            childMdx: shape({ body: string.isRequired }).isRequired,
+          }),
+          registrationLink: string,
+          path: string.isRequired,
+        })
+      ).isRequired,
+    }).isRequired,
+  }).isRequired,
   pageContext: shape({
     collection: string.isRequired,
     lang: string.isRequired,

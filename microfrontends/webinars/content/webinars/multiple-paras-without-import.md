@@ -1,6 +1,6 @@
 ---
 type: Webinar
-title: Aliqua est minim ex mollit sunt anim ipsum et laborum occaecat
+title: This is a webinar with speakers only
 start: 2019-08-27T14:00
 end: 2019-08-27T15:15
 zone: Asia/Bangkok
