@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-base
 
+## 0.12.3
+
+### Patch Changes
+
+- [`c6f99ed`](https://github.com/UNDataForum/gatsby-themes/commit/c6f99edc8f0de1496cc78ad606f0b532dae6052d)
+  [#409](https://github.com/UNDataForum/gatsby-themes/pull/409) Thanks
+  [@454de6e](https://github.com/454de6e)! - Remove dependency on legacy
+  prop-type that does not exist any longer
+
 ## 0.12.2
 
 ### Patch Changes
