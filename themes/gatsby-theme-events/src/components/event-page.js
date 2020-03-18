@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string, object } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 import { Container, Heading, Link, Styled } from 'theme-ui';
 import { Avatars, EventPreview, NewTabLink } from '@undataforum/components';
 import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
@@ -7,6 +7,7 @@ import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import Img from 'gatsby-image';
 
 import messages from '../i18n/messages';
+import decorate from '../../utils/decorate-moderators';
 
 const Event = ({ data, pageContext: { lang }, location }) => {
   // We need to localize props that are not React components:
@@ -23,29 +24,27 @@ const Event = ({ data, pageContext: { lang }, location }) => {
   // Data from GraphQL query.
   const {
     collection,
-    title: { text: title },
-    displayDate: date,
+    title,
+    displayDate,
     duration,
     moderators,
     speakers,
-    description: { text: description },
+    description,
     registrationLink,
     body,
   } = data.event;
 
-  // EventPreview has speakers prop only and does not distinguish between moderators and speakers.
-  // Consolidate moderators and speakers into profiles. Add "(Moderator)" after moderator's name.
-  let profiles = speakers;
-  if (moderators) {
+  // Consolidate moderators and speakers for EventPreview.
+  let profiles;
+  if (moderators && speakers) {
     profiles = [
-      ...moderators.map(moderator => ({
-        ...moderator,
-        name: `${moderator.name} (${intl.formatMessage({
-          id: `${collection}.moderator`,
-        })})`,
-      })),
+      ...decorate(moderators, lang, messages, collection),
       ...speakers,
     ];
+  } else if (moderators) {
+    profiles = decorate(moderators, lang, messages, collection);
+  } else {
+    profiles = speakers;
   }
 
   // Process attachments.
@@ -57,17 +56,21 @@ const Event = ({ data, pageContext: { lang }, location }) => {
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
-      <Layout location={location} title={title} description={description}>
+      <Layout
+        location={location}
+        title={title.text}
+        description={description.text}
+      >
         <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
           <EventPreview
             event={{
               tag: intl.formatMessage({ id: `${collection}.tag` }),
               title: (
                 <Heading as="h1" sx={{ textAlign: 'start', mb: 3 }}>
-                  {title}
+                  {title.text}
                 </Heading>
               ),
-              date,
+              date: displayDate,
               duration,
               speakers: profiles && (
                 <Avatars
@@ -112,7 +115,18 @@ const Event = ({ data, pageContext: { lang }, location }) => {
 };
 
 Event.propTypes = {
-  data: shape({ event: object.isRequired }).isRequired,
+  data: shape({
+    event: shape({
+      collection: string.isRequired,
+      title: shape({ text: string.isRequired }).isRequired,
+      displayDate: string.isRequired,
+      duration: string.isRequired,
+      moderators: arrayOf(shape({ name: string.isRequired }).isRequired),
+      speakers: arrayOf(shape({ name: string.isRequired }).isRequired),
+      registrationLink: string,
+      body: string.isRequired,
+    }).isRequired,
+  }).isRequired,
   pageContext: shape({
     lang: string.isRequired,
   }),

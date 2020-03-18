@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-import EventPage from '../components/event';
+import EventPage from '../components/event-page';
 
 export default EventPage;
 
@@ -40,9 +40,6 @@ export const query = graphql`
         }
       }
       description {
-        childMdx {
-          body
-        }
         text
       }
       registrationLink

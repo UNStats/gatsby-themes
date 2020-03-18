@@ -1,6 +1,6 @@
 ---
 type: Webinar
-title: Ad labore ipsum elit pariatur tempor pariatur fugiat officia ullamco
+title: This is a webinars without speakers and moderators
 start: 2019-08-24T09:00
 end: 2019-08-24T10:00
 zone: America/Los_Angeles
