@@ -1,5 +1,5 @@
 import React from 'react';
-import { scaleToType } from '@undataforum/components';
+import { oneOf } from 'prop-types';
 
 const Logo = ({ scaleTo }) => {
   const height = scaleTo === 'height' ? '100%' : null;
@@ -13,7 +13,7 @@ const Logo = ({ scaleTo }) => {
 };
 
 Logo.propTypes = {
-  scaleTo: scaleToType.isRequired,
+  scaleTo: oneOf(['height, width']),
 };
 
 export default Logo;
