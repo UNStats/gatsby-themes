@@ -220,7 +220,7 @@ module.exports.onCreateNode = (
       parent: postNode.id,
       children: [],
       internal: {
-        type: `${collection}Description`,
+        type: 'Description',
         contentDigest: createContentDigest(description),
         mediaType: 'text/markdown',
         content: description,
@@ -241,7 +241,7 @@ module.exports.onCreateNode = (
       parent: postNode.id,
       children: [],
       internal: {
-        type: `${collection}Title`,
+        type: 'Title',
         contentDigest: createContentDigest(node.frontmatter.title),
         mediaType: 'text/markdown',
         content: node.frontmatter.title,

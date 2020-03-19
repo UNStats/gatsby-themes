@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     'blog',
+    'news',
     'profiles',
     'webinars',
     {
