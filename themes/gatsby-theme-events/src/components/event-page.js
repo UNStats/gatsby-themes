@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 import { Container, Heading, Link, Styled } from 'theme-ui';
 import { Avatars, EventPreview, NewTabLink } from '@undataforum/components';
-import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
+import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import Img from 'gatsby-image';
 
@@ -56,11 +56,8 @@ const Event = ({ data, pageContext: { lang }, location }) => {
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
-      <Layout
-        location={location}
-        title={title.text}
-        description={description.text}
-      >
+      <Layout location={location}>
+        <Seo title={title.text} description={description.text} />
         <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
           <EventPreview
             event={{

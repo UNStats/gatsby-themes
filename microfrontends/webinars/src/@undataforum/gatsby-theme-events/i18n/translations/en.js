@@ -1,10 +1,9 @@
 // Shadowed localizations for webinars collection.
 const en = {
-  'webinars.title': 'Webinars',
+  'webinars.title': 'Shadowed webinars overview page title',
   'webinars.tag': 'Webinar',
   'webinars.moderator': 'Moderator',
-  'webinars.description':
-    'Description for overview page of webinars collection.',
+  'webinars.description': 'Shadowed webinar overview page description.',
 };
 
 export default en;

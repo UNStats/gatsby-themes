@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 
-import ProfilePage from '../components/profile';
+import ProfilePage from '../components/profile-page';
 
 export default ProfilePage;
 

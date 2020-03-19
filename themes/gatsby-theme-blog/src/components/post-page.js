@@ -2,7 +2,7 @@ import React from 'react';
 import { object, shape, string, arrayOf } from 'prop-types';
 import { Container, Heading } from 'theme-ui';
 import { Avatars, PostPreview } from '@undataforum/components';
-import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
+import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 
 const PostPage = ({ data, location }) => {
@@ -12,11 +12,8 @@ const PostPage = ({ data, location }) => {
     ? images.map(image => image.childImageSharp.fluid)
     : undefined;
   return (
-    <Layout
-      location={location}
-      title={title.text}
-      description={description.text}
-    >
+    <Layout location={location}>
+      <Seo title={title.text} description={description.text} />
       <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
         <PostPreview
           post={{
