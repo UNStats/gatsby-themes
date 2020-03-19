@@ -1,5 +1,17 @@
 # @undataforum/gatsby-theme-profiles
 
+## 0.8.2
+
+### Patch Changes
+
+- [`9032975`](https://github.com/UNDataForum/gatsby-themes/commit/90329752676a4c77c16dd624b0db3b74942d8c71)
+  [#419](https://github.com/UNDataForum/gatsby-themes/pull/419) Thanks
+  [@454de6e](https://github.com/454de6e)! - Add SEO component to page components
+
+- Updated dependencies
+  [[`90e38a0`](https://github.com/UNDataForum/gatsby-themes/commit/90e38a0d09bec590ae7a9a24abda5d6cf018111e)]:
+  - @undataforum/gatsby-theme-base@0.13.0
+
 ## 0.8.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-base
 
+## 0.13.0
+
+### Minor Changes
+
+- [`90e38a0`](https://github.com/UNDataForum/gatsby-themes/commit/90e38a0d09bec590ae7a9a24abda5d6cf018111e)
+  [#419](https://github.com/UNDataForum/gatsby-themes/pull/419) Thanks
+  [@454de6e](https://github.com/454de6e)! - Move SEO component outside layout
+
 ## 0.12.3
 
 ### Patch Changes
