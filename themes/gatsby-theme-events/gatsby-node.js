@@ -258,7 +258,7 @@ module.exports.onCreateNode = (
       parent: eventNode.id,
       children: [],
       internal: {
-        type: `${collection}Title`,
+        type: 'EventTitle',
         contentDigest: createContentDigest(node.frontmatter.title),
         mediaType: 'text/markdown',
         // Workaround to process any Markdown in title, such as quotes and dashes.
@@ -280,7 +280,7 @@ module.exports.onCreateNode = (
       parent: eventNode.id,
       children: [],
       internal: {
-        type: `${collection}Description`,
+        type: 'EventDescription',
         contentDigest: createContentDigest(description),
         mediaType: 'text/markdown',
         content: description,
