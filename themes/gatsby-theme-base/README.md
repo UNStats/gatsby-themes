@@ -1,25 +1,16 @@
 # @undataforum/gatsby-theme-base
 
-## Site Metadata
+## Usage
+
+### Site metadata
 
 When using this theme you need to set the following `siteMetadata` in your
-`gatsby-config.js` in order to overwrite the theme's placeholders.
+`gatsby-config.js`:
 
-### `title`
-
-Site title. Will be used for SEO when no title is set for an idividual page.
-
-### `description`
-
-Site description. Will be used for SEO when no description is set for an
-individual page.
-
-### `twitter`
-
-Site Twitter handle. Will be used for `twitter:site` and `twitter:creator` if
-not set for an individual page.
-
-### `siteUrl`
-
-URL from which the production site is served. This is required to generate a
-sitemap for production deployments.
+| Key                   | Required | Description                                                                |
+| :-------------------- | :------- | :------------------------------------------------------------------------- |
+| `title`               | yes      | Site title for SEO. Can also be used for header.                           |
+| `description`         | yes      | Site description for SEO.                                                  |
+| `keywords`            | yes      | Site keywords are merged with page keywords. Can be set to `[]`.           |
+| `siteTwitterUsername` | yes      | Site Twitter username for SEO. Can be set to `''`.                         |
+| `siteUrl`             | yes      | URL from which the production site is served. Used for sitemap generation. |

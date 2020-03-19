@@ -1,6 +1,6 @@
 ---
-title: Default Template Test Page
-description: Test descriptio for the default template test page.
+title: MdxPage component test page
+description: Description for the MdxPage component test page.
 ---
 
 Nulla consequat incididunt ad cillum tempor occaecat. Dolore culpa esse nulla
