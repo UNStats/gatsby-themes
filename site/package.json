@@ -3,6 +3,7 @@
   "name": "site",
   "version": "0.6.0",
   "author": "Thilo Maier <maier@un.org>",
+  "keywords": ["gatsby", "undataforum"],
   "homepage": "https://gatsby-themes.undataforum.now.sh/",
   "scripts": {
     "develop": "cross-env GATSBY_TELEMETRY_DISABLED=1 gatsby develop",

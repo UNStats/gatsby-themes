@@ -1,11 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Site title placeholder (from @undataforum/gatsby-theme-base)',
-    description:
-      'Site description placeholder (from @undataforum/gatsby-theme-base)',
-    twitter: 'Site Twitter placeholder (from @undataforum/gatsby-theme-base)',
-    siteUrl: 'Site URL placeholder (from @undataforum/gatsby-theme-base)',
-  },
   plugins: [
     'gatsby-plugin-theme-ui',
     {
@@ -13,7 +6,7 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/default.js'),
+          default: require.resolve('./src/components/mdx-page.js'),
         },
         gatsbyRemarkPlugins: ['gatsby-remark-smartypants'],
       },

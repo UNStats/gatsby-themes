@@ -3,7 +3,13 @@ const pkg = require('./package.json');
 module.exports = {
   siteMetadata: {
     title: 'Test Site',
-    description: 'This description overrides any placeholder descriptions.',
+    description: 'Test site description for SEO.',
+    keywords: [
+      'United Nations World Data Forum',
+      '2030 Agenda',
+      'Sustainable Development Goals',
+    ],
+    siteTwitterUsername: 'UNDataForum',
     siteUrl: pkg.homepage,
   },
   plugins: [
