@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-events
 
+## 0.8.1
+
+### Patch Changes
+
+- [`46bea38`](https://github.com/UNDataForum/gatsby-themes/commit/46bea38992ba71d9acdd91baea2ccac4d2fab4ca)
+  [#415](https://github.com/UNDataForum/gatsby-themes/pull/415) Thanks
+  [@454de6e](https://github.com/454de6e)! - Fix node types of title and
+  description nodes
+
 ## 0.8.0
 
 ### Minor Changes
