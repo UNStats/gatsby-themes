@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "blog",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Microfrontend for blog.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
