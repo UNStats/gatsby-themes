@@ -3,10 +3,10 @@ module.exports = {
     {
       resolve: '@undataforum/gatsby-theme-blog',
       options: {
-        basePath: '/blog',
-        contentPath: `${__dirname}/content/posts`,
+        basePath: '/news',
+        contentPath: `${__dirname}/content/articles`,
         assetPath: `${__dirname}/content/assets`,
-        collection: 'blog',
+        collection: 'news',
       },
     },
   ],

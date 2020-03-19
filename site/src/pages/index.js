@@ -124,7 +124,7 @@ const Homepage = ({ data }) => {
               );
             })}
           </Grid>
-          <Styled.h1>Blog</Styled.h1>
+          <Styled.h1>Latest articles</Styled.h1>
           <Grid gap={[4, 5]} columns={[1, null, 2]}>
             {posts.map(post => {
               const { id, title, date, authors, description, path } = post;
@@ -180,11 +180,7 @@ export const query = graphql`
         description
       }
     }
-    allPost(
-      limit: 4
-      sort: { fields: date, order: DESC }
-      filter: { collection: { eq: "blog" } }
-    ) {
+    allPost(limit: 4, sort: { fields: date, order: DESC }) {
       nodes {
         id
         title {
