@@ -2,7 +2,7 @@ import React from 'react';
 import { node, object, shape, string } from 'prop-types';
 import { Container, Grid, Styled } from 'theme-ui';
 import { ProfilePreview, SmartLink } from '@undataforum/components';
-import { Layout } from '@undataforum/gatsby-theme-base';
+import { Layout, Seo } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 import {
   createIntl,
@@ -33,11 +33,11 @@ const Profiles = ({
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
-      <Layout
-        title={intl.formatMessage({ id: `${collection}.title` })}
-        description={intl.formatMessage({ id: `${collection}.description` })}
-        location={location}
-      >
+      <Layout location={location}>
+        <Seo
+          title={intl.formatMessage({ id: `${collection}.title` })}
+          description={intl.formatMessage({ id: `${collection}.description` })}
+        />
         <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
           <Styled.h1>
             <FormattedMessage id={`${collection}.title`} />

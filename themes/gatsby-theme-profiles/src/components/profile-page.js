@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, object, shape, string } from 'prop-types';
 import { Container, Grid, Heading, Styled } from 'theme-ui';
 import { Names, PostPreview, ProfilePreview } from '@undataforum/components';
-import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
+import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 
@@ -23,7 +23,8 @@ const Profile = ({ data, pageContext: { lang, posts }, location }) => {
   } = data.profile;
   return (
     <IntlProvider locale={lang} messages={messages[lang]}>
-      <Layout location={location} title={name} description={description}>
+      <Layout location={location}>
+        <Seo title={name} description={description} />
         <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
           <ProfilePreview
             profile={{

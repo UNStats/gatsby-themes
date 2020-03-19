@@ -1,8 +1,8 @@
 import React from 'react';
-import { shape, object } from 'prop-types';
+import { object, shape, string } from 'prop-types';
 import { Button, Container, Flex, Grid, Heading, Styled, Text } from 'theme-ui';
 import { EventPreview, Names, PostPreview } from '@undataforum/components';
-import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
+import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 import { graphql } from 'gatsby';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import { messages } from '@undataforum/gatsby-theme-events';
@@ -14,7 +14,7 @@ import Hero from '../components/hero';
 // If you change the hero image, you need to update the page query:
 // - update filename regex,
 // - update maxWidth to avoid blurry images.
-const Homepage = ({ data }) => {
+const Homepage = ({ data, location }) => {
   const posts = data.allPost.nodes;
   const events = data.allEvent.nodes;
 
@@ -32,7 +32,11 @@ const Homepage = ({ data }) => {
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
-      <Layout title="Homepage" description={data.site.siteMetadata.description}>
+      <Layout location={location}>
+        <Seo
+          title="Homepage"
+          description={data.site.siteMetadata.description}
+        />
         <Hero
           fluid={data.hero.nodes[0].fluid}
           title="View of Bern, Switzerland"
@@ -169,6 +173,7 @@ Homepage.propTypes = {
     allPost: object.isRequired,
     allEvent: object.isRequired,
   }).isRequired,
+  location: shape({ pathname: string.isRequired }).isRequired,
 };
 
 export default Homepage;

@@ -2,7 +2,7 @@ import React from 'react';
 import { arrayOf, node, shape, string } from 'prop-types';
 import { Container, Grid, Heading, Styled } from 'theme-ui';
 import { EventPreview, Names } from '@undataforum/components';
-import { Layout, MDXRenderer } from '@undataforum/gatsby-theme-base';
+import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 import {
   createIntl,
   createIntlCache,
@@ -33,11 +33,11 @@ const Events = ({
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
-      <Layout
-        location={location}
-        title={intl.formatMessage({ id: `${collection}.title` })}
-        description={intl.formatMessage({ id: `${collection}.description` })}
-      >
+      <Layout location={location}>
+        <Seo
+          title={intl.formatMessage({ id: `${collection}.title` })}
+          description={intl.formatMessage({ id: `${collection}.description` })}
+        />
         <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
           <Styled.h1>
             <FormattedMessage id={`${collection}.title`} />
