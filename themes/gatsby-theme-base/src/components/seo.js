@@ -88,7 +88,7 @@ const Seo = ({
   if (authorTwitterUsernames.length > 0) {
     twitterMeta = [
       ...twitterMeta,
-      ...authorTwitterUsernames.map(authorTwitterUsername => ({
+      ...authorTwitterUsernames.map((authorTwitterUsername) => ({
         name: 'twitter:creator',
         content: `@${authorTwitterUsername}`,
       })),
@@ -103,7 +103,7 @@ const Seo = ({
       title={metaTitle}
       meta={[
         // Authors.
-        ...authors.map(author => ({ name: 'author', content: author })),
+        ...authors.map((author) => ({ name: 'author', content: author })),
         // Description.
         {
           name: 'description',

@@ -9,7 +9,7 @@ const PostPage = ({ data, location }) => {
   const { title, date, authors, description, body, images } = data.post;
   // If post defines images in frontmatter, extract fluid images.
   const fluidImages = images
-    ? images.map(image => image.childImageSharp.fluid)
+    ? images.map((image) => image.childImageSharp.fluid)
     : undefined;
   return (
     <Layout location={location}>
@@ -25,7 +25,7 @@ const PostPage = ({ data, location }) => {
             date,
             authors: authors ? (
               <Avatars
-                values={authors.map(author => ({
+                values={authors.map((author) => ({
                   id: author.id,
                   avatar: (
                     <Img
@@ -39,9 +39,7 @@ const PostPage = ({ data, location }) => {
                 }))}
                 mb={3}
               />
-            ) : (
-              undefined
-            ),
+            ) : undefined,
           }}
           mb={[3, 4]}
         />

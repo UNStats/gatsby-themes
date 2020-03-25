@@ -99,7 +99,7 @@ const Homepage = ({ data, location }) => {
         >
           <Styled.h1>Webinars</Styled.h1>
           <Grid gap={[4, 5]} columns={[1, null, 2]} sx={{ mb: [4, 5] }}>
-            {events.map(event => {
+            {events.map((event) => {
               const {
                 id,
                 collection,
@@ -130,7 +130,7 @@ const Homepage = ({ data, location }) => {
           </Grid>
           <Styled.h1>Latest articles</Styled.h1>
           <Grid gap={[4, 5]} columns={[1, null, 2]}>
-            {posts.map(post => {
+            {posts.map((post) => {
               const { id, title, date, authors, description, path } = post;
               return (
                 <PostPreview
@@ -144,15 +144,11 @@ const Homepage = ({ data, location }) => {
                     // Authors prop is optional.
                     authors: authors ? (
                       <Names values={authors.map(({ name }) => name)} mb={3} />
-                    ) : (
-                      undefined
-                    ),
+                    ) : undefined,
                     // Description is optional.
                     description: description ? (
                       <MDXRenderer>{description.childMdx.body}</MDXRenderer>
-                    ) : (
-                      undefined
-                    ),
+                    ) : undefined,
 
                     href: path,
                   }}
