@@ -1,5 +1,13 @@
 # @undataforum/gatsby-theme-base
 
+## 0.13.1
+
+### Patch Changes
+
+- [`f562d02`](https://github.com/UNDataForum/gatsby-themes/commit/f562d02bc96c6e82589810e07e09eaa52dffcce0)
+  [#426](https://github.com/UNDataForum/gatsby-themes/pull/426) Thanks
+  [@454de6e](https://github.com/454de6e)! - Pass ...props to Header in Layout
+
 ## 0.13.0
 
 ### Minor Changes
