@@ -36,12 +36,12 @@
     "@undataforum/components": "^0.73.0",
     "@undataforum/preset": "^0.6.0",
     "deepmerge": "^4.2.2",
-    "gatsby-image": "^2.2.45",
-    "gatsby-plugin-mdx": "^1.0.84",
-    "gatsby-plugin-react-helmet": "^3.1.24",
-    "gatsby-plugin-sitemap": "^2.2.30",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-mdx": "^1.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sitemap": "^2.3.1",
     "gatsby-plugin-theme-ui": "^0.3.0",
-    "gatsby-remark-smartypants": "^2.1.23",
+    "gatsby-remark-smartypants": "^2.2.1",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1"
   }
