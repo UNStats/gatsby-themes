@@ -71,7 +71,7 @@ const Event = ({ data, pageContext: { lang }, location }) => {
               duration,
               speakers: profiles && (
                 <Avatars
-                  values={profiles.map(profile => ({
+                  values={profiles.map((profile) => ({
                     id: profile.id,
                     avatar: (
                       <Img

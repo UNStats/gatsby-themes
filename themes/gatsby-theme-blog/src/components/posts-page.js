@@ -43,7 +43,7 @@ const PostsPage = ({
           </Styled.h1>
           {blurb}
           <Grid gap={4} columns={[1, null, 2]}>
-            {posts.map(post => {
+            {posts.map((post) => {
               const { id, title, authors, date, description, path } = post;
               return (
                 <PostPreview
