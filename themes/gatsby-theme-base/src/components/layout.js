@@ -5,10 +5,10 @@ import { Box, Flex, Styled } from 'theme-ui';
 import Header from './header';
 import Footer from './footer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, ...props }) => (
   <Styled.root>
     <Flex sx={{ flexDirection: 'column', minHeight: '100vh' }}>
-      <Header mb={3} />
+      <Header {...props} mb={3} />
       <Box sx={{ flex: 1, mb: 4 }}>{children}</Box>
       <Footer />
     </Flex>
