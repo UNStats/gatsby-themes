@@ -1,5 +1,17 @@
 # @undataforum/gatsby-theme-blog
 
+## 0.11.4
+
+### Patch Changes
+
+- [`25ca77e`](https://github.com/UNDataForum/gatsby-themes/commit/25ca77e62f5d182b5636763e277487fe41710531)
+  [#429](https://github.com/UNDataForum/gatsby-themes/pull/429) Thanks
+  [@454de6e](https://github.com/454de6e)! - Add missing fields to GraphQL types
+
+- Updated dependencies
+  [[`95b96ad`](https://github.com/UNDataForum/gatsby-themes/commit/95b96adbb9495c5a2fb427689021b6266dd9038c)]:
+  - @undataforum/gatsby-theme-base@0.13.2
+
 ## 0.11.3
 
 ### Patch Changes
