@@ -33,12 +33,12 @@
   "dependencies": {
     "@undataforum/components": "^0.73.0",
     "@undataforum/gatsby-theme-base": "^0.13.0",
-    "gatsby-image": "^2.2.45",
-    "gatsby-source-filesystem": "^2.1.57",
-    "luxon": "^1.22.0",
+    "gatsby-image": "^2.3.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "luxon": "^1.22.2",
     "prop-types": "^15.7.2",
-    "react-intl": "^4.1.1",
+    "react-intl": "^4.2.2",
     "remark": "^11.0.1",
-    "strip-markdown": "^3.1.1"
+    "strip-markdown": "^3.1.2"
   }
 }

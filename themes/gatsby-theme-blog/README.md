@@ -64,13 +64,15 @@ This theme adds GraphQL type `Post` which can be queried with `post` and
 `allPost` queries. Type `Post` makes no assumptions about what the underlying
 data source is.
 
-| Field        | Type                          | Description                                                                                    |
-| :----------- | :---------------------------- | :--------------------------------------------------------------------------------------------- |
-| `id`         | `ID!`                         | Gatsby node GUID.                                                                              |
-| `slug`       | `ID!`                         | Alternative ID used for querying and building the graph.                                       |
-| `collection` | `String!`                     | Distinguish separate post collections.                                                         |
-| `date`       | `Date!`                       |                                                                                                |
-| `authors`    | `[String!]!` or `[Profile!]!` | Type depends on theme option `profiles`.                                                       |
-| `body`       | `String!`                     | A string representation of the body of the profile page. For MDX pages this is the MDX `body`. |
-| `images`     | `[File!]`                     | Relative paths to images.                                                                      |
-| `path`       | `String!`                     | Path to generated page.                                                                        |
+| Field         | Type                          | Description                                                                                    |
+| :------------ | :---------------------------- | :--------------------------------------------------------------------------------------------- |
+| `id`          | `ID!`                         | Gatsby node GUID.                                                                              |
+| `slug`        | `ID!`                         | Alternative ID used for querying and building the graph.                                       |
+| `collection`  | `String!`                     | Distinguish separate post collections.                                                         |
+| `title`       | `PostTitle!`                  | Text and compiled MDX variants of post title.                                                  |
+| `date`        | `Date!`                       |                                                                                                |
+| `authors`     | `[String!]!` or `[Profile!]!` | Type depends on theme option `profiles`.                                                       |
+| `description` | `PostDescription!`            | Text and compiled MDX variants of post description.                                            |
+| `body`        | `String!`                     | A string representation of the body of the profile page. For MDX pages this is the MDX `body`. |
+| `images`      | `[File!]`                     | Relative paths to images.                                                                      |
+| `path`        | `String!`                     | Path to generated page.                                                                        |

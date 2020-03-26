@@ -13,7 +13,7 @@ import {
 import messages from '../i18n/messages';
 import decorate from '../../utils/decorate-moderators';
 
-const Events = ({
+const EventsPage = ({
   blurb,
   data,
   pageContext: { collection, lang },
@@ -101,7 +101,7 @@ const Events = ({
   );
 };
 
-Events.propTypes = {
+EventsPage.propTypes = {
   blurb: node,
   data: shape({
     allEvent: shape({
@@ -128,4 +128,4 @@ Events.propTypes = {
   location: shape({ pathname: string.isRequired }).isRequired,
 };
 
-export default Events;
+export default EventsPage;

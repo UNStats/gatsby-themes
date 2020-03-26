@@ -9,7 +9,7 @@ import Img from 'gatsby-image';
 import messages from '../i18n/messages';
 import decorate from '../../utils/decorate-moderators';
 
-const Event = ({ data, pageContext: { lang }, location }) => {
+const EventPage = ({ data, pageContext: { lang }, location }) => {
   // We need to localize props that are not React components:
   // https://github.com/formatjs/react-intl/blob/master/docs/API.md#createintl
   const cache = createIntlCache();
@@ -111,7 +111,7 @@ const Event = ({ data, pageContext: { lang }, location }) => {
   );
 };
 
-Event.propTypes = {
+EventPage.propTypes = {
   data: shape({
     event: shape({
       collection: string.isRequired,
@@ -130,4 +130,4 @@ Event.propTypes = {
   location: shape({ pathname: string.isRequired }).isRequired,
 };
 
-export default Event;
+export default EventPage;
