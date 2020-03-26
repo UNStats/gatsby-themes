@@ -73,12 +73,14 @@ data source is.
 | `id`               | `ID!`                       | Gatsby node GUID.                                                                            |
 | `slug`             | `ID!`                       | Alternative ID used for querying and building the graph.                                     |
 | `collection`       | `String!`                   | Distinguish separate event collections.                                                      |
+| `title`            | `EventTitle!`               | Text and compiled MDX variant of event title.                                                |
 | `startDate`        | `Date!`                     | Start date converted to UTC.                                                                 |
 | `endDate`          | `Date!`                     | End date converted to UTC.                                                                   |
 | `displayDate`      | `String!`                   | This is the start date augmented with time zone information.                                 |
 | `duration`         | `String!`                   | Event duration (calculated with `startDate` and `endDate`).                                  |
 | `moderators`       | `[String!]` or `[Profile!]` | Type depends on theme option `profiles`.                                                     |
 | `speakers`         | `[String!]` or `[Profile!]` | Type depends on theme option `profiles`.                                                     |
-| `body`             | `String!`                   | A string representation of the body of the event page. For MDX pages this is the MDX `body`. |
+| `description`      | `EventDescription!`         | Text and compiled MDX variants of event description.                                         |
 | `registrationLink` | `String`                    |                                                                                              |
+| `body`             | `String!`                   | A string representation of the body of the event page. For MDX pages this is the MDX `body`. |
 | `path`             | `String!`                   | Path to generated page.                                                                      |

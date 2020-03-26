@@ -13,50 +13,73 @@ const urlResolve = require('./utils/url-resolve');
 module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
   const { contentPath, assetPath } = withDefaults(themeOptions);
   const dirs = [assetPath, contentPath];
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     if (fs.existsSync(dir)) return;
     reporter.info(`Creating directory ${dir}`);
     fs.mkdirSync(dir, { recursive: true });
   });
 };
 
-module.exports.sourceNodes = ({ actions, schema }) => {
+module.exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
 
-  // Derive Post nodes from Mdx nodes.
-  // There are 2 types of fields:
-  // 1: fields whose values exists on the Mdx node
-  // 2: fields that only return values after using a resolver to compute a value
-  // See https://www.christopherbiscardi.com/post/constructing-query-types-in-themes
-  createTypes(
+  const typeDefs = [
+    // PostDescription (derived from first paragraph/frontmatter.description of Mdx node).
+    schema.buildObjectType({
+      name: 'PostDescription',
+      fields: {
+        id: { type: 'ID!' },
+        childMdx: { type: 'Mdx!' },
+        text: { type: 'String!' },
+      },
+      interfaces: ['Node'],
+    }),
+
+    // PostTitle (derived from frontmatter.title of Mdx node).
+    schema.buildObjectType({
+      name: 'PostTitle',
+      fields: {
+        id: { type: 'ID!' },
+        childMdx: { type: 'Mdx!' },
+        text: { type: 'String!' },
+      },
+      interfaces: ['Node'],
+    }),
+
+    // Post (derived from Mdx node).
     schema.buildObjectType({
       name: 'Post',
       fields: {
         id: { type: 'ID!' },
-        // Slug can be used as alternative ID.
         slug: {
           type: 'ID!',
         },
-        // Distinguish different post collections.
         collection: {
           type: 'String!',
         },
+        title: {
+          type: 'PostTitle!',
+          extensions: {
+            link: { by: 'id' },
+          },
+        },
         authors: {
           type: '[Profile!]',
-          // Link profiles by slug.
           extensions: {
             link: { by: 'slug' },
           },
         },
         date: {
           type: 'Date!',
-          // Enable date formatting in GraphQL queries.
           extensions: {
             dateformat: {},
           },
         },
-        path: {
-          type: 'String!',
+        description: {
+          type: 'PostDescription!',
+          extensions: {
+            link: { by: 'id' },
+          },
         },
         images: {
           type: '[File!]',
@@ -79,10 +102,15 @@ module.exports.sourceNodes = ({ actions, schema }) => {
             return result;
           },
         },
+        path: {
+          type: 'String!',
+        },
       },
       interfaces: ['Node'],
-    })
-  );
+    }),
+  ];
+
+  createTypes(typeDefs);
 };
 
 module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
@@ -189,14 +217,14 @@ module.exports.onCreateNode = (
     const post = {
       slug,
       collection,
-      // Foreign key reference to node that will be created further down.
-      title___NODE: titleNodeId,
+      // Foreign key reference to PostTitle node.
+      title: titleNodeId,
       date: node.frontmatter.date,
-      // Contains author slugs.
+      // Author slugs.
       authors: node.frontmatter.authors,
+      // Foreign key reference to PostDescription node.
+      description: descriptionNodeId,
       images: node.frontmatter.images,
-      // Foreign key reference to node that will be created further down.
-      description___NODE: descriptionNodeId,
       path: href,
     };
     const postNode = {
@@ -225,7 +253,7 @@ module.exports.onCreateNode = (
         mediaType: 'text/markdown',
         content: description,
       },
-      // Strip Markdown.
+      // Strip Markdown, line breaks and white space.
       text: remark()
         .use(strip)
         .processSync(description)

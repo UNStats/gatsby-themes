@@ -12,33 +12,55 @@ const withDefaults = require('./utils/default-options');
 module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
   const { contentPath, assetPath } = withDefaults(themeOptions);
   const dirs = [assetPath, contentPath];
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     if (fs.existsSync(dir)) return;
     reporter.info(`Creating directory ${dir}`);
     fs.mkdirSync(dir, { recursive: true });
   });
 };
 
-module.exports.sourceNodes = ({ actions, schema }) => {
+module.exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
 
-  // Derive Event nodes from Mdx nodes.
-  // There are 2 types of fields:
-  // 1: fields whose values exists on the Mdx node
-  // 2: fields that only return values after using a resolver to compute a value
-  // See https://www.christopherbiscardi.com/post/constructing-query-types-in-themes
-  createTypes(
+  const typeDefs = [
+    // EventDescription (derived from frontmatter.description of Mdx node).
+    schema.buildObjectType({
+      name: 'EventDescription',
+      fields: {
+        id: { type: 'ID!' },
+        childMdx: { type: 'Mdx!' },
+        text: { type: 'String!' },
+      },
+      interfaces: ['Node'],
+    }),
+
+    // EventTitle (derived from frontmatter.title of Mdx node).
+    schema.buildObjectType({
+      name: 'EventTitle',
+      fields: {
+        id: { type: 'ID!' },
+        childMdx: { type: 'Mdx!' },
+        text: { type: 'String!' },
+      },
+      interfaces: ['Node'],
+    }),
+
+    // Event (derived from Mdx node).
     schema.buildObjectType({
       name: 'Event',
       fields: {
         id: { type: 'ID!' },
-        // Slug can be used as alternative ID.
         slug: {
           type: 'ID!',
         },
-        // Distinguish different event collections.
         collection: {
           type: 'String!',
+        },
+        title: {
+          type: 'EventTitle!',
+          extensions: {
+            link: { by: 'id' },
+          },
         },
         startDate: {
           type: 'Date!',
@@ -60,23 +82,24 @@ module.exports.sourceNodes = ({ actions, schema }) => {
         },
         moderators: {
           type: '[Profile!]',
-          // Link moderators by slug.
           extensions: {
             link: { by: 'slug' },
           },
         },
         speakers: {
           type: '[Profile!]',
-          // Link speakers by slug.
           extensions: {
             link: { by: 'slug' },
           },
         },
+        description: {
+          type: 'EventDescription!',
+          extensions: {
+            link: { by: 'id' },
+          },
+        },
         registrationLink: {
           type: 'String',
-        },
-        path: {
-          type: 'String!',
         },
         // Retrieve resolver from Mdx node and run it.
         body: {
@@ -93,10 +116,15 @@ module.exports.sourceNodes = ({ actions, schema }) => {
             return result;
           },
         },
+        path: {
+          type: 'String!',
+        },
       },
       interfaces: ['Node'],
-    })
-  );
+    }),
+  ];
+
+  createTypes(typeDefs);
 };
 
 module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
@@ -221,18 +249,18 @@ module.exports.onCreateNode = (
     const event = {
       slug,
       collection,
-      // Foreign key reference to node that will be created further down.
-      title___NODE: titleNodeId,
+      // Foreign key reference to EventTitle node.
+      title: titleNodeId,
       startDate: startDate.toUTC().toString(),
       endDate: endDate.toUTC().toString(),
       displayDate,
       duration,
-      // Contains moderator slugs.
+      // Moderator slugs.
       moderators: node.frontmatter.moderators,
-      // Contains speaker slugs.
+      // Speaker slugs.
       speakers: node.frontmatter.speakers,
-      // Foreign key reference to node that will be created further down.
-      description___NODE: descriptionNodeId,
+      // Foreign key reference to EventDescription node.
+      description: descriptionNodeId,
       registrationLink: node.frontmatter.registrationLink,
       path: href,
     };
@@ -250,28 +278,6 @@ module.exports.onCreateNode = (
       },
     };
     createNode(eventNode);
-
-    // Create title node that processes Markdown in title.
-    // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
-    const titleNode = {
-      id: titleNodeId,
-      parent: eventNode.id,
-      children: [],
-      internal: {
-        type: 'EventTitle',
-        contentDigest: createContentDigest(node.frontmatter.title),
-        mediaType: 'text/markdown',
-        // Workaround to process any Markdown in title, such as quotes and dashes.
-        // Without adding # the result would be wrapped in <p> which cannot be nested inside a heading.
-        content: `# ${node.frontmatter.title}`,
-      },
-      // Strip Markdown.
-      text: remark()
-        .use(strip)
-        .processSync(node.frontmatter.title)
-        .contents.trim(),
-    };
-    createNode(titleNode);
 
     // Create description node that processes Markdown in description.
     // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
@@ -293,5 +299,25 @@ module.exports.onCreateNode = (
         .trim(),
     };
     createNode(descriptionNode);
+
+    // Create title node that processes Markdown in title.
+    // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
+    const titleNode = {
+      id: titleNodeId,
+      parent: eventNode.id,
+      children: [],
+      internal: {
+        type: 'EventTitle',
+        contentDigest: createContentDigest(node.frontmatter.title),
+        mediaType: 'text/markdown',
+        content: `${node.frontmatter.title}`,
+      },
+      // Strip Markdown.
+      text: remark()
+        .use(strip)
+        .processSync(node.frontmatter.title)
+        .contents.trim(),
+    };
+    createNode(titleNode);
   }
 };
