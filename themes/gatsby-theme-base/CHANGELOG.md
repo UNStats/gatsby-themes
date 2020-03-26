@@ -1,5 +1,14 @@
 # @undataforum/gatsby-theme-base
 
+## 0.13.2
+
+### Patch Changes
+
+- [`95b96ad`](https://github.com/UNDataForum/gatsby-themes/commit/95b96adbb9495c5a2fb427689021b6266dd9038c)
+  [#431](https://github.com/UNDataForum/gatsby-themes/pull/431) Thanks
+  [@454de6e](https://github.com/454de6e)! - Fix theme-ui render problem related
+  to gatsby-plugin-mdx
+
 ## 0.13.1
 
 ### Patch Changes

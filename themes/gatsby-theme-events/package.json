@@ -1,6 +1,6 @@
 {
   "name": "@undataforum/gatsby-theme-events",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "A Gatsby theme for events.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@undataforum/components": "^0.73.0",
-    "@undataforum/gatsby-theme-base": "^0.13.0",
+    "@undataforum/gatsby-theme-base": "^0.13.2",
     "gatsby-image": "^2.3.1",
     "gatsby-source-filesystem": "^2.2.2",
     "luxon": "^1.22.2",
