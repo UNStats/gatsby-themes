@@ -8032,6 +8032,14 @@ intl-messageformat@^8.3.1:
     intl-format-cache "^4.2.22"
     intl-messageformat-parser "^4.1.1"
 
+intl-messageformat@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-8.3.2.tgz#ad6b06982d749d39b6610ad26e88637d64688972"
+  integrity sha512-CMcGPciQjt1nesTME7vekUgx+Igy2sa14g/BZE2ZrYwqkdnVDO5f0bt3X0ZjQJohgZth9RvlIMvVoRUjrDRubA==
+  dependencies:
+    intl-format-cache "^4.2.22"
+    intl-messageformat-parser "^4.1.1"
+
 into-stream@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/into-stream/-/into-stream-3.1.0.tgz#96fb0a936c12babd6ff1752a17d05616abd094c6"
@@ -11807,7 +11815,25 @@ react-hot-loader@^4.12.20:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-intl@4.3.0, react-intl@^4.1.1, react-intl@^4.2.2:
+react-intl@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.3.1.tgz#a56ae90aa76bf8cac992606002dc8cbf1276ed7d"
+  integrity sha512-WaF6h1H9b4//csBTZ9JGfrKrceOCIKBjJZMBB0P/E+mjjkR1BJjytH2SEBbPV2bnDDnN6vQQaFz5MhgPfUDMYw==
+  dependencies:
+    "@formatjs/intl-displaynames" "^1.2.2"
+    "@formatjs/intl-listformat" "^1.4.2"
+    "@formatjs/intl-relativetimeformat" "^4.5.10"
+    "@formatjs/intl-unified-numberformat" "^3.3.0"
+    "@formatjs/intl-utils" "^2.2.0"
+    "@types/hoist-non-react-statics" "^3.3.1"
+    "@types/invariant" "^2.2.31"
+    hoist-non-react-statics "^3.3.2"
+    intl-format-cache "^4.2.22"
+    intl-messageformat "^8.3.2"
+    intl-messageformat-parser "^4.1.1"
+    shallow-equal "^1.2.1"
+
+react-intl@^4.1.1, react-intl@^4.2.2:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.3.0.tgz#58c0fe26cc30ec533791cba991792ed462532ede"
   integrity sha512-HqfyR2GV8BSE4TtK9pk/d+y13YUe7SaQhAcXyV4ZicaQ8fVMXu1fGwg4V2zqOIHaZWMYCzvlPcc51c7JYfabUw==
