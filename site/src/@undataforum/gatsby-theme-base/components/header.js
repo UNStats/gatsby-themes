@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from '@undataforum/components';
 import { Logo } from '@undataforum/assets';
 
-const ShadowedHeader = props => (
+const ShadowedHeader = (props) => (
   <Header
     {...props}
     logo={<Logo scaleTo="height" />}

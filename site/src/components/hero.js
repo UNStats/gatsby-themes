@@ -45,10 +45,10 @@ const Hero = ({ fluid, title, alt, highlight, promotion, ...props }) => (
             justifyContent: ['flex-start', null, 'flex-end'],
             color: 'background',
             backgroundImage: [
-              theme =>
+              (theme) =>
                 `linear-gradient(to bottom, ${theme.colors.primary}, transparent 75%  )`,
               null,
-              theme =>
+              (theme) =>
                 `linear-gradient(to top, ${theme.colors.text}, transparent 75%)`,
             ],
             height: '100%',

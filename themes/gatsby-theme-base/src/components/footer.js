@@ -4,7 +4,7 @@ import { Footer, SocialIcons } from '@undataforum/components';
 
 import Logo from './logo';
 
-const FooterProxy = props => {
+const FooterProxy = (props) => {
   return (
     <Footer
       {...props}

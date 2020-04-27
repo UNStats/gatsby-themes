@@ -1,6 +1,6 @@
 const withDefaults = require('./utils/default-options');
 
-module.exports = themeOptions => {
+module.exports = (themeOptions) => {
   const { contentPath, assetPath, collection } = withDefaults(themeOptions);
   return {
     plugins: [

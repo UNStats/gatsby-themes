@@ -13,7 +13,7 @@ const urlResolve = require('./utils/url-resolve');
 module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
   const { contentPath, assetPath } = withDefaults(themeOptions);
   const dirs = [contentPath, assetPath];
-  dirs.forEach(dir => {
+  dirs.forEach((dir) => {
     reporter.info(`Initializing ${dir} directory`);
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
