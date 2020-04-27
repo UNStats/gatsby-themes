@@ -17,7 +17,8 @@
     "format:code": "yarn run lint:code --fix",
     "format:other": "yarn run prettier --write",
     "release": "yarn changeset publish && git push --follow-tags",
-    "purge": "rm -rf ./node_modules && yarn workspaces run purge"
+    "purge": "rm -rf ./node_modules && yarn workspaces run purge",
+    "test": "yarn run lint"
   },
   "husky": {
     "hooks": {
