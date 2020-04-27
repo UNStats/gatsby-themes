@@ -1,4 +1,4 @@
-module.exports = options => {
+module.exports = (options) => {
   const basePath = options.basePath || '/';
   const contentPath = options.contentPath || 'content/posts';
   const assetPath = options.assetPath || 'content/assets';

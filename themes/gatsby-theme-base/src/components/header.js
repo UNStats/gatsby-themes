@@ -4,7 +4,7 @@ import { Header } from '@undataforum/components';
 import Logo from './logo';
 
 // Shadow this file to customize header.
-const HeaderProxy = props => (
+const HeaderProxy = (props) => (
   <Header
     {...props}
     logo={<Logo scaleTo="height" />}

@@ -11,7 +11,7 @@ module.exports = (moderators, lang, messages, key) => {
     },
     cache
   );
-  return moderators.map(moderator => ({
+  return moderators.map((moderator) => ({
     ...moderator,
     name: `${moderator.name} (${intl.formatMessage({
       id: `${key}.moderator`,

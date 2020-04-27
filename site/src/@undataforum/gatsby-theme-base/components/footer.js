@@ -3,7 +3,7 @@ import { Box } from 'theme-ui';
 import { Footer, SocialIcons } from '@undataforum/components';
 import { Logo } from '@undataforum/assets';
 
-const ShadowedFooter = props => {
+const ShadowedFooter = (props) => {
   return (
     <Footer
       {...props}
