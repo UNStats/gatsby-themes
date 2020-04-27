@@ -10,7 +10,7 @@
     "build": "rm -rf public && yarn workspace site run build && mv site/public/ public",
     "clean": "yarn workspace site run clean",
     "lint": "yarn run lint:code && yarn run lint:other",
-    "lint:code": "eslint . --cache --ext .js,.jsx --ignore-path .gitignore",
+    "lint:code": "eslint . --ignore-path .gitignore",
     "lint:other": "yarn run prettier --check",
     "prettier": "prettier \"**/*.{md,mdx,css,yaml,yml}\" --ignore-path .gitignore",
     "format": "yarn run format:code && yarn run format:other",
@@ -29,8 +29,8 @@
     "@changesets/cli": "2.6.2",
     "eslint": "6.8.0",
     "eslint-plugin-shopify": "35.1.0",
-    "husky": "4.2.3",
-    "lint-staged": "10.1.1",
+    "husky": "4.2.5",
+    "lint-staged": "10.1.7",
     "now": "17.1.1",
     "prettier": "2.0.2"
   }
