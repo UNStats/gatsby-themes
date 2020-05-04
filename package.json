@@ -31,7 +31,7 @@
     "@shopify/eslint-plugin": "36.0.2",
     "eslint": "6.8.0",
     "husky": "4.2.5",
-    "lint-staged": "10.1.7",
+    "lint-staged": "10.2.2",
     "now": "18.0.0",
     "prettier": "2.0.5"
   }
