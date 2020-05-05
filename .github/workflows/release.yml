@@ -1,4 +1,4 @@
-name: Prepare release or publish
+name: Version or publish packages
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
     steps:
       # Fetch entire Git history so Changesets can generate changelogs.

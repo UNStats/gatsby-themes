@@ -16,7 +16,7 @@
     "format": "yarn run format:code && yarn run format:other",
     "format:code": "yarn run lint:code --fix",
     "format:other": "yarn run prettier --write",
-    "release": "yarn changeset publish && git push --follow-tags",
+    "release": "changeset publish",
     "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "husky": {
