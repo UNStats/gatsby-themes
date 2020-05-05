@@ -1,7 +1,9 @@
-name: Run yarn test
-on: [push]
+name: Code QA
+
+on: [pull_request]
+
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,4 +11,4 @@ jobs:
         with:
           node-version: '12.x'
       - run: yarn install
-      - run: yarn run test
+      - run: yarn run lint

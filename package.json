@@ -17,8 +17,7 @@
     "format:code": "yarn run lint:code --fix",
     "format:other": "yarn run prettier --write",
     "release": "yarn changeset publish && git push --follow-tags",
-    "purge": "rm -rf ./node_modules && yarn workspaces run purge",
-    "test": "yarn run lint"
+    "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "husky": {
     "hooks": {
@@ -26,7 +25,6 @@
     }
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.2.5",
     "@changesets/cli": "2.6.5",
     "@shopify/eslint-plugin": "36.0.2",
     "eslint": "6.8.0",
