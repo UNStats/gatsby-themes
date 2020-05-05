@@ -3,6 +3,7 @@
   "labels": ["dependencies"],
   "reviewers": ["team:@UNDataForum/code-reviewers"],
   "rebaseWhen": "never",
+  "semanticCommits": false,
   "packageRules": [
     {
       "sourceUrlPrefixes": ["https://github.com/undataforum/design-system"],
