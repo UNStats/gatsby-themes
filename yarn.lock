@@ -2023,10 +2023,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@shopify/eslint-plugin@36.0.2":
-  version "36.0.2"
-  resolved "https://registry.yarnpkg.com/@shopify/eslint-plugin/-/eslint-plugin-36.0.2.tgz#1717ffcb608759be557a8c78245d495c6b0728e1"
-  integrity sha512-poDtXvk0yJliNlhDQnrNENYKAzxkLN+a4reX3gJ5OCh1g3GA4kN3cCC9Zl2TX2TYpfHKN2cBkIxw5n+AlhGagA==
+"@shopify/eslint-plugin@36.1.0":
+  version "36.1.0"
+  resolved "https://registry.yarnpkg.com/@shopify/eslint-plugin/-/eslint-plugin-36.1.0.tgz#b2c69c23b966228854bd8aa248846bbb7799a004"
+  integrity sha512-RHgcWQmC0VMet3QMfFaCvwiNDtgcNShX8D6nZ9FbLXEpJH2s6Q0/VywSFcsGOnCjRcDDAae17yQ4MSmHdr/BSg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.25.0"
     "@typescript-eslint/parser" "^2.25.0"
