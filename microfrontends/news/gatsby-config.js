@@ -1,11 +1,13 @@
+const path = require('path');
+
 module.exports = {
   plugins: [
     {
       resolve: '@undataforum/gatsby-theme-blog',
       options: {
         basePath: '/news',
-        contentPath: `${__dirname}/content/articles`,
-        assetPath: `${__dirname}/content/assets`,
+        contentPath: path.join(__dirname, 'content', 'articles'),
+        assetPath: path.join(__dirname, 'content', 'assets'),
         collection: 'news',
       },
     },
