@@ -3128,6 +3128,11 @@
     "@emotion/styled" "^10.0.0"
     "@mdx-js/react" "^1.0.0"
 
+"@theme-ui/preset-base@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@theme-ui/preset-base/-/preset-base-0.3.0.tgz#853a78195beead04ece4391c5672d690899bec47"
+  integrity sha512-bFCYoxfe/Ugr5k5BEy3Gv5jg8+idZHWDt/NM95jgla4qITlaOAMuEL6afoQ5HXbJjp5TnZFZ73qO6cKI8/BFfQ==
+
 "@theme-ui/theme-provider@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/theme-provider/-/theme-provider-0.3.1.tgz#910bc43454fd61b1047d7bb0dce05e36ffb6b44b"
@@ -3460,24 +3465,27 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@undataforum/assets@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.5.0.tgz#9fd89da5968efb0dffee55521f2762bd1ff31bf8"
-  integrity sha512-Gd0DSyzaoSPuoPF+78+WKZNG1N+q29KoVnf2GNSjU46HjZsAiGKktoqg3ODJBRQXsmaT9zFRveBX7pmI5E1L/Q==
-  dependencies:
-    prop-types "^15.7.2"
-
-"@undataforum/components@0.73.0", "@undataforum/components@^0.73.0":
-  version "0.73.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.73.0.tgz#ca8cf4e1b43f1d87eb7b458e828287e8a580a141"
-  integrity sha512-JA5t5/7aHM1JOgu8BX6Dao6EEk78Qj/slK32vTCZahC5FjNrjL8yo5VjQgnJQvGvQJKjfwxLAzJgNLfzOVTp8A==
-  dependencies:
-    prop-types "^15.7.2"
-
-"@undataforum/preset@^0.6.0":
+"@undataforum/assets@0.6.0":
   version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@undataforum/preset/-/preset-0.6.0.tgz#3aa41caa152a7fad80f2a0b660802517c7e1cf5a"
-  integrity sha512-Cz9U587NDwguKNO2goqGiOdfnMJoHwTpqO+6/W1mHOFCHQEST2JpxxMneBO9yIAMk0MliqCtJW6M+FLDM5C6cg==
+  resolved "https://registry.yarnpkg.com/@undataforum/assets/-/assets-0.6.0.tgz#1356d3e7f36770629c33bc75b279d17ed408301e"
+  integrity sha512-jtEvm5KMFzXr2HKujFKfpF7jxlk/KbqntzQgYoT1YNdLPb/3/jUFMIBYrMH1UJZ2Aq9XO+CfLOGM9jZRMQEiag==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@undataforum/components@0.76.0", "@undataforum/components@^0.76.0":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/components/-/components-0.76.0.tgz#6663d7a9688b21ae6a1c5fa6830f1e118d8b227e"
+  integrity sha512-sNyCYrfkW9jUgdbRGXt0G0eAWPiLNu4cE1Fa7Uj/eJGOgcLLPXVeQB3eAjItH7/dO29PX5/vEYEu+wyE27LTOw==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@undataforum/preset@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@undataforum/preset/-/preset-0.8.0.tgz#d7fb44f187be9bad245f2b2768f3c9bdfa32df4f"
+  integrity sha512-RSq+y6nTHZtWkEVbq6oIIj7odiFktt/cD6G6tET+W++Yl/MpHIgHToXtHWfp/8kr+bPAf9Pf1ZCpVFPVbPwyWw==
+  dependencies:
+    "@theme-ui/preset-base" "0.3.0"
+    deepmerge "4.2.2"
 
 "@urql/core@^1.12.0":
   version "1.12.1"
