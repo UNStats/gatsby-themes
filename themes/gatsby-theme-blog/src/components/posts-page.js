@@ -37,7 +37,7 @@ const PostsPage = ({
           title={intl.formatMessage({ id: `${collection}.title` })}
           description={intl.formatMessage({ id: `${collection}.description` })}
         />
-        <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
+        <Container>
           <Styled.h1>
             <FormattedMessage id={`${collection}.title`} />
           </Styled.h1>
@@ -47,6 +47,7 @@ const PostsPage = ({
               const { id, title, authors, date, description, path } = post;
               return (
                 <PostPreview
+                  key={id}
                   post={{
                     title: (
                       <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
@@ -64,7 +65,6 @@ const PostsPage = ({
                     ),
                     href: path,
                   }}
-                  key={id}
                 />
               );
             })}

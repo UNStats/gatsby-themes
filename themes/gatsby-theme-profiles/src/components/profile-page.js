@@ -25,7 +25,7 @@ const Profile = ({ data, pageContext: { lang, posts }, location }) => {
     <IntlProvider locale={lang} messages={messages[lang]}>
       <Layout location={location}>
         <Seo title={name} description={description} />
-        <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
+        <Container variant="narrow">
           <ProfilePreview
             profile={{
               avatar: (
@@ -36,7 +36,11 @@ const Profile = ({ data, pageContext: { lang, posts }, location }) => {
                 />
               ),
               honorific,
-              name,
+              name: (
+                <Heading as="h1" sx={{ textAlign: 'center', mb: 1 }}>
+                  {name}
+                </Heading>
+              ),
               jobtitle,
               organization,
               badges: roles,
@@ -59,6 +63,7 @@ const Profile = ({ data, pageContext: { lang, posts }, location }) => {
                   } = post;
                   return (
                     <PostPreview
+                      key={id}
                       post={{
                         title: (
                           <Heading as="h3" sx={{ textAlign: 'start', mb: 3 }}>
@@ -76,7 +81,6 @@ const Profile = ({ data, pageContext: { lang, posts }, location }) => {
                         date,
                         href: path,
                       }}
-                      key={id}
                     />
                   );
                 })}

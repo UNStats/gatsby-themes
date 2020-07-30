@@ -1,6 +1,8 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-theme-ui',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -11,7 +13,6 @@ module.exports = {
         gatsbyRemarkPlugins: ['gatsby-remark-smartypants'],
       },
     },
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
   ],
 };

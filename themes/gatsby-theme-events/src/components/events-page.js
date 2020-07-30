@@ -38,7 +38,7 @@ const EventsPage = ({
           title={intl.formatMessage({ id: `${collection}.title` })}
           description={intl.formatMessage({ id: `${collection}.description` })}
         />
-        <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
+        <Container>
           <Styled.h1>
             <FormattedMessage id={`${collection}.title`} />
           </Styled.h1>
@@ -72,6 +72,7 @@ const EventsPage = ({
 
               return (
                 <EventPreview
+                  key={id}
                   event={{
                     tag: intl.formatMessage({ id: `${collection}.tag` }),
                     title: (
@@ -90,7 +91,6 @@ const EventsPage = ({
                     registrationLink,
                     href: path,
                   }}
-                  key={id}
                 />
               );
             })}

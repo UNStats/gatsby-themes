@@ -1,38 +1,64 @@
 import React from 'react';
-import { Box, Container, Grid, Text } from 'theme-ui';
+import { Box, Container, Grid, Heading, Text } from 'theme-ui';
 
 const Experience = ({ ...props }) => (
-  <Container {...props} sx={{ maxWidth: 'width.wide', px: [2, 3, 4] }}>
+  <Container {...props} variant="wide">
     <Grid gap={3} columns={[1, 2, 4]}>
       <Box
-        sx={{ textAlign: ['center', 'left'], p: 3, variant: 'pairings.blue' }}
+        sx={{
+          color: 'background',
+          bg: 'blue',
+          textAlign: ['center', 'left'],
+          p: 3,
+        }}
       >
-        <Text sx={{ fontSize: 4, fontWeight: 'heading' }}>Labore</Text>
-        <Text>
+        <Heading as="div" sx={{ fontSize: 4, mb: 3 }}>
+          Labore
+        </Heading>
+        <Text as="p">
           Eiusmod minim aliqua elit magna cupidatat nulla non eiusmod eiusmod
           elit.
         </Text>
       </Box>
       <Box
-        sx={{ textAlign: ['center', 'left'], p: 3, variant: 'pairings.green' }}
+        sx={{
+          color: 'background',
+          bg: 'green',
+          textAlign: ['center', 'left'],
+          p: 3,
+        }}
       >
-        <Text sx={{ fontSize: 4, fontWeight: 'heading' }}>Irure</Text>
-        <Text>
+        <Heading as="div" sx={{ fontSize: 4, mb: 3 }}>
+          Irure
+        </Heading>
+        <Text as="p">
           Ipsum incididunt ut cillum amet nostrud et aliquip officia sint
           consequat officia labore.
         </Text>
       </Box>
       <Box
-        sx={{ textAlign: ['center', 'left'], p: 3, variant: 'pairings.red' }}
+        sx={{
+          color: 'background',
+          bg: 'red',
+          textAlign: ['center', 'left'],
+          p: 3,
+        }}
       >
-        <Text sx={{ fontSize: 4, fontWeight: 'heading' }}>Clamare</Text>
-        <Text>Magna pariatur in ipsum officia velit voluptate proident.</Text>
+        <Heading sx={{ fontSize: 4, mb: 3 }}>Clamare</Heading>
+        <Text as="p">
+          Magna pariatur in ipsum officia velit voluptate proident.
+        </Text>
       </Box>
       <Box
-        sx={{ textAlign: ['center', 'left'], p: 3, variant: 'pairings.yellow' }}
+        sx={{
+          color: 'background',
+          bg: 'yellow',
+          textAlign: ['center', 'left'],
+          p: 3,
+        }}
       >
-        <Text sx={{ fontSize: 4, fontWeight: 'heading' }}>Consequare</Text>
-        <Text>
+        <Heading sx={{ fontSize: 4, mb: 3 }}>Consequare</Heading>
+        <Text as="p">
           Voluptate dolore ut deserunt mollit occaecat cupidatat occaecat
           commodo velit id excepteur esse eiusmod.
         </Text>

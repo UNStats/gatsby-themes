@@ -18,8 +18,8 @@ sit velit amet pariatur anim ipsum id minim fugiat sint Lorem et. Commodo
 occaecat sunt anim esse ea reprehenderit minim non consequat.
 
 1. [Internal link](/blog) should open in same tab when clicked.
-1. [External link](https://github.com/undataforum) should open in new tabl when
-   clicked.
+1. [External link](https://github.com/undataforum) should also open in the same
+   tab when clicked.
 
 ### Totam rem aperiam
 
