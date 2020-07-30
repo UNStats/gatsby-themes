@@ -1,5 +1,17 @@
 # @undataforum/gatsby-theme-blog
 
+## 0.12.0
+
+### Minor Changes
+
+- e6669b2: Upgrade to latest design-system packages
+
+### Patch Changes
+
+- Updated dependencies [e6669b2]
+- Updated dependencies [e6669b2]
+  - @undataforum/gatsby-theme-base@0.14.0
+
 ## 0.11.4
 
 ### Patch Changes
