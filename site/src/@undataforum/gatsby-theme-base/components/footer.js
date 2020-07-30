@@ -1,16 +1,21 @@
 import React from 'react';
-import { Box } from 'theme-ui';
-import { Footer, SocialIcons } from '@undataforum/components';
+import { Box, Link } from 'theme-ui';
+import {
+  EmailIcon,
+  Footer,
+  GitHubIcon,
+  SocialIcons,
+  TwitterIcon,
+} from '@undataforum/components';
 import { Logo } from '@undataforum/assets';
 
-const ShadowedFooter = (props) => {
+const ShadowedFooter = () => {
   return (
     <Footer
-      {...props}
       logo={
         <Box
           sx={{
-            height: ['height.medium', null, 'height.large'],
+            height: [96, null, 128],
             mb: [2, 3],
           }}
         >
@@ -25,29 +30,41 @@ const ShadowedFooter = (props) => {
       ]}
       socialIcons={
         <SocialIcons
-          platforms={[
+          values={[
             {
               id: 'twitter',
-              username: 'UNDataForum',
-              title: 'Follow us on Twitter',
+              icon: (
+                <Link
+                  href="https://twitter.com/undataforum"
+                  sx={{ color: 'inherit' }}
+                >
+                  <TwitterIcon size={32} title="Follow us on Twitter" />
+                </Link>
+              ),
             },
             {
               id: 'github',
-              username: 'UNDataForum',
-              title: 'Follow us on GitHub',
+              icon: (
+                <Link
+                  href="https://github.com/undataforum"
+                  sx={{ color: 'inherit' }}
+                >
+                  <GitHubIcon size={32} title="Follow us on GitHub" />
+                </Link>
+              ),
             },
             {
               id: 'email',
-              username: 'dataforum@un.org',
-              title: 'Send us an email',
+              icon: (
+                <Link href="mailto:dataforum@un.org" sx={{ color: 'inherit' }}>
+                  <EmailIcon size={32} title="Send us an email" />
+                </Link>
+              ),
             },
           ]}
-          size={[32, 48]}
-          variant="inherit"
-          mb={[1, 2]}
+          mb={3}
         />
       }
-      variant="primary"
     />
   );
 };

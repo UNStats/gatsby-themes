@@ -5,10 +5,9 @@ const About = ({ ...props }) => (
   <Container
     {...props}
     sx={{
-      maxWidth: 'width.narrow',
+      variant: 'layout.narrow',
       fontSize: 3,
       textAlign: 'center',
-      px: [2, 3, 4],
     }}
   >
     <Text>

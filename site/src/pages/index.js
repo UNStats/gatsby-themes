@@ -83,10 +83,8 @@ const Homepage = ({ data, location }) => {
                 registrationLink: events[0].registrationLink,
                 href: events[0].path,
               }}
-              variant="promotion"
             />
           }
-          mt={-3}
           mb={[4, 5]}
         />
         <About mb={[4, 5]} />

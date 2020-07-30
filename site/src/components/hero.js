@@ -1,10 +1,13 @@
 import React from 'react';
 import { object, string, node } from 'prop-types';
-import { Box, Container, Flex, Grid, Text } from 'theme-ui';
+import { Box, Container, Flex, Grid, Text, ThemeProvider } from 'theme-ui';
 import Img from 'gatsby-image';
 
 const Hero = ({ fluid, title, alt, highlight, promotion, ...props }) => (
-  <Container {...props} sx={{ maxWidth: 'width.wide' }}>
+  // Container sets px=[2, 3, 4]. Overriding with px: 0 is not enough.
+  // Media queries are generated from original array already.
+  // Override media queries by overrriding entire array.
+  <Container {...props} sx={{ variant: 'layout.wide', px: [0, 0, 0] }}>
     <Grid
       sx={{
         gridTemplateAreas: [
@@ -98,23 +101,54 @@ const Hero = ({ fluid, title, alt, highlight, promotion, ...props }) => (
       </Box>
       <Box
         sx={{
+          color: 'background',
+          bg: 'primary',
           gridArea: 'highlight',
           px: [2, 3, 4],
           py: 4,
-          variant: 'pairings.primary',
         }}
       >
-        {highlight}
+        <ThemeProvider
+          theme={{
+            buttons: {
+              highlight: {
+                variant: 'buttons.default',
+                color: 'primary',
+                bg: 'background',
+              },
+            },
+          }}
+        >
+          {highlight}
+        </ThemeProvider>
       </Box>
       <Box
         sx={{
+          color: 'background',
+          bg: 'secondary',
           gridArea: 'promotion',
           px: [2, 3, 4],
           py: 4,
-          variant: 'pairings.secondary',
         }}
       >
-        {promotion}
+        <ThemeProvider
+          theme={{
+            'event-preview': {
+              badge: { color: 'secondary', bg: 'background' },
+              buttons: {
+                event: {
+                  color: 'secondary',
+                  bg: 'background',
+                },
+                registration: {
+                  color: 'background',
+                },
+              },
+            },
+          }}
+        >
+          {promotion}
+        </ThemeProvider>
       </Box>
     </Grid>
   </Container>

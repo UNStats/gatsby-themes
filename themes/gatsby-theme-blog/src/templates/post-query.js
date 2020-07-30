@@ -7,6 +7,7 @@ export default PostPage;
 export const query = graphql`
   query($id: String!) {
     post(id: { eq: $id }) {
+      collection
       title {
         text
       }

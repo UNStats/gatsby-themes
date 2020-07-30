@@ -1,7 +1,7 @@
 import React from 'react';
 import { node, object, shape, string } from 'prop-types';
-import { Container, Grid, Styled } from 'theme-ui';
-import { ProfilePreview, SmartLink } from '@undataforum/components';
+import { Container, Grid, Heading, Link, Styled } from 'theme-ui';
+import { ProfilePreview } from '@undataforum/components';
 import { Layout, Seo } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 import {
@@ -38,7 +38,7 @@ const Profiles = ({
           title={intl.formatMessage({ id: `${collection}.title` })}
           description={intl.formatMessage({ id: `${collection}.description` })}
         />
-        <Container sx={{ maxWidth: 'width.default', px: [2, 3, 4] }}>
+        <Container>
           <Styled.h1>
             <FormattedMessage id={`${collection}.title`} />
           </Styled.h1>
@@ -55,11 +55,13 @@ const Profiles = ({
                 organization,
               } = profile;
               return (
-                <SmartLink
+                <Link
                   key={id}
-                  css={{ ':hover': { textDecoration: 'none' } }}
+                  sx={{
+                    color: 'inherit',
+                    ':hover': { textDecoration: 'none' },
+                  }}
                   href={path}
-                  variant="inherit"
                 >
                   <ProfilePreview
                     profile={{
@@ -71,12 +73,16 @@ const Profiles = ({
                         />
                       ),
                       honorific,
-                      name,
+                      name: (
+                        <Heading as="h2" sx={{ textAlign: 'center', mb: 1 }}>
+                          {name}
+                        </Heading>
+                      ),
                       jobtitle,
                       organization,
                     }}
                   />
-                </SmartLink>
+                </Link>
               );
             })}
           </Grid>

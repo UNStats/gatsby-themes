@@ -58,7 +58,7 @@ const EventPage = ({ data, pageContext: { lang }, location }) => {
     <RawIntlProvider value={intl}>
       <Layout location={location}>
         <Seo title={title.text} description={description.text} />
-        <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
+        <Container variant="narrow">
           <EventPreview
             event={{
               tag: intl.formatMessage({ id: `${collection}.tag` }),
@@ -80,7 +80,14 @@ const EventPage = ({ data, pageContext: { lang }, location }) => {
                         fixed={profile.avatar.childImageSharp.fixed}
                       />
                     ),
-                    name: profile.name,
+                    name: (
+                      <Heading
+                        as="div"
+                        sx={{ fontSize: 1, textAlign: 'start' }}
+                      >
+                        {profile.name}
+                      </Heading>
+                    ),
                     href: profile.path,
                   }))}
                   mb={3}
@@ -97,7 +104,7 @@ const EventPage = ({ data, pageContext: { lang }, location }) => {
               <ul>
                 {attachments.map(({ text, href }) => (
                   <li key={text}>
-                    <Link as={NewTabLink} href={href} variant="primary">
+                    <Link as={NewTabLink} href={href}>
                       {text}
                     </Link>
                   </li>

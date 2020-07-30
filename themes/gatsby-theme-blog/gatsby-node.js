@@ -142,6 +142,7 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
       component: require.resolve('./src/templates/post-query.js'),
       context: {
         id,
+        lang: 'en',
       },
     });
   });
