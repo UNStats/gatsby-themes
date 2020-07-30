@@ -9,8 +9,6 @@
     "node": "12.x"
   },
   "scripts": {
-    "build": "rm -rf public && yarn workspace site run build && mv site/public/ public",
-    "clean": "yarn workspace site run clean",
     "lint": "yarn run lint:code && yarn run lint:other",
     "lint:code": "eslint . --ignore-path .gitignore",
     "lint:other": "yarn run prettier --check",
