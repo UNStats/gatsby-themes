@@ -9,6 +9,8 @@
     "node": "12.x"
   },
   "scripts": {
+    "version": "changeset version && yarn run format",
+    "release": "changeset publish",
     "lint": "yarn run lint:code && yarn run lint:other",
     "lint:code": "eslint . --ignore-path .gitignore",
     "lint:other": "yarn run prettier --check",
@@ -16,7 +18,6 @@
     "format": "yarn run format:code && yarn run format:other",
     "format:code": "yarn run lint:code --fix",
     "format:other": "yarn run prettier --write",
-    "release": "changeset publish",
     "purge": "rm -rf ./node_modules && yarn workspaces run purge"
   },
   "husky": {
