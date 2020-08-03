@@ -1,5 +1,12 @@
 # @undataforum/gatsby-theme-base
 
+## 0.14.0
+
+### Minor Changes
+
+- e6669b2: Upgrade to latest design-system packages
+- e6669b2: Upgrade to @undataforum/components 0.78.0 (breaking changes)
+
 ## 0.13.2
 
 ### Patch Changes
