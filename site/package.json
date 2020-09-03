@@ -30,7 +30,7 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-intl": "5.4.5",
+    "react-intl": "5.8.0",
     "theme-ui": "0.3.1",
     "typeface-roboto": "0.0.75",
     "webinars": "*"
