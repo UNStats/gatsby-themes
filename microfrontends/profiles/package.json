@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "profiles",
+  "name": "gatsby-theme-profiles",
   "version": "0.0.0",
-  "description": "Microfrontend for profiles.",
+  "description": "Micro frontend for /profiles.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "scripts": {

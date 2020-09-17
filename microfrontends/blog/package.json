@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "blog",
+  "name": "gatsby-theme-blog",
   "version": "0.1.0",
-  "description": "Microfrontend for blog.",
+  "description": "Micro frontend for /blog.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "scripts": {

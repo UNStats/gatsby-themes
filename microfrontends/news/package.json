@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "news",
+  "name": "gatsby-theme-news",
   "version": "0.1.0",
-  "description": "Microfrontend for news.",
+  "description": "Micro frontend for /news.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "scripts": {

@@ -15,10 +15,10 @@ module.exports = {
     siteUrl: pkg.homepage,
   },
   plugins: [
-    'blog',
-    'news',
-    'profiles',
-    'webinars',
+    'gatsby-theme-blog',
+    'gatsby-theme-news',
+    'gatsby-theme-profiles',
+    'gatsby-theme-webinars',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
