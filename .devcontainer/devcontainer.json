@@ -1,0 +1,35 @@
+{
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'VARIANT' to pick a Node version: 10, 12, 14
+    "args": { "VARIANT": "12" }
+  },
+
+  // Put only settings that are container specific.
+  // All other settings should go in workspaces settings.
+  "settings": {
+    "git-graph.repository.fetchAndPrune": true,
+    "git-graph.repository.commits.fetchAvatars": true,
+    "git.autofetch": true,
+    "githubPullRequests.defaultMergeMethod": "rebase",
+    "githubPullRequests.telemetry.enabled": false,
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  // These extensions need to be duplicated in .vscode/extensions.json.
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mhutchie.git-graph"
+  ],
+
+  "forwardPorts": [8000],
+
+  "postCreateCommand": "yarn install",
+
+  "remoteEnv": { "GATSBY_TELEMETRY_DISABLED": "1" }
+
+  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+  // "remoteUser": "node"
+}
