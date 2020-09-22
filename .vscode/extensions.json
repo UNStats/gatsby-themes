@@ -1,7 +1,4 @@
 {
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "mhutchie.git-graph"
-  ]
+  // These extensions need to be duplicated in .devcontainer/devcontainer.json.
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
 }
