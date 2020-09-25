@@ -1,5 +1,5 @@
 {
-  "name": "Node.js",
+  "name": "@undataforum/gatsby-themes",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
