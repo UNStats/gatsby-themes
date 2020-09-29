@@ -12,7 +12,7 @@ const MdxPage = ({ children, location, pageContext }) => (
       description={pageContext.frontmatter.description}
       keywords={pageContext.frontmatter.keywords}
     />
-    <Container sx={{ maxWidth: 'width.narrow', px: [2, 3, 4] }}>
+    <Container variant="narrow">
       <Styled.h1>{pageContext.frontmatter.title}</Styled.h1>
       {children}
     </Container>
