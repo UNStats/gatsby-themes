@@ -4,8 +4,11 @@ import EventPage from '../components/event-page';
 
 export default EventPage;
 
+// Do not shadow this file: https://github.com/gatsbyjs/gatsby/issues/23729.
+
 // Retrieve event with provided event ID.
 // Retrieve links to PDFs of presentations.
+// Query description as text only, since it is only needed for SEO.
 export const query = graphql`
   query($id: String!, $regex: String!) {
     event(id: { eq: $id }) {
