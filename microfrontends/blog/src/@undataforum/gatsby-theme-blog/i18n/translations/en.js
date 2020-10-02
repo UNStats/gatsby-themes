@@ -1,5 +1,5 @@
-// With multiple post collections, only onw shadowed file will win.
-// You need to shadow this file in the site.
+// This shadowed file wins when you launch the microfrontend in isolation.
+// The translations are pulled into the corresponding shadowed file in the site.
 const en = {
   'blog.tag': 'Blog',
   'blog.title': 'Shadowed blog overview page title',
