@@ -1,10 +1,12 @@
+import blog from '../../../../../../microfrontends/blog/src/@undataforum/gatsby-theme-blog/i18n/translations/en';
+import news from '../../../../../../microfrontends/news/src/@undataforum/gatsby-theme-blog/i18n/translations/en';
+
+// This shadowed file wins when the entire site is launched.
 const en = {
-  'blog.tag': 'Blog',
-  'blog.title': 'Blog',
-  'blog.description': 'Blog overview page description.',
-  'news.tag': 'News',
-  'news.title': 'News',
-  'news.description': 'News overview page description.',
+  // Translations for blog.
+  ...blog,
+  // Translations for news.
+  ...news,
 };
 
 export default en;
