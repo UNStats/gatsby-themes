@@ -85,8 +85,28 @@ underlying data source is.
 
 ### Localizations
 
-| Key            | Description                                                                    |
-| :------------- | :----------------------------------------------------------------------------- |
-| `title`        | Title of profiles overview page.                                               |
-| `description`  | Description page metadata for profiles overview page.                          |
-| `relatedPosts` | Heading for related posts on profile pages. May contain the `{firstName}` tag. |
+This theme does not support full i18n, but partial localization. The following
+keys are supported:
+
+| Key                        | Description                                                               |
+| :------------------------- | :------------------------------------------------------------------------ |
+| `<collection>.title`       | Title of profiles overview page.                                          |
+| `<collection>.description` | Description that is used for SEO on the profiles overview page.           |
+| `relatedPosts`             | Heading for related posts on profile pages. May contain the `{name}` tag. |
+
+Some keys are prepended by the collection name, which is a theme option. The
+default collection is `profiles` and the theme comes with default localizations
+for this collection.
+
+The default localizations are located in `src/i18n/translations/en.js`. To
+customize localizations, you need to shadow this file in your Gatsby website. If
+you shadow `en.js` you need to include all keys that you intend to use since
+shadowed keys are not merged with defaults.
+
+Shadowing is normally done in the main Gatsby website. If you use a
+microfrontend architecture as is the case in the example website in this
+repository and if you use multiple collections in different microfrontends, then
+you need to shadow `en.js` in each microfrontend to ensure that the
+microfrontend renders properly when launched in isolation and you need to
+consolidate all shadowed `en.js` files in another shadowed file inside your
+Gatsby site. Check out the source code in this repository.
