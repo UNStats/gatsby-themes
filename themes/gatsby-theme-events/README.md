@@ -84,3 +84,32 @@ data source is.
 | `registrationLink` | `String`                    |                                                                                              |
 | `body`             | `String!`                   | A string representation of the body of the event page. For MDX pages this is the MDX `body`. |
 | `path`             | `String!`                   | Path to generated page.                                                                      |
+
+### Localizations
+
+This theme does not support full i18n, but partial localization. The following
+keys are supported:
+
+| Key                        | Description                                                       |
+| :------------------------- | :---------------------------------------------------------------- |
+| `<collection>.tag`         | Tag that is displayed on post pages to indicate the type of post. |
+| `<collection>.title`       | Title of events overview page.                                    |
+| `<collection>.moderator`   | This key defines how to label moderators in events.               |
+| `<collection>.description` | Description that is used for SEO on the events overview page.     |
+
+Each key is prepended by the collection name, which is a theme option. The
+default collection is `events` and the theme comes with default localizations
+for this collection.
+
+The default localizations are located in `src/i18n/translations/en.js`. To
+customize localizations, you need to shadow this file in your Gatsby website. If
+you shadow `en.js` you need to include all keys that you intend to use since
+shadowed keys are not merged with defaults.
+
+Shadowing is normally done in the main Gatsby website. If you use a
+microfrontend architecture as is the case in the example website in this
+repository and if you use multiple collections in different microfrontends, then
+you need to shadow `en.js` in each microfrontend to ensure that the
+microfrontend renders properly when launched in isolation and you need to
+consolidate all shadowed `en.js` files in another shadowed file inside your
+Gatsby site. Check out the source code in this repository.
