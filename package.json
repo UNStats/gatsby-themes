@@ -1,9 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "microfrontends/*",
-    "themes/*",
-    "site"
+    "sites/*",
+    "themes/*"
   ],
   "scripts": {
     "version": "changeset version && yarn run format",

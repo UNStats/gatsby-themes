@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "gatsby-theme-webinars",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Micro frontend for /webinars.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
