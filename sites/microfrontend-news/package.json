@@ -1,17 +1,17 @@
 {
   "private": true,
-  "name": "gatsby-theme-blog",
-  "version": "0.1.0",
-  "description": "Micro frontend for /blog.",
+  "name": "gatsby-theme-news",
+  "version": "0.0.0",
+  "description": "Micro frontend for /news.",
   "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "scripts": {
     "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
-    "gatsby": "^2.19.19",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "gatsby": "^2.19.48",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "theme-ui": "^0.3.1"
   },
   "dependencies": {

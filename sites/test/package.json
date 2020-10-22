@@ -1,13 +1,13 @@
 {
   "private": true,
-  "name": "site",
-  "version": "0.6.0",
+  "name": "test",
+  "version": "0.0.0",
   "author": "Thilo Maier <maier@un.org>",
+  "homepage": "https://gatsby-themes.undataforum.vercel.app/",
   "keywords": [
     "gatsby",
     "undataforum"
   ],
-  "homepage": "https://gatsby-themes.undataforum.now.sh/",
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
