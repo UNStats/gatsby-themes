@@ -2,9 +2,14 @@
   "name": "@undataforum/gatsby-theme-base",
   "version": "0.14.0",
   "description": "A Gatsby theme with a layout.",
-  "main": "index.js",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/undataforum/gatsby-themes.git",
+    "directory": "packages/gatsby-theme-base"
+  },
   "keywords": [
     "gatsby",
     "gatsby-theme",
@@ -12,12 +17,6 @@
     "theme-ui",
     "undataforum"
   ],
-  "homepage": "https://github.com/UNDataForum/gatsby-themes/tree/master/themes/gatsby-theme-base",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/undataforum/gatsby-themes.git",
-    "directory": "themes/gatsby-theme-base"
-  },
   "publishConfig": {
     "access": "public"
   },
