@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.1
         with:
-          node-version: '12'
+          node-version: '14'
       - run: yarn install --frozen-lockfile
       - run: yarn run lint
