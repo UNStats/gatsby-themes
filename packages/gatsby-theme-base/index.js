@@ -1,3 +1,5 @@
 export { default as Layout } from './src/components/layout';
-export { default as Seo } from './src/components/seo';
-export { default as MDXRenderer } from 'gatsby-plugin-mdx/mdx-renderer';
+export { default as SEO } from './src/components/seo';
+export * from 'theme-ui';
+export * from '@undataforum/components';
+export { default as useSiteMetadata } from './src/use-site-metadata';

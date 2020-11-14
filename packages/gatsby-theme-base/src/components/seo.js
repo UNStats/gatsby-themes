@@ -1,143 +1,56 @@
 import React from 'react';
-import { arrayOf, oneOfType, shape, string } from 'prop-types';
+import { arrayOf, string } from 'prop-types';
 import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { createPath } from '@maiertech/gatsby-helpers';
 
-const Seo = ({
-  title: pageTitle,
-  authors = [],
-  description: pageDescription,
-  keywords: pageKeywords = [],
-  lang = 'en',
-  meta = [],
-  authorTwitterUsernames = [],
+import useSiteMetadata from '../use-site-metadata';
+
+const SEO = ({
+  title,
+  description,
+  path,
+  canonicalUrl,
+  lang,
+  keywords,
+  children,
 }) => {
-  // Read site metadata from gatsby-config.js.
-  const {
-    site: {
-      siteMetadata: {
-        title: siteTitle,
-        description: siteDescription,
-        keywords: siteKeywords = [],
-        siteTwitterUsername,
-      },
-    },
-  } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-            siteTwitterUsername
-          }
-        }
-      }
-    `
-  );
+  const site = useSiteMetadata();
 
-  // Create a pretty title.
-  const metaTitle = `${pageTitle} | ${siteTitle}`;
+  const { siteTitle, siteUrl, siteLanguage, siteTwitter } = site;
 
-  // Use site description as fallback if no description is provided.
-  const metaDescription = pageDescription || siteDescription;
-
-  const keywords = [...siteKeywords, ...pageKeywords];
-
-  // Open Graph meta tags.
-  const ogMeta = [
-    {
-      property: 'og:title',
-      content: metaTitle,
-    },
-    {
-      property: 'og:description',
-      content: metaDescription,
-    },
-    {
-      property: 'og:type',
-      content: 'website',
-    },
-  ];
-
-  // Twitter meta tags.
-  let twitterMeta = [
-    {
-      name: 'twitter:card',
-      content: 'summary',
-    },
-    {
-      name: 'twitter:title',
-      content: metaTitle,
-    },
-    {
-      name: 'twitter:description',
-      content: metaDescription,
-    },
-  ];
-  if (siteTwitterUsername) {
-    twitterMeta = [
-      ...twitterMeta,
-      {
-        name: 'twitter:site',
-        content: `@${siteTwitterUsername}`,
-      },
-    ];
-  }
-  if (authorTwitterUsernames.length > 0) {
-    twitterMeta = [
-      ...twitterMeta,
-      ...authorTwitterUsernames.map((authorTwitterUsername) => ({
-        name: 'twitter:creator',
-        content: `@${authorTwitterUsername}`,
-      })),
-    ];
-  }
+  const url = canonicalUrl ? canonicalUrl : createPath(siteUrl, path);
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={metaTitle}
-      meta={[
-        // Authors.
-        ...authors.map((author) => ({ name: 'author', content: author })),
-        // Description.
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        // Keywords.
-        {
-          name: 'keywords',
-          content: keywords.join(', '),
-        },
-        // Open Graph meta.
-        ...ogMeta,
-        // Twitter meta.
-        ...twitterMeta,
-        // Other meta.
-        ...meta,
-      ]}
-    />
+      title={title}
+      defaultTitle={siteTitle}
+      titleTemplate={`%s | ${siteTitle}`}
+    >
+      <html lang={lang || siteLanguage || 'en'} />
+      <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords.join(', ')} />}
+      <meta property="og:title" content={title} />
+      <meta property="og:url" content={url} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:url" content={url} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:creator" content={siteTwitter} />
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      {children}
+    </Helmet>
   );
 };
 
-Seo.propTypes = {
+SEO.propTypes = {
   title: string.isRequired,
-  authors: arrayOf(string),
-  description: string,
-  keywords: arrayOf(string),
+  description: string.isRequired,
+  path: string.isRequired,
   lang: string,
-  authorTwitterUsernames: arrayOf(string),
-  meta: arrayOf(
-    oneOfType([
-      shape({ name: string.isRequired, content: string.isRequired }),
-      shape({ property: string.isRequired, content: string.isRequired }),
-    ]).isRequired
-  ),
+  keywords: arrayOf(string),
+  children: Node,
+  canonicalUrl: string,
 };
 
-export default Seo;
+export default SEO;

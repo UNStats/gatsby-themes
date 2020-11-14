@@ -1,23 +1,12 @@
 import React from 'react';
-import { Header } from '@undataforum/components';
-
-import Logo from './logo';
+import { Box } from 'theme-ui';
 
 // Shadow this file to customize header.
-const HeaderProxy = (props) => (
-  <Header
-    {...props}
-    logo={<Logo scaleTo="height" />}
-    links={[
-      { text: 'Nav item 1', href: '/nav-item-1/' },
-      { text: 'Nav item 2', href: '/nav-item-2/' },
-      { text: 'Nav item 3', href: '/nav-item-3/' },
-    ]}
-    button={{
-      text: 'Button',
-      href: '/button',
-    }}
-  />
+const Header = (props) => (
+  <Box {...props} sx={{ color: 'background', bg: 'primary', p: 4 }}>
+    Shadow src/components/header.js of @undataforum/gatsby-theme-base to
+    customize this header.
+  </Box>
 );
 
-export default HeaderProxy;
+export default Header;
