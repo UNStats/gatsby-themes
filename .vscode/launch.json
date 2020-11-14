@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "yarn workspace core-themes-example run dev",
+      "type": "pwa-node",
+      "request": "launch",
+      "program": "${workspaceFolder}/examples/core-themes/node_modules/.bin/gatsby",
+      "cwd": "${workspaceFolder}/examples/core-themes",
+      "args": ["develop"],
+      "runtimeArgs": ["--nolazy"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "yarn workspace undataforum-example run dev",
+      "type": "pwa-node",
+      "request": "launch",
+      "program": "${workspaceFolder}/examples/undataforum/node_modules/.bin/gatsby",
+      "cwd": "${workspaceFolder}/examples/undataforum",
+      "args": ["develop"],
+      "runtimeArgs": ["--nolazy"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "name": "undataforum-example",
+  "version": "0.0.0",
+  "description": "Example Gatsby site for developing and testing styling and layouts.",
+  "homepage": "https://mockup.undataforum.vercel.app/",
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "purge": "rm -rf ./node_modules"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.21",
+    "@mdx-js/react": "^1.6.21",
+    "@undataforum/assets": "^0.7.0",
+    "@undataforum/gatsby-theme-base": "^0.14.0",
+    "@undataforum/gatsby-theme-blog-core": "*",
+    "@undataforum/gatsby-theme-profiles-core": "*",
+    "gatsby": "^2.26.0",
+    "gatsby-image": "^2.5.0",
+    "gatsby-plugin-mdx": "^1.4.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
+    "lodash.filter": "^4.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-intl": "^5.10.0",
+    "typeface-roboto": "^1.1.13"
+  }
+}

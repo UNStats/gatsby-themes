@@ -1,3 +1,3 @@
-import preset from '@undataforum/preset';
+import theme from '@undataforum/preset';
 
-export default preset;
+export default theme;
