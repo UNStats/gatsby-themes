@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, string } from 'prop-types';
+import { arrayOf, node, string } from 'prop-types';
 import Helmet from 'react-helmet';
 import { createPath } from '@maiertech/gatsby-helpers';
 
@@ -49,7 +49,7 @@ SEO.propTypes = {
   path: string.isRequired,
   lang: string,
   keywords: arrayOf(string),
-  children: Node,
+  children: node,
   canonicalUrl: string,
 };
 
