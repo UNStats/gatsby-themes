@@ -2,14 +2,16 @@
 
 ## Styling
 
-All `@undataforum/gatsby-theme-<content_type>-core` are themes that come without
-any opinion on styling. The idea is that you shadow all page components and use
-whatever you prefer for styling.
+All `@undataforum/gatsby-theme-<content_type>-core` themes are themes that come
+without any opinion on styling. The idea is that you shadow all page components
+and use whatever you prefer for styling.
 
 This theme on the other hand is opinionated about styling. It wires up
 [Theme UI](https://theme-ui.com/home) for use with Gatsby and configures
 [`@undataforum/preset`](https://github.com/UNDataForum/design-system/tree/master/packages/preset)
-as theme. You can use any other Theme UI preset by shadowing `index.js` of
+as theme. You can use
+[any other Theme UI preset](https://theme-ui.com/packages/presets/) by shadowing
+`index.js` of
 [`gatsby-plugin-theme-ui`](https://theme-ui.com/packages/gatsby-plugin/).
 
 ## Components
@@ -41,7 +43,6 @@ This theme installs the following plugins:
 | [gatsby-plugin-catch-links](https://www.gatsbyjs.com/plugins/gatsby-plugin-catch-links/)   | Use Gatsby's `Link` component for all internal links.                                                                   |
 | [gatsby-plugin-react-helmet](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/) | Required to make the `SEO` component work.                                                                              |
 | [gatsby-plugin-sitemap](https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap)            | Create a [sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) that you can submit to Google. |
-| [gatsby-plugin-theme-ui](https://theme-ui.com/packages/gatsby-plugin/)                     | Wire up                                                                                                                 |
-| Theme UI for use with Gatsby.                                                              |
+| [gatsby-plugin-theme-ui](https://theme-ui.com/packages/gatsby-plugin/)                     | Wire up [Theme UI](https://theme-ui.com/home/) for use with Gatsby.                                                     |
 
 ## Pages
