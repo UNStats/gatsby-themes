@@ -1,6 +1,6 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
-import { Container, Styled, Text } from 'theme-ui';
+import { Container, Themed, Text } from 'theme-ui';
 import { Layout, Seo } from '@undataforum/gatsby-theme-base';
 
 const Homepage = ({ location }) => {
@@ -12,7 +12,7 @@ const Homepage = ({ location }) => {
         description="You can query site description with Gatsby."
       />
       <Container>
-        <Styled.h1>Homepage</Styled.h1>
+        <Themed.h1>Homepage</Themed.h1>
         <Text as="p">
           Homepage design needs to be done inside each project that adopts one
           or more themes from this repository.

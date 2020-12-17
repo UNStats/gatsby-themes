@@ -9,7 +9,7 @@ import {
   PostPreview,
   ProfilePreview,
   SEO,
-  Styled,
+  Themed,
 } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 import { FormattedMessage, IntlProvider } from 'react-intl';
@@ -62,12 +62,12 @@ const ShadowedProfilePage = ({ data, pageContext, location }) => {
           <MDXRenderer>{profile.body}</MDXRenderer>
           {posts.length > 0 && (
             <>
-              <Styled.h2>
+              <Themed.h2>
                 <FormattedMessage
                   id="relatedPosts"
                   values={{ name: profile.name }}
                 />
-              </Styled.h2>
+              </Themed.h2>
               <Grid gap={3} columns={1}>
                 {posts.map(({ id, ...post }) => (
                   <Link
