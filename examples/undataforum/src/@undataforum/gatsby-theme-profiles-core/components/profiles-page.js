@@ -8,7 +8,7 @@ import {
   Link,
   ProfilePreview,
   SEO,
-  Styled,
+  Themed,
 } from '@undataforum/gatsby-theme-base';
 import Img from 'gatsby-image';
 import {
@@ -44,9 +44,9 @@ const ShadowedProfilesPage = ({ blurb, data, pageContext, location }) => {
           path={location.pathname}
         />
         <Container>
-          <Styled.h1>
+          <Themed.h1>
             <FormattedMessage id={`${pageContext.collection}.title`} />
-          </Styled.h1>
+          </Themed.h1>
           {blurb}
           <Grid gap={4} columns={[1, 2, 3]}>
             {profiles.map(({ id, path, ...profile }) => (

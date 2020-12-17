@@ -8,7 +8,7 @@ import {
   Names,
   PostPreview,
   SEO,
-  Styled,
+  Themed,
 } from '@undataforum/gatsby-theme-base';
 import {
   createIntl,
@@ -60,9 +60,9 @@ const ShadowedPostsPage = ({ blurb, data, pageContext, location }) => {
           path={location.pathname}
         />
         <Container>
-          <Styled.h1>
+          <Themed.h1>
             <FormattedMessage id={`${pageContext.collection}.title`} />
-          </Styled.h1>
+          </Themed.h1>
           {blurb}
           <Grid gap={4} columns={[1, null, 2]}>
             {posts.map((post) => (

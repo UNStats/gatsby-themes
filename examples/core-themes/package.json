@@ -17,8 +17,8 @@
     "@undataforum/gatsby-theme-profiles-core": "*",
     "gatsby": "^2.29.1",
     "gatsby-plugin-mdx": "^1.7.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.18",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }

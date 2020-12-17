@@ -1,6 +1,6 @@
 import React from 'react';
 import { arrayOf, node, shape, string } from 'prop-types';
-import { Container, Grid, Heading, Styled } from 'theme-ui';
+import { Container, Grid, Heading, Themed } from 'theme-ui';
 import { EventPreview, Names } from '@undataforum/components';
 import { Layout, MDXRenderer, Seo } from '@undataforum/gatsby-theme-base';
 import {
@@ -39,9 +39,9 @@ const EventsPage = ({
           description={intl.formatMessage({ id: `${collection}.description` })}
         />
         <Container>
-          <Styled.h1>
+          <Themed.h1>
             <FormattedMessage id={`${collection}.title`} />
-          </Styled.h1>
+          </Themed.h1>
           {blurb}
           <Grid gap={4} columns={[1, null, 2]}>
             {events.map((event) => {
