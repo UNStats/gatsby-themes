@@ -2,13 +2,12 @@ import React from 'react';
 import { object } from 'prop-types';
 import {
   Container,
+  EventPreview,
   Grid,
   Heading,
-  Layout,
-  Names,
-  PostPreview,
-  SEO,
   Themed,
+  Layout,
+  SEO,
 } from '@undataforum/gatsby-theme-base';
 import {
   createIntl,
@@ -17,12 +16,11 @@ import {
   RawIntlProvider,
 } from 'react-intl';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { useProfiles } from '@undataforum/gatsby-theme-profiles-core';
-import _filter from 'lodash.filter';
 
 import messages from '../../../i18n/messages';
 
-const ShadowedPostsPage = ({ data, pageContext, location }) => {
+const EventsPage = ({ data, pageContext, location }) => {
+  const events = data.allEvent.nodes;
   // We need to localize props that are not React components:
   // https://github.com/formatjs/react-intl/blob/master/docs/API.md#createintl
   const cache = createIntlCache();
@@ -34,19 +32,7 @@ const ShadowedPostsPage = ({ data, pageContext, location }) => {
     cache
   );
 
-  // Retrieve all profiles (sorted).
-  const profiles = useProfiles();
-
-  // Map author IDs to names.
-  const posts = data.allPost.nodes.map((post) => ({
-    ...post,
-    // Select all profiles whose ID is in post.authors.
-    authors: post.authors
-      ? _filter(profiles, (profile) => post.authors.includes(profile.id)).map(
-          (profile) => profile.name
-        )
-      : undefined,
-  }));
+  // Format start date.
 
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
@@ -64,28 +50,37 @@ const ShadowedPostsPage = ({ data, pageContext, location }) => {
             <FormattedMessage id={`${pageContext.collection}.title`} />
           </Themed.h1>
           <Grid gap={4} columns={[1, null, 2]}>
-            {posts.map((post) => (
-              <PostPreview
-                key={post.id}
-                post={{
-                  title: (
-                    <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
-                      {post.title}
-                    </Heading>
-                  ),
-                  // Authors is optional.
-                  authors: post.authors && (
-                    <Names values={post.authors} mb={3} />
-                  ),
-                  date: post.date,
-                  // Description is optional.
-                  description: (
-                    <MDXRenderer>{post.description.body}</MDXRenderer>
-                  ),
-                  href: post.path,
-                }}
-              />
-            ))}
+            {events.map((event) => {
+              // Format start date.
+              const date = new Intl.DateTimeFormat('en-US', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                timeZoneName: 'long',
+              }).format(new Date(event.startDate));
+              return (
+                <EventPreview
+                  key={event.id}
+                  event={{
+                    tag: intl.formatMessage({ id: `${event.collection}.tag` }),
+                    title: (
+                      <Heading as="h2" sx={{ textAlign: 'start', mb: 3 }}>
+                        {event.title}
+                      </Heading>
+                    ),
+                    date,
+                    speakers: undefined,
+                    description: event.description && (
+                      <MDXRenderer>{event.description.body}</MDXRenderer>
+                    ),
+                    registrationLink: event.registrationLink,
+                    href: event.path,
+                  }}
+                />
+              );
+            })}
           </Grid>
         </Container>
       </Layout>
@@ -93,10 +88,10 @@ const ShadowedPostsPage = ({ data, pageContext, location }) => {
   );
 };
 
-ShadowedPostsPage.propTypes = {
+EventsPage.propTypes = {
   data: object.isRequired,
   pageContext: object.isRequired,
   location: object.isRequired,
 };
 
-export default ShadowedPostsPage;
+export default EventsPage;

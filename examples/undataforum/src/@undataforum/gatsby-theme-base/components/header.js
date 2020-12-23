@@ -11,7 +11,6 @@ const ShadowedHeader = (props) => (
       { href: '/news/', text: 'News' },
       { href: '/webinars/', text: 'Webinars' },
       { href: '/profiles/', text: 'Profiles' },
-      { href: '/test/', text: 'Test' },
     ]}
   />
 );

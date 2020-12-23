@@ -4,12 +4,12 @@ module.exports = {
     siteTwitterUsername: 'dummy',
   },
   plugins: [
-    { resolve: 'gatsby-plugin-mdx', options: {} },
+    'gatsby-plugin-mdx',
     {
       resolve: '@undataforum/gatsby-theme-blog-core',
       options: {
-        collection: 'blog',
-        contentPath: 'content/posts',
+        // collection: 'posts',
+        // contentPath: 'content/posts',
         mdxOtherwiseConfigured: true,
       },
     },
@@ -18,6 +18,14 @@ module.exports = {
       options: {
         collection: 'news',
         contentPath: 'content/articles',
+        mdxOtherwiseConfigured: true,
+      },
+    },
+    {
+      resolve: '@undataforum/gatsby-theme-events-core',
+      options: {
+        // collection: 'events',
+        // contentPath: 'content/events',
         mdxOtherwiseConfigured: true,
       },
     },

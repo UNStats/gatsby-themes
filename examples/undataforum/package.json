@@ -17,6 +17,7 @@
     "@undataforum/assets": "^0.9.0",
     "@undataforum/gatsby-theme-base": "*",
     "@undataforum/gatsby-theme-blog-core": "*",
+    "@undataforum/gatsby-theme-events-core": "*",
     "@undataforum/gatsby-theme-profiles-core": "*",
     "gatsby": "^2.29.1",
     "gatsby-image": "^2.8.0",

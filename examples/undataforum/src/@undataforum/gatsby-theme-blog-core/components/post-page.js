@@ -30,6 +30,7 @@ const ShadowedPostPage = ({ data, pageContext, location }) => {
   const { post } = data;
 
   // Interpret post authors as profile IDs and retrieve matching profiles.
+  // You can't call a hook conditionally, therefore this awkward
   const profiles = useProfiles((profile) =>
     post.authors ? post.authors.includes(profile.id) : false
   );
