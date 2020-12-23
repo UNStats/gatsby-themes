@@ -25,13 +25,15 @@ module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
   ensurePathExists(contentPath, reporter);
 };
 
+// Not clear yet whether `File` is the right data type for `images`.
+// Need to understand more how to retrieve files from a CMS.
 /* istanbul ignore next */
 module.exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     interface Profile @nodeInterface {
       id: ID!
       collection: String!
-      avatar: File! @fileByRelativePath
+      avatar: File!
       firstName: String!
       lastName: String!
       name: String!

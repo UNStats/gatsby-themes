@@ -6,6 +6,7 @@ const {
 } = require('@maiertech/gatsby-helpers');
 const remark = require('remark');
 const strip = require('strip-markdown');
+const { DateTime } = require('luxon');
 
 const withDefaults = require('./theme-options');
 
@@ -27,58 +28,66 @@ module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
   ensurePathExists(contentPath, reporter);
 };
 
-// Not clear yet whether `File` is the right data type for `images`.
-// Need to understand more how to retrieve files from a CMS.
+// attachments: [File!] is probably not a good choice for an interface that may be implemented with data from a CMS.
+// I need to understand more about how to tap into data from a CMS to choose a better type.
 /* istanbul ignore next */
 module.exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
-    interface PostDescription @nodeInterface {
+    interface EventDescription @nodeInterface {
       id: ID!
       body: String!
       text: String!
     }
 
-    type MdxPostDescription implements Node & PostDescription {
+    type MdxEventDescription implements Node & EventDescription {
       id: ID!
       body: String!
       text: String!
     }
 
-    interface Post @nodeInterface {
+    interface Event @nodeInterface {
       id: ID!
       collection: String!
       title: String!
-      date: Date! @dateformat
-      authors: [String!]
-      description: PostDescription!
+      startDate: Date! @dateformat
+      endDate: Date! @dateformat
+      moderators: [String!]
+      speakers: [String!]
+      location: String!
+      description: EventDescription!
+      registrationLink: String
       body: String!
-      images: [File!]
       path: String!
+      attachments: [File!]
     }
 
-    type MdxPost implements Node & Post {
+    type MdxEvent implements Node & Event {
       id: ID!
       collection: String!
       title: String!
-      date: Date! @dateformat
-      authors: [String!]
-      description: PostDescription! @link
+      startDate: Date! @dateformat
+      endDate: Date! @dateformat
+      moderators: [String!]
+      speakers: [String!]
+      location: String!
+      description: EventDescription! @link
+      registrationLink: String
       body: String!
-      images: [File!] @fileByRelativePath
       path: String!
+      attachments: [File!] @fileByRelativePath
     }
   `);
 };
 
-// Create resolvers for `body` on MdxPost and MdxPostDescripion.
+// Create resolvers for `body` on MdxEvent and MdxEventDescripion.
 /* istanbul ignore next */
 module.exports.createResolvers = ({ createResolvers }) => {
   createResolvers({
-    MdxPost: { body: { resolve: mdxResolverPassthrough('body') } },
-    MdxPostDescription: {
+    MdxEvent: { body: { resolve: mdxResolverPassthrough('body') } },
+    MdxEventDescription: {
       body: {
-        // gatsby-plugin-mdx adds `Mdx` node as child of `MdxPostDescription` node (parent node for which Markdown is processed).
-        // `body` on `MdxPostDescription` node needs to be resolved with `body` from child `Mdx` node.
+        // gatsby-plugin-mdx adds `Mdx` node as child of `MdxEventDescription` node (parent node for which Markdown is processed).
+        // `body` on `MdxEventDescription` node needs to be resolved with `body` from child `Mdx` node.
         resolve: async (source, args, context, info) => {
           const type = info.schema.getType(`Mdx`);
           const mdxNode = context.nodeModel.getNodeById({
@@ -116,7 +125,7 @@ module.exports.onCreateNode = (
   if (name === collection) {
     // Process description.
     // The goal is to create an MdxPostDescription node that implements PostDescription.
-    // The MdxPostDescription node processes Markdown and makes processe Markdown availalbe via `body` field.
+    // The MdxPostDescription node processes Markdown and makes processe Markdown availalbe via `body` field.    let description;
     let description;
     if (node.frontmatter.description) {
       description = node.frontmatter.description;
@@ -135,38 +144,57 @@ module.exports.onCreateNode = (
       }
     }
 
-    // Use this ID to link from MdxPost node to MdxPostDescription node.
+    // Use this ID to link from MdxEvent node to MdxEventDescription node.
     const descriptionNodeId = createNodeId(
       `${collection}-description-${description}`
     );
 
     const slug = node.frontmatter.slug || slugify(node.frontmatter.title);
 
-    const postData = {
+    // Process start date.
+    // Interpret date in timezone and then convert to UTC.
+    const startDate = DateTime.fromISO(node.frontmatter.startDate, {
+      zone: node.frontmatter.timezone,
+    })
+      .toUTC()
+      .toString();
+
+    // Process end date.
+    // Interpret date in timezone and then convert to UTC.
+    const endDate = DateTime.fromISO(node.frontmatter.endDate, {
+      zone: node.frontmatter.timezone,
+    })
+      .toUTC()
+      .toString();
+
+    const eventData = {
       // Spreading frontmatter makes it possible to add fields to frontmatter and use then in query.
       ...node.frontmatter,
       collection,
-      // Foreign key reference to description node.
+      startDate,
+      endDate,
+      // Foreign key reference to EventDescription node.
       description: descriptionNodeId,
+      registrationLink: node.frontmatter.registrationLink,
       path: createPath(basePath, collection, slug),
       // We do not want slug to show up in node.
       slug: undefined,
     };
 
     // You can explicitly override ID in frontmatter.
-    const postNodeId =
+    const eventNodeId =
       node.frontmatter.id || createNodeId(`${collection}-${slug}`);
 
     actions.createNode({
-      ...postData,
+      ...eventData,
       // Generated ID is namespaced to plugin.name.
-      id: postNodeId,
-      // Make MdxPost node aware of Mdx node.
+      id: eventNodeId,
+      // Make MdxEvent node aware of Mdx node.
       parent: node.id,
       children: [],
       internal: {
-        type: 'MdxPost',
-        contentDigest: createContentDigest(postData),
+        type: 'MdxEvent',
+        contentDigest: createContentDigest(eventData),
       },
     });
 
@@ -176,10 +204,10 @@ module.exports.onCreateNode = (
     // This results in childMdx being added to this node.
     actions.createNode({
       id: descriptionNodeId,
-      parent: postNodeId,
+      parent: eventNodeId,
       children: [],
       internal: {
-        type: 'MdxPostDescription',
+        type: 'MdxEventDescription',
         contentDigest: createContentDigest(description),
         mediaType: 'text/markdown',
         content: description,
@@ -200,12 +228,12 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
 
   const {
     data: {
-      allPost: { nodes: posts },
+      allEvent: { nodes: events },
     },
   } = await graphql(
     `
       query($collection: String!) {
-        allPost(filter: { collection: { eq: $collection } }) {
+        allEvent(filter: { collection: { eq: $collection } }) {
           nodes {
             id
             path
@@ -216,10 +244,10 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
     { collection }
   );
 
-  // Create posts page.
+  // Create events page.
   actions.createPage({
     path: createPath(basePath, collection),
-    component: require.resolve('./src/templates/posts-query.js'),
+    component: require.resolve('./src/templates/events-query.js'),
     context: {
       collection,
       // i18n is hard wired at the moment.
@@ -228,11 +256,11 @@ module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
     },
   });
 
-  // Create individual post pages.
-  posts.forEach(({ id, path }) => {
+  // Create individual event pages.
+  events.forEach(({ id, path }) => {
     actions.createPage({
       path,
-      component: require.resolve('./src/templates/post-query.js'),
+      component: require.resolve('./src/templates/event-query.js'),
       context: {
         id,
         // i18n is hard wired at the moment.

@@ -1,13 +1,13 @@
 # @undataforum/gatsby-theme-profiles-core
 
-A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) add a `Profiles`
-interface and `MdxProfiles` type to Gatsby sites.
+A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) that adds a `Profile`
+interface and `MdxProfile` type to Gatsby sites.
 
 ## Options
 
 | Key                      | Default value      | Description                                                                                                                    |
 | :----------------------- | :----------------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| `basePath`               | `/`                | Basepath for deployments at locations other than root.                                                                         |
+| `basePath`               | `/`                | Basepath for deployments at path other than root.                                                                              |
 | `collection`             | `profiles`         | The collection is added to `Profile` nodes. It is also part of the path.                                                       |
 | `contentPath`            | `content/profiles` | Location of profile MDX files and assets. You can organize them in whichever way you want, e.g. place them in sub-directories. |
 | `mdxOtherwiseConfigured` | `false`            | Set this flag to `true` if `gatsby-plugin-mdx` is already configured for your site.                                            |

@@ -1,5 +1,5 @@
 import React from 'react';
-import { node, object } from 'prop-types';
+import { object } from 'prop-types';
 import {
   Container,
   Grid,
@@ -20,7 +20,7 @@ import {
 
 import messages from '../../../i18n/messages';
 
-const ShadowedProfilesPage = ({ blurb, data, pageContext, location }) => {
+const ShadowedProfilesPage = ({ data, pageContext, location }) => {
   const profiles = data.allProfile.nodes;
   // We need to localize props that are not React components:
   // https://github.com/formatjs/react-intl/blob/master/docs/API.md#createintl
@@ -47,7 +47,6 @@ const ShadowedProfilesPage = ({ blurb, data, pageContext, location }) => {
           <Themed.h1>
             <FormattedMessage id={`${pageContext.collection}.title`} />
           </Themed.h1>
-          {blurb}
           <Grid gap={4} columns={[1, 2, 3]}>
             {profiles.map(({ id, path, ...profile }) => (
               <Link
@@ -87,7 +86,6 @@ const ShadowedProfilesPage = ({ blurb, data, pageContext, location }) => {
 };
 
 ShadowedProfilesPage.propTypes = {
-  blurb: node,
   data: object.isRequired,
   pageContext: object.isRequired,
   location: object.isRequired,

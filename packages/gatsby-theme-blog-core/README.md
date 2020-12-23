@@ -1,13 +1,13 @@
 # @undataforum/gatsby-theme-blog-core
 
-A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) add a `Post` interface
-and `MdxPost` type to Gatsby sites.
+A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) that adds a `Post`
+interface and `MdxPost` type to Gatsby sites.
 
 ## Options
 
 | Key                      | Default Value   | Description                                                                                                                 |
 | :----------------------- | :-------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| `basePath`               | `/`             | Basepath for deployments at locations other than root.                                                                      |
+| `basePath`               | `/`             | Basepath for deployments at path other than root.                                                                           |
 | `collection`             | `posts`         | The collection is added to `Post` nodes. It is also part of the path.                                                       |
 | `contentPath`            | `content/posts` | Location of post MDX files and assets. You can organize them in whichever way you want, e.g. place them in sub-directories. |
 | `mdxOtherwiseConfigured` | `false`         | Set this flag to `true` if `gatsby-plugin-mdx` is already configured for your site.                                         |

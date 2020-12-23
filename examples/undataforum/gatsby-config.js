@@ -9,16 +9,8 @@ module.exports = {
     siteLanguage: 'en',
   },
   plugins: [
-    { resolve: 'gatsby-plugin-mdx', options: {} },
+    'gatsby-plugin-mdx',
     '@undataforum/gatsby-theme-base',
-    {
-      resolve: '@undataforum/gatsby-theme-profiles-core',
-      options: {
-        // collection: 'profiles',
-        // contentPath: 'content/profiles',
-        mdxOtherwiseConfigured: true,
-      },
-    },
     {
       resolve: '@undataforum/gatsby-theme-blog-core',
       options: {
@@ -32,6 +24,22 @@ module.exports = {
       options: {
         collection: 'news',
         contentPath: 'content/articles',
+        mdxOtherwiseConfigured: true,
+      },
+    },
+    {
+      resolve: '@undataforum/gatsby-theme-events-core',
+      options: {
+        collection: 'webinars',
+        // contentPath: 'content/events',
+        mdxOtherwiseConfigured: true,
+      },
+    },
+    {
+      resolve: '@undataforum/gatsby-theme-profiles-core',
+      options: {
+        // collection: 'profiles',
+        // contentPath: 'content/profiles',
         mdxOtherwiseConfigured: true,
       },
     },
