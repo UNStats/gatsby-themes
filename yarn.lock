@@ -7616,10 +7616,10 @@ gatsby-plugin-sitemap@^2.9.0:
     pify "^3.0.0"
     sitemap "^1.13.0"
 
-gatsby-plugin-theme-ui@^0.6.0-alpha.3:
-  version "0.6.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.6.0-alpha.3.tgz#68f9c17e72fd655ad4eee94eeabb1bcf9bbbddad"
-  integrity sha512-ZwGoa5YRanrQfEc/8Zm1O7Knrz5YwcBLVintCu5tOowDpgFrb7irJGLFL+jEauOatiKN2ybzF/PsDx45gOTY0A==
+gatsby-plugin-theme-ui@^0.6.0-alpha.4:
+  version "0.6.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.6.0-alpha.4.tgz#a572881b9d275bac341673458391ade831af03c3"
+  integrity sha512-HxbSdp2DSHiaWWSFjQ26Pw4P3g29BoWux0wmr0TPy/D7xHZ7ppK++VpmeSeLjD7evI1b4vhnbt9X9Z4+VtWQAQ==
 
 gatsby-plugin-typescript@^2.9.0:
   version "2.9.0"
