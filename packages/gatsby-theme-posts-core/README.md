@@ -1,4 +1,4 @@
-# @undataforum/gatsby-theme-blog-core
+# @undataforum/gatsby-theme-posts-core
 
 A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) that adds a `Post`
 interface and `MdxPost` type to Gatsby sites.

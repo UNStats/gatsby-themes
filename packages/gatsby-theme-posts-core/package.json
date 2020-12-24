@@ -1,5 +1,5 @@
 {
-  "name": "@undataforum/gatsby-theme-blog-core",
+  "name": "@undataforum/gatsby-theme-posts-core",
   "version": "0.0.0",
   "description": "This theme adds a Post interface and MdxPost type to Gatsby sites.",
   "author": "Thilo Maier <maier@un.org>",
@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-themes.git",
-    "directory": "packages/gatsby-theme-blog-core"
+    "directory": "packages/gatsby-theme-posts-core"
   },
   "main": "index.js",
   "keywords": [

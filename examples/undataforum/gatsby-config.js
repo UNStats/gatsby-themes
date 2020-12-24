@@ -13,7 +13,7 @@ module.exports = {
     '@undataforum/gatsby-theme-base',
     '@undataforum/gatsby-theme-theme-ui',
     {
-      resolve: '@undataforum/gatsby-theme-blog-core',
+      resolve: '@undataforum/gatsby-theme-posts-core',
       options: {
         collection: 'blog',
         // contentPath: 'content/posts',
@@ -21,7 +21,7 @@ module.exports = {
       },
     },
     {
-      resolve: '@undataforum/gatsby-theme-blog-core',
+      resolve: '@undataforum/gatsby-theme-posts-core',
       options: {
         collection: 'news',
         contentPath: 'content/articles',
