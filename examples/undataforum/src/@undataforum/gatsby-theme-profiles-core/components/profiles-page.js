@@ -1,5 +1,6 @@
 import React from 'react';
 import { object } from 'prop-types';
+import { SEO } from '@undataforum/gatsby-theme-base';
 import {
   Container,
   Grid,
@@ -7,9 +8,8 @@ import {
   Layout,
   Link,
   ProfilePreview,
-  SEO,
-  Themed,
-} from '@undataforum/gatsby-theme-base';
+  Styled,
+} from '@undataforum/gatsby-theme-theme-ui';
 import Img from 'gatsby-image';
 import {
   createIntl,
@@ -44,9 +44,9 @@ const ShadowedProfilesPage = ({ data, pageContext, location }) => {
           path={location.pathname}
         />
         <Container>
-          <Themed.h1>
+          <Styled.h1>
             <FormattedMessage id={`${pageContext.collection}.title`} />
-          </Themed.h1>
+          </Styled.h1>
           <Grid gap={4} columns={[1, 2, 3]}>
             {profiles.map(({ id, path, ...profile }) => (
               <Link

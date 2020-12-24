@@ -1,26 +1,26 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
+import { SEO, useSiteMetadata } from '@undataforum/gatsby-theme-base';
 import {
   Container,
-  Themed,
+  Styled,
   Text,
   Layout,
-  SEO,
-} from '@undataforum/gatsby-theme-base';
-
-// Query site title from METADATA!!!!!!!.
+} from '@undataforum/gatsby-theme-theme-ui';
 
 const Homepage = ({ location }) => {
+  const { siteDescription } = useSiteMetadata();
+
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <Layout location={location}>
       <SEO
-        title="You can query site title with Gatsby"
-        description="You can query site description with Gatsby."
+        title="Homepage"
+        description={siteDescription}
         path={location.pathname}
       />
       <Container>
-        <Themed.h1>Homepage</Themed.h1>
+        <Styled.h1>Homepage</Styled.h1>
         <Text as="p">
           Homepage design needs to be done inside each project that adopts one
           or more themes from this repository.

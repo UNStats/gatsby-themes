@@ -1,13 +1,13 @@
 import React from 'react';
 import { object } from 'prop-types';
+import { SEO } from '@undataforum/gatsby-theme-base';
 import {
   Avatars,
   Container,
   Heading,
   Layout,
   PostPreview,
-  SEO,
-} from '@undataforum/gatsby-theme-base';
+} from '@undataforum/gatsby-theme-theme-ui';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';

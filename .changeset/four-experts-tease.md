@@ -2,4 +2,5 @@
 '@undataforum/gatsby-theme-base': minor
 ---
 
-Complete rewrite to enable opinionated styling for core themes
+Remove styling from theme. Styling is opinionated and has moved to
+`@undataforum/gatsby-theme-theme-ui`.

@@ -1,9 +1,9 @@
-import baseTheme from '@undataforum/gatsby-theme-base/src/gatsby-plugin-theme-ui';
+import preset from '@undataforum/gatsby-theme-theme-ui/src/gatsby-plugin-theme-ui';
 
 const theme = {
-  ...baseTheme,
+  ...preset,
   fonts: {
-    ...baseTheme.fonts,
+    ...preset.fonts,
     body: 'Roboto, system-ui, sans-serif',
     heading: 'Roboto, system-ui, sans-serif',
   },

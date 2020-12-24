@@ -1,5 +1,6 @@
 import React from 'react';
 import { object } from 'prop-types';
+import { SEO } from '@undataforum/gatsby-theme-base';
 import {
   Avatars,
   Container,
@@ -8,9 +9,8 @@ import {
   Link,
   NewTabLink,
   Layout,
-  SEO,
-  Themed,
-} from '@undataforum/gatsby-theme-base';
+  Styled,
+} from '@undataforum/gatsby-theme-theme-ui';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -122,7 +122,7 @@ const ShadowedEventPage = ({ data, pageContext, location }) => {
           <MDXRenderer>{event.body}</MDXRenderer>
           {event.attachments && event.attachments.length > 0 && (
             <>
-              <Themed.h2>Presentations</Themed.h2>
+              <Styled.h2>Presentations</Styled.h2>
               <ul>
                 {event.attachments.map(({ base, publicURL }) => (
                   <li key={base}>

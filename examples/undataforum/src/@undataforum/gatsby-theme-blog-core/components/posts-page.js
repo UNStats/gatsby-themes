@@ -1,5 +1,6 @@
 import React from 'react';
 import { object } from 'prop-types';
+import { SEO } from '@undataforum/gatsby-theme-base';
 import {
   Container,
   Grid,
@@ -7,9 +8,8 @@ import {
   Layout,
   Names,
   PostPreview,
-  SEO,
-  Themed,
-} from '@undataforum/gatsby-theme-base';
+  Styled,
+} from '@undataforum/gatsby-theme-theme-ui';
 import {
   createIntl,
   createIntlCache,
@@ -60,9 +60,9 @@ const ShadowedPostsPage = ({ data, pageContext, location }) => {
           path={location.pathname}
         />
         <Container>
-          <Themed.h1>
+          <Styled.h1>
             <FormattedMessage id={`${pageContext.collection}.title`} />
-          </Themed.h1>
+          </Styled.h1>
           <Grid gap={4} columns={[1, null, 2]}>
             {posts.map((post) => (
               <PostPreview
