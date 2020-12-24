@@ -6,7 +6,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-mdx',
     {
-      resolve: '@undataforum/gatsby-theme-blog-core',
+      resolve: '@undataforum/gatsby-theme-posts-core',
       options: {
         // collection: 'posts',
         // contentPath: 'content/posts',
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
     {
-      resolve: '@undataforum/gatsby-theme-blog-core',
+      resolve: '@undataforum/gatsby-theme-posts-core',
       options: {
         collection: 'news',
         contentPath: 'content/articles',

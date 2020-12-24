@@ -14,7 +14,7 @@ import {
 import Img from 'gatsby-image';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { usePosts } from '@undataforum/gatsby-theme-blog-core';
+import { usePosts } from '@undataforum/gatsby-theme-posts-core';
 
 import messages from '../../../i18n/messages';
 
