@@ -7,7 +7,7 @@ import {
   Link,
   SocialIcons,
   TwitterIcon,
-} from '@undataforum/gatsby-theme-base';
+} from '@undataforum/gatsby-theme-theme-ui';
 import { Logo } from '@undataforum/assets';
 
 const ShadowedFooter = () => {
@@ -26,8 +26,8 @@ const ShadowedFooter = () => {
       links={[
         { text: 'Contact', href: '/contact/' },
         { text: 'Copyright', href: '/copyright/' },
-        { text: 'Privacy Notice', href: '/privacy/' },
-        { text: 'Terms of Use', href: '/terms/' },
+        { text: 'Privacy Notice', href: '/privacy-notice/' },
+        { text: 'Terms of Use', href: '/terms-of-use/' },
       ]}
       socialIcons={
         <SocialIcons

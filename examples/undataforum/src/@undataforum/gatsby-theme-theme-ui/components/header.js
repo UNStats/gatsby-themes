@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '@undataforum/gatsby-theme-base';
+import { Header } from '@undataforum/gatsby-theme-theme-ui';
 import { Logo } from '@undataforum/assets';
 
 const ShadowedHeader = (props) => (

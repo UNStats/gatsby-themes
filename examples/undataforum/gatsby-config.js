@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-mdx',
     '@undataforum/gatsby-theme-base',
+    '@undataforum/gatsby-theme-theme-ui',
     {
       resolve: '@undataforum/gatsby-theme-blog-core',
       options: {
