@@ -15,7 +15,7 @@
     "@mdx-js/react": "^1.6.22",
     "@undataforum/gatsby-theme-posts-core": "*",
     "@undataforum/gatsby-theme-profiles-core": "*",
-    "gatsby": "^2.29.2",
+    "gatsby": "^2.29.3",
     "gatsby-plugin-mdx": "^1.7.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.18",
     "react": "^17.0.1",
