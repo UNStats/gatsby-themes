@@ -28,10 +28,10 @@
     "react-dom": "^16.14.0 || ^17.0.1"
   },
   "dependencies": {
-    "@maiertech/gatsby-helpers": "^0.2.1",
-    "@maiertech/gatsby-theme-pages-core": "^0.2.0",
-    "gatsby-plugin-react-helmet": "^3.7.0",
-    "gatsby-plugin-sitemap": "^2.9.0",
+    "@maiertech/gatsby-helpers": "^0.3.0",
+    "@maiertech/gatsby-theme-pages-core": "^0.4.0",
+    "gatsby-plugin-react-helmet": "^3.9.0",
+    "gatsby-plugin-sitemap": "^2.11.0",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0"
   }
