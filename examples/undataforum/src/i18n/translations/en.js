@@ -1,11 +1,11 @@
 const translations = {
   // Localizations for post-page.js and posts-page.js (`blog` collection).
-  'blog.tag': 'Blog',
+  'blog.tag': 'Post',
   'blog.title': 'Blog',
   'blog.description': 'Blog landing page description.',
 
   // Localizations for post-page.js and posts-page.js (`news` collection).
-  'news.tag': 'News',
+  'news.tag': 'Article',
   'news.title': 'News',
   'news.description': 'News landing page description.',
 

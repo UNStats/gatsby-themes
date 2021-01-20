@@ -11,6 +11,8 @@ module.exports = {
         // collection: 'posts',
         // contentPath: 'content/posts',
         mdxOtherwiseConfigured: true,
+        // This option has no effect other than that it is passed through to page templates.
+        tagCollection: 'tags',
       },
     },
     {
@@ -19,6 +21,8 @@ module.exports = {
         collection: 'news',
         contentPath: 'content/articles',
         mdxOtherwiseConfigured: true,
+        // This option has no effect other than that it is passed through to page templates.
+        tagCollection: 'tags',
       },
     },
     {
@@ -27,6 +31,7 @@ module.exports = {
         // collection: 'events',
         // contentPath: 'content/events',
         mdxOtherwiseConfigured: true,
+        tagCollection: 'tags',
       },
     },
     {
@@ -35,6 +40,13 @@ module.exports = {
         // collection: 'profiles',
         // contentPath: 'content/profiles',
         mdxOtherwiseConfigured: true,
+      },
+    },
+    {
+      resolve: '@maiertech/gatsby-theme-tags-core',
+      options: {
+        // tagCollection: 'tags',
+        mdxCollections: ['blog', 'news', 'events'],
       },
     },
     {

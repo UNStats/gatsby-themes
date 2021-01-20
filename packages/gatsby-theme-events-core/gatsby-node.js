@@ -28,8 +28,8 @@ module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
   ensurePathExists(contentPath, reporter);
 };
 
-// attachments: [File!] is probably not a good choice for an interface that may be implemented with data from a CMS.
-// I need to understand more about how to tap into data from a CMS to choose a better type.
+// Not clear yet whether `File` is the right data type for `images`.
+// Need to understand more how to retrieve files from a CMS.
 /* istanbul ignore next */
 module.exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
@@ -56,9 +56,10 @@ module.exports.createSchemaCustomization = ({ actions }) => {
       location: String!
       description: EventDescription!
       registrationLink: String
+      attachments: [File!]
+      tags: [String!]
       body: String!
       path: String!
-      attachments: [File!]
     }
 
     type MdxEvent implements Node & Event {
@@ -72,9 +73,10 @@ module.exports.createSchemaCustomization = ({ actions }) => {
       location: String!
       description: EventDescription! @link
       registrationLink: String
+      attachments: [File!] @fileByRelativePath
+      tags: [String!]
       body: String!
       path: String!
-      attachments: [File!] @fileByRelativePath
     }
   `);
 };
@@ -122,104 +124,117 @@ module.exports.onCreateNode = (
   const name = fileNode.sourceInstanceName;
 
   // Process files in `contentPath` location only.
-  if (name === collection) {
-    // Process description.
-    // The goal is to create an MdxPostDescription node that implements PostDescription.
-    // The MdxPostDescription node processes Markdown and makes processe Markdown availalbe via `body` field.    let description;
-    let description;
-    if (node.frontmatter.description) {
-      description = node.frontmatter.description;
-    } else {
-      // Four scenarios for which we need to match first paragraph:
-      // - multiple paras with import statement
-      // - multiple paras without import statement
-      // - one para with import statement
-      // - one para without import statement
-      // Regex:
-      // - match subsequent non-empty lines (but not lines starting with "import")
-      // - lookbehind and there should be two line feeds (\n)
-      const match = node.rawBody.match(/(?<=\n{2})((?!import).+\n)+/);
-      if (match) {
-        description = match[0];
-      }
+  if (name !== collection) return;
+
+  // Process description.
+  // The goal is to create an MdxEventDescription node that implements EventDescription.
+  // The MdxEventDescription node processes Markdown and makes processed Markdown availalbe via `body` field.
+  let description;
+  if (node.frontmatter.description) {
+    description = node.frontmatter.description;
+  } else {
+    // Four scenarios for which we need to match first paragraph:
+    // - multiple paras with import statement
+    // - multiple paras without import statement
+    // - one para with import statement
+    // - one para without import statement
+    // Regex:
+    // - match subsequent non-empty lines (but not lines starting with "import")
+    // - lookbehind and there should be two line feeds (\n)
+    const match = node.rawBody.match(/(?<=\n{2})((?!import).+\n)+/);
+    if (match) {
+      description = match[0];
     }
-
-    // Use this ID to link from MdxEvent node to MdxEventDescription node.
-    const descriptionNodeId = createNodeId(
-      `${collection}-description-${description}`
-    );
-
-    const slug = node.frontmatter.slug || slugify(node.frontmatter.title);
-
-    // Process start date.
-    // Interpret date in timezone and then convert to UTC.
-    const startDate = DateTime.fromISO(node.frontmatter.startDate, {
-      zone: node.frontmatter.timezone,
-    })
-      .toUTC()
-      .toString();
-
-    // Process end date.
-    // Interpret date in timezone and then convert to UTC.
-    const endDate = DateTime.fromISO(node.frontmatter.endDate, {
-      zone: node.frontmatter.timezone,
-    })
-      .toUTC()
-      .toString();
-
-    const eventData = {
-      // Spreading frontmatter makes it possible to add fields to frontmatter and use then in query.
-      ...node.frontmatter,
-      collection,
-      startDate,
-      endDate,
-      // Foreign key reference to EventDescription node.
-      description: descriptionNodeId,
-      registrationLink: node.frontmatter.registrationLink,
-      path: createPath(basePath, collection, slug),
-      // We do not want slug to show up in node.
-      slug: undefined,
-    };
-
-    // You can explicitly override ID in frontmatter.
-    const eventNodeId =
-      node.frontmatter.id || createNodeId(`${collection}-${slug}`);
-
-    actions.createNode({
-      ...eventData,
-      // Generated ID is namespaced to plugin.name.
-      id: eventNodeId,
-      // Make MdxEvent node aware of Mdx node.
-      parent: node.id,
-      children: [],
-      internal: {
-        type: 'MdxEvent',
-        contentDigest: createContentDigest(eventData),
-      },
-    });
-
-    // Create description node that can processes a Markdown description.
-    // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
-    // mediaType text/markdown on non-File nodes triggers processing with gatsby-plugin-mdx.
-    // This results in childMdx being added to this node.
-    actions.createNode({
-      id: descriptionNodeId,
-      parent: eventNodeId,
-      children: [],
-      internal: {
-        type: 'MdxEventDescription',
-        contentDigest: createContentDigest(description),
-        mediaType: 'text/markdown',
-        content: description,
-      },
-      // Strip Markdown, line breaks and white space.
-      text: remark()
-        .use(strip)
-        .processSync(description)
-        .contents.replace(/\n/g, ' ')
-        .trim(),
-    });
   }
+
+  // Use this ID to link from MdxEvent node to MdxEventDescription node.
+  const descriptionNodeId = createNodeId(
+    `${collection}-description-${description}`
+  );
+
+  const slug = node.frontmatter.slug || slugify(node.frontmatter.title);
+
+  // Process start date.
+  // Interpret date in timezone and then convert to UTC.
+  const startDate = DateTime.fromISO(node.frontmatter.date, {
+    zone: node.frontmatter.timezone,
+  })
+    .toUTC()
+    .toString();
+
+  // Process end date.
+  // Interpret date in timezone and then convert to UTC.
+  const endDate = DateTime.fromISO(node.frontmatter.endDate, {
+    zone: node.frontmatter.timezone,
+  })
+    .toUTC()
+    .toString();
+
+  const eventData = {
+    // Spreading frontmatter makes it possible to add fields to frontmatter and use then in query.
+    ...node.frontmatter,
+    collection,
+    startDate,
+    endDate,
+    // Foreign key reference to EventDescription node.
+    description: descriptionNodeId,
+    path: createPath(basePath, collection, slug),
+    // We do not want slug to show up in node.
+    slug: undefined,
+  };
+
+  // You can explicitly override ID in frontmatter.
+  const eventNodeId =
+    node.frontmatter.id || createNodeId(`${collection}-${slug}`);
+
+  actions.createNode({
+    ...eventData,
+    // Generated ID is namespaced to plugin.name.
+    id: eventNodeId,
+    // Make MdxEvent node aware of Mdx node.
+    parent: node.id,
+    children: [],
+    internal: {
+      type: 'MdxEvent',
+      contentDigest: createContentDigest(eventData),
+    },
+  });
+
+  // Create description node that can processes a Markdown description.
+  // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
+  // mediaType text/markdown on non-File nodes triggers processing with gatsby-plugin-mdx.
+  // This results in childMdx being added to this node.
+  actions.createNode({
+    id: descriptionNodeId,
+    parent: eventNodeId,
+    children: [],
+    internal: {
+      type: 'MdxEventDescription',
+      contentDigest: createContentDigest(description),
+      mediaType: 'text/markdown',
+      content: description,
+    },
+    // Strip Markdown, line breaks and white space.
+    text: remark()
+      .use(strip)
+      .processSync(description)
+      .contents.replace(/\n/g, ' ')
+      .trim(),
+  });
+
+  // Add collection to Mdx node.
+  actions.createNodeField({
+    node,
+    name: 'collection',
+    value: collection,
+  });
+
+  // Add path to Mdx node.
+  actions.createNodeField({
+    node,
+    name: 'path',
+    value: eventData.path,
+  });
 };
 
 module.exports.createPages = async ({ graphql, actions }, themeOptions) => {

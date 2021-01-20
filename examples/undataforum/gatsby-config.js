@@ -18,6 +18,8 @@ module.exports = {
         collection: 'blog',
         // contentPath: 'content/posts',
         mdxOtherwiseConfigured: true,
+        // This option is passed through to page components.
+        tagCollection: 'tags',
       },
     },
     {
@@ -26,6 +28,8 @@ module.exports = {
         collection: 'news',
         contentPath: 'content/articles',
         mdxOtherwiseConfigured: true,
+        // This option is passed through to page components.
+        tagCollection: 'tags',
       },
     },
     {
@@ -34,6 +38,8 @@ module.exports = {
         collection: 'webinars',
         // contentPath: 'content/events',
         mdxOtherwiseConfigured: true,
+        // This option is passed through to page components.
+        tagCollection: 'tags',
       },
     },
     {
@@ -42,6 +48,13 @@ module.exports = {
         // collection: 'profiles',
         // contentPath: 'content/profiles',
         mdxOtherwiseConfigured: true,
+      },
+    },
+    {
+      resolve: '@maiertech/gatsby-theme-tags-core',
+      options: {
+        // tagCollection: 'tags',
+        mdxCollections: ['blog', 'news', 'webinars'],
       },
     },
     {

@@ -20,5 +20,6 @@ export const fragment = graphql`
     }
     body
     path
+    tags
   }
 `;

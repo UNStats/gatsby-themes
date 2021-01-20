@@ -10,11 +10,13 @@ import {
   NewTabLink,
   Layout,
   Styled,
+  Tags,
 } from '@undataforum/gatsby-theme-theme-ui';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useProfiles } from '@undataforum/gatsby-theme-profiles-core';
+import { createPath } from '@maiertech/gatsby-helpers';
 
 import messages from '../../../i18n/messages';
 
@@ -72,6 +74,16 @@ const ShadowedEventPage = ({ data, pageContext, location }) => {
   // Merge (decorated) moderators and speakers.
   const profiles = [...moderators, ...speakers];
 
+  // Create values array for Tags component.
+  const { basePath, tagCollection } = pageContext.themeOptions;
+  let values = [];
+  if (event.tags) {
+    values = event.tags.map((tag) => ({
+      tag,
+      path: createPath(basePath, tagCollection, tag),
+    }));
+  }
+
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
@@ -119,6 +131,7 @@ const ShadowedEventPage = ({ data, pageContext, location }) => {
             }}
             mb={3}
           />
+          <Tags values={values} variant="tags.secondary" mb={3} />
           <MDXRenderer>{event.body}</MDXRenderer>
           {event.attachments && event.attachments.length > 0 && (
             <>

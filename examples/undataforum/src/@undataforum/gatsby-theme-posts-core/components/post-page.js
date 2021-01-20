@@ -7,11 +7,13 @@ import {
   Heading,
   Layout,
   PostPreview,
+  Tags,
 } from '@undataforum/gatsby-theme-theme-ui';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useProfiles } from '@undataforum/gatsby-theme-profiles-core';
+import { createPath } from '@maiertech/gatsby-helpers';
 
 import messages from '../../../i18n/messages';
 
@@ -63,6 +65,17 @@ const ShadowedPostPage = ({ data, pageContext, location }) => {
   const fluidImages = post.images
     ? post.images.map((image) => image.childImageSharp.fluid)
     : undefined;
+
+  // Create values array for Tags component.
+  const { basePath, tagCollection } = pageContext.themeOptions;
+  let values = [];
+  if (post.tags) {
+    values = post.tags.map((tag) => ({
+      tag,
+      path: createPath(basePath, tagCollection, tag),
+    }));
+  }
+
   return (
     // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <RawIntlProvider value={intl}>
@@ -84,8 +97,9 @@ const ShadowedPostPage = ({ data, pageContext, location }) => {
               date: post.date,
               authors,
             }}
-            mb={[3, 4]}
+            mb={3}
           />
+          <Tags values={values} variant="tags.secondary" mb={3} />
           <MDXRenderer images={fluidImages}>{post.body}</MDXRenderer>
         </Container>
       </Layout>
