@@ -1,5 +1,12 @@
 # @undataforum/gatsby-theme-base
 
+## 0.15.0
+
+### Minor Changes
+
+- 87326f4: Remove styling from theme. Styling is opinionated and has moved to
+  `@undataforum/gatsby-theme-theme-ui`.
+
 ## 0.14.0
 
 ### Minor Changes
