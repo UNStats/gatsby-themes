@@ -28,11 +28,11 @@
     "react-dom": "^16.14.0 || ^17.0.1"
   },
   "dependencies": {
-    "@maiertech/gatsby-helpers": "^0.2.1",
+    "@maiertech/gatsby-helpers": "^0.3.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "gatsby-plugin-mdx": "^1.7.1",
-    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-plugin-mdx": "^1.9.0",
+    "gatsby-source-filesystem": "^2.10.0",
     "luxon": "^1.25.0",
     "prop-types": "^15.7.2",
     "remark": "^13.0.0",

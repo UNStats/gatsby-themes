@@ -51,8 +51,9 @@ module.exports.createSchemaCustomization = ({ actions }) => {
       date: Date! @dateformat
       authors: [String!]
       description: PostDescription!
-      body: String!
       images: [File!]
+      tags: [String!]
+      body: String!
       path: String!
     }
 
@@ -63,8 +64,10 @@ module.exports.createSchemaCustomization = ({ actions }) => {
       date: Date! @dateformat
       authors: [String!]
       description: PostDescription! @link
-      body: String!
+      tags: [String!]
       images: [File!] @fileByRelativePath
+      tags: [String!]
+      body: String!
       path: String!
     }
   `);
@@ -113,85 +116,99 @@ module.exports.onCreateNode = (
   const name = fileNode.sourceInstanceName;
 
   // Process files in `contentPath` location only.
-  if (name === collection) {
-    // Process description.
-    // The goal is to create an MdxPostDescription node that implements PostDescription.
-    // The MdxPostDescription node processes Markdown and makes processe Markdown availalbe via `body` field.
-    let description;
-    if (node.frontmatter.description) {
-      description = node.frontmatter.description;
-    } else {
-      // Four scenarios for which we need to match first paragraph:
-      // - multiple paras with import statement
-      // - multiple paras without import statement
-      // - one para with import statement
-      // - one para without import statement
-      // Regex:
-      // - match subsequent non-empty lines (but not lines starting with "import")
-      // - lookbehind and there should be two line feeds (\n)
-      const match = node.rawBody.match(/(?<=\n{2})((?!import).+\n)+/);
-      if (match) {
-        description = match[0];
-      }
+  if (name !== collection) return;
+
+  // Process description.
+  // The goal is to create an MdxPostDescription node that implements PostDescription.
+  // The MdxPostDescription node processes Markdown and makes processed Markdown availalbe via `body` field.
+  let description;
+  if (node.frontmatter.description) {
+    description = node.frontmatter.description;
+  } else {
+    // Four scenarios for which we need to match first paragraph:
+    // - multiple paras with import statement
+    // - multiple paras without import statement
+    // - one para with import statement
+    // - one para without import statement
+    // Regex:
+    // - match subsequent non-empty lines (but not lines starting with "import")
+    // - lookbehind and there should be two line feeds (\n)
+    const match = node.rawBody.match(/(?<=\n{2})((?!import).+\n)+/);
+    if (match) {
+      description = match[0];
     }
-
-    // Use this ID to link from MdxPost node to MdxPostDescription node.
-    const descriptionNodeId = createNodeId(
-      `${collection}-description-${description}`
-    );
-
-    const slug = node.frontmatter.slug || slugify(node.frontmatter.title);
-
-    const postData = {
-      // Spreading frontmatter makes it possible to add fields to frontmatter and use then in query.
-      ...node.frontmatter,
-      collection,
-      // Foreign key reference to description node.
-      description: descriptionNodeId,
-      path: createPath(basePath, collection, slug),
-      // We do not want slug to show up in node.
-      slug: undefined,
-    };
-
-    // You can explicitly override ID in frontmatter.
-    const postNodeId =
-      node.frontmatter.id || createNodeId(`${collection}-${slug}`);
-
-    actions.createNode({
-      ...postData,
-      // Generated ID is namespaced to plugin.name.
-      id: postNodeId,
-      // Make MdxPost node aware of Mdx node.
-      parent: node.id,
-      children: [],
-      internal: {
-        type: 'MdxPost',
-        contentDigest: createContentDigest(postData),
-      },
-    });
-
-    // Create description node that can processes a Markdown description.
-    // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
-    // mediaType text/markdown on non-File nodes triggers processing with gatsby-plugin-mdx.
-    // This results in childMdx being added to this node.
-    actions.createNode({
-      id: descriptionNodeId,
-      parent: postNodeId,
-      children: [],
-      internal: {
-        type: 'MdxPostDescription',
-        contentDigest: createContentDigest(description),
-        mediaType: 'text/markdown',
-        content: description,
-      },
-      // Strip Markdown, line breaks and white space.
-      text: remark()
-        .use(strip)
-        .processSync(description)
-        .contents.replace(/\n/g, ' ')
-        .trim(),
-    });
   }
+
+  // Use this ID to link from MdxPost node to MdxPostDescription node.
+  const descriptionNodeId = createNodeId(
+    `${collection}-description-${description}`
+  );
+
+  const slug = node.frontmatter.slug || slugify(node.frontmatter.title);
+
+  const postData = {
+    // Spreading frontmatter makes it possible to add fields to frontmatter and use then in query.
+    ...node.frontmatter,
+    collection,
+    // Foreign key reference to PostDescription node.
+    description: descriptionNodeId,
+    path: createPath(basePath, collection, slug),
+    // We do not want slug to show up in node.
+    slug: undefined,
+  };
+
+  // You can explicitly override ID in frontmatter.
+  const postNodeId =
+    node.frontmatter.id || createNodeId(`${collection}-${slug}`);
+
+  actions.createNode({
+    ...postData,
+    // Generated ID is namespaced to plugin.name.
+    id: postNodeId,
+    // Make MdxPost node aware of Mdx node.
+    parent: node.id,
+    children: [],
+    internal: {
+      type: 'MdxPost',
+      contentDigest: createContentDigest(postData),
+    },
+  });
+
+  // Create description node that can processes a Markdown description.
+  // https://www.christopherbiscardi.com/post/creating-mdx-nodes-from-raw-strings/
+  // mediaType text/markdown on non-File nodes triggers processing with gatsby-plugin-mdx.
+  // This results in childMdx being added to this node.
+  actions.createNode({
+    id: descriptionNodeId,
+    parent: postNodeId,
+    children: [],
+    internal: {
+      type: 'MdxPostDescription',
+      contentDigest: createContentDigest(description),
+      mediaType: 'text/markdown',
+      content: description,
+    },
+    // Strip Markdown, line breaks and white space.
+    text: remark()
+      .use(strip)
+      .processSync(description)
+      .contents.replace(/\n/g, ' ')
+      .trim(),
+  });
+
+  // Add collection to Mdx node.
+  actions.createNodeField({
+    node,
+    name: 'collection',
+    value: collection,
+  });
+
+  // Add path to Mdx node.
+  actions.createNodeField({
+    node,
+    name: 'path',
+    value: postData.path,
+  });
 };
 
 module.exports.createPages = async ({ graphql, actions }, themeOptions) => {
