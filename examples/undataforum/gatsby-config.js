@@ -10,7 +10,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-mdx',
-    '@undataforum/gatsby-theme-base',
+    {
+      resolve: '@undataforum/gatsby-theme-base',
+      options: {
+        mdxOtherwiseConfigured: true,
+      },
+    },
     '@undataforum/gatsby-theme-theme-ui',
     {
       resolve: '@undataforum/gatsby-theme-posts-core',
