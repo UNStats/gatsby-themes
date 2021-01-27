@@ -1,5 +1,16 @@
 # @undataforum/gatsby-theme-base
 
+## 0.16.0
+
+### Minor Changes
+
+- 8bd994a: Remove contact page
+
+### Patch Changes
+
+- 37f4d12: Fix path of 404 page
+- 03bd273: Update copyright page
+
 ## 0.15.0
 
 ### Minor Changes
