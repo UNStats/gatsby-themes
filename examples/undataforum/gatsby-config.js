@@ -15,6 +15,7 @@ module.exports = {
     {
       resolve: '@undataforum/gatsby-theme-posts-core',
       options: {
+        // basePath: '/',
         collection: 'blog',
         // contentPath: 'content/posts',
         mdxOtherwiseConfigured: true,
@@ -25,6 +26,7 @@ module.exports = {
     {
       resolve: '@undataforum/gatsby-theme-posts-core',
       options: {
+        // basePath: '/',
         collection: 'news',
         contentPath: 'content/articles',
         mdxOtherwiseConfigured: true,
@@ -35,6 +37,7 @@ module.exports = {
     {
       resolve: '@undataforum/gatsby-theme-events-core',
       options: {
+        // basePath: '/',
         collection: 'webinars',
         // contentPath: 'content/events',
         mdxOtherwiseConfigured: true,
@@ -45,22 +48,26 @@ module.exports = {
     {
       resolve: '@undataforum/gatsby-theme-profiles-core',
       options: {
+        // basePath: '/',
         // collection: 'profiles',
         // contentPath: 'content/profiles',
         mdxOtherwiseConfigured: true,
       },
     },
     {
-      resolve: '@maiertech/gatsby-theme-tags-core',
+      resolve: '@maiertech/gatsby-theme-pages-core',
       options: {
-        // tagCollection: 'tags',
-        mdxCollections: ['blog', 'news', 'webinars'],
+        // basePath: '/',
+        // contentPath: 'content/pages',
+        mdxOtherwiseConfigured: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      resolve: '@maiertech/gatsby-theme-tags-core',
       options: {
-        analyzerMode: 'static',
+        // basePath: '/',
+        // tagCollection: 'tags',
+        mdxCollections: ['blog', 'news', 'webinars'],
       },
     },
   ],
