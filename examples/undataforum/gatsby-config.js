@@ -9,7 +9,25 @@ module.exports = {
     siteLanguage: 'en',
   },
   plugins: [
-    'gatsby-plugin-mdx',
+    'gatsby-plugin-sharp',
+    'gatsby-remark-images',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1200,
+              showCaptions: true,
+              // Broken in gatsby-plugin-mdx.
+              // markdownCaptions: true,
+              withWebp: true,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: '@undataforum/gatsby-theme-base',
       options: {
