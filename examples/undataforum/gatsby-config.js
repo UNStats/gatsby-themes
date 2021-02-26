@@ -25,6 +25,12 @@ module.exports = {
               withWebp: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: (file) => `downloads/${file.hash}/${file.name}`,
+            },
+          },
         ],
       },
     },
