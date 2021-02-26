@@ -6,10 +6,7 @@ import {
   Container,
   EventPreview,
   Heading,
-  Link,
-  NewTabLink,
   Layout,
-  Styled,
   Tags,
 } from '@undataforum/gatsby-theme-theme-ui';
 import { createIntl, createIntlCache, RawIntlProvider } from 'react-intl';
@@ -133,20 +130,6 @@ const ShadowedEventPage = ({ data, pageContext, location }) => {
           />
           <Tags values={values} variant="tags.secondary" mb={3} />
           <MDXRenderer>{event.body}</MDXRenderer>
-          {event.attachments && event.attachments.length > 0 && (
-            <>
-              <Styled.h2>Presentations</Styled.h2>
-              <ul>
-                {event.attachments.map(({ base, publicURL }) => (
-                  <li key={base}>
-                    <Link as={NewTabLink} href={publicURL}>
-                      {base}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
         </Container>
       </Layout>
     </RawIntlProvider>
