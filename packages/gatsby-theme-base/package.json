@@ -31,7 +31,7 @@
     "@maiertech/gatsby-helpers": "^0.3.0",
     "@maiertech/gatsby-theme-pages-core": "^0.4.0",
     "gatsby-plugin-react-helmet": "^3.9.0",
-    "gatsby-plugin-sitemap": "^2.11.0",
+    "gatsby-plugin-sitemap": "^2.12.0",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0"
   }
