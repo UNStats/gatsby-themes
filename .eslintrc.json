@@ -1,0 +1,4 @@
+{
+  "extends": "@maiertech",
+  "rules": { "react/jsx-pascal-case": "off" }
+}
