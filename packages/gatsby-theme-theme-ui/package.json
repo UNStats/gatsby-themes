@@ -22,14 +22,14 @@
     "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
-    "gatsby": "^2.29.1",
+    "gatsby": "^3.0.3",
     "react": "^16.14.0 || ^17.0.1",
     "react-dom": "^16.14.0 || ^17.0.1"
   },
   "dependencies": {
     "@undataforum/components": "^0.84.0",
     "@undataforum/preset": "^0.13.1",
-    "gatsby-plugin-catch-links": "^2.9.0",
+    "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-theme-ui": "^0.3.5",
     "prop-types": "^15.7.2",
     "theme-ui": "^0.3.5"
