@@ -9,14 +9,16 @@ const strip = require('strip-markdown');
 
 const withDefaults = require('./theme-options');
 
-// This Webpack config helps prevent this error: https://github.com/gatsbyjs/gatsby/issues/24815.
-// It is caused when using @maiertech/gatsby-helpers inside use-profiles.js.
-// See https://www.gatsbyjs.com/docs/troubleshooting-common-errors/#issues-with-fs-resolution.
+// createPath and ensurePathExists from @maiertech/gatsby-helpers use fs and path from the Node API.
+// They cannot be run in the browser without a polyfill.
 /* istanbul ignore next */
 module.exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
-    node: {
-      fs: 'empty',
+    resolve: {
+      alias: {
+        path: require.resolve('path-browserify'),
+      },
+      fallback: { fs: false },
     },
   });
 };
@@ -32,7 +34,7 @@ module.exports.onPreBootstrap = ({ reporter }, themeOptions) => {
 /* istanbul ignore next */
 module.exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
-    interface PostDescription @nodeInterface {
+    interface PostDescription implements Node {
       id: ID!
       body: String!
       text: String!
@@ -44,7 +46,7 @@ module.exports.createSchemaCustomization = ({ actions }) => {
       text: String!
     }
 
-    interface Post @nodeInterface {
+    interface Post implements Node {
       id: ID!
       collection: String!
       title: String!
