@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-events-core
 
+## 0.2.0
+
+### Minor Changes
+
+- 62d9b0e: Upgrade to Gatsby v3
+
 ## 0.1.0
 
 ### Minor Changes

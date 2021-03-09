@@ -1,7 +1,7 @@
 {
   "name": "@undataforum/gatsby-theme-theme-ui",
   "description": "Add opinionated Theme UI styling to a Gatsby site.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "main": "index.js",
