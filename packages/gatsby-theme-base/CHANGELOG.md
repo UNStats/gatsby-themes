@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-base
 
+## 0.17.0
+
+### Minor Changes
+
+- 62d9b0e: Upgrade to Gatsby v3
+
 ## 0.16.0
 
 ### Minor Changes
