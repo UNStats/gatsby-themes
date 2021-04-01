@@ -24,7 +24,7 @@
     "@undataforum/gatsby-theme-profiles-core": "*",
     "@undataforum/gatsby-theme-theme-ui": "*",
     "gatsby": "^3.0.3",
-    "gatsby-image": "^3.0.0",
+    "gatsby-image": "^3.2.0",
     "gatsby-plugin-mdx": "^2.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-remark-copy-linked-files": "^3.0.0",
