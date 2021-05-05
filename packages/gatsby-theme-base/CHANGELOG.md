@@ -1,5 +1,11 @@
 # @undataforum/gatsby-theme-base
 
+## 0.18.0
+
+### Minor Changes
+
+- 51b12be: Add TypeScript support
+
 ## 0.17.0
 
 ### Minor Changes
