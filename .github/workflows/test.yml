@@ -1,14 +1,26 @@
 name: Test
-
-on: pull_request
-
+on: [pull_request]
 jobs:
-  lint:
-    runs-on: ubuntu-latest
+  test:
+    name: Run tests with Node ${{ matrix.node }} on ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [14]
+        os: [ubuntu-latest]
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.5
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node }}
+        uses: actions/setup-node@v2.1.5
         with:
-          node-version: '14'
-      - run: yarn install --frozen-lockfile
-      - run: yarn run lint
+          node-version: ${{ matrix.node }}
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+
+      - name: Test
+        run: yarn test

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
-import { SEO, useSiteMetadata } from '@undataforum/gatsby-theme-base';
+import { SEO, useSiteMetadata } from '@undataforum/gatsby-theme-base/src';
 import {
   Container,
   Styled,
@@ -12,7 +12,6 @@ const Homepage = ({ location }) => {
   const { siteDescription } = useSiteMetadata();
 
   return (
-    // We would normally use `IntlProvider`, but we already have `intl` and therefore reuse it with RawIntlProvider.
     <Layout location={location}>
       <SEO
         title="Homepage"

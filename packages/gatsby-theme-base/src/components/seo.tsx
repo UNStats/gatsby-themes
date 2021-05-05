@@ -1,9 +1,18 @@
 import React from 'react';
-import { arrayOf, node, string } from 'prop-types';
 import Helmet from 'react-helmet';
 import { createPath } from '@maiertech/gatsby-helpers';
 
 import useSiteMetadata from '../use-site-metadata';
+
+type Props = {
+  title: string;
+  description: string;
+  path: string;
+  lang?: string;
+  keywords?: string[];
+  canonicalUrl?: string;
+  children?: React.ReactNode;
+};
 
 const SEO = ({
   title,
@@ -13,12 +22,12 @@ const SEO = ({
   lang,
   keywords,
   children,
-}) => {
-  const site = useSiteMetadata();
+}: Props) => {
+  const { siteTitle, siteUrl, siteLanguage, siteTwitter } = useSiteMetadata();
 
-  const { siteTitle, siteUrl, siteLanguage, siteTwitter } = site;
-
-  const url = canonicalUrl ? canonicalUrl : createPath(siteUrl, path);
+  const url = canonicalUrl
+    ? canonicalUrl
+    : (createPath(siteUrl, path) as string);
 
   return (
     <Helmet
@@ -41,16 +50,6 @@ const SEO = ({
       {children}
     </Helmet>
   );
-};
-
-SEO.propTypes = {
-  title: string.isRequired,
-  description: string.isRequired,
-  path: string.isRequired,
-  lang: string,
-  keywords: arrayOf(string),
-  children: node,
-  canonicalUrl: string,
 };
 
 export default SEO;

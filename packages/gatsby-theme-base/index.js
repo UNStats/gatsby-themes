@@ -1,2 +1,5 @@
-export { default as SEO } from './src/components/seo';
-export { default as useSiteMetadata } from './src/use-site-metadata';
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./dist/gatsby-theme-base.cjs.production.min.js');
+} else {
+  module.exports = require('./dist/gatsby-theme-base.cjs.development.js');
+}

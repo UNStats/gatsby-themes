@@ -14,9 +14,8 @@ A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) that does the following:
 
 ## Options
 
-| Option                   | Default | Description                                                                       |
-| :----------------------- | :------ | :-------------------------------------------------------------------------------- |
-| `mdxOtherwiseConfigured` | `false` | Set this flag to true if `gatsby-plugin-mdx` is already configured for your site. |
+Theme options are documented in type [ThemeOptions](./src/types.ts). You can
+lookup theme option defaults in file [theme-options.ts](./src/theme-options.ts).
 
 ## Site metadata
 
