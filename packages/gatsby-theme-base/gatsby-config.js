@@ -1,15 +1,20 @@
+// @ts-check
 const path = require('path');
-
 const withDefaults = require('./theme-options');
 
-module.exports = (themeOptions) => {
-  const { mdxOtherwiseConfigured } = withDefaults(themeOptions);
+/**
+ * This `gatsby-config.js` will be consolidated by Gatsby into the site's `gatsby-config.js`.
+ *
+ * @param { import("./src/types").Options } options
+ */
+module.exports = (options) => {
+  const { mdxOtherwiseConfigured } = withDefaults(options);
   return {
     plugins: [
       {
         resolve: '@maiertech/gatsby-theme-pages-core',
         options: {
-          contentPath: path.join(__dirname, 'content', 'pages'),
+          contentPath: path.join(__dirname, 'content/pages'),
           mdxOtherwiseConfigured,
         },
       },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { object } from 'prop-types';
-import { SEO } from '@undataforum/gatsby-theme-base';
+import { SEO } from '@undataforum/gatsby-theme-base/src';
 import {
   Container,
   EventPreview,

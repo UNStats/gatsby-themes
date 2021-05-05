@@ -1,10 +1,18 @@
 {
   "name": "@undataforum/gatsby-theme-base",
   "version": "0.17.0",
-  "description": "A Gatsby theme with a layout.",
+  "description": "Base theme for @UNStats websites.",
   "author": "Thilo Maier <maier@un.org>",
   "license": "MIT",
   "main": "index.js",
+  "module": "dist/gatsby-theme-base.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "content",
+    "gatsby-config.js",
+    "theme-options.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/undataforum/gatsby-themes.git",
@@ -13,26 +21,26 @@
   "keywords": [
     "gatsby",
     "gatsby-theme",
-    "gatsby-plugin",
-    "undataforum"
+    "gatsby-plugin"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "start": "tsdx watch",
+    "prepare": "tsdx build",
     "purge": "rm -rf ./node_modules"
   },
   "peerDependencies": {
     "gatsby": "^3.0.3",
-    "react": "^16.14.0 || ^17.0.1",
-    "react-dom": "^16.14.0 || ^17.0.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "dependencies": {
-    "@maiertech/gatsby-helpers": "^0.3.0",
-    "@maiertech/gatsby-theme-pages-core": "^0.6.0",
+    "@maiertech/gatsby-helpers": "^0.5.0",
+    "@maiertech/gatsby-theme-pages-core": "^0.8.0",
     "gatsby-plugin-react-helmet": "^4.4.0",
-    "gatsby-plugin-sitemap": "^3.0.0",
-    "prop-types": "^15.7.2",
+    "gatsby-plugin-sitemap": "^4.0.0",
     "react-helmet": "^6.1.0"
   }
 }

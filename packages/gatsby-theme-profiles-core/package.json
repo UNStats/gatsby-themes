@@ -13,8 +13,7 @@
   "keywords": [
     "gatsby",
     "gatsby-theme",
-    "gatsby-plugin",
-    "undataforum"
+    "gatsby-plugin"
   ],
   "publishConfig": {
     "access": "public"

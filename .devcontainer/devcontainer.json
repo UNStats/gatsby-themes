@@ -5,7 +5,7 @@
     "terminal.integrated.shell.linux": "/bin/bash"
   },
   "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
-  "forwardPorts": [8000],
+  "forwardPorts": [8000, 9000],
   "postCreateCommand": "yarn install",
   "containerEnv": {
     "GATSBY_TELEMETRY_DISABLED": "1"
