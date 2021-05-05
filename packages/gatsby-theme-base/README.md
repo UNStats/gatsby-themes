@@ -15,30 +15,17 @@ A [Gatsby theme](https://www.gatsbyjs.org/docs/themes/) that does the following:
 ## Options
 
 Theme options are documented in type [ThemeOptions](./src/types.ts). You can
-lookup theme option defaults in file [theme-options.ts](./src/theme-options.ts).
+lookup theme option defaults in file [theme-options.js](./theme-options.js).
 
 ## Site metadata
 
-To make the `SEO` component work, you need to define the following
-[site metadata](https://www.gatsbyjs.com/docs/gatsby-config/#sitemetadata) in
-your site's `gatsby-config.js`:
-
-| Key             | Required | Description                                                              |
-| :-------------- | :------- | :----------------------------------------------------------------------- |
-| siteTitle       | ✓        | Site title for SEO.                                                      |
-| siteDescription |          | Site description for SEO in homepage.                                    |
-| siteUrl         | ✓        | URL from which the production site is served. Used for sitemap creation. |
-| siteTwitter     | ✓        | Site Twitter username for SEO. Can be set to `''`.                       |
-| siteLanguage    | ✓        | Default site language.                                                   |
+To make the `SEO` component work, you need to define site metadata in your
+site's gatsby-config.js. See type [SiteMetadata](./src/types.ts).
 
 ## Plugins
 
-This theme installs the following plugins:
-
-| Plugin                                                                                     | Description                                                                                                             |
-| :----------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| [gatsby-plugin-react-helmet](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/) | Required to make the `SEO` component work.                                                                              |
-| [gatsby-plugin-sitemap](https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap)            | Create a [sitemap](https://developers.google.com/search/docs/advanced/sitemaps/overview) that you can submit to Google. |
+This theme installs the plugins listed in
+[gatsby-config.js](./gatsby-config.js).
 
 ## Standardized pages
 
