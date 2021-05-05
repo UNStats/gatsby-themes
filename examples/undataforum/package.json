@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "undataforum-example",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Example Gatsby site for developing and testing styling and layouts.",
   "homepage": "https://mockup.undataforum.vercel.app/",
   "scripts": {
