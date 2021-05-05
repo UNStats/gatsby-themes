@@ -2189,14 +2189,6 @@
     eslint-plugin-react-hooks "^4.2.0"
     eslint-plugin-testing-library "^3.10.1"
 
-"@maiertech/gatsby-helpers@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@maiertech/gatsby-helpers/-/gatsby-helpers-0.3.0.tgz#5ae76210a8afd780874a7f7d69013db7d72eed01"
-  integrity sha512-xgV7u4MnGzaIR0w62xpqSIn9kYdzfHcl79NcYoNQgymFYDGBOrZnFUAv9AnITHos6eSz4fcQresbfyvh/8TZyQ==
-  dependencies:
-    "@sindresorhus/slugify" "^1.1.0"
-    lodash.filter "^4.6.0"
-
 "@maiertech/gatsby-helpers@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@maiertech/gatsby-helpers/-/gatsby-helpers-0.5.0.tgz#5333b2f7b77c1ef3b19618eb64bc8f6db55a6c8b"
