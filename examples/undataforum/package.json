@@ -32,7 +32,7 @@
     "gatsby-remark-images": "^4.0.0",
     "lodash.filter": "^4.6.0",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
+    "react": "^18.1.0",
     "react-dom": "^17.0.1",
     "react-intl": "^5.13.2",
     "typeface-roboto": "^1.1.13"
